@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.http import HttpResponse
-
 def home(request):
-    return HttpResponse("Welcome to SwipeSaver!")
+    return render(request, 'homepage/homepage.html')
+
+def commons(request):
+    return render(request, 'homepage/commons.html')

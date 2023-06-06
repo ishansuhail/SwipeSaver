@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}SwipeSaver{% endblock %}</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'commons' %}">Commons</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    <!-- This is where the content of child pages will be inserted. -->
+    {% endblock %}
+</body>
+</html>
