@@ -1,12 +1,72 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwipeSaver</title>
+    <style>
+        div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        }
+
+        div.scrollmenu a:hover {
+        background-color: #777;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .header-container h1,p,a
+        {
+            font-family: Verdana, sans-serif;
+        }
+
+        .header-container {
+            position: relative;
+        }
+
+        .overlay-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: gainsboro;
+            z-index: -1;
+        }
+    </style>
 </head>
-<body>
-    <h1>Welcome to SwipeSaver!</h1>
-    <p>This is the homepage.</p>
+<body style="background-color: whitesmoke;">
+    
+    <div class="header-container">
+        <div class="overlay-box"></div>
+        <div style="display: flex; align-items: center;">
+            <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver" style="width: 100px; height: 100px; margin-top: 20px; margin-left: 20px; margin-bottom: 20px;">
+            <h1 style="color: rgb(228, 30, 30); font-size: 60px; text-align: center; margin: 0 auto;">RPI SwipeSaver</h1>
+        </div>
+    </div>
+
+    <div class="scrollmenu">
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'commons' %}">Commons Dining Hall</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+    
+    <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
+    
 </body>
 </html>
