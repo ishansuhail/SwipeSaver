@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commons Dining Hall</title>
@@ -26,16 +26,28 @@
         }
 
         body {
-            font-family: Spectral, serif;
-        }
-
-        .header-container h1,p,a
-        {
-            font-family: Spectral, serif;
+            font-family: Fira Sans, sans-serif;
         }
 
         .header-container {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .header-container img {
+            width: 100px;
+            height: 100px;
+            margin: 20px 20px 2px 20px;  /* top right bottom left */
+        }
+
+        .header-container h1 {
+            color: rgb(255, 255, 255); 
+            font-size: 60px; 
+            margin: 10px 20px 20px 20px;  /* top right bottom left */
         }
 
         .overlay-box {
@@ -44,19 +56,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: gainsboro;
+            background-color: rgb(228, 30, 30);
             z-index: -1;
         }
+
+        @media (max-width: 600px) {
+            .header-container img {
+                width: 50px;
+                height: 50px;
+                margin: 10px 10px 5px 10px; /* half of the original margin */
+            }
+
+            .header-container h1 {
+                font-size: 30px;
+            }
+        }
+
     </style>
 </head>
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
         <div class="overlay-box"></div>
-        <div style="display: flex; align-items: center;">
-            <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver" style="width: 100px; height: 100px; margin-top: 20px; margin-left: 20px; margin-bottom: 20px;">
-            <h1 style="color: rgb(228, 30, 30); font-size: 60px; text-align: center; margin: 0 auto;">Commons Dining Hall</h1>
-        </div>
+        <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver">
+        <h1>COMMONS DINING HALL</h1>
     </div>
 
     <div class="scrollmenu">
@@ -64,7 +87,7 @@
         <a href="{% url 'commons' %}">Commons Dining Hall</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-      </div>
+    </div>
     
     <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
     
