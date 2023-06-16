@@ -4,9 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commons Dining Hall</title>
+<<<<<<< Updated upstream
 </head>
 <body>
     <h1>Welcome to the Commons Dining Hall!</h1>
     <p>This is the Commons page.</p>
+=======
+    <style>
+        div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        }
+
+        div.scrollmenu a:hover {
+        background-color: #777;
+        }
+
+        body {
+            font-family: Fira Sans, sans-serif;
+        }
+
+        .header-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .header-container img {
+            width: 100px;
+            height: 100px;
+            margin: 20px 20px 2px 20px;  /* top right bottom left */
+        }
+
+        .header-container h1 {
+            color: rgb(255, 255, 255); 
+            font-size: 60px; 
+            margin: 10px 20px 20px 20px;  /* top right bottom left */
+        }
+
+        .overlay-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(228, 30, 30);
+            z-index: -1;
+        }
+
+        @media (max-width: 600px) {
+            .header-container img {
+                width: 50px;
+                height: 50px;
+                margin: 10px 10px 5px 10px; /* half of the original margin */
+            }
+
+            .header-container h1 {
+                font-size: 30px;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body style="background-color: whitesmoke;">
+    
+    <div class="header-container">
+        <div class="overlay-box"></div>
+        <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver">
+        <h1>COMMONS DINING HALL</h1>
+    </div>
+
+    <div class="scrollmenu">
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'commons' %}">Commons Dining Hall</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+
+    <script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
+
+    
+    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-left: 20px; margin-bottom: 10px">BREAKFAST (7:00 - 9:30)</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Grill</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Omelette Bar</p>
+
+    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-left: 20px;margin-bottom: 10px">LUNCH (11:00 - 3:00)</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Grill</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Simple Servings</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Entree</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Pasta Bar</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Pacifica</p>
+
+    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-left: 20px;margin-bottom: 10px">DINNER (4:30 - 8:00)</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Grill</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Simple Servings</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Entree</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Pasta Bar</p>
+    <p style="color: rgb(0, 0, 0); font-size: 24px; margin-left: 40px; margin-top: 5px ">Pacifica</p>
+
+
+
+
+
+    <div class = "footer">
+        <p style="color: white;">An RCOS project</p>
+    </div>
+
+>>>>>>> Stashed changes
 </body>
 </html>
