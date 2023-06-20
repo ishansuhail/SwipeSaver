@@ -2,56 +2,88 @@
 {% load static %}
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commons Dining Hall</title>
-
-
-</head>
-<body>
     <style>
+        /* Define the color palette */
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #FFFFFF;
+            --accent-color: #333333;
+        }
+
         div.scrollmenu {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
+            background-color: var(--primary-color);
+            overflow: auto;
+            white-space: nowrap;
         }
 
         div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
+            display: inline-block;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
         }
 
         div.scrollmenu a:hover {
-        background-color: #777;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Content styles */
+        .content-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .quote {
+            font-size: 20px;
+            margin-top: 30px;
+            color: var(--secondary-color);
         }
 
         body {
-            font-family: Fira Sans, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
         }
 
         .header-container {
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            background-color: var(--secondary-color);
+            padding: 20px;
             text-align: center;
         }
 
         .header-container img {
-            width: 100px;
-            height: 100px;
-            margin: 20px 20px 2px 20px;  /* top right bottom left */
+            width: 200px;
+            height: 46px;
+            display: block;
+            margin: 0 auto 10px;
         }
 
         .header-container h1 {
-            color: rgb(255, 255, 255); 
-            font-size: 60px; 
-            margin: 10px 20px 20px 20px;  /* top right bottom left */
+            font-size: 60px;
+            margin: 0;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 20px;
         }
 
         .overlay-box {
@@ -64,16 +96,48 @@
             z-index: -1;
         }
 
-        @media (max-width: 600px) {
-            .header-container img {
-                width: 50px;
-                height: 50px;
-                margin: 10px 10px 5px 10px; /* half of the original margin */
-            }
+        .accordion {
+            background-color: #eee;
+            font-family: Verdana, sans-serif;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 95%;
+            font-size: 20px;
+            text-align: left;
+            margin: 20px 20px 10px 20px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
 
-            .header-container h1 {
-                font-size: 30px;
-            }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\02795'; /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2796"; /* Unicode character for "minus" sign (-) */
+        }
+
+        .panel {
+            font-family: Verdana, sans-serif;
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            width: 92.5%;
+            border: none;
+            outline: none;
+            margin: 0px 20px 0px 20px;
+            transition: max-height 0.2s ease-out;
         }
 
         .footer {
@@ -89,113 +153,15 @@
             justify-content: center;
         }
 
-    </style>
-</head>
-
-    <style>
-        div.scrollmenu {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
-        }
-
-        div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-        }
-
-        div.scrollmenu a:hover {
-        background-color: #777;
-        }
-
-        body {
-            font-family: Fira Sans, sans-serif;
-        }
-
-        .header-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .header-container img {
-            width: 100px;
-            height: 100px;
-            margin: 20px 20px 2px 20px;  /* top right bottom left */
-        }
-
-        .header-container h1 {
-            color: rgb(255, 255, 255); 
-            font-size: 60px; 
-            margin: 10px 20px 20px 20px;  /* top right bottom left */
-        }
-
-        .overlay-box {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(228, 30, 30);
-            z-index: -1;
-        }
-        
-        .accordion {
-            background-color: #eee;
-            font-family: Fira Sans, sans-serif;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 95%;
-            font-size: 20px;
-            text-align: left;
-            margin: 20px 20px 10px 20px;  /* top right bottom left */
-            border: none;
-            outline: none;
-            transition: 0.4s;
-        }
-
-         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-        .active, .accordion:hover {
-            background-color: #ccc;
-        }
-        .accordion:after {
-            content: '\02795'; /* Unicode character for "plus" sign (+) */
-            font-size: 13px;
-            color: #777;
-            float: right;
-            margin-left: 5px;
-          }
-          
-        .active:after {
-            content: "\2796"; /* Unicode character for "minus" sign (-) */
-        }
-
-        /* Style the accordion panel. Note: hidden by default */
-        .panel {
-            font-family: Fira Sans, sans-serif;
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            width: 92.5%;
-            border: none;
-            outline: none;
-            margin: 0px 20px 0px 20px;  /* top right bottom left */
-            transition: max-height 0.2s ease-out;
+        .footer p {
+            color: white;
         }
 
         @media (max-width: 600px) {
             .header-container img {
                 width: 50px;
                 height: 50px;
-                margin: 10px 10px 5px 10px; /* half of the original margin */
+                margin: 10px 10px 5px 10px;
             }
 
             .header-container h1 {
@@ -205,12 +171,11 @@
 
     </style>
 </head>
-
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
         <div class="overlay-box"></div>
-        <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver">
+        <img src="{% static 'newLogo.png' %}" alt="SwipeSaver">
         <h1>COMMONS DINING HALL</h1>
     </div>
 
@@ -293,6 +258,10 @@
         <p>List of food!</p>
     </div>
 
+    <div class="footer">
+        <p>An RCOS project</p>
+    </div>
+    
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -309,17 +278,6 @@
         });
         }
     </script>
-
-
-
-
-
-
-    <div class = "footer">
-        <p style="color: white;">An RCOS project</p>
-    </div>
-
-
 
 </body>
 </html>
