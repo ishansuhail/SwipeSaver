@@ -8,3 +8,9 @@ def home(request):
 
 def commons(request):
     return HttpResponse("Welcome to Commons!")
+
+def contact(request):
+    return HttpResponse("Welcome to Contact!")
+
+def about(request):
+    return HttpResponse("Welcome to About!")
