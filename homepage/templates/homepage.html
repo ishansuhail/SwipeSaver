@@ -2,40 +2,96 @@
 {% load static %}
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwipeSaver</title>
+    <title>Commons Dining Hall</title>
     <style>
+        /* Define the color palette */
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #FFFFFF;
+            --accent-color: #333333;
+        }
+
         div.scrollmenu {
-            background-color: #333;
+            background-color: var(--primary-color);
             overflow: auto;
             white-space: nowrap;
         }
 
         div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
+            display: inline-block;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
         }
 
         div.scrollmenu a:hover {
-        background-color: #777;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Content styles */
+        .content-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .quote {
+            font-size: 20px;
+            margin-top: 30px;
+            color: var(--secondary-color);
         }
 
         body {
-            font-family: Verdana, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 100px;
         }
 
-        .header-container h1,p,a
-        {
-            font-family: Verdana, sans-serif;
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
         }
 
         .header-container {
             position: relative;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-container img {
+            width: 200px;
+            height: 46px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .header-container h1 {
+            font-size: 60px;
+            margin: 0;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .commons-header-container {
+            position: relative;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
         }
 
         .overlay-box {
@@ -44,19 +100,48 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: gainsboro;
+            background-color: rgb(228, 30, 30);
             z-index: -1;
         }
+
+        .panel {
+            font-family: Verdana, sans-serif;
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            width: 92.5%;
+            border: none;
+            outline: none;
+            margin: 0px 20px 0px 20px;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            color: white;
+        }
+
     </style>
 </head>
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
         <div class="overlay-box"></div>
-        <div style="display: flex; align-items: center;">
-            <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver" style="width: 100px; height: 100px; margin-top: 20px; margin-left: 35px; margin-bottom: 20px;">
-            <h1 style="color: rgb(228, 30, 30); font-size: 60px; text-align: center; margin-left: 350px;">RPI SwipeSaver</h1>
-        </div>
+        <img src="{% static 'newLogo.png' %}" alt="SwipeSaver">
+        <h1>RPI SwipeSaver</h1>
     </div>
 
     <div class="scrollmenu">
@@ -65,8 +150,26 @@
         <a href="{% url 'contact' %}">Contact</a>
         <a href="{% url 'about' %}">About</a>
       </div>
-    
+
+    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+
+    <script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
+
     <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
-    
+
+    <div class="footer">
+        <p>An RCOS project</p>
+    </div>
+
 </body>
 </html>

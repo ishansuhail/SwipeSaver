@@ -2,40 +2,89 @@
 {% load static %}
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commons Dining Hall</title>
     <style>
+        /* Define the color palette */
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #FFFFFF;
+            --accent-color: #333333;
+        }
+
         div.scrollmenu {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
+            background-color: var(--primary-color);
+            overflow: auto;
+            white-space: nowrap;
         }
 
         div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
+            display: inline-block;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
         }
 
         div.scrollmenu a:hover {
-        background-color: #777;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Content styles */
+        .content-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .quote {
+            font-size: 20px;
+            margin-top: 30px;
+            color: var(--secondary-color);
         }
 
         body {
-            font-family: Spectral, serif;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 100px;
         }
 
-        .header-container h1,p,a
-        {
-            font-family: Spectral, serif;
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
         }
 
         .header-container {
             position: relative;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-container img {
+            width: 200px;
+            height: 46px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .header-container h1 {
+            font-size: 60px;
+            margin: 0;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 20px;
         }
 
         .overlay-box {
@@ -44,19 +93,91 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: gainsboro;
+            background-color: rgb(228, 30, 30);
             z-index: -1;
         }
+
+        .accordion {
+            background-color: #eee;
+            font-family: Verdana, sans-serif;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 95%;
+            font-size: 20px;
+            text-align: left;
+            margin: 20px 20px 10px 20px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\02795'; /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2796"; /* Unicode character for "minus" sign (-) */
+        }
+
+        .panel {
+            font-family: Verdana, sans-serif;
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            width: 92.5%;
+            border: none;
+            outline: none;
+            margin: 0px 20px 0px 20px;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .header-container img {
+                width: 50px;
+                height: 50px;
+                margin: 10px 10px 5px 10px;
+            }
+
+            .header-container h1 {
+                font-size: 30px;
+            }
+        }
+
     </style>
 </head>
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
         <div class="overlay-box"></div>
-        <div style="display: flex; align-items: center;">
-            <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver" style="width: 100px; height: 100px; margin-top: 20px; margin-left: 20px; margin-bottom: 20px;">
-            <h1 style="color: rgb(228, 30, 30); font-size: 60px; text-align: center; margin: 0 auto;">Commons Dining Hall</h1>
-        </div>
+        <img src="{% static 'newLogo.png' %}" alt="SwipeSaver">
+        <h1>COMMONS DINING HALL</h1>
     </div>
 
     <div class="scrollmenu">
@@ -67,6 +188,98 @@
       </div>
     
     <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
+
+    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+
+    <script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
+
+    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 20px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
+    <button class="accordion">Grill</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+
+    <button class="accordion">Omelette Bar</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+
+    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 20px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
+    <button class="accordion">Grill</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+
+    <button class="accordion">Simple Servings</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+    <button class="accordion">Entree</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+    <button class="accordion">Pasta Bar</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>    
+    <button class="accordion">Pacifica</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 20px;margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+    <button class="accordion">Grill</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+
+
+    <button class="accordion">Simple Servings</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+    <button class="accordion">Entree</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+    <button class="accordion">Pasta Bar</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>    
+    <button class="accordion">Pacifica</button>
+    <div class="panel">
+        <p>List of food!</p>
+    </div>
+
+    <div class="footer">
+        <p>An RCOS project</p>
+    </div>
     
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
+
 </body>
 </html>
