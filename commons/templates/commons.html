@@ -129,7 +129,7 @@
         }
 
         .panel {
-            font-family: Verdana, sans-serif;
+            font-family:'Montserrat', sans-serif;
             padding: 0 18px;
             background-color: white;
             max-height: 0;
@@ -170,6 +170,47 @@
             }
         }
 
+        .rating {
+            float: right;
+        }
+
+        .rating:not(:checked) > input {
+            position: absolute;
+            clip: rect(0,0,0,0);
+        }
+
+        .rating:not(:checked) > label {
+            float: right;
+            width: 1em;
+            padding: 0 .1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 200%;
+            line-height: 1.2;
+            color: lightgrey;
+        }
+
+        .rating:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+        .rating > input:checked ~ label {
+            color: gold;
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: gold;
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            color: gold;
+        }
+        
     </style>
 </head>
 <body style="background-color: whitesmoke;">
@@ -203,60 +244,154 @@
     </script>
 
     <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 20px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
+
     <button class="accordion">Grill</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-breakfast-grill" name="rating-breakfast-grill" value="5" /><label for="star5-breakfast-grill" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-breakfast-grill" name="rating-breakfast-grill" value="4" /><label for="star4-breakfast-grill" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-breakfast-grill" name="rating-breakfast-grill" value="3" /><label for="star3-breakfast-grill" title="Meh">3 stars</label>
+            <input type="radio" id="star2-breakfast-grill" name="rating-breakfast-grill" value="2" /><label for="star2-breakfast-grill" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-breakfast-grill" name="rating-breakfast-grill" value="1" /><label for="star1-breakfast-grill" title="Sucks big time">1 star</label>
+        </div>
     </div>
 
     <button class="accordion">Omelette Bar</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-breakfast-omelette" name="rating-breakfast-omelette" value="5" /><label for="star5-breakfast-omelette" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-breakfast-omelette" name="rating-breakfast-omelette" value="4" /><label for="star4-breakfast-omelette" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-breakfast-omelette" name="rating-breakfast-omelette" value="3" /><label for="star3-breakfast-omelette" title="Meh">3 stars</label>
+            <input type="radio" id="star2-breakfast-omelette" name="rating-breakfast-omelette" value="2" /><label for="star2-breakfast-omelette" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-breakfast-omelette" name="rating-breakfast-omelette" value="1" /><label for="star1-breakfast-omelette" title="Sucks big time">1 star</label>
+        </div>
     </div>
 
     <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 20px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
+
     <button class="accordion">Grill</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-lunch-grill" name="rating-lunch-grill" value="5" /><label for="star5-lunch-grill" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-lunch-grill" name="rating-lunch-grill" value="4" /><label for="star4-lunch-grill" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-lunch-grill" name="rating-lunch-grill" value="3" /><label for="star3-lunch-grill" title="Meh">3 stars</label>
+            <input type="radio" id="star2-lunch-grill" name="rating-lunch-grill" value="2" /><label for="star2-lunch-grill" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-lunch-grill" name="rating-lunch-grill" value="1" /><label for="star1-lunch-grill" title="Sucks big time">1 star</label>
+        </div>
     </div>
 
     <button class="accordion">Simple Servings</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-lunch-simple" name="rating-lunch-simple" value="5" /><label for="star5-lunch-simple" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-lunch-simple" name="rating-lunch-simple" value="4" /><label for="star4-lunch-simple" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-lunch-simple" name="rating-lunch-simple" value="3" /><label for="star3-lunch-simple" title="Meh">3 stars</label>
+            <input type="radio" id="star2-lunch-simple" name="rating-lunch-simple" value="2" /><label for="star2-lunch-simple" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-lunch-simple" name="rating-lunch-simple" value="1" /><label for="star1-lunch-simple" title="Sucks big time">1 star</label>
+        </div>
     </div>
+
     <button class="accordion">Entree</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-lunch-entree" name="rating-lunch-entree" value="5" /><label for="star5-lunch-entree" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-lunch-entree" name="rating-lunch-entree" value="4" /><label for="star4-lunch-entree" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-lunch-entree" name="rating-lunch-entree" value="3" /><label for="star3-lunch-entree" title="Meh">3 stars</label>
+            <input type="radio" id="star2-lunch-entree" name="rating-lunch-entree" value="2" /><label for="star2-lunch-entree" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-lunch-entree" name="rating-lunch-entree" value="1" /><label for="star1-lunch-entree" title="Sucks big time">1 star</label>
+        </div>
     </div>
+
     <button class="accordion">Pasta Bar</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-lunch-pasta" name="rating-lunch-pasta" value="5" /><label for="star5-lunch-pasta" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-lunch-pasta" name="rating-lunch-pasta" value="4" /><label for="star4-lunch-pasta" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-lunch-pasta" name="rating-lunch-pasta" value="3" /><label for="star3-lunch-pasta" title="Meh">3 stars</label>
+            <input type="radio" id="star2-lunch-pasta" name="rating-lunch-pasta" value="2" /><label for="star2-lunch-pasta" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-lunch-pasta" name="rating-lunch-pasta" value="1" /><label for="star1-lunch-pasta" title="Sucks big time">1 star</label>
+        </div>
     </div>    
+
     <button class="accordion">Pacifica</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-lunch-pacifica" name="rating-lunch-pacifica" value="5" /><label for="star5-lunch-pacifica" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-lunch-pacifica" name="rating-lunch-pacifica" value="4" /><label for="star4-lunch-pacifica" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-lunch-pacifica" name="rating-lunch-pacifica" value="3" /><label for="star3-lunch-pacifica" title="Meh">3 stars</label>
+            <input type="radio" id="star2-lunch-pacifica" name="rating-lunch-pacifica" value="2" /><label for="star2-lunch-pacifica" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-lunch-pacifica" name="rating-lunch-pacifica" value="1" /><label for="star1-lunch-pacifica" title="Sucks big time">1 star</label>
+        </div>
     </div>
+
+
     <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 20px;margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+
     <button class="accordion">Grill</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-dinner-grill" name="rating-dinner-grill" value="5" /><label for="star5-dinner-grill" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-dinner-grill" name="rating-dinner-grill" value="4" /><label for="star4-dinner-grill" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-dinner-grill" name="rating-dinner-grill" value="3" /><label for="star3-dinner-grill" title="Meh">3 stars</label>
+            <input type="radio" id="star2-dinner-grill" name="rating-dinner-grill" value="2" /><label for="star2-dinner-grill" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-dinner-grill" name="rating-dinner-grill" value="1" /><label for="star1-dinner-grill" title="Sucks big time">1 star</label>
+        </div>
     </div>
-
 
     <button class="accordion">Simple Servings</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-dinner-simple" name="rating-dinner-simple" value="5" /><label for="star5-dinner-simple" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-dinner-simple" name="rating-dinner-simple" value="4" /><label for="star4-dinner-simple" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-dinner-simple" name="rating-dinner-simple" value="3" /><label for="star3-dinner-simple" title="Meh">3 stars</label>
+            <input type="radio" id="star2-dinner-simple" name="rating-dinner-simple" value="2" /><label for="star2-dinner-simple" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-dinner-simple" name="rating-dinner-simple" value="1" /><label for="star1-dinner-simple" title="Sucks big time">1 star</label>
+        </div>
     </div>
+
     <button class="accordion">Entree</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-dinner-entree" name="rating-dinner-entree" value="5" /><label for="star5-dinner-entree" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-dinner-entree" name="rating-dinner-entree" value="4" /><label for="star4-dinner-entree" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-dinner-entree" name="rating-dinner-entree" value="3" /><label for="star3-dinner-entree" title="Meh">3 stars</label>
+            <input type="radio" id="star2-dinner-entree" name="rating-dinner-entree" value="2" /><label for="star2-dinner-entree" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-dinner-entree" name="rating-dinner-entree" value="1" /><label for="star1-dinner-entree" title="Sucks big time">1 star</label>
+        </div>
     </div>
+
     <button class="accordion">Pasta Bar</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-dinner-pasta" name="rating-dinner-pasta" value="5" /><label for="star5-dinner-pasta" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-dinner-pasta" name="rating-dinner-pasta" value="4" /><label for="star4-dinner-pasta" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-dinner-pasta" name="rating-dinner-pasta" value="3" /><label for="star3-dinner-pasta" title="Meh">3 stars</label>
+            <input type="radio" id="star2-dinner-pasta" name="rating-dinner-pasta" value="2" /><label for="star2-dinner-pasta" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-dinner-pasta" name="rating-dinner-pasta" value="1" /><label for="star1-dinner-pasta" title="Sucks big time">1 star</label>
+        </div>
     </div>    
+
     <button class="accordion">Pacifica</button>
     <div class="panel">
         <p>List of food!</p>
+        <div class="rating">
+            <input type="radio" id="star5-dinner-pacifica" name="rating-dinner-pacifica" value="5" /><label for="star5-dinner-pacifica" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4-dinner-pacifica" name="rating-dinner-pacifica" value="4" /><label for="star4-dinner-pacifica" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3-dinner-pacifica" name="rating-dinner-pacifica" value="3" /><label for="star3-dinner-pacifica" title="Meh">3 stars</label>
+            <input type="radio" id="star2-dinner-pacifica" name="rating-dinner-pacifica" value="2" /><label for="star2-dinner-pacifica" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1-dinner-pacifica" name="rating-dinner-pacifica" value="1" /><label for="star1-dinner-pacifica" title="Sucks big time">1 star</label>
+        </div>
     </div>
 
     <div class="footer">
