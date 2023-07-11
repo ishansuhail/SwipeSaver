@@ -221,6 +221,8 @@
         }
         
     </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="background-color: whitesmoke;">
     
@@ -497,6 +499,31 @@
         });
         }
     </script>
+
+    <script>
+        $(".rating input[type='radio']").on('change', function() {
+            var rating = $(this).val();
+            var nameParts = $(this).attr('name').split('-'); // split the name attribute
+            var mealTime = nameParts[1]; // get the meal time
+            var station = nameParts[2]; // get the station name
+            var data = {};
+            data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
+    
+            $.ajax({
+                url: '/commons/rate/',
+                data: data,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success) {
+                        alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
+                    }
+                }
+            });
+        });
+    </script>
+    
+    
+    
 
 </body>
 </html>
