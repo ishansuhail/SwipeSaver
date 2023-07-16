@@ -1,11 +1,19 @@
-<!DOCTYPE html>
 {% load static %}
+{% load widget_tweaks %}
+{% load bootstrap5 %}
+
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwipeSaver</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
         div.scrollmenu {
             background-color: #333;
@@ -54,7 +62,7 @@
     <div class="header-container">
         <div class="overlay-box"></div>
         <div style="display: flex; align-items: center;">
-            <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver" style="width: 100px; height: 100px; margin-top: 20px; margin-left: 35px; margin-bottom: 20px;">
+            <img src="{% static 'newLogo.png' %}" alt="SwipeSaver" style="width: 100px; height: 40px; margin-top: 20px; margin-left: 35px; margin-bottom: 20px;">
             <h1 style="color: rgb(228, 30, 30); font-size: 60px; text-align: center; margin-left: 350px;">RPI SwipeSaver</h1>
         </div>
     </div>
@@ -65,19 +73,40 @@
         <a href="{% url 'contact' %}">Contact</a>
         <a href="{% url 'about' %}">About</a>
       </div>
-    
+{% block content %}    
     <center>
-    <p style="color: rgb(228, 30, 30); font-size: 32px;">Contact!</p>
-    <br/><br/>
-    <form action="" method=POST>
-        {% csrf_token %}
+    <p style="color: rgb(228, 30, 30); font-size: 32px;">Contact Page</p>
 
-        
-        {{ form.as_p }}
+    {% if submitted %}
+        We got your request and will be with you shortly!!!
+    {% else %}
+        <form action="" method=POST>
+            {% csrf_token %}
+            
 
-        <input type="submit" value="Submit" class="btn btn-secoundary">
-    </form>
-    <h1>------------------------</h1>
+            <p>
+            <div class="form-group">
+                {% render_field form.email class="form-control" placeholder="Email:" %}
+            </div>
+     
+            <div class="form-group">
+                {% render_field form.name type="text" class="form-control" placeholder="Name:" %}
+            </div>
+     
+            <div class="form-group">
+                {% render_field form.title type="text" class="form-control" placeholder="Contact Topic:" %}
+            </div>
+     
+            <div class="form-group">
+                {% render_field form.description type="text" class="form-control" placeholder="Tell us More:" %}
+            </div>
+            </p>
+
+            <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block mt-5">
+        </form>
+    {% endif %}
+    <h1></h1>
     </center>
+{% endblock %}
 </body>
 </html>

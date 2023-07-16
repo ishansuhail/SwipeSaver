@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'commons',
     'contact',
     'about',
+    'ratedfood',
+    'widget_tweaks', #Not webpage
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
