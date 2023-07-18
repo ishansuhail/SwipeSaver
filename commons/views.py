@@ -50,9 +50,9 @@ def parse_meal(soup, meal, html_pattern):
         pattern = r'data-fooditemname="([^"]+)"'
         result = re.findall(pattern, meal_string)
 
-        if result and day_ == count-1:
+        if result:
             
-            search_pattern = html_pattern + '\n\n    <button class="accordion">Grill</button>\n    <div class="panel">\n'
+            search_pattern = html_pattern + '\n<button class="accordion">Grill</button>\n<div class="panel">\n'
             index = existing_html.find(search_pattern)
 
             if index != -1:
@@ -62,14 +62,36 @@ def parse_meal(soup, meal, html_pattern):
 
                 for item in result:
                     modified_html += f'\t\t<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">{item}</p>\n\t\t<hr class="dashed-line">\n'
-                    #modified_html += f'<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">ehekjekhederf</p>\n\t\t<hr class="dashed-line">= '
-
+                    
                 modified_html += existing_html[insertion_index:]
 
                 with open("commons/templates/commons.html", "w") as file:
                     file.write(modified_html)
         count += 1
 
+ #remove the food items
+def remove_items(request):
+    with open('commons/templates/commons.html', 'r') as file:
+        file_change = file.read()
+    
+    soup = BeautifulSoup(file_change, 'html.parser')
+    
+    elements = soup.find_all('p', style = 'font-size: 24px; margin-top: 25px; margin-left: 30px')
+    
+    for element in elements:
+        element.extract()
+    
+    second_elements = soup.find_all('hr', class_ = 'dashed-line')
+    
+    for element in second_elements:
+        element.extract()
+    
+    
+    with open('commons/templates/commons.html', 'w') as file:
+        file.write(str(soup))
+    
+    return render(request, 'commons.html')
+    
     
 def home(request):
     return HttpResponse("Welcome to SwipeSaver!")
