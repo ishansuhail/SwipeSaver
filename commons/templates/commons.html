@@ -1,53 +1,117 @@
 <!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commons Dining Hall</title>
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Commons Dining Hall</title>
+<style>
+        /* Define the color palette */
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #FFFFFF;
+            --accent-color: #333333;
+        }
+
         div.scrollmenu {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
+            background-color: var(--primary-color);
+            overflow: auto;
+            white-space: nowrap;
         }
 
         div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
+            display: inline-block;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
         }
 
         div.scrollmenu a:hover {
-        background-color: #777;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Content styles */
+        .content-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .quote {
+            font-size: 20px;
+            margin-top: 30px;
+            color: var(--secondary-color);
+        }
+
+        .dashed-line {
+            border: 1px dashed red;
+            margin-left: 30px;
+            margin-right: 30px;
         }
 
         body {
-            font-family: Fira Sans, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 65px;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
         }
 
         .header-container {
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            background-color: var(--secondary-color);
+            padding: 20px;
             text-align: center;
         }
 
         .header-container img {
-            width: 100px;
-            height: 100px;
-            margin: 20px 20px 2px 20px;  /* top right bottom left */
+            width: 200px;
+            height: 46px;
+            display: block;
+            margin: 0 auto 10px;
         }
 
         .header-container h1 {
-            color: rgb(255, 255, 255); 
-            font-size: 60px; 
-            margin: 10px 20px 20px 20px;  /* top right bottom left */
+            font-size: 60px;
+            margin: 0;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 20px;
         }
 
         .overlay-box {
@@ -59,57 +123,74 @@
             background-color: rgb(228, 30, 30);
             z-index: -1;
         }
-        
+
         .accordion {
             background-color: #eee;
-            font-family: Fira Sans, sans-serif;
+            font-family: Verdana, sans-serif;
             color: #444;
             cursor: pointer;
             padding: 18px;
-            width: 95%;
+            width: 90%;
             font-size: 20px;
+            font-weight: bold;
             text-align: left;
-            margin: 20px 20px 10px 20px;  /* top right bottom left */
+            margin: 20px 20px 10px 64px;
             border: none;
             outline: none;
             transition: 0.4s;
         }
 
-         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
         .active, .accordion:hover {
             background-color: #ccc;
         }
+
         .accordion:after {
             content: '\02795'; /* Unicode character for "plus" sign (+) */
             font-size: 13px;
             color: #777;
             float: right;
             margin-left: 5px;
-          }
-          
+        }
+
         .active:after {
             content: "\2796"; /* Unicode character for "minus" sign (-) */
         }
 
-        /* Style the accordion panel. Note: hidden by default */
         .panel {
-            font-family: Fira Sans, sans-serif;
+            font-family:'Montserrat', sans-serif;
             padding: 0 18px;
             background-color: white;
             max-height: 0;
             overflow: hidden;
-            width: 92.5%;
+            width: 87%;
             border: none;
             outline: none;
-            margin: 0px 20px 0px 20px;  /* top right bottom left */
+            margin: 0px 20px 0px 65px;
             transition: max-height 0.2s ease-out;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            color: white;
         }
 
         @media (max-width: 600px) {
             .header-container img {
                 width: 50px;
                 height: 50px;
-                margin: 10px 10px 5px 10px; /* half of the original margin */
+                margin: 10px 10px 5px 10px;
             }
 
             .header-container h1 {
@@ -117,27 +198,65 @@
             }
         }
 
+        .rating {
+            float: right;
+            margin-right: 30px;
+            margin-bottom: 25px;
+        }
+
+        .rating:not(:checked) > input {
+            position: absolute;
+            clip: rect(0,0,0,0);
+        }
+
+        .rating:not(:checked) > label {
+            float: right;
+            width: 1em;
+            padding: 0 .1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 200%;
+            line-height: 1.2;
+            color: lightgrey;
+        }
+
+        .rating:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+        .rating > input:checked ~ label {
+            color: gold;
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: gold;
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            color: gold;
+        }
+        
     </style>
 </head>
 <body style="background-color: whitesmoke;">
-    
-    <div class="header-container">
-        <div class="overlay-box"></div>
-        <img src="{% static 'SwipeSaver.png' %}" alt="SwipeSaver">
-        <h1>COMMONS DINING HALL</h1>
-    </div>
-
-    <div class="scrollmenu">
-        <a href="{% url 'homepage' %}">Home</a>
-        <a href="{% url 'commons' %}">Commons Dining Hall</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-    </div>
-    
-
-    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
-
-    <script>
+<div class="header-container">
+<div class="overlay-box"></div>
+<img alt="SwipeSaver" src="{% static 'newLogo.png' %}"/>
+<h1>COMMONS DINING HALL</h1>
+</div>
+<div class="scrollmenu">
+<a href="{% url 'homepage' %}">Home</a>
+<a href="{% url 'commons' %}">Commons Dining Hall</a>
+<a href="#contact">Contact</a>
+<a href="#about">About</a>
+</div>
+<p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+<script>
     function getCurrentTime() {
     var date = new Date();
     var options = { timeZone: 'America/New_York', hour12: true };
@@ -148,64 +267,471 @@
     getCurrentTime();
     setInterval(getCurrentTime, 1000);
     </script>
-
-    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-left: 20px; margin-bottom: 10px">BREAKFAST (7:00 - 9:30)</p>
-    <button class="accordion">Grill</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-
-    <button class="accordion">Omelette Bar</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-
-    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-left: 20px;margin-bottom: 10px">LUNCH (11:00 - 3:00)</p>
-    <button class="accordion">Grill</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-
-    <button class="accordion">Simple Servings</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-    <button class="accordion">Entree</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-    <button class="accordion">Pasta Bar</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>    
-    <button class="accordion">Pacifica</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-    <p style="color: rgb(228, 30, 30); font-size: 32px; margin-left: 20px;margin-bottom: 10px">DINNER (4:30 - 8:00)</p>
-    <button class="accordion">Grill</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-
-    <button class="accordion">Simple Servings</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-    <button class="accordion">Entree</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-    <button class="accordion">Pasta Bar</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>    
-    <button class="accordion">Pacifica</button>
-    <div class="panel">
-        <p>List of food!</p>
-    </div>
-
-    <script>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
+<button class="accordion">Grill</button>
+<div class="panel">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Raspberry White Chocolate Scone</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Raspberry Sour Cream Muffin</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Warm Pancake Syrup</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Whole Wheat French Toast</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sriracha Sauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caramelized Apples</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Scrambled Eggs</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chocolate Sauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fried Tater Tots</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caramel Topping</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Bacon Slices</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Whipped Topping</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Assorted Seasonal Fresh Fruit</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Watermelon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cinnamon Applesauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Vanilla Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vegan Cheddar Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Egg Substitute</p>
+		<hr class="dashed-line"><p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-grill" name="rating-breakfast-grill" type="radio" value="5"/><label for="star5-breakfast-grill" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-grill" name="rating-breakfast-grill" type="radio" value="4"/><label for="star4-breakfast-grill" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-grill" name="rating-breakfast-grill" type="radio" value="3"/><label for="star3-breakfast-grill" title="Meh">3 stars</label>
+<input id="star2-breakfast-grill" name="rating-breakfast-grill" type="radio" value="2"/><label for="star2-breakfast-grill" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-grill" name="rating-breakfast-grill" type="radio" value="1"/><label for="star1-breakfast-grill" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Omelette Bar</button>
+<div class="panel">
+<input id="star5-breakfast-omelette" name="rating-breakfast-omelette" type="radio" value="5"/><label for="star5-breakfast-omelette" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-omelette" name="rating-breakfast-omelette" type="radio" value="4"/><label for="star4-breakfast-omelette" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-omelette" name="rating-breakfast-omelette" type="radio" value="3"/><label for="star3-breakfast-omelette" title="Meh">3 stars</label>
+<input id="star2-breakfast-omelette" name="rating-breakfast-omelette" type="radio" value="2"/><label for="star2-breakfast-omelette" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-omelette" name="rating-breakfast-omelette" type="radio" value="1"/><label for="star1-breakfast-omelette" title="Sucks big time">1 star</label>
+</div>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
+<button class="accordion">Grill</button>
+<div class="panel">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Baked Vegetable Egg Roll</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Two Chocolate Chip Cookies</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sour Cream</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Cheddar Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Black Bean &amp; Corn Salsa</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">American Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roast Beef</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Deli Turkey Breast</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Smoked Ham</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Cheddar Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Pepperoncini</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pepper Jack Cheese, Sliced</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Cupcake With M&amp;m's</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Mocha Cookie</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blueberry White Chocolate Blondie</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crispy Orange Chicken Stir Fry</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Beef Fajita Meat</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Lemongrass Chicken Pho</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chicken Tender Parmesan Loafer Sandwich</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hamburger</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">French Fries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheeseburger</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Have A Nice Day!</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pork Potsticker Gyoza</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Seared Beef Lo Mein</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sesame Bok Choy</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Jackfruit Carnitas Tacos</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crumbled Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Red Onions</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cherry Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Ranch Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yoplait Low Fat Vanilla Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Spinach</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Jalapeno Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Green Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chopped Romaine</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Red Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Watermelon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hardboiled Eggs</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Carrots</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Blueberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Balsamic Vinaigrette</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Thousand Island Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Flax Seeds</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blanched Fresh Broccoli</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hummus</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Homestyle Croutons</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roasted Red Grape Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast Strips</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caesar Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Mix</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cucumber</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fat Free Italian Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Green Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Alfredo Sauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Onions</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Garlic</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Tomato Basil Marinara</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sautéed Mushrooms</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Extra Firm Tofu</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Zucchini Saute</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Parmesan Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Spinach With Garlic</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Oven Roasted Greek Potatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Braised Pork With Root Vegetables</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Black Bean Soup</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cilantro Jasmine Rice</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Refried Black Beans</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Jasmine Rice</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese Sauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Fajita Vegetables</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Lettuce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yellow Onion</p>
+		<hr class="dashed-line"><div class="rating">
+<input id="star5-lunch-grill" name="rating-lunch-grill" type="radio" value="5"/><label for="star5-lunch-grill" title="Rocks!">5 stars</label>
+<input id="star4-lunch-grill" name="rating-lunch-grill" type="radio" value="4"/><label for="star4-lunch-grill" title="Pretty good">4 stars</label>
+<input id="star3-lunch-grill" name="rating-lunch-grill" type="radio" value="3"/><label for="star3-lunch-grill" title="Meh">3 stars</label>
+<input id="star2-lunch-grill" name="rating-lunch-grill" type="radio" value="2"/><label for="star2-lunch-grill" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-grill" name="rating-lunch-grill" type="radio" value="1"/><label for="star1-lunch-grill" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Simple Servings</button>
+<div class="panel">
+<div class="rating">
+<input id="star5-lunch-simple" name="rating-lunch-simple" type="radio" value="5"/><label for="star5-lunch-simple" title="Rocks!">5 stars</label>
+<input id="star4-lunch-simple" name="rating-lunch-simple" type="radio" value="4"/><label for="star4-lunch-simple" title="Pretty good">4 stars</label>
+<input id="star3-lunch-simple" name="rating-lunch-simple" type="radio" value="3"/><label for="star3-lunch-simple" title="Meh">3 stars</label>
+<input id="star2-lunch-simple" name="rating-lunch-simple" type="radio" value="2"/><label for="star2-lunch-simple" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-simple" name="rating-lunch-simple" type="radio" value="1"/><label for="star1-lunch-simple" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Entree</button>
+<div class="panel">
+<div class="rating">
+<input id="star5-lunch-entree" name="rating-lunch-entree" type="radio" value="5"/><label for="star5-lunch-entree" title="Rocks!">5 stars</label>
+<input id="star4-lunch-entree" name="rating-lunch-entree" type="radio" value="4"/><label for="star4-lunch-entree" title="Pretty good">4 stars</label>
+<input id="star3-lunch-entree" name="rating-lunch-entree" type="radio" value="3"/><label for="star3-lunch-entree" title="Meh">3 stars</label>
+<input id="star2-lunch-entree" name="rating-lunch-entree" type="radio" value="2"/><label for="star2-lunch-entree" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-entree" name="rating-lunch-entree" type="radio" value="1"/><label for="star1-lunch-entree" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Pasta Bar</button>
+<div class="panel">
+<div class="rating">
+<input id="star5-lunch-pasta" name="rating-lunch-pasta" type="radio" value="5"/><label for="star5-lunch-pasta" title="Rocks!">5 stars</label>
+<input id="star4-lunch-pasta" name="rating-lunch-pasta" type="radio" value="4"/><label for="star4-lunch-pasta" title="Pretty good">4 stars</label>
+<input id="star3-lunch-pasta" name="rating-lunch-pasta" type="radio" value="3"/><label for="star3-lunch-pasta" title="Meh">3 stars</label>
+<input id="star2-lunch-pasta" name="rating-lunch-pasta" type="radio" value="2"/><label for="star2-lunch-pasta" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-pasta" name="rating-lunch-pasta" type="radio" value="1"/><label for="star1-lunch-pasta" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Pacifica</button>
+<div class="panel">
+<div class="rating">
+<input id="star5-lunch-pacifica" name="rating-lunch-pacifica" type="radio" value="5"/><label for="star5-lunch-pacifica" title="Rocks!">5 stars</label>
+<input id="star4-lunch-pacifica" name="rating-lunch-pacifica" type="radio" value="4"/><label for="star4-lunch-pacifica" title="Pretty good">4 stars</label>
+<input id="star3-lunch-pacifica" name="rating-lunch-pacifica" type="radio" value="3"/><label for="star3-lunch-pacifica" title="Meh">3 stars</label>
+<input id="star2-lunch-pacifica" name="rating-lunch-pacifica" type="radio" value="2"/><label for="star2-lunch-pacifica" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-pacifica" name="rating-lunch-pacifica" type="radio" value="1"/><label for="star1-lunch-pacifica" title="Sucks big time">1 star</label>
+</div>
+</div>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+<button class="accordion">Grill</button>
+<div class="panel">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Traditional Pad Thai With Shrimp</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Green Beans Southern Style</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Salisbury Steak</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Garlic Mashed Potatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Deli Turkey Breast</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roast Beef</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">American Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pepper Jack Cheese, Sliced</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Pepperoncini</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Cheddar Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Smoked Ham</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Lattice Top Apple Pie</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Citrus Angel Food Cake</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheese Quesadilla</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hamburger</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheeseburger</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">French Fries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Have A Nice Day!</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Individual Vegetable Pizza</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Individual Pepperoni Pizza</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Individual Three Cheese Pizza</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Tuscan Chickpea And Tomato Stew</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Orzo</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Homestyle Croutons</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Blueberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hardboiled Eggs</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Carrots</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hummus</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Thousand Island Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Balsamic Vinaigrette</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Flax Seeds</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blanched Fresh Broccoli</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fat Free Italian Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Mix</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caesar Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast Strips</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roasted Red Grape Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cucumber</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Watermelon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Green Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chopped Romaine</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Red Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Jalapeno Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Spinach</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yoplait Low Fat Vanilla Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Ranch Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cherry Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crumbled Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Red Onions</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Tomato Basil Marinara</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Zucchini</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Peruvian Chicken</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yellow Rice With Black Beans</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Black Bean Soup</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vegetable Egg Rolls, 3 Ea</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Bok Choi Shanghai</p>
+		<hr class="dashed-line"><div class="rating">
+<input id="star5-dinner-grill" name="rating-dinner-grill" type="radio" value="5"/><label for="star5-dinner-grill" title="Rocks!">5 stars</label>
+<input id="star4-dinner-grill" name="rating-dinner-grill" type="radio" value="4"/><label for="star4-dinner-grill" title="Pretty good">4 stars</label>
+<input id="star3-dinner-grill" name="rating-dinner-grill" type="radio" value="3"/><label for="star3-dinner-grill" title="Meh">3 stars</label>
+<input id="star2-dinner-grill" name="rating-dinner-grill" type="radio" value="2"/><label for="star2-dinner-grill" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-grill" name="rating-dinner-grill" type="radio" value="1"/><label for="star1-dinner-grill" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Simple Servings</button>
+<div class="panel">
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p> <div class="rating">
+<input id="star5-dinner-simple" name="rating-dinner-simple" type="radio" value="5"/><label for="star5-dinner-simple" title="Rocks!">5 stars</label>
+<input id="star4-dinner-simple" name="rating-dinner-simple" type="radio" value="4"/><label for="star4-dinner-simple" title="Pretty good">4 stars</label>
+<input id="star3-dinner-simple" name="rating-dinner-simple" type="radio" value="3"/><label for="star3-dinner-simple" title="Meh">3 stars</label>
+<input id="star2-dinner-simple" name="rating-dinner-simple" type="radio" value="2"/><label for="star2-dinner-simple" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-simple" name="rating-dinner-simple" type="radio" value="1"/><label for="star1-dinner-simple" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Entree</button>
+<div class="panel">
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p> <div class="rating">
+<input id="star5-dinner-entree" name="rating-dinner-entree" type="radio" value="5"/><label for="star5-dinner-entree" title="Rocks!">5 stars</label>
+<input id="star4-dinner-entree" name="rating-dinner-entree" type="radio" value="4"/><label for="star4-dinner-entree" title="Pretty good">4 stars</label>
+<input id="star3-dinner-entree" name="rating-dinner-entree" type="radio" value="3"/><label for="star3-dinner-entree" title="Meh">3 stars</label>
+<input id="star2-dinner-entree" name="rating-dinner-entree" type="radio" value="2"/><label for="star2-dinner-entree" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-entree" name="rating-dinner-entree" type="radio" value="1"/><label for="star1-dinner-entree" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Pasta Bar</button>
+<div class="panel">
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p> <div class="rating">
+<input id="star5-dinner-pasta" name="rating-dinner-pasta" type="radio" value="5"/><label for="star5-dinner-pasta" title="Rocks!">5 stars</label>
+<input id="star4-dinner-pasta" name="rating-dinner-pasta" type="radio" value="4"/><label for="star4-dinner-pasta" title="Pretty good">4 stars</label>
+<input id="star3-dinner-pasta" name="rating-dinner-pasta" type="radio" value="3"/><label for="star3-dinner-pasta" title="Meh">3 stars</label>
+<input id="star2-dinner-pasta" name="rating-dinner-pasta" type="radio" value="2"/><label for="star2-dinner-pasta" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-pasta" name="rating-dinner-pasta" type="radio" value="1"/><label for="star1-dinner-pasta" title="Sucks big time">1 star</label>
+</div>
+</div>
+<button class="accordion">Pacifica</button>
+<div class="panel">
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p> <div class="rating">
+<input id="star5-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="5"/><label for="star5-dinner-pacifica" title="Rocks!">5 stars</label>
+<input id="star4-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="4"/><label for="star4-dinner-pacifica" title="Pretty good">4 stars</label>
+<input id="star3-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="3"/><label for="star3-dinner-pacifica" title="Meh">3 stars</label>
+<input id="star2-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="2"/><label for="star2-dinner-pacifica" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="1"/><label for="star1-dinner-pacifica" title="Sucks big time">1 star</label>
+</div>
+</div>
+<div class="footer">
+<p>An RCOS project</p>
+</div>
+<script>
         var acc = document.getElementsByClassName("accordion");
         var i;
 
