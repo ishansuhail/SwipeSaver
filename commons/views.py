@@ -154,8 +154,13 @@ def home(request):
 def commons(request):
     return HttpResponse("Welcome to Commons!")
 
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
 def rate(request):
-    if request.is_ajax():
+    print("Made it here")
+    if is_ajax(request):
+        print("inside is_ajax")
         rating_val = None
         station_name = None
         meal_time = None

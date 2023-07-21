@@ -20,6 +20,14 @@
 
 
 
+
+
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -242,6 +250,7 @@
         }
         
     </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="background-color: whitesmoke;">
 <div class="header-container">
@@ -270,33 +279,29 @@
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 <button class="accordion">Grill</button>
 <div class="panel">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Raspberry White Chocolate Scone</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Peach Yogurt Muffin</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Raspberry Sour Cream Muffin</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Warm Pancake Syrup</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Whole Wheat French Toast</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sriracha Sauce</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caramelized Apples</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Scrambled Eggs</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chocolate Sauce</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fried Tater Tots</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Apple Cinnamon Mini Scone</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caramel Topping</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Berry Compote</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Bacon Slices</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Whipped Topping</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sriracha Sauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Warm Pancake Syrup</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Two Pork Sausage Links</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chocolate Sauce</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Scrambled Eggs</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fried Tater Tots</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
 		<hr class="dashed-line">
@@ -306,18 +311,70 @@
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Watermelon</p>
-		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cinnamon Applesauce</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Vanilla Yogurt</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Watermelon</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Vanilla Yogurt</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vegan Cheddar Cheese</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Egg Substitute</p>
-		<hr class="dashed-line"><p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+		<hr class="dashed-line">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
 <div class="rating">
 <input id="star5-breakfast-grill" name="rating-breakfast-grill" type="radio" value="5"/><label for="star5-breakfast-grill" title="Rocks!">5 stars</label>
 <input id="star4-breakfast-grill" name="rating-breakfast-grill" type="radio" value="4"/><label for="star4-breakfast-grill" title="Pretty good">4 stars</label>
@@ -337,15 +394,15 @@
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
 <button class="accordion">Grill</button>
 <div class="panel">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Baked Vegetable Egg Roll</p>
-		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Two Chocolate Chip Cookies</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sour Cream</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pepper Jack Cheese, Sliced</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Pepperoncini</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Cheddar Cheese</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Black Bean &amp; Corn Salsa</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Smoked Ham</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">American Cheese</p>
 		<hr class="dashed-line">
@@ -355,95 +412,39 @@
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Smoked Ham</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Rice Krispies &amp; Trix Cereal Bar</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Cheddar Cheese</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Red Velvet Cookie</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Pepperoncini</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Confetti Cupcake</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pepper Jack Cheese, Sliced</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Fish Tacos With Mango Slaw</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Cupcake With M&amp;m's</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Mocha Cookie</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blueberry White Chocolate Blondie</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crispy Orange Chicken Stir Fry</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Beef Fajita Meat</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Lemongrass Chicken Pho</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chicken Tender Parmesan Loafer Sandwich</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pub Style Fish &amp; Chips Platter</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hamburger</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">French Fries</p>
-		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheeseburger</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">French Fries</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Have A Nice Day!</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pork Potsticker Gyoza</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chicken Potsticker</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Seared Beef Lo Mein</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">General Tso's Chicken Stir Fry With Jasmine Rice</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sesame Bok Choy</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Jackfruit Carnitas Tacos</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crumbled Bacon</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Red Onions</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cherry Tomatoes</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Ranch Dressing</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yoplait Low Fat Vanilla Yogurt</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Spinach</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Jalapeno Peppers</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Green Peppers</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chopped Romaine</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Red Peppers</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Watermelon</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Bacon</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hardboiled Eggs</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Carrots</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Blueberries</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Balsamic Vinaigrette</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Thousand Island Dressing</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Flax Seeds</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blanched Fresh Broccoli</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hummus</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Homestyle Croutons</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Turkish Beans (zeytinyagli Barbunya)</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roasted Red Grape Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cucumber</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fat Free Italian Dressing</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast Strips</p>
 		<hr class="dashed-line">
@@ -451,58 +452,192 @@
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Mix</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cucumber</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Balsamic Vinaigrette</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fat Free Italian Dressing</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Blueberries</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Thousand Island Dressing</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Green Peppers</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Carrots</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Alfredo Sauce</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Homestyle Croutons</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Onions</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hummus</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Tomatoes</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Flax Seeds</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Garlic</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blanched Fresh Broccoli</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hardboiled Eggs</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crumbled Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cherry Tomatoes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Red Onions</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Spinach</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yoplait Low Fat Vanilla Yogurt</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Ranch Dressing</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Watermelon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Jalapeno Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chopped Romaine</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Green Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Red Peppers</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Tomato Basil Marinara</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sautéed Mushrooms</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Alfredo Sauce</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Aromatic Basmati Rice</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Extra Firm Tofu</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Beef Shawarma</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Zucchini Saute</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Baingan Bharta Indian Eggplant</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Parmesan Cheese</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Classic New England Clam Chowder</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Spinach With Garlic</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caribbean Red Beans &amp; Rice</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Oven Roasted Greek Potatoes</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Braised Pork With Root Vegetables</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Black Bean Soup</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cilantro Jasmine Rice</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Refried Black Beans</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Jasmine Rice</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese Sauce</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Fajita Vegetables</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Lettuce</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yellow Onion</p>
-		<hr class="dashed-line"><div class="rating">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rating">
 <input id="star5-lunch-grill" name="rating-lunch-grill" type="radio" value="5"/><label for="star5-lunch-grill" title="Rocks!">5 stars</label>
 <input id="star4-lunch-grill" name="rating-lunch-grill" type="radio" value="4"/><label for="star4-lunch-grill" title="Pretty good">4 stars</label>
 <input id="star3-lunch-grill" name="rating-lunch-grill" type="radio" value="3"/><label for="star3-lunch-grill" title="Meh">3 stars</label>
@@ -553,35 +688,31 @@
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
 <button class="accordion">Grill</button>
 <div class="panel">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Traditional Pad Thai With Shrimp</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Baked Potato</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Green Beans Southern Style</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Lemon Garlic Broccoli</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Salisbury Steak</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Garlic Mashed Potatoes</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Deli Turkey Breast</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roast Beef</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">American Cheese</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pepper Jack Cheese, Sliced</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Pepperoncini</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Marinated Top Round Steak</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Cheddar Cheese</p>
 		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Pepperoncini</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Pepper Jack Cheese, Sliced</p>
+		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Smoked Ham</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Lattice Top Apple Pie</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">American Cheese</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Citrus Angel Food Cake</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheddar Cheese</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cheese Quesadilla</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roast Beef</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Deli Turkey Breast</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Deluxe New York-style Cheesecake</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chocolate Pudding</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hamburger</p>
 		<hr class="dashed-line">
@@ -589,98 +720,206 @@
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">French Fries</p>
 		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Ham &amp; Cheese Sandwich</p>
+		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Have A Nice Day!</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Individual Vegetable Pizza</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vegetable Chili</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Individual Pepperoni Pizza</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blanched Fresh Broccoli</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Individual Three Cheese Pizza</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hardboiled Eggs</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Tuscan Chickpea And Tomato Stew</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Orzo</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Homestyle Croutons</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Balsamic Vinaigrette</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Blueberries</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hardboiled Eggs</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Flax Seeds</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Homestyle Croutons</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Thousand Island Dressing</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Shredded Carrots</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Hummus</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Thousand Island Dressing</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Balsamic Vinaigrette</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Honeydew Melon Cubes</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Flax Seeds</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Blanched Fresh Broccoli</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fat Free Italian Dressing</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Mix</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast Strips</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Caesar Dressing</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Grilled Chicken Breast Strips</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Spring Mix</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fat Free Italian Dressing</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Roasted Red Grape Tomatoes</p>
 		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cantaloupe Cubes</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Strawberry Yogurt</p>
+		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Cucumber</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Watermelon</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Green Peppers</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chopped Romaine</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Red Peppers</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Bacon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Watermelon</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Chopped Romaine</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sliced Jalapeno Peppers</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Diced Bacon</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Julienne Green Peppers</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Strawberries</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Low Fat Cottage Cheese</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Red Onions</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cherry Tomatoes</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Spinach</p>
+		<hr class="dashed-line">
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yoplait Low Fat Vanilla Yogurt</p>
 		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Ranch Dressing</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Cherry Tomatoes</p>
-		<hr class="dashed-line">
 		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Crumbled Bacon</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vanilla Greek Yogurt</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Wilted Baby Spinach</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Fresh Red Onions</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Baked Cod With Tomato Olive Jam</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Tomato Basil Marinara</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Basmati Rice</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Sauteed Zucchini</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Classic New England Clam Chowder</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Peruvian Chicken</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Mindful Tuscan Seven Vegetable Soup</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Yellow Rice With Black Beans</p>
+		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Garlic Roasted Potato Wedges</p>
 		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Black Bean Soup</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Vegetable Egg Rolls, 3 Ea</p>
-		<hr class="dashed-line">
-		<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">Bok Choi Shanghai</p>
-		<hr class="dashed-line"><div class="rating">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rating">
 <input id="star5-dinner-grill" name="rating-dinner-grill" type="radio" value="5"/><label for="star5-dinner-grill" title="Rocks!">5 stars</label>
 <input id="star4-dinner-grill" name="rating-dinner-grill" type="radio" value="4"/><label for="star4-dinner-grill" title="Pretty good">4 stars</label>
 <input id="star3-dinner-grill" name="rating-dinner-grill" type="radio" value="3"/><label for="star3-dinner-grill" title="Meh">3 stars</label>
@@ -746,6 +985,27 @@
             }
         });
         }
+    </script>
+<script>
+        $(".rating input[type='radio']").on('change', function() {
+            var rating = $(this).val();
+            var nameParts = $(this).attr('name').split('-'); // split the name attribute
+            var mealTime = nameParts[1]; // get the meal time
+            var station = nameParts[2]; // get the station name
+            var data = {};
+            data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
+           // alert("Made it here")
+            $.ajax({
+                url: '/commons/rate/',
+                data: data,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success) {
+                        alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
