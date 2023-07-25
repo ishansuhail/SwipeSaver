@@ -23,11 +23,24 @@ def br_lunch_day():
 def dinner_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    if(day == 6):
+    if day == 6:
         return 0
     day += 1
     
     return day
+
+def brunch_day():
+    current_date = datetime.date.today()
+    day = current_date.weekday()
+    
+    if day == 5:
+        return 1
+    
+    if day == 6:
+        return 0
+    
+    return -1
+        
 
 def parse_html(request):
     
@@ -44,10 +57,23 @@ def parse_html(request):
     soup = BeautifulSoup(html_content, 'html.parser')
     br_lunch = br_lunch_day()
     dinner = dinner_day()
+    #brunch = brunch()
     
-    parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch)
-    parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch)
-    parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner)
+    current_date = datetime.date.today()
+    day = current_date.weekday()
+    
+    
+    if day == 5 or day == 6:
+        # parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch)
+        # parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch)
+        #parse_meal(soup, 'accordion-block brunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', brunch)
+        parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner)
+    
+    else:
+        parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch)
+        parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch)
+        parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner)
+    
 
     # parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>')
     # parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>')
@@ -58,13 +84,20 @@ def parse_html(request):
 
 def parse_meal(soup, meal, html_pattern, day):
     meal_type = soup.find_all('div', class_= meal)
+    
 
     with open('commons/templates/commons.html', "r") as file:
         existing_html = file.read()
         
     meal_string = str(meal_type[day])
+    
     pattern = r'data-fooditemname="([^"]+)"'
+    calorie_pattern = r'(\d+cal)'
+    
     result = re.findall(pattern, meal_string)
+    
+    calorie_result = re.findall(calorie_pattern, meal_string)
+    # calorie_result = calorie_result[1::2]
 
     if result:
             
@@ -76,11 +109,13 @@ def parse_meal(soup, meal, html_pattern, day):
             insertion_index = index + len(search_pattern)
             modified_html = existing_html[:insertion_index]
 
-            for item in result:
-                if item != result[-1]:
-                    modified_html += f'\t\t<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">{item}</p>\n\t\t<hr class="dashed-line">\n'
+            for item1, item2 in zip(result, calorie_result):
+                if item1 == 'Have A Nice Day!':
+                    continue
+                if item1 != result[-1]:
+                    modified_html += f'\t\t<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">{item1} {item2}</p>\n\t\t<hr class="dashed-line">\n'
                 else:
-                    modified_html += f'\t\t<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">{item}</p>\n\t\t<hr class="dashed-line">'
+                    modified_html += f'\t\t<p style="font-size: 24px; margin-top: 25px; margin-left: 30px">{item1} {item2}</p>\n\t\t<hr class="dashed-line">'
                     
             modified_html += existing_html[insertion_index:]
 
