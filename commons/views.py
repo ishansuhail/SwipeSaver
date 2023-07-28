@@ -58,10 +58,12 @@ def parse_html(request):
 
 
 def parse_meal(soup, meal, html_pattern, day, existing_html):
+    meal = meal.split(' ')[1]
+    #print(meal)
     meal_type = soup.find_all('div', class_= meal)
     
     meal_string = str(meal_type[day])
-    
+     
     meal_soup = BeautifulSoup(meal_string, 'html.parser')
     
     courses = meal_soup.find_all('div', class_='bite-menu-course')
