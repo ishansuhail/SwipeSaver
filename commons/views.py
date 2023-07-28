@@ -58,8 +58,8 @@ def parse_html(request):
 
 
 def parse_meal(soup, meal, html_pattern, day, existing_html):
+    meal = meal.split(' ')[1]
     meal_type = soup.find_all('div', class_= meal)
-    
     meal_string = str(meal_type[day])
     
     meal_soup = BeautifulSoup(meal_string, 'html.parser')
@@ -133,8 +133,6 @@ def remove_items(request):
         file.write(str(soup))
     
     return render(request, 'commons.html')
-
-
 
     
 def home(request):
