@@ -147,6 +147,11 @@ def remove_items(request):
 
     for element in elements:
         element.extract()
+    
+    second_elements = soup.find_all('hr', class_ = 'dashed-line')
+
+    for element in second_elements:
+        element.extract()
         
     with open('commons/templates/commons.html', 'w') as file:
         file.write(str(soup))
