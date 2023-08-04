@@ -122,25 +122,35 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
 
  #remove the food items
 def remove_items(request):
+    
     with open('commons/templates/commons.html', 'r') as file:
         file_change = file.read()
     
     soup = BeautifulSoup(file_change, 'html.parser')
     
+    headers = soup.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right')
+
+    for header in headers:
+        header.extract()
+
+    buttons = soup.find_all('button', class_ = 'accordion')
+
+    for button in buttons:
+        button.extract()
+
+    panels = soup.find_all('div', class_ = 'panel')
+
+    for panel in panels:
+        panel.extract()
+
     elements = soup.find_all('p', style = 'font-size: 24px; margin-top: 25px; margin-left: 30px')
-    
+
     for element in elements:
         element.extract()
-    
-    second_elements = soup.find_all('hr', class_ = 'dashed-line')
-    
-    for element in second_elements:
-        element.extract()
-    
-    
+        
     with open('commons/templates/commons.html', 'w') as file:
         file.write(str(soup))
-    
+
     return render(request, 'commons.html')
 
     
