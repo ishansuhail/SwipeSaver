@@ -58,9 +58,14 @@ def parse_html(request):
 
 
 def parse_meal(soup, meal, html_pattern, day, existing_html):
+    meal = meal.split(' ')[1]
     meal_type = soup.find_all('div', class_= meal)
+    #meal_string = str(meal_type[day])
     
-    meal_string = str(meal_type[day])
+    if len(meal_type) > day:
+        meal_string = str(meal_type[day])
+    else:
+        return existing_html
     
     meal_soup = BeautifulSoup(meal_string, 'html.parser')
     
@@ -73,22 +78,22 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
         # Calculate the insertion index
         insertion_index = index + len(search_pattern)
         modified_html = existing_html[:insertion_index]
-        
-        
 
         for course in courses:
             station_name = course.find('h5').get_text(strip=True)
             modified_html += f'\n<button class="accordion">{station_name}</button>\n<div class="panel">\n'
             
             items = course.find_next_sibling('ul').find_all('li')
-                     
+            
             for item in items:
-                
                 item_name = re.search(r'data-fooditemname="([^"]+)"', str(item))
-                
-                if item_name:
+                calories = re.search(r'\d+cal', str(item))
+                                     
+                if item_name and calories:
                     item_name = item_name.group(1)
-                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} </p>\n\t\t<hr class="dashed-line">\n'
+                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    #modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    #modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
 
             # Add rating system for the station
             station_name_slug = station_name.lower().replace(" ", "-")  # convert station name to lower case and replace spaces with hyphens
@@ -122,21 +127,6 @@ def remove_items(request):
     
     soup = BeautifulSoup(file_change, 'html.parser')
     
-    headers = soup.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right')
-    
-    for header in headers:
-        header.extract()
-        
-    buttons = soup.find_all('button', class_ = 'accordion')
-    
-    for button in buttons:
-        button.extract()
-        
-    panels = soup.find_all('div', class_ = 'panel')
-    
-    for panel in panels:
-        panel.extract()
-    
     elements = soup.find_all('p', style = 'font-size: 24px; margin-top: 25px; margin-left: 30px')
     
     for element in elements:
@@ -146,15 +136,12 @@ def remove_items(request):
     
     for element in second_elements:
         element.extract()
-        
-
+    
     
     with open('commons/templates/commons.html', 'w') as file:
         file.write(str(soup))
     
     return render(request, 'commons.html')
-
-
 
     
 def home(request):
@@ -191,3 +178,5 @@ def rate(request):
 
             return JsonResponse({'success': True, 'average_rating': average_rating})
     return JsonResponse({'success': False})
+
+
