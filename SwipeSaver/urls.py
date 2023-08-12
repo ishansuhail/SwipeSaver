@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.urls import include, path
+from ratedfood import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,6 @@ urlpatterns = [
     path('commons/', include('commons.urls')),
     path('contact/', include('contact.urls')),
     path('about/', include('about.urls')),
-    path('ratedfood/', include('ratedfood.urls')),
+    path('ratedfood/', views.ratedfood, name='display_FOOD'),
+    path('display_FOOD/', views.display_FOOD, name='display_FOOD'),
 ]

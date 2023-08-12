@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food List</title>
+</head>
+<body>
+    <h1>Food List</h1>
+    <ul>
+        {% for food in display_FOOD %}
+            <li>
+                Food Name: {{ food.food_name }}<br>
+                Image: {{ food.image }}<br>
+                Rating: {{ food.rating }}<br>
+                Vegan: {{ food.vegan }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

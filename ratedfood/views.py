@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import ratedFoodItem
 
 
 # Create your views here.
@@ -18,4 +18,13 @@ def about(request):
 	return render(request, 'contact.html')
 
 def ratedfood(request):
-	return render(request, 'ratedfood.html')
+    temp_food = ratedFoodItem(food_name="temp", image="temp.jpg", rating=4.5, vegan=False)
+    temp_food.save()
+
+   
+    display_FOOD = ratedFoodItem.objects.all()
+    return render(request, 'ratedfood.html', {'display_FOOD': display_FOOD})
+
+def display_FOOD(request):
+	display_FOOD = ratedFoodItem.objects.all()
+	return render(request, 'display_FOOD.html', {'display_FOOD': display_FOOD})
