@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 from .models import Survey
 from .models import contactForm
 from .forms import ContactFormForm
@@ -14,7 +13,7 @@ def commons(request):
     return render(request, 'commons.html')
 
 def contact(request):
-	submitted = True
+	submitted = False
 	if request.method == "POST":
 		form = ContactFormForm(request.POST)
 		if form.is_valid():
