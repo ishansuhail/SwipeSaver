@@ -27,9 +27,9 @@ urlpatterns = [
     path('commons/', include('commons.urls')),
     path('contact/', include('contact.urls')),
     path('about/', include('about.urls')),
-    path('ratedfood/', views_R.ratedfood, name='display_FOOD'),
-    path('ratedfood_high/', views_R.ratedfood_high, name='display_FOOD'),
-    path('ratedfood_low/', views_R.ratedfood_low, name='display_FOOD'),
-    path('ratedfood_vegan/', views_R.ratedfood_vegan, name='display_FOOD'),
+    path('ratedfood/', views_R.ratedfood, name='ratedfood'),
+    path('ratedfood_high/', views_R.ratedfood_high, name='ratedfood_high'),
+    path('ratedfood_low/', views_R.ratedfood_low, name='ratedfood_low'),
+    path('ratedfood_vegan/', views_R.ratedfood_vegan, name='ratedfood_vegan'),
     path('display_FOOD/', views_R.display_FOOD, name='display_FOOD'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
