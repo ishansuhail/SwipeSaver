@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.urls import include, path
-from ratedfood import views
+from ratedfood import views_R
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +27,9 @@ urlpatterns = [
     path('commons/', include('commons.urls')),
     path('contact/', include('contact.urls')),
     path('about/', include('about.urls')),
-    path('ratedfood/', views.ratedfood, name='display_FOOD'),
-    path('display_FOOD/', views.display_FOOD, name='display_FOOD'),
-]
+    path('ratedfood/', views_R.ratedfood, name='display_FOOD'),
+    path('ratedfood_high/', views_R.ratedfood_high, name='display_FOOD'),
+    path('ratedfood_low/', views_R.ratedfood_low, name='display_FOOD'),
+    path('ratedfood_vegan/', views_R.ratedfood_vegan, name='display_FOOD'),
+    path('display_FOOD/', views_R.display_FOOD, name='display_FOOD'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

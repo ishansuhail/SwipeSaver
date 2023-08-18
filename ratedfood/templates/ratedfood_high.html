@@ -104,7 +104,7 @@
     <h1>
         <div class="scrollmenu">
         <div style="display: flex; align-items: center; color: white; background-color: #ffffff;">   
-            {% for food in displayALL %}
+            {% for food in displayALL|dictsortreversed:'rating' %}
                 <div class="card thumbnail-card">
                     <img src="{{ food.image.url }}" class="thumbnail-image" alt="{{ food.food_name }}">
                     <div class="card-body">
@@ -116,7 +116,7 @@
             {% endfor %}
         </div>
     </h1>
-    <img src="{% static 'newLogo.png' %}" alt="SwipeSaver" style="width: 500px; height: 125px;align-items: center; margin-top: 100px; margin-left: 376px">
+    <img src="{% static 'newLogo.png' %}" alt="SwipeSaver" style="width: 501px; height: 125px;align-items: center; margin-top: 100px; margin-left: 376px">
 </body>
     
     

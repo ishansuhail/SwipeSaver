@@ -5,4 +5,6 @@ from django.contrib import admin
 from django.contrib import admin
 from .models import ratedFoodItem
 
-admin.site.register(ratedFoodItem)
+class RatedAdmin(admin.ModelAdmin):
+	list_display = ('food_name','image','rating','vegan' )
+admin.site.register(ratedFoodItem,RatedAdmin)

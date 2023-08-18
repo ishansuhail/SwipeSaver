@@ -104,7 +104,7 @@
     <h1>
         <div class="scrollmenu">
         <div style="display: flex; align-items: center; color: white; background-color: #ffffff;">   
-            {% for food in displayALL %}
+            {% for food in displayALL|dictsort:'rating' %}
                 <div class="card thumbnail-card">
                     <img src="{{ food.image.url }}" class="thumbnail-image" alt="{{ food.food_name }}">
                     <div class="card-body">

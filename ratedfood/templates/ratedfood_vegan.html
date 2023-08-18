@@ -105,14 +105,16 @@
         <div class="scrollmenu">
         <div style="display: flex; align-items: center; color: white; background-color: #ffffff;">   
             {% for food in displayALL %}
-                <div class="card thumbnail-card">
-                    <img src="{{ food.image.url }}" class="thumbnail-image" alt="{{ food.food_name }}">
-                    <div class="card-body">
-                        <p class="card-title">{{ food.food_name }}</p>
-                        <p class="card-text">Rating: {{ food.rating }}</p>
-                        <p class="card-text">Vegan: {{ food.vegan }}</p>
+                {% if food.vegan %}
+                    <div class="card thumbnail-card">
+                        <img src="{{ food.image.url }}" class="thumbnail-image" alt="{{ food.food_name }}">
+                        <div class="card-body">
+                            <p class="card-title">{{ food.food_name }}</p>
+                            <p class="card-text">Rating: {{ food.rating }}</p>
+                            <p class="card-text">Vegan: {{ food.vegan }}</p>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </h1>
