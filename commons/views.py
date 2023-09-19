@@ -84,10 +84,15 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
             
             for item in items:
                 item_name = re.search(r'data-fooditemname="([^"]+)"', str(item))
-                if item_name:
+                calories = re.search(r'\d+cal', str(item))
+                                     
+                if item_name and calories:
                     item_name = item_name.group(1)
-                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}</p>\n\t\t<hr class="dashed-line">\n'
+                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    #modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    #modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
 
+        
             # Add rating system for the station
             station_name_slug = station_name.lower().replace(" ", "-")  # convert station name to lower case and replace spaces with hyphens
             rating_html = f'''
