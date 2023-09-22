@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from bs4 import BeautifulSoup
 import requests
 import re
+from unidecode import unidecode
 
 
 def br_lunch_day():
@@ -86,7 +87,9 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
             items = course.find_next_sibling('ul').find_all('li')
             
             for item in items:
-                item_name = re.search(r'data-fooditemname="([^"]+)"', str(item))
+                item_renamed = unidecode(str(item))
+                item_name = re.search(r'data-fooditemname="([^"]+)"', item_renamed)
+                
                 calories = re.search(r'\d+cal', str(item))
                                      
                 if item_name and calories:
