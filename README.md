@@ -16,3 +16,7 @@ Potential features to be added include:
 
 
 
+
+
+Useful start-up Hints:
+add <**/__pycache__/> to .git/info/exclude in your project (don't include <>)
