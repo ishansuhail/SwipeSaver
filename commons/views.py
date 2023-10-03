@@ -166,7 +166,7 @@ def home(request):
     return HttpResponse("Welcome to SwipeSaver!")
 
 def commons(request):
-    return HttpResponse("Welcome to Commons!")
+    return render(request, 'commons/commons.html')
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'

@@ -166,7 +166,7 @@ def home(request):
     return HttpResponse("Welcome to SwipeSaver!")
 
 def russellsage(request):
-    return HttpResponse("Welcome to Russell Sage!")
+    return render(request, 'russellsage/russellsage.html')
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
