@@ -17,7 +17,6 @@ from unidecode import unidecode
 def br_lunch_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    
     return day
     
 
@@ -45,15 +44,27 @@ def parse_html(request):
 
         br_lunch = br_lunch_day()
         dinner = dinner_day()
+        current_date = datetime.date.today()
+        day = current_date.weekday()
+         
         
-        existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html)
-        existing_html = parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch, existing_html)
-        existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html)
-        
-        # Save the modified HTML
-        with open('commons/templates/commons.html', 'w') as file:
-            file.write(existing_html)
+        if (day <= 5):
+            existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html)
+            existing_html = parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch, existing_html)
+            existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html)
 
+            with open('commons/templates/commons.html', 'w') as file:
+                file.write(existing_html)
+            # Save the modified HTML
+            
+        else:
+            existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BRUNCH (7:00 - 9:30)</p>', br_lunch, existing_html)
+            
+            with open('commons/templates/commons.html', 'w') as file:
+                file.write(existing_html)
+            
+        
+                
     return render(request, 'commons.html')
 
 
@@ -94,7 +105,9 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
                                      
                 if item_name and calories:
                     item_name = item_name.group(1)
-                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    current_date = datetime.date.today()
+                    x_day = current_date.weekday()
+                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()} {x_day}</p>\n\t\t<hr class="dashed-line">\n'
                     #modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
                     #modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
 
