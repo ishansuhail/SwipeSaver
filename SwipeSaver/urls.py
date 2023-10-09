@@ -31,5 +31,6 @@ urlpatterns = [
     path('ratedfood_high/', views_R.ratedfood_high, name='ratedfood_high'),
     path('ratedfood_low/', views_R.ratedfood_low, name='ratedfood_low'),
     path('ratedfood_vegan/', views_R.ratedfood_vegan, name='ratedfood_vegan'),
+    path('ratedfood_commons/', views_R.ratedfood_commons, name='ratedfood_commons'),
     path('display_FOOD/', views_R.display_FOOD, name='display_FOOD'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

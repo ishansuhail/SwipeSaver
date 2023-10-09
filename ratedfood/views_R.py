@@ -43,6 +43,11 @@ def display_FOOD(request):
 	display_FOOD = ratedFoodItem.objects.all()
 	return render(request, 'display_FOOD.html', {'display_FOOD': display_FOOD})
 
+def ratedfood_commons(request):
+	displayALL = ratedFoodItem.objects.all()
+	return render(request, 'ratedfood_commons.html', {'displayALL': displayALL})
+
+
 def simple_image(request):
 	return render(request, 'salad.jpg')
 def generate_image(request):

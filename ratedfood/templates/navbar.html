@@ -25,9 +25,24 @@
           <a class="dropdown-item" href="{% url 'ratedfood_low' %}">Worst Rated</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{% url 'ratedfood_high' %}">Most Ratings</a>
+
+          
         
         
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by Dining Hall
+        </a>
+        
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'ratedfood_commons' %}">Commons Dining Hall</a>
+          <a class="dropdown-item" href=#>BARH Dining Hall</a>
+
+        </div>
+      </li>
+
+
     </ul>
     <div>
     <div class="d-flex align-items-center">
