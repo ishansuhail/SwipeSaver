@@ -190,7 +190,8 @@ def rate(request):
             rating.save()
 
             # Calculate the average rating
-            average_rating = Rating.objects.filter(station=station, meal_time=meal_time).aggregate(Avg('rating'))['rating__avg']
+            today = datetime.date.today()
+            average_rating = Rating.objects.filter(station=station, meal_time=meal_time, date=today).aggregate(Avg('rating'))['rating__avg']
             if average_rating is not None:
                 average_rating = round(average_rating, 2)  # round to 2 decimal places
 
