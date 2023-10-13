@@ -65,6 +65,10 @@
             text-decoration: none;
         }
 
+        .solid-line {
+            border: 3px solid red;
+        }
+
         .header-container {
             position: relative;
             background-color: var(--secondary-color);
@@ -122,10 +126,44 @@
             height: 15%; 
             background-color: rgb(255, 255, 255, 0.7);
             display: flex;
+            font-family: 'Montserrat', sans-serif;
             align-items: center;
             justify-content: center;
             text-align: center;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            cursor: pointer;
           }
+
+        .active, .title-overlay:hover {
+            background-color: rgb(255, 255, 255, 0.9);
+        }
+
+        .title-overlay:after {
+            background-color: rgb(255, 255, 255, 0.9);
+        }
+
+        .panel {
+            position: absolute;
+            top: 15%;
+            left: 100px;
+            width: 600px;
+            font-family:'Montserrat', sans-serif;
+            background-color: rgb(255, 255, 255, 0.9);
+            max-height: 0;
+            width: 600px;
+            color: white;
+            border: none;
+            outline: none;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            z-index: 100;
+        }
+
+        .panel p{
+            color: var(--accent-color);
+        }
 
         .footer {
             position: fixed;
@@ -145,6 +183,7 @@
         }
 
     </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="background-color: whitesmoke;">
     
@@ -185,14 +224,22 @@
     <div class="dining-halls-container">
         <div class="image-container">
             <img src="{% static 'commons.jpg' %}" alt="Commons">
-            <div class="title-overlay">
+            <button class ="title-overlay">
                 <p>Commons</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p>commons</p>
             </div>
         </div>
         <div class="image-container">
             <img src="{% static 'sage.png' %}" alt="Sage">
-            <div class="title-overlay">
+            <button class ="title-overlay">
                 <p>Sage</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p>sage</p>
             </div>
         </div>
     </div>
@@ -201,15 +248,23 @@
 
     <div class="dining-halls-container">
         <div class="image-container">
-            <img src="{% static 'commons.jpg' %}" alt="Commons">
-            <div class="title-overlay">
+            <img src="{% static 'blitman.jpg' %}" alt="Blitman">
+            <button class ="title-overlay">
                 <p>Blitman</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p>blitman</p>
             </div>
         </div>
         <div class="image-container">
-            <img src="{% static 'sage.png' %}" alt="Sage">
-            <div class="title-overlay">
+            <img src="{% static 'barh.jpg' %}" alt="BARH">
+            <button class ="title-overlay">
                 <p>BARH</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p>barh</p>
             </div>
         </div>
     </div>
@@ -219,5 +274,21 @@
     </div>
 
     <script src="{% static 'distanceTracker.js' %}"></script>
+    <script>
+        var acc = document.getElementsByClassName("title-overlay");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
 </body>
 </html>

@@ -65,6 +65,14 @@
 
 
 
+
+
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -316,7 +324,9 @@
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Peach Yogurt Muffin 190cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Banana Streusel Muffin 227cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Raspberry White Chocolate Scone 262cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -329,29 +339,34 @@
 </div>
 		</div>
 
+<button class="accordion">DELI</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Avocado Parmesan Toast 243cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-deli" name="rating-breakfast-deli" type="radio" value="5"/><label for="star5-breakfast-deli" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-deli" name="rating-breakfast-deli" type="radio" value="4"/><label for="star4-breakfast-deli" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-deli" name="rating-breakfast-deli" type="radio" value="3"/><label for="star3-breakfast-deli" title="Meh">3 stars</label>
+<input id="star2-breakfast-deli" name="rating-breakfast-deli" type="radio" value="2"/><label for="star2-breakfast-deli" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-deli" name="rating-breakfast-deli" type="radio" value="1"/><label for="star1-breakfast-deli" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <button class="accordion">GRILL</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caramel Topping 71cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pork Sausage Links 190cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Whipped Topping 22cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Scrambled Eggs 191cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Salted Caramel Bananas Foster Topping 77cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chocolate Sauce 226cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Buttermilk Pancakes 227cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fried Tater Tots 252cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Warm Pancake Syrup 112cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bacon Slices 70cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sriracha Sauce 17cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caramelized Apples 135cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hash Brown Patty 132cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Warm Pancake Syrup 112cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Scrambled Eggs 191cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon French Toast With Berry Compote 330cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -383,17 +398,17 @@
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Vanilla Yogurt 97cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon Applesauce 65cal</p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Watermelon 9cal</p>
 		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon Applesauce 65cal</p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes 10cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Assorted Seasonal Fresh Fruit 88cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes 10cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt 25cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Assorted Seasonal Fresh Fruit 88cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -433,16 +448,22 @@
 
 
 
+
+
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Double Chocolate Chip Cookies 335cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chocolate Chip Vegan Cookie 186cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Oatmeal Raisin Cookies 207cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Lucky Charms Cereal Bar 114cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Confetti Cupcake 280cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Chocolate Chip Cookies 227cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon Crunch Cupcake 256cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hamburger Bun 148cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chunky Monkey Brownie 210cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -457,13 +478,27 @@
 
 <button class="accordion">CHEFS TABLE</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Tandoori Cauliflower 30cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese Sauce 89cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chicken Tikka Masala 301cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Refried Black Beans 101cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Naan Bread 146cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Part Skim Shredded Mozzarella Cheese 81cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Basmati Rice 93cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sour Cream 28cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese 56cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jalapeno Pepper 8cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jackfruit &amp; Lentil Jambalaya (mindful) 71cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cilantro Jasmine Rice 185cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Taco Beef Soft Taco 370cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Black Bean &amp; Corn Salsa 17cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Lettuce 2cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -476,23 +511,38 @@
 </div>
 		</div>
 
+<button class="accordion">CONDIMENT/GARNISH</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Guacamole 37cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-lunch-condiment/garnish" name="rating-lunch-condiment/garnish" type="radio" value="5"/><label for="star5-lunch-condiment/garnish" title="Rocks!">5 stars</label>
+<input id="star4-lunch-condiment/garnish" name="rating-lunch-condiment/garnish" type="radio" value="4"/><label for="star4-lunch-condiment/garnish" title="Pretty good">4 stars</label>
+<input id="star3-lunch-condiment/garnish" name="rating-lunch-condiment/garnish" type="radio" value="3"/><label for="star3-lunch-condiment/garnish" title="Meh">3 stars</label>
+<input id="star2-lunch-condiment/garnish" name="rating-lunch-condiment/garnish" type="radio" value="2"/><label for="star2-lunch-condiment/garnish" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-condiment/garnish" name="rating-lunch-condiment/garnish" type="radio" value="1"/><label for="star1-lunch-condiment/garnish" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <button class="accordion">DELI</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham 37cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced 53cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese 111cal</p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Cheese 47cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef 64cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese 57cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Deli Turkey Breast 51cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef 64cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham 37cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced 53cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese 111cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -507,13 +557,13 @@
 
 <button class="accordion">GRILL</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pub Style Fish &amp; Chips Platter 1167cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hamburger 312cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries 205cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheeseburger 373cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries 205cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hamburger 312cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Maple Chicken Cheddar Waffle Sandwich 585cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -541,11 +591,7 @@
 
 <button class="accordion">PACIFICA</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sesame Bok Choy 39cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jasmine Rice 118cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crispy Orange Chicken Stir Fry 281cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Beef Pho Noodle Soup 291cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -558,9 +604,28 @@
 </div>
 		</div>
 
+<button class="accordion">PIZZA</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Pizza 248cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Vegetable Pizza 271cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepperoni Pizza 277cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-lunch-pizza" name="rating-lunch-pizza" type="radio" value="5"/><label for="star5-lunch-pizza" title="Rocks!">5 stars</label>
+<input id="star4-lunch-pizza" name="rating-lunch-pizza" type="radio" value="4"/><label for="star4-lunch-pizza" title="Pretty good">4 stars</label>
+<input id="star3-lunch-pizza" name="rating-lunch-pizza" type="radio" value="3"/><label for="star3-lunch-pizza" title="Meh">3 stars</label>
+<input id="star2-lunch-pizza" name="rating-lunch-pizza" type="radio" value="2"/><label for="star2-lunch-pizza" title="Kinda bad">2 stars</label>
+<input id="star1-lunch-pizza" name="rating-lunch-pizza" type="radio" value="1"/><label for="star1-lunch-pizza" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <button class="accordion">RUSTIC ROOTS (VEGAN)</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Penne Alla Carbonara 528cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Lablabi, Tunisian Chickpea Stew 212cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -575,44 +640,6 @@
 
 <button class="accordion">SALAD</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes 419cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips 48cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt 25cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes 10cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caesar Dressing 233cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing 27cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries 5cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons 62cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs 44cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds 56cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus 78cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blanched Fresh Broccoli 11cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots 6cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes 10cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette 103cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing 103cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions 11cal</p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crumbled Bacon 48cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt 24cal</p>
@@ -623,19 +650,55 @@
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranch Dressing 48cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers 6cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions 11cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Watermelon 9cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon 72cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers 9cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chopped Romaine 5cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers 6cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Jalapeno Peppers 4cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries 14cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon 72cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing 27cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers 9cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes 419cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes 10cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caesar Dressing 233cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips 48cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt 25cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus 78cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries 5cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette 103cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons 62cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots 6cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs 44cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blanched Fresh Broccoli 11cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing 103cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds 56cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes 10cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -650,31 +713,31 @@
 
 <button class="accordion">SAUTE</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast 141cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Mushrooms 16cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Zucchini Saute 58cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Extra Firm Tofu 29cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Spinach With Garlic 46cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Parmesan Cheese 20cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Garlic Shrimp 128cal</p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Garlic 4cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Tomato Basil Marinara 18cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Onions 21cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Green Peppers 17cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Tomatoes 5cal</p>
 		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Dal (lentils) 222cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Onions 21cal</p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Alfredo Sauce 195cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Zucchini Saute 58cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Mushrooms 16cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Extra Firm Tofu 29cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast 141cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Parmesan Cheese 20cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Spinach With Garlic 46cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -689,11 +752,13 @@
 
 <button class="accordion">SIMPLE SERVINGS</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Green Beans With Oregano 92cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simple Cajun Roasted Red Potatoes 104cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Herbed Potatoes 128cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simply Roasted Carrots 49cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Balsamic Chicken Breast 147cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Beef Top Round 127cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Rosemary Mushroom Sauce 26cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -703,38 +768,6 @@
 <input id="star3-lunch-simple-servings" name="rating-lunch-simple-servings" type="radio" value="3"/><label for="star3-lunch-simple-servings" title="Meh">3 stars</label>
 <input id="star2-lunch-simple-servings" name="rating-lunch-simple-servings" type="radio" value="2"/><label for="star2-lunch-simple-servings" title="Kinda bad">2 stars</label>
 <input id="star1-lunch-simple-servings" name="rating-lunch-simple-servings" type="radio" value="1"/><label for="star1-lunch-simple-servings" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
-<button class="accordion">SOUP</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Bounty Vegetable Soup 44cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Seafood Chowder 183cal</p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-soup" name="rating-lunch-soup" type="radio" value="5"/><label for="star5-lunch-soup" title="Rocks!">5 stars</label>
-<input id="star4-lunch-soup" name="rating-lunch-soup" type="radio" value="4"/><label for="star4-lunch-soup" title="Pretty good">4 stars</label>
-<input id="star3-lunch-soup" name="rating-lunch-soup" type="radio" value="3"/><label for="star3-lunch-soup" title="Meh">3 stars</label>
-<input id="star2-lunch-soup" name="rating-lunch-soup" type="radio" value="2"/><label for="star2-lunch-soup" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-soup" name="rating-lunch-soup" type="radio" value="1"/><label for="star1-lunch-soup" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
-<button class="accordion">STOCK & SAUCE</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Arrabiata Sauce 19cal</p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="5"/><label for="star5-lunch-stock-&-sauce" title="Rocks!">5 stars</label>
-<input id="star4-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="4"/><label for="star4-lunch-stock-&-sauce" title="Pretty good">4 stars</label>
-<input id="star3-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="3"/><label for="star3-lunch-stock-&-sauce" title="Meh">3 stars</label>
-<input id="star2-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="2"/><label for="star2-lunch-stock-&-sauce" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="1"/><label for="star1-lunch-stock-&-sauce" title="Sucks big time">1 star</label>
 </div>
 		</div>
 
@@ -763,15 +796,36 @@
 
 
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+<button class="accordion">BAKERY</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pumpkin Whoopie Pie 595cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Southern Banana Pudding 245cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Oatmeal Raisin Cookies 207cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Confetti Cupcake 280cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Chocolate Chip Cookies 227cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-bakery" name="rating-dinner-bakery" type="radio" value="5"/><label for="star5-dinner-bakery" title="Rocks!">5 stars</label>
+<input id="star4-dinner-bakery" name="rating-dinner-bakery" type="radio" value="4"/><label for="star4-dinner-bakery" title="Pretty good">4 stars</label>
+<input id="star3-dinner-bakery" name="rating-dinner-bakery" type="radio" value="3"/><label for="star3-dinner-bakery" title="Meh">3 stars</label>
+<input id="star2-dinner-bakery" name="rating-dinner-bakery" type="radio" value="2"/><label for="star2-dinner-bakery" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-bakery" name="rating-dinner-bakery" type="radio" value="1"/><label for="star1-dinner-bakery" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <button class="accordion">CHEFS TABLE</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Loin Of Pork 211cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Southwest Flank Steak 109cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Guajillo Adobo London Broil 170cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Mashed Potatoes 152cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caribbean Style Ratatouille 80cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Vegetarian Dirty Rice 142cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Okra And Greens 55cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -786,21 +840,21 @@
 
 <button class="accordion">DELI</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham 37cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced 53cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese 111cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Cheese 47cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef 64cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese 57cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Deli Turkey Breast 51cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef 64cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Cheese 47cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham 37cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese 111cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced 53cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -815,9 +869,7 @@
 
 <button class="accordion">DESSERT</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bread Pudding 249cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Deluxe New York-style Cheesecake 428cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranger Vegan Cookie 171cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -832,13 +884,13 @@
 
 <button class="accordion">GRILL</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries 205cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chicago Style Hot Dog 290cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheeseburger 373cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hamburger 312cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries 205cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pizza Burger 427cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shoestring Fries 201cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -864,11 +916,45 @@
 </div>
 		</div>
 
+<button class="accordion">PACIFICA</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sweet &amp; Sour Pork Stir Fry 462cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bok Choy Baby, Shanghai 62cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="5"/><label for="star5-dinner-pacifica" title="Rocks!">5 stars</label>
+<input id="star4-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="4"/><label for="star4-dinner-pacifica" title="Pretty good">4 stars</label>
+<input id="star3-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="3"/><label for="star3-dinner-pacifica" title="Meh">3 stars</label>
+<input id="star2-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="2"/><label for="star2-dinner-pacifica" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-pacifica" name="rating-dinner-pacifica" type="radio" value="1"/><label for="star1-dinner-pacifica" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">PIZZA</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Pizza 248cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Vegetable Pizza 271cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepperoni Pizza 277cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-pizza" name="rating-dinner-pizza" type="radio" value="5"/><label for="star5-dinner-pizza" title="Rocks!">5 stars</label>
+<input id="star4-dinner-pizza" name="rating-dinner-pizza" type="radio" value="4"/><label for="star4-dinner-pizza" title="Pretty good">4 stars</label>
+<input id="star3-dinner-pizza" name="rating-dinner-pizza" type="radio" value="3"/><label for="star3-dinner-pizza" title="Meh">3 stars</label>
+<input id="star2-dinner-pizza" name="rating-dinner-pizza" type="radio" value="2"/><label for="star2-dinner-pizza" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-pizza" name="rating-dinner-pizza" type="radio" value="1"/><label for="star1-dinner-pizza" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <button class="accordion">RUSTIC ROOTS (VEGAN)</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cooked Farro 114cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Butternut Squash &amp; Lentils 154cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Grilled Portobello Mushroom 73cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -883,67 +969,65 @@
 
 <button class="accordion">SALAD</button>
 <div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes 10cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons 62cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots 6cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus 78cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs 44cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blanched Fresh Broccoli 11cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing 103cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette 103cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries 5cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds 56cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes 419cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing 27cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips 48cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caesar Dressing 233cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt 25cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes 10cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon 72cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries 14cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers 6cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Jalapeno Peppers 4cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers 9cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chopped Romaine 5cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt 24cal</p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Spinach 7cal</p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions 11cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranch Dressing 48cal</p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cherry Tomatoes 5cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt 24cal</p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crumbled Bacon 48cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Spinach 7cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Watermelon 9cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries 14cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon 72cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers 9cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers 6cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chopped Romaine 5cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Jalapeno Peppers 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette 103cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes 10cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries 5cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots 6cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing 103cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons 62cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus 78cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs 44cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds 56cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blanched Fresh Broccoli 11cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes 419cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes 10cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt 25cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing 27cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix 4cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caesar Dressing 233cal</p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips 48cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -958,11 +1042,11 @@
 
 <button class="accordion">SIMPLE SERVINGS</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Gluten Free Lentil Basmati Rice Pilaf 122cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Maple Apple Roasted Turkey 148cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Lemon Garlic Broccoli 36cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Mashed Sweet Potatoes 110cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Charred Lemon Chimichurri Sauce 43cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cajun Roasted Vegetables 75cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -979,7 +1063,7 @@
 <div class="panel">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Bounty Vegetable Soup 44cal</p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Seafood Chowder 183cal</p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bacon &amp; Corn Chowder 143cal</p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -991,6 +1075,29 @@
 <input id="star1-dinner-soup" name="rating-dinner-soup" type="radio" value="1"/><label for="star1-dinner-soup" title="Sucks big time">1 star</label>
 </div>
 		</div>
+
+<button class="accordion">VEGETABLE</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Corn 30cal</p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="5"/><label for="star5-dinner-vegetable" title="Rocks!">5 stars</label>
+<input id="star4-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="4"/><label for="star4-dinner-vegetable" title="Pretty good">4 stars</label>
+<input id="star3-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="3"/><label for="star3-dinner-vegetable" title="Meh">3 stars</label>
+<input id="star2-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="2"/><label for="star2-dinner-vegetable" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="1"/><label for="star1-dinner-vegetable" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+
+
+
+
+
+
+
 
 
 
