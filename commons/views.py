@@ -17,14 +17,14 @@ from unidecode import unidecode
 def br_lunch_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    day = 5
+    #day = 5
     return day
     
 
 def dinner_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    day = 5
+    #day = 5
     if(day == 6):
         return 0
     day += 1
@@ -49,24 +49,50 @@ def parse_html(request):
         current_date = datetime.date.today()
         day = current_date.weekday()
          
-        soup2 = BeautifulSoup(existing_html, 'html.parser')
         
-        target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
+        if day >= 5:
+            
+            soup2 = BeautifulSoup(existing_html, 'html.parser')
         
-        desired_content = "BREAKFAST (7:00 - 9:30)"
+            target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
+        
+            breakfast_tag = "BREAKFAST (7:00 - 9:30)"
 
-        for p_tag in target_elements:
-            if p_tag.text == desired_content:
-                new_content = "New content here"  # Replace with your desired content
-                p_tag.string.replace_with(new_content)
-                break  # Stop searching once you find the desired tag
+            for tag in target_elements:
+                if tag.text == breakfast_tag:
+                    new_content = "BRUNCH (7:00 - 9:30)"  # Replace with your desired content
+                    tag.string.replace_with(new_content)
 
-        
+            with open('commons/templates/commons.html', 'w') as file:
+                file.write(str(soup2))
+            
+            with open('commons/templates/commons.html', 'r') as file:
+                existing_html = file.read()
+            
                     
+        if day < 5:
+            
+            soup2 = BeautifulSoup(existing_html, 'html.parser')
         
-        existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html, target_elements)
-        existing_html = parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch, existing_html, target_elements)
-        existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html, target_elements)
+            target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
+            
+            breakfast_tag = "BRUNCH (7:00 - 9:30)"
+
+            for tag in target_elements:
+                if tag.text == breakfast_tag:
+                    new_content = "BREAKFAST (7:00 - 9:30)"  # Replace with your desired content
+                    tag.string.replace_with(new_content)
+
+            with open('commons/templates/commons.html', 'w') as file:
+                file.write(str(soup2))
+            
+            with open('commons/templates/commons.html', 'r') as file:
+                existing_html = file.read()
+                
+            existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html, target_elements)
+            existing_html = parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch, existing_html, target_elements)
+            existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html, target_elements)
+            
 
         with open('commons/templates/commons.html', 'w') as file:
             file.write(existing_html)
@@ -120,7 +146,7 @@ def parse_meal(soup, meal, html_pattern, day, existing_html, target_elements):
                     item_name = item_name.group(1)
                     current_date = datetime.date.today()
                     x_day = current_date.weekday()
-                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()} {x_day} {target_elements} </p>\n\t\t<hr class="dashed-line">\n'
+                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()} {x_day}</p>\n\t\t<hr class="dashed-line">\n'
                     # modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
                    # modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
 
