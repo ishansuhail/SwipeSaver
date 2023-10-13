@@ -66,7 +66,13 @@
         }
 
         .solid-line {
-            border: 3px solid red;
+            border: 3px solid var(--accent-color);
+        }
+
+        .dashed-line {
+            border: 1px dashed red;
+            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .header-container {
@@ -158,7 +164,6 @@
             outline: none;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
-            z-index: 100;
         }
 
         .panel p{
@@ -184,6 +189,7 @@
 
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'distanceTracker.js' %}"></script>
 </head>
 <body style="background-color: whitesmoke;">
     
@@ -216,9 +222,9 @@
     setInterval(getCurrentTime, 1000);
     </script>
 
+    <div id="output" style="text-align: center; margin: 20px;"></div>
     <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
 
-    {% comment %} <div id="output" style="text-align: center; margin: 20px;"></div> {% endcomment %}
     <div class="red-box"></div>
 
     <div class="dining-halls-container">
@@ -229,7 +235,10 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p>commons</p>
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <hr class="dashed-line">
+                <div id="commons_distance"></div>
+                <hr class="dashed-line">
             </div>
         </div>
         <div class="image-container">
@@ -239,7 +248,10 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p>sage</p>
+                <div>
+                <p>Hours:</p>
+                </div>
+                <div id="sage_distance" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></div>
             </div>
         </div>
     </div>
@@ -254,7 +266,8 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p>blitman</p>
+                <p>Hours:</p>
+                <p>Distance:</p>
             </div>
         </div>
         <div class="image-container">
@@ -264,7 +277,8 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p>barh</p>
+                <p>Hours:</p>
+                <p>Distance:</p>
             </div>
         </div>
     </div>
@@ -272,8 +286,6 @@
     <div class="footer">
         <p>An RCOS project</p>
     </div>
-
-    <script src="{% static 'distanceTracker.js' %}"></script>
     <script>
         var acc = document.getElementsByClassName("title-overlay");
         var i;
