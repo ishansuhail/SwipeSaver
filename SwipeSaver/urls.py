@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('commons/', include('commons.urls')),
+    path('russellsage/', include('russellsage.urls')),
+    path('blitman/', include('blitman.urls')),
 ]
