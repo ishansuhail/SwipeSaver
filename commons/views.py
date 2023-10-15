@@ -13,6 +13,11 @@ import requests
 import re
 from unidecode import unidecode
 
+# views.py in the search app
+from django.shortcuts import render
+from .models import SearchResult
+from .forms import SearchForm
+
 
 def br_lunch_day():
     current_date = datetime.date.today()
@@ -197,5 +202,22 @@ def rate(request):
 
             return JsonResponse({'success': True, 'average_rating': average_rating})
     return JsonResponse({'success': False})
+
+
+
+def search_view(request):
+    if request.method == "GET":
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data.get('query')
+            results = SearchResult.objects.filter(content__icontains=query)
+        else:
+            results = SearchResult.objects.none()
+    else:
+        form = SearchForm()
+        results = SearchResult.objects.none()
+    
+    return render(request, 'search_results.html', {'form': form, 'results': results})
+
 
 
