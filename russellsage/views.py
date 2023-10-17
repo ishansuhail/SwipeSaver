@@ -17,14 +17,13 @@ from unidecode import unidecode
 def br_lunch_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    #day = 5
+    
     return day
     
 
 def dinner_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    #day = 5
     if(day == 6):
         return 0
     day += 1
@@ -33,88 +32,29 @@ def dinner_day():
 
 def parse_html(request):
     # Open the existing HTML file
-    with open('commons/templates/commons.html', 'r') as file:
+    with open('russellsage/templates/russellsage.html', 'r') as file:
         existing_html = file.read()
 
     # Check if the html file has already been parsed
     if '<hr class="dashed-line">' not in existing_html:
         # Perform the parsing and modification logic
-        r = requests.get("https://menus.sodexomyway.com/BiteMenu/Menu?menuId=15465&locationId=76929001&whereami=http://rpi.sodexomyway.com/dining-near-me/commons-dining-hall")
+        r = requests.get("https://menus.sodexomyway.com/BiteMenu/Menu?menuId=15285&locationId=76929002&whereami=http://rpi.sodexomyway.com/dining-near-me/commons-dining-hall")
         html_content = r.content
 
         soup = BeautifulSoup(html_content, 'html.parser')
 
         br_lunch = br_lunch_day()
         dinner = dinner_day()
-        current_date = datetime.date.today()
-        day = current_date.weekday()
         
+        existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html)
+        existing_html = parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px;margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch, existing_html)
+        existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html)
         
-        if day >= 5:
-            
-            
-            soup2 = BeautifulSoup(existing_html, 'html.parser')
-        
-            target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
-        
-            breakfast_tag = "BREAKFAST (7:00 - 9:30)"
-
-            for tag in target_elements:
-                if tag.text == breakfast_tag:
-                    new_content = "BRUNCH (7:00 - 9:30)"  # Replace with your desired content
-                    tag.string.replace_with(new_content)
-
-            with open('commons/templates/commons.html', 'w') as file:
-                file.write(str(soup2))
-            
-            with open('commons/templates/commons.html', 'r') as file:
-                existing_html = file.read()
-            
-            brunch_day = 0
-            
-            if day == 6:
-                brunch_day = 1
-            
-            existing_html = parse_meal(soup, 'accordion-block brunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BRUNCH (7:00 - 9:30)</p>', brunch_day, existing_html)
-            existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', br_lunch, existing_html)
-            
-                
-                    
-        if day < 5:
-            
-            soup2 = BeautifulSoup(existing_html, 'html.parser')
-        
-            target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
-            
-            breakfast_tag = "BRUNCH (7:00 - 9:30)"
-
-            for tag in target_elements:
-                if tag.text == breakfast_tag:
-                    new_content = "BREAKFAST (7:00 - 9:30)"  # Replace with your desired content
-                    tag.string.replace_with(new_content)
-
-            with open('commons/templates/commons.html', 'w') as file:
-                file.write(str(soup2))
-            
-            with open('commons/templates/commons.html', 'r') as file:
-                existing_html = file.read()
-                
-            existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html)
-            existing_html = parse_meal(soup, 'accordion-block lunch', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>', br_lunch, existing_html)
-            existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html)
-            
-
-        with open('commons/templates/commons.html', 'w') as file:
+        # Save the modified HTML
+        with open('russellsage/templates/russellsage.html', 'w') as file:
             file.write(existing_html)
-            # Save the modified HTML
-            
-        # else:
-        #     existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BRUNCH (7:00 - 9:30)</p>', br_lunch, existing_html)
-            
-            
-        
-                
-    return render(request, 'commons.html')
+
+    return render(request, 'russellsage.html')
 
 
 
@@ -154,11 +94,9 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
                                      
                 if item_name and calories:
                     item_name = item_name.group(1)
-                    current_date = datetime.date.today()
-                    x_day = current_date.weekday()
-                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()} </p>\n\t\t<hr class="dashed-line">\n'
-                    # modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
-                   # modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
+                    modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    #modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
+                    #modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
 
             # Add rating system for the station
             station_name_slug = station_name.lower().replace(" ", "-")  # convert station name to lower case and replace spaces with hyphens
@@ -188,7 +126,7 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
  #remove the food items
 def remove_items(request):
     
-    with open('commons/templates/commons.html', 'r') as file:
+    with open('russellsage/templates/russellsage.html', 'r') as file:
         file_change = file.read()
     
     soup = BeautifulSoup(file_change, 'html.parser')
@@ -218,17 +156,17 @@ def remove_items(request):
     for element in second_elements:
         element.extract()
         
-    with open('commons/templates/commons.html', 'w') as file:
+    with open('russellsage/templates/russellsage.html', 'w') as file:
         file.write(str(soup))
 
-    return render(request, 'commons.html')
+    return render(request, 'russellsage.html')
 
     
 def home(request):
     return HttpResponse("Welcome to SwipeSaver!")
 
-def commons(request):
-    return render(request, 'commons/commons.html')
+def russellsage(request):
+    return render(request, 'russellsage/russellsage.html')
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
