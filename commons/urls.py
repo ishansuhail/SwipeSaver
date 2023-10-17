@@ -7,5 +7,6 @@ urlpatterns = [
     path('remove_items', views.remove_items, name='remove_items'),
     path('', views.commons, name='commons'),
     path('rate/', views.rate, name='rate'),
+    
 
 ]
