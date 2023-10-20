@@ -9,5 +9,6 @@ class ratedFoodItem(models.Model):
 	rating = models.DecimalField(max_digits=2, decimal_places = 1)
 	vegan = models.BooleanField()
 	dining_hall = models.CharField(max_length=50, default = 'commons')
+	gluten_free = models.BooleanField(default = False)
 
 	
