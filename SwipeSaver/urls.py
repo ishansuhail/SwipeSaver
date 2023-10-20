@@ -23,5 +23,8 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('commons/', include('commons.urls')),
     path('russellsage/', include('russellsage.urls')),
+<<<<<<< HEAD
     path('blitman/', include('blitman.urls')),
+=======
+>>>>>>> 382fd638787ec15e98cfcdd54181c22b7b7badf3
 ]
