@@ -11,7 +11,7 @@
         :root {
             --primary-color: #333333;
             --secondary-color: #FFFFFF;
-            --accent-color: #333333;
+            --accent-color: #E41E1E;
         }
 
         div.scrollmenu {
@@ -65,6 +65,16 @@
             text-decoration: none;
         }
 
+        .solid-line {
+            border: 3px solid var(--accent-color);
+        }
+
+        .dashed-line {
+            border: 1px dashed red;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
         .header-container {
             position: relative;
             background-color: var(--secondary-color);
@@ -87,34 +97,77 @@
             margin-top: 20px;
         }
 
-        .commons-header-container {
-            position: relative;
-            background-color: var(--secondary-color);
-            padding: 20px;
+        .red-box {
+            postion:relative;
+            margin-top: 20px;
+            background-color: var(--accent-color);
             text-align: center;
+            width: 100%;
+            height:20px;
         }
 
-        .overlay-box {
+        .dining-halls-container {
+            postion; relative;
+            display: flex;
+            background-color: var(--primary-color);
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .dining-halls-container img{
+            width: 600px;
+            height: 500px;
+            display: block;
+            postion: relative;
+            margin-left:100px;
+        }
+
+        .title-overlay {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(228, 30, 30);
-            z-index: -1;
+            left: 100px;
+            width: 600px;
+            height: 15%; 
+            background-color: rgb(255, 255, 255, 0.7);
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            cursor: pointer;
+          }
+
+        .active, .title-overlay:hover {
+            background-color: rgb(255, 255, 255, 0.9);
+        }
+
+        .title-overlay:after {
+            background-color: rgb(255, 255, 255, 0.9);
         }
 
         .panel {
-            font-family: Verdana, sans-serif;
-            padding: 0 18px;
-            background-color: white;
+            position: absolute;
+            top: 15%;
+            left: 100px;
+            width: 600px;
+            font-family:'Montserrat', sans-serif;
+            background-color: rgb(255, 255, 255, 0.9);
             max-height: 0;
-            overflow: hidden;
-            width: 92.5%;
+            width: 600px;
+            color: white;
             border: none;
             outline: none;
-            margin: 0px 20px 0px 20px;
+            overflow: hidden;
             transition: max-height 0.2s ease-out;
+        }
+
+        .panel p{
+            color: var(--accent-color);
         }
 
         .footer {
@@ -135,11 +188,12 @@
         }
 
     </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'distanceTracker.js' %}"></script>
 </head>
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
-        <div class="overlay-box"></div>
         <img src="{% static 'newLogo.png' %}" alt="SwipeSaver">
         <h1>RPI SwipeSaver</h1>
     </div>
@@ -147,10 +201,18 @@
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
         <a href="{% url 'commons' %}">Commons Dining Hall</a>
+<<<<<<< HEAD
         <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>
         <a href="{% url 'contact' %}">Contact</a>
         <a href="{% url 'about' %}">About</a>
         <a href="{% url 'ratedfood' %}">Rated Food</a>
+=======
+        <a href="#sage">Russel Sage Dining Hall</a>
+        <a href="#blitman">Blitman Dining Hall</a>
+        <a href="#barh">BARH Dining Hall</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+>>>>>>> 597618f05e03c56a06fdd3d7ba18b1766d758349
     </div>
 
     <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
@@ -167,14 +229,119 @@
     setInterval(getCurrentTime, 1000);
     </script>
 
+    <div id="output" style="text-align: center; margin: 20px;"></div>
     <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
 
-    <div id="output" style="text-align: center; margin: 20px;"></div>
+    <div class="red-box"></div>
+
+    <div class="dining-halls-container">
+        <div class="image-container">
+            <img src="{% static 'commons.jpg' %}" alt="Commons">
+            <button class ="title-overlay">
+                <p>Commons</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Thursday: 7:00 am - 3:30 pm | 4:30 - 10:30 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Friday: 7:00 am - 3:30 pm | 4:30 - 9:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday: 9:00 am - 2:00 pm | 4:30 - 8:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Sunday: 9:00 am - 2:00 pm | 4:30 - 10:30 pm
+                </p>
+                <hr class="dashed-line">
+                <div id="commons_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'sage.png' %}" alt="Sage">
+            <button class ="title-overlay">
+                <p>Sage</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Friday: 7:00 am - 2:30 pm | 4:00 - 8:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday-Sunday: 1:30 pm - 8:00 pm
+                </p>
+                <hr class="dashed-line">
+                <div id="sage_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+    </div>
+
+    <div class="red-box"></div>
+
+    <div class="dining-halls-container">
+        <div class="image-container">
+            <img src="{% static 'blitman.jpg' %}" alt="Blitman">
+            <button class ="title-overlay">
+                <p>Blitman</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Friday: 7:00 am - 9:30 am | 5:00 - 8:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday-Sunday: 10:30 am - 1:30 pm | 5:00 - 8:00 pm
+                </p>                
+                <hr class="dashed-line">
+                <div id="blitman_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'barh.jpg' %}" alt="BARH">
+            <button class ="title-overlay">
+                <p>BARH</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Friday: 7:00 am - 9:30 am | 5:00 - 9:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday-Sunday: 11:00 am - 1:00 pm 
+                </p>  
+                <hr class="dashed-line">
+                <div id="barh_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+    </div>
 
     <div class="footer">
         <p>An RCOS project</p>
     </div>
+    <script>
+        var acc = document.getElementsByClassName("title-overlay");
+        var i;
 
-    <script src="{% static 'distanceTracker.js' %}"></script>
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
 </body>
 </html>
