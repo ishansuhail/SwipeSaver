@@ -14,3 +14,9 @@ def russellsage(request):
     russellsage_remove_items(request)
     return russellsage_parse_html(request)
 
+def about(request):
+    return render(request, 'about.html')
+
+def ratedfood(request):
+    return render(request, 'ratedfood.html')
+

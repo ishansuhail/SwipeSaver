@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RatedFood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwipeSaver</title>
+    <style>
+        div.scrollmenu {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        }
+
+        div.scrollmenu a:hover {
+        background-color: #777;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .header-container h1,p,a
+        {
+            font-family: Verdana, sans-serif;
+        }
+
+        .header-container {
+            position: relative;
+        }
+
+        .overlay-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: gainsboro;
+            z-index: -1;
+        }
+        .thumbnail-card {
+            width: 280px; /* Adjust the width as needed */
+            height: 150px;
+            display: inline-block;
+            margin: 10px;
+            background-color: #ffffff;
+            color: white;
+
+        }
+
+        /* Add CSS styles for the rounded corners effect */
+        .thumbnail-image {
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            background-color: #ffffff;
+            order-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    
+    </style>
+</head>
+<body style="background-color: indianred;">
+    
+    <div class="header-container">
+        <div class="overlay-box"></div>
+        <div style="display: flex; align-items: center;">
+            <img src="{% static 'newLogo.png' %}" alt="SwipeSaver" style="width: 100px; height: 40px; margin-top: 20px; margin-left: 35px; margin-bottom: 20px;">
+            <h1 style="color: rgb(228, 30, 30); font-size: 60px; text-align: center; margin: auto;">RPI SwipeSaver</h1>
+        </div>
+        {% include 'navbar.html' %}
+    </div>
+
+    <h1>
+        <div class="scrollmenu">
+        <div style="display: flex; align-items: center; color: white; background-color: #ffffff;">   
+            {% for food in displayALL %}
+                <div class="card thumbnail-card">
+                    <img src="{{ food.image.url }}" class="thumbnail-image" alt="{{ food.food_name }}">
+                    <div class="card-body">
+                        <p class="card-title">{{ food.food_name }}</p>
+                        <p class="card-text">Rating: {{ food.rating }}</p>
+                        <p class="card-text">Vegan: {{ food.vegan }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </h1>
+    <img src="{% static 'newLogo.png' %}" alt="SwipeSaver" style="width: 500px; height: 125px;align-items: center; margin-top: 100px; margin-left: 376px">
+</body>
+    
+    
+
+</html>
