@@ -41,10 +41,7 @@ INSTALLED_APPS = [
     'homepage',
     'commons',
     'russellsage',
-<<<<<<< HEAD
     'blitman',
-=======
->>>>>>> 382fd638787ec15e98cfcdd54181c22b7b7badf3
 ]
 
 MIDDLEWARE = [
