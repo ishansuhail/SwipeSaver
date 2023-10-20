@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
@@ -11,7 +12,7 @@ class Rating(models.Model):
         ('lunch', 'Lunch'),
         ('dinner', 'Dinner'),
     ]
-
+    date = models.DateField(default=datetime.date.today)
     station = models.ForeignKey(Station, on_delete=models.CASCADE)
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     meal_time = models.CharField(max_length=10, choices=MEAL_TIMES, default='dinner')

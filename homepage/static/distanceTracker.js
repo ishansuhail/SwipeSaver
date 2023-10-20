@@ -3,7 +3,7 @@ pick the closest dining hall to them. This newest version doesn't require a goog
 */
 
 // Let's check to make sure we're actually running our file...
-console.log("distanceTracker.js is running");
+//console.log("distanceTracker.js is running");
 
 // Check if the user's browser supports Geolocation
 if (navigator.geolocation) {
@@ -34,11 +34,12 @@ function getClosestDiningHalls(userLat, userLon) {
     });
 
     // Sort the dining halls by distance
-    diningHalls.sort(function(a, b) {
-        return a.distance - b.distance;
-    });
+    // diningHalls.sort(function(a, b) {
+    //     return a.distance - b.distance;
+    // });
 
     // Call function to display the sorted dining halls on the website
+    console.log("hi");
     displayDiningHalls();
 }
 
@@ -61,7 +62,12 @@ function deg2rad(deg) {
 }
 
 function displayDiningHalls() {
+    console.log("hi");
     var output = '';
+    var commons_distance = '<p style="font-size: 25px; margin-top: 10px; margin-left: 20px">' + 'Distance: ' + diningHalls[0].distance.toFixed(2) + ' mi away'+ '</p>';
+    var sage_distance = '<p style="font-size: 25px; margin-top: 10px; margin-left: 20px">' + 'Distance: ' +  diningHalls[1].distance.toFixed(2) + ' mi away</p>';
+    var barh_distance = '<p style="font-size: 25px; margin-top: 10px; margin-left: 20px">' + 'Distance: ' + diningHalls[2].distance.toFixed(2) + ' mi away</p>';
+    var blitman_distance = '<p style="font-size: 25px; margin-top: 10px; margin-left: 20px">' + 'Distance: ' +  diningHalls[3].distance.toFixed(2) + ' mi away</p>';
     diningHalls.forEach(function(hall, index) {
         output += '<p>' + hall.name + ': ' + hall.distance.toFixed(2) + ' mi away';
         // If the dining hall is the first one in the list (i.e., the closest one)
@@ -73,6 +79,10 @@ function displayDiningHalls() {
 
     // Assuming you have a div with id="output" in your HTML
     document.getElementById('output').innerHTML = output;
+    document.getElementById('commons_distance').innerHTML = commons_distance;
+    document.getElementById('sage_distance').innerHTML = sage_distance;
+    document.getElementById('barh_distance').innerHTML = barh_distance;
+    document.getElementById('blitman_distance').innerHTML = blitman_distance;
 }
 
 
