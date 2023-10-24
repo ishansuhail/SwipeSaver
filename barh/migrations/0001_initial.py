@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('rating', models.IntegerField(validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(5)])),
-                ('meal_time', models.CharField(choices=[('breakfast', 'Breakfast'), ('lunch', 'Lunch'), ('dinner', 'Dinner')], default='dinner', max_length=10)),
-                ('station', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='commons.station')),
+                ('meal_time', models.CharField(choices=[('breakfast', 'Breakfast'), ('dinner', 'Dinner')], default='dinner', max_length=10)),
+                ('station', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='barh.station')),
             ],
         ),
     ]
