@@ -107,7 +107,6 @@
         }
 
         .dining-halls-container {
-            postion; relative;
             display: flex;
             height:500px;
             background-color: var(--primary-color);
@@ -199,8 +198,7 @@
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
-        <img src="{% static 'logo.png' %}" alt="SwipeSaver" width=80px height=20px>
-        <h1>RPI SwipeSaver</h1>
+        <img src="{% static 'logo.png' %}" alt="SwipeSaver" style="width: 600px; height: 150px;">
     </div>
 
     <div class="scrollmenu">
@@ -213,7 +211,7 @@
         <a href="#about">About</a>
     </div>
 
-    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>
 
     <script>
     function getCurrentTime() {
@@ -228,7 +226,6 @@
     </script>
 
     <div id="output" hidden="hidden" style="text-align: center; margin: 20px;"></div>
-    <p style="color: rgb(228, 30, 30); font-size: 32px; text-align: center;">Welcome to RPI SwipeSaver!</p>
 
     <div class="red-box"></div>
 
