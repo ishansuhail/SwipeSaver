@@ -26,9 +26,8 @@ def dinner_day():
     day = current_date.weekday()
     if(day == 6):
         return 0
-    day += 1
-    
     return day
+    
 
 def parse_html(request):
     # Open the existing HTML file
