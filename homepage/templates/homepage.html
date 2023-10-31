@@ -213,18 +213,6 @@
 
     <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>
 
-    <script>
-    function getCurrentTime() {
-    var date = new Date();
-    var options = { timeZone: 'America/New_York', hour12: true };
-    var timeString = date.toLocaleTimeString('en-US', options);
-    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
-    }
-
-    getCurrentTime();
-    setInterval(getCurrentTime, 1000);
-    </script>
-
     <div id="output" hidden="hidden" style="text-align: center; margin: 20px;"></div>
 
     <div class="red-box"></div>
@@ -238,18 +226,7 @@
             <div class="panel">
                 <hr class="solid-line">
                 <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Monday-Thursday: 7:00 am - 3:30 pm | 4:30 - 10:30 pm
-                </p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Friday: 7:00 am - 3:30 pm | 4:30 - 9:00 pm
-                </p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Saturday: 9:00 am - 2:00 pm | 4:30 - 8:00 pm
-                </p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Sunday: 9:00 am - 2:00 pm | 4:30 - 10:30 pm
-                </p>
+                <p id = "commons_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>
                 <hr class="dashed-line">
                 <div id="commons_distance"></div>
                 <hr class="dashed-line">
@@ -263,12 +240,7 @@
             <div class="panel">
                 <hr class="solid-line">
                 <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Monday-Friday: 7:00 am - 2:30 pm | 4:00 - 8:00 pm
-                </p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Saturday-Sunday: 1:30 pm - 8:00 pm
-                </p>
+                <p id = "sage_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>
                 <hr class="dashed-line">
                 <div id="sage_distance"></div>
                 <hr class="dashed-line">
@@ -287,12 +259,7 @@
             <div class="panel">
                 <hr class="solid-line">
                 <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Monday-Friday: 7:00 am - 9:30 am | 5:00 - 8:00 pm
-                </p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Saturday-Sunday: 10:30 am - 1:30 pm | 5:00 - 8:00 pm
-                </p>                
+                <p id = "blitman_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>           
                 <hr class="dashed-line">
                 <div id="blitman_distance"></div>
                 <hr class="dashed-line">
@@ -306,12 +273,7 @@
             <div class="panel">
                 <hr class="solid-line">
                 <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Monday-Friday: 7:00 am - 9:30 am | 5:00 - 9:00 pm
-                </p>
-                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
-                    Saturday-Sunday: 11:00 am - 1:00 pm 
-                </p>  
+                <p id = "barh_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>
                 <hr class="dashed-line">
                 <div id="barh_distance"></div>
                 <hr class="dashed-line">
@@ -322,6 +284,51 @@
     <div class="footer">
         <p>An RCOS project</p>
     </div>
+
+    <script>
+        function getCurrentTime() {
+            var date = new Date();
+            var options = { timeZone: 'America/New_York', hour12: true };
+            var timeString = date.toLocaleTimeString('en-US', options);
+            document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+        }
+    
+        function getHours() {
+            var date = new Date();
+            var day = date.getDay();
+            if(day == 0) //Sunday
+            {
+                document.getElementById("commons_hours").textContent = "9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
+                document.getElementById("sage_hours").textContent = "1:30 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "11:00 am - 1:00 pm";
+                document.getElementById("blitman_hours").textContent = "10:30 am - 1:30 pm | 5:00 - 8:00 pm";
+            }
+            else if(day >= 1 && day <= 4) //Monday - Thursday
+            {
+                document.getElementById("commons_hours").textContent = "7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
+                document.getElementById("sage_hours").textContent = "7:00 am - 2:30 pm | 4:00 - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "7:00 am - 9:30 am | 5:00 - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "7:00 am - 9:30 am | 5:00 - 8:00 pm";
+            }
+            else if(day == 5) //Friday
+            {
+                document.getElementById("commons_hours").textContent = "7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
+                document.getElementById("sage_hours").textContent = "7:00 am - 2:30 pm | 4:00 - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "7:00 am - 9:30 am | 5:00 - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "7:00 am - 9:30 am | 5:00 - 8:00 pm";
+            }
+            else if(day == 6) //Saturday
+            {
+                document.getElementById("commons_hours").textContent = "9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
+                document.getElementById("sage_hours").textContent = "1:30 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "11:00 am - 1:00 pm";
+                document.getElementById("blitman_hours").textContent = "10:30 am - 1:30 pm | 5:00 - 8:00 pm";
+            }
+        }
+        getCurrentTime();
+        getHours();
+        setInterval(getCurrentTime, 1000);
+    </script>
     <script>
         var acc = document.getElementsByClassName("title-overlay");
         var i;
