@@ -11,4 +11,6 @@ class ratedFoodItem(models.Model):
 	dining_hall = models.CharField(max_length=50, default = 'commons')
 	gluten_free = models.BooleanField(default = False)
 
+	#TO ADD NEW FOOD ITEM TO DATABASE REFER TO VIEWS_R.PY / def addRatedFoodItem(request): / URL: http://127.0.0.1:8000/add_rated_food_item/
+
 	

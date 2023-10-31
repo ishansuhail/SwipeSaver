@@ -10,6 +10,7 @@ urlpatterns = [
     path('ratedfood_high/', views_R.ratedfood_high, name='dratedfood_high'),
     path('ratedfood_vegan/', views_R.ratedfood_vegan, name='ratedfood_vegan'),
     path('ratedfood_commons/', views_R.ratedfood_commons, name='ratedfood_commons'),
+    path('add_rated_food_item/', views_R.addRatedFoodItem, name='add_rated_food_item'),
 
 
 ]

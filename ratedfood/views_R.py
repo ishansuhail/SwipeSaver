@@ -47,6 +47,18 @@ def ratedfood_commons(request):
 	displayALL = ratedFoodItem.objects.all()
 	return render(request, 'ratedfood_commons.html', {'displayALL': displayALL})
 
+def addRatedFoodItem(request):
+	new_food_item = ratedFoodItem(
+		food_name = 'Test_Food_Item',
+		rating = 4.5,
+		vegan = False,
+		dining_hall = 'commons',
+		gluten_free = False
+	)
+	new_food_item.image = 'ratedfood_images/temp.jpg'
+	new_food_item.save()
+	displayALL = ratedFoodItem.objects.all()
+	return render(request, 'ratedfood.html', {'displayALL': displayALL})
 
 def simple_image(request):
 	return render(request, 'salad.jpg')
