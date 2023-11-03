@@ -171,7 +171,23 @@
         }
 
         .panel p{
+            display: inline;
             color: var(--accent-color);
+            font-size: 25px; 
+            margin-top: 10px; 
+            margin-left: 20px;
+        }
+
+        .panel a{
+            display: inline; /* or inline-block */
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 23px;
+        }
+
+        .panel a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
         }
 
         .footer {
@@ -225,10 +241,14 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p id = "commons_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>
+                <p id = "commons_hours"></p>
                 <hr class="dashed-line">
                 <div id="commons_distance"></div>
+                <hr class="dashed-line">
+                <p >Rating:</p>
+                <hr class="dashed-line">
+                <p >View Menu: </p>
+                <a href="{% url 'commons' %}">Commons Dining Hall</a>    
                 <hr class="dashed-line">
             </div>
         </div>
@@ -239,10 +259,14 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p id = "sage_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>
+                <p id = "sage_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
                 <hr class="dashed-line">
                 <div id="sage_distance"></div>
+                <hr class="dashed-line">
+                <p >Rating:</p>
+                <hr class="dashed-line">
+                <p >View Menu: </p>
+                <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>    
                 <hr class="dashed-line">
             </div>
         </div>
@@ -258,10 +282,14 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p id = "blitman_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>           
+                <p id = "blitman_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>           
                 <hr class="dashed-line">
                 <div id="blitman_distance"></div>
+                <hr class="dashed-line">
+                <p >Rating:</p>
+                <hr class="dashed-line">
+                <p >View Menu: </p>
+                <a href="#blitman">Blitman Dining Hall</a>    
                 <hr class="dashed-line">
             </div>
         </div>
@@ -272,10 +300,14 @@
             </button>
             <div class="panel">
                 <hr class="solid-line">
-                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
-                <p id = "barh_hours" style="font-size: 16px; margin-top: 10px; margin-left: 35px"></p>
+                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
                 <hr class="dashed-line">
                 <div id="barh_distance"></div>
+                <hr class="dashed-line">
+                <p >Rating:</p>
+                <hr class="dashed-line">
+                <p >View Menu: </p>
+                <a href="{% url 'barh' %}">BARH Dining Hall</a>    
                 <hr class="dashed-line">
             </div>
         </div>
@@ -298,31 +330,31 @@
             var day = date.getDay();
             if(day == 0) //Sunday
             {
-                document.getElementById("commons_hours").textContent = "9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "1:30 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "10:30 am - 1:30 pm | 5:00 - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
+                document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 - 8:00 pm";
             }
             else if(day >= 1 && day <= 4) //Monday - Thursday
             {
-                document.getElementById("commons_hours").textContent = "7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "7:00 am - 2:30 pm | 4:00 - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "7:00 am - 9:30 am | 5:00 - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "7:00 am - 9:30 am | 5:00 - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
+                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 8:00 pm";
             }
             else if(day == 5) //Friday
             {
-                document.getElementById("commons_hours").textContent = "7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "7:00 am - 2:30 pm | 4:00 - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "7:00 am - 9:30 am | 5:00 - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "7:00 am - 9:30 am | 5:00 - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
+                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 8:00 pm";
             }
             else if(day == 6) //Saturday
             {
-                document.getElementById("commons_hours").textContent = "9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "1:30 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "10:30 am - 1:30 pm | 5:00 - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
+                document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 - 8:00 pm";
             }
         }
         getCurrentTime();
