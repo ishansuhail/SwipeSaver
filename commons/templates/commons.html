@@ -32,6 +32,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -295,8 +316,13 @@
 		totalCalories += calories;
         document.getElementById("totalCalories").textContent = totalCalories;
 	}
+
+	function clearCalories(){
+		totalCalories = 0
+		document.getElementById("totalCalories").textContent = totalCalories;
+	}
 </script>
-<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0</span></p>
+<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear</button></p>
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
