@@ -51,6 +51,14 @@
             color: var(--secondary-color);
         }
 
+        .logo {
+            width: 200%; /* Make the logo larger (adjust the percentage as needed) */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto; /* Center the logo */
+            max-width: 600px; /* Limit the maximum width if needed */
+        }
+
         body {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -83,8 +91,8 @@
         }
 
         .header-container img {
-            width: 200px;
-            height: 46px;
+            width: 80%; /* Set a percentage for the width (adjust as needed) */
+            height: auto; /* Maintain aspect ratio */
             display: block;
             margin: 0 auto 10px;
         }
@@ -136,7 +144,10 @@
             .image-container {
                 flex-basis: 100%; /* Full width on smaller screens */
             }
-
+            .logo {
+                width: 120%; /* Increase the percentage for smaller screens if needed */
+                max-width: 600px; /* You can adjust or remove this if needed */
+            }
             .title-overlay {
                 left: 0; /* Align left to the container on smaller screens */
                 width: 100%; /* Full width on smaller screens */
@@ -221,8 +232,8 @@
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
-        <img src="{% static 'logo.png' %}" alt="SwipeSaver" style="width: 600px; height: 150px;">
-    </div>
+        <img src="{% static 'logo.png' %}" alt="SwipeSaver" class="logo">
+    </div>        
 
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
