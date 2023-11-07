@@ -270,20 +270,39 @@
             color: gold;
         }
         
+        #to_top{
+            position:fixed;
+            float:right;
+            height:40px;
+            width:155px;
+            right: 10px;
+            background-color: white;
+            color: black; 
+            border: none; 
+            border-radius: 100px; 
+            padding: 10px 20px; 
+            font-weight: bold;
+            cursor: pointer; 
+          }
+          
+          #to_top:hover {
+            background-color: #E41E1E; /* Change color on hover */
+            color: white; 
+          }
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="background-color: whitesmoke;">
 <div class="header-container">
 <div class="overlay-box"></div>
-<img alt="SwipeSaver" src="{% static 'newLogo.png' %}"/>
+<img alt="SwipeSaver" src="{% static 'logo.png' %}" style="width: 600px; height: 150px;"/>
 <h1>BARH DINING HALL</h1>
 </div>
 <div class="scrollmenu">
 <a href="{% url 'homepage' %}">Home</a>
 <a href="{% url 'commons' %}">Commons Dining Hall</a>
 <a href="{% url 'barh' %}">Barh Dining Hall</a>
-<a href="{% url 'russellsage' %}">Russel Sage Dining Hall</a>
+<a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>
 <a href="#blitman">Blitman Dining Hall</a>
 <a href="#contact">Contact</a>
 <a href="#about">About</a>
@@ -632,6 +651,7 @@
 
 <div class="footer">
 <p>An RCOS project</p>
+<button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
 </div>
 <script>
         var acc = document.getElementsByClassName("accordion");
@@ -669,6 +689,14 @@
                 }
             });
         });
+    </script>
+<script>
+        function scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+          });
+        }
     </script>
 </body>
 </html>
