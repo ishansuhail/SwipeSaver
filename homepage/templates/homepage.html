@@ -207,6 +207,28 @@
             color: white;
         }
 
+        #to_top{
+            position:fixed;
+            float:right;
+            height:40px;
+            width:155px;
+            right: 10px;
+            background-color: white;
+            color: black; 
+            border: none; 
+            border-radius: 100px; 
+            padding: 10px 20px; 
+            font-weight: bold;
+            cursor: pointer; 
+          }
+          
+          #to_top:hover {
+            background-color: var(--accent-color); /* Change color on hover */
+            color: white; 
+          }
+
+
+
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'distanceTracker.js' %}"></script>
@@ -315,6 +337,7 @@
 
     <div class="footer">
         <p>An RCOS project</p>
+        <button onclick="scrollToTop()" id="to_top">BACK TO TOP</button>
     </div>
 
     <script>
@@ -377,5 +400,15 @@
         });
         }
     </script>
+
+    <script>
+        function scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+          });
+        }
+    </script>
+
 </body>
 </html>
