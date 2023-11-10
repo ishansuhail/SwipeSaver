@@ -14,11 +14,6 @@ def home(request):
 def commons(request):
     return render(request, 'commons.html')
 
-def contact(request):
-	
-	form = ContactFormForm
-	return render(request, 'contact.html', {'form':form})
-
 def about(request):
 	return render(request, 'contact.html')
 
