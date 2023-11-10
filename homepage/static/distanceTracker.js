@@ -82,7 +82,3 @@ function displayDiningHalls() {
     document.getElementById('barh_distance').innerHTML = barh_distance;
     document.getElementById('blitman_distance').innerHTML = blitman_distance;
 }
-
-
-
-
