@@ -48,7 +48,7 @@ def addRatedFoodItem(request):
 		rating = 4.5,
 		vegan = False,
 		dining_hall = 'commons',
-		meal_time = 'BREAKFAST',
+		meal_time = 'breakfest',
 		gluten_free = False
 	)
 	new_food_item.image = 'ratedfood_images/temp.jpg'
