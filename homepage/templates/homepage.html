@@ -206,7 +206,7 @@
 
         .panel p{
             display: inline;
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-size: 25px; 
             margin-top: 10px; 
             margin-left: 20px;
@@ -295,34 +295,49 @@
             <button class ="title-overlay">
                 <p>Commons</p>
             </button>
+
             <div class="panel">
                 <hr class="solid-line">
-                <p id = "commons_hours"></p>
-                <hr class="dashed-line">
+                <p id="commons_status">Status: Checking...</p>
+                <hr class="dashed-line">                
+                
                 <div id="commons_distance"></div>
                 <hr class="dashed-line">
-                <p >Rating:</p>
-                <hr class="dashed-line">
+
                 <p >View Menu: </p>
                 <a href="{% url 'commons' %}">Commons Dining Hall</a>    
                 <hr class="dashed-line">
+
+                <p id = "commons_hours"></p>
+                <hr class="dashed-line">
+
+                <p >Rating:</p>
+                <hr class="dashed-line">
             </div>
         </div>
+
         <div class="image-container">
             <img src="{% static 'sage_cropped.png' %}" alt="Sage">
             <button class ="title-overlay">
                 <p>Sage</p>
             </button>
+
             <div class="panel">
                 <hr class="solid-line">
-                <p id = "sage_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
+                <p id="sage_status">Status: Checking...</p>
                 <hr class="dashed-line">
+
                 <div id="sage_distance"></div>
                 <hr class="dashed-line">
-                <p >Rating:</p>
-                <hr class="dashed-line">
+
                 <p >View Menu: </p>
                 <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>    
+                <hr class="dashed-line">
+
+                <p id = "sage_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
+                <hr class="dashed-line">
+
+                <p >Rating:</p>
                 <hr class="dashed-line">
             </div>
         </div>
@@ -331,40 +346,56 @@
     <div class="red-box"></div>
 
     <div class="dining-halls-container">
+
         <div class="image-container">
             <img src="{% static 'blitman_cropped.png' %}" alt="Blitman">
             <button class ="title-overlay">
                 <p>Blitman</p>
             </button>
+
             <div class="panel">
                 <hr class="solid-line">
-                <p id = "blitman_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>           
+                <p id="blitman_status">Status: Checking...</p>
                 <hr class="dashed-line">
+
                 <div id="blitman_distance"></div>
                 <hr class="dashed-line">
-                <p >Rating:</p>
-                <hr class="dashed-line">
+
                 <p >View Menu: </p>
                 <a href="#blitman">Blitman Dining Hall</a>    
                 <hr class="dashed-line">
+
+                <p id = "blitman_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>           
+                <hr class="dashed-line">
+
+                <p >Rating:</p>
+                <hr class="dashed-line">
             </div>
         </div>
+
         <div class="image-container">
             <img src="{% static 'barh_cropped.png' %}" alt="BARH">
             <button class ="title-overlay">
                 <p>BARH</p>
             </button>
+            
             <div class="panel">
                 <hr class="solid-line">
-                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
+                <p id="barh_status">Status: Checking...</p>
                 <hr class="dashed-line">
+
                 <div id="barh_distance"></div>
                 <hr class="dashed-line">
-                <p >Rating:</p>
-                <hr class="dashed-line">
+                
                 <p >View Menu: </p>
                 <a href="{% url 'barh' %}">BARH Dining Hall</a>    
+                <hr class="dashed-line">  
+
+                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
                 <hr class="dashed-line">
+
+                <p >Rating:</p>
+                <hr class="dashed-line">              
             </div>
         </div>
     </div>
@@ -418,6 +449,7 @@
         getHours();
         setInterval(getCurrentTime, 1000);
     </script>
+
     <script>
         var acc = document.getElementsByClassName("title-overlay");
         var i;
@@ -443,6 +475,92 @@
           });
         }
     </script>
+
+    <script>
+        function updateDiningHallStatuses() {
+            var now = new Date();
+            var day = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
+            var currentTime = now.getHours() * 60 + now.getMinutes(); // Time in minutes
+    
+            updateStatus("commons", getCommonsHours(day), currentTime);
+            updateStatus("sage", getSageHours(day), currentTime);
+            updateStatus("barh", getBARHHours(day), currentTime);
+            updateStatus("blitman", getBlitmanHours(day), currentTime);
+            // Add similar lines for other dining halls
+        }
+    
+        function updateStatus(diningHallId, openHours, currentTime) {
+            var statusText = "Closed";
+            for (var i = 0; i < openHours.length; i++) {
+                var timeRange = openHours[i];
+                if (currentTime >= timeRange.start && currentTime <= timeRange.end) {
+                    statusText = "Open for " + timeRange.meal;
+                    break;
+                }
+            }
+            document.getElementById(diningHallId + "_status").textContent = "Status: " + statusText;
+        }
+    
+        function getCommonsHours(day) {
+            var breakfast = { start: 7 * 60, end: 10 * 60, meal: "Breakfast" };
+            var continentalBreakfast = { start: 10 * 60, end: 11 * 60, meal: "Continental Breakfast" };
+            var lunch = { start: 11 * 60, end: 15.5 * 60, meal: "Lunch" };
+            var dinnerWeek = { start: 16.5 * 60, end: 21 * 60, meal: "Dinner" };
+            var lateNight = { start: 21 * 60, end: 22.5 * 60, meal: "Late Night" };
+            var brunch = { start: 9 * 60, end: 14 * 60, meal: "Brunch" };
+            var dinnerWeekend = { start: 16.5 * 60, end: 20 * 60, meal: "Dinner" };
+    
+            if (day >= 1 && day <= 5) { // Monday to Friday
+                return [breakfast, continentalBreakfast, lunch, dinnerWeek];
+            } else if (day == 6 || day == 0) { // Saturday and Sunday
+                var hours = [brunch, dinnerWeekend];
+                if (day == 0) hours.push(lateNight); // Sunday Late Night
+                return hours;
+            }
+        }
+
+        function getSageHours(day) {
+            var breakfast = { start: 7 * 60, end: 10 * 60, meal: "Breakfast" };
+            var continentalBreakfast = { start: 10 * 60, end: 11 * 60, meal: "Continental Breakfast" };
+            var lunch = { start: 11 * 60, end: 14.5 * 60, meal: "Lunch" }; // Until 2:30 PM
+            var dinner = { start: 16 * 60, end: 20 * 60, meal: "Dinner" }; // Until 8:00 PM
+            var lateLunchWeekend = { start: 13.5 * 60, end: 16 * 60, meal: "Late Lunch" }; // 1:30 PM to 4:00 PM
+        
+            if (day >= 1 && day <= 5) { // Monday to Friday
+                return [breakfast, continentalBreakfast, lunch, dinner];
+            } else { // Saturday and Sunday
+                return [lateLunchWeekend, dinner];
+            }
+        }        
+
+        function getBARHHours(day) {
+            var breakfast = { start: 7 * 60, end: 9.5 * 60, meal: "Breakfast" }; // 7:00 AM to 9:30 AM
+            var dinnerWeek = { start: 17 * 60, end: 21 * 60, meal: "Dinner" }; // 5:00 PM to 9:00 PM
+            var brunchWeekend = { start: 11 * 60, end: 13 * 60, meal: "Brunch" }; // 11:00 AM to 1:00 PM
+        
+            if (day >= 1 && day <= 5) { // Monday to Friday
+                return [breakfast, dinnerWeek];
+            } else { // Saturday and Sunday
+                return [brunchWeekend];
+            }
+        }
+
+        function getBlitmanHours(day) {
+            var breakfastWeek = { start: 7 * 60, end: 9.5 * 60, meal: "Breakfast" }; // 7:00 AM to 9:30 AM, Monday-Friday
+            var brunchWeekend = { start: 10.5 * 60, end: 13.5 * 60, meal: "Brunch" }; // 10:30 AM to 1:30 PM, Saturday-Sunday
+            var dinner = { start: 17 * 60, end: 20 * 60, meal: "Dinner" }; // 5:00 PM to 8:00 PM, Monday-Sunday
+        
+            if (day >= 1 && day <= 5) { // Monday to Friday
+                return [breakfastWeek, dinner];
+            } else { // Saturday and Sunday
+                return [brunchWeekend, dinner];
+            }
+        }
+        
+        updateDiningHallStatuses();
+        setInterval(updateDiningHallStatuses, 60000); // Update status every minute
+    </script>
+    
 
 </body>
 </html>
