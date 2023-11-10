@@ -4,7 +4,7 @@ import datetime
 
 from django.http import JsonResponse
 from django.db.models import Avg
-from .models import Rating, Station
+from .models import Rating, Station, testFoodItem
 # Create your views here.
 from django.http import HttpResponse
 
@@ -153,7 +153,18 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
                 calories = re.search(r'\d+cal', str(item))
                                      
                 if item_name and calories:
+                    #THIS IS WHERE I AM ADDING FOOD TO DATABASE. DO MORE CHECKS AND MAKE SURE NOT TO ADD DUPLICATES
                     item_name = item_name.group(1)
+                    new_food_item = testFoodItem(
+                        food_name = item_name,
+                        rating = 4.5,
+                        vegan = False,
+                        dining_hall = 'commons',
+                        meal_time = 'breakfest',
+                        gluten_free = False
+                    )
+                    new_food_item.image = 'ratedfood_images/temp.jpg'
+                    new_food_item.save()
                     current_date = datetime.date.today()
                     x_day = current_date.weekday()
                     modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} {calories.group()} </p>\n\t\t<hr class="dashed-line">\n'
