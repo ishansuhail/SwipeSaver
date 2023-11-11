@@ -159,9 +159,6 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
                     cal = int(match.group())
                     
                     modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name} <button onclick = "addCalories({cal})" class = "button" data-calories = "{cal}" style = "color: red; border: none; font-size: 20px;">{calories.group()} </button></p>\n\t\t<hr class="dashed-line">\n'
-                    # modified_html += f'\t\t<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{item_name}<p style= "font-size: 20px; margin-top: 20px; margin-right: 35px">{calories.group()}</p>\n\t\t<hr class="dashed-line">\n'
-                   # modified_html += f'\t\t<div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 20px; margin-left: 35px;">\n\t\t\t<p>{item_name}</p>\n\t\t\t<p>{calories.group()}</p>\n\t\t</div>\n\t\t<hr class="dashed-line">\n'
-
             # Add rating system for the station
             station_name_slug = station_name.lower().replace(" ", "-")  # convert station name to lower case and replace spaces with hyphens
             rating_html = f'''
