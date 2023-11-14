@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -563,4 +564,347 @@
     
 
 </body>
+=======
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwipeSaver Homepage</title>
+    <style>
+        /* Define the color palette */
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #FFFFFF;
+            --accent-color: #E41E1E;
+        }
+
+        div.scrollmenu {
+            background-color: var(--primary-color);
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+            display: inline-block;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        div.scrollmenu a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Content styles */
+        .content-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        .quote {
+            font-size: 20px;
+            margin-top: 30px;
+            color: var(--secondary-color);
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 100px;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .solid-line {
+            border: 3px solid var(--accent-color);
+        }
+
+        .dashed-line {
+            border: 1px dashed red;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .header-container {
+            position: relative;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-container img {
+            width: 200px;
+            height: 46px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .header-container h1 {
+            font-size: 60px;
+            margin: 0;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .red-box {
+            position: relative;
+            margin-top: 20px;
+            background-color: var(--accent-color);
+            text-align: center;
+            width: 100%;
+            height:20px;
+        }
+
+        .dining-halls-container {
+            display: flex;
+            height:500px;
+            background-color: var(--primary-color);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dining-halls-container img{
+            padding-right: 50px;
+            padding-left: 50px;
+            height: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .title-overlay {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 600px;
+            height: 15%; 
+            background-color: rgb(255, 255, 255, 0.7);
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            cursor: pointer;
+          }
+
+        .active, .title-overlay:hover {
+            background-color: rgb(255, 255, 255, 0.9);
+        }
+
+        .title-overlay:after {
+            background-color: rgb(255, 255, 255, 0.9);
+        }
+
+        .panel {
+            position: absolute;
+            top: 15%;
+            left: 50px;
+            width: 600px;
+            font-family:'Montserrat', sans-serif;
+            background-color: rgb(255, 255, 255, 0.9);
+            max-height: 0;
+            width: 600px;
+            color: white;
+            border: none;
+            outline: none;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .panel p{
+            color: var(--accent-color);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            color: white;
+        }
+
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'distanceTracker.js' %}"></script>
+</head>
+<body style="background-color: whitesmoke;">
+    
+    <div class="header-container">
+        <img src="{% static 'logo.png' %}" alt="SwipeSaver" style="width: 600px; height: 150px;">
+    </div>
+
+    <div class="scrollmenu">
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'commons' %}">Commons Dining Hall</a>    
+        <a href="{% url 'barh' %}">Barh Dining Hall</a>    
+        <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>
+        <a href="#blitman">Blitman Dining Hall</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>
+
+    <script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
+
+    <div id="output" hidden="hidden" style="text-align: center; margin: 20px;"></div>
+
+    <div class="red-box"></div>
+
+    <div class="dining-halls-container">
+        <div class="image-container">
+            <img src="{% static 'commons_cropped.png' %}" alt="Commons">
+            <button class ="title-overlay">
+                <p>Commons</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Thursday: 7:00 am - 3:30 pm | 4:30 - 10:30 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Friday: 7:00 am - 3:30 pm | 4:30 - 9:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday: 9:00 am - 2:00 pm | 4:30 - 8:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Sunday: 9:00 am - 2:00 pm | 4:30 - 10:30 pm
+                </p>
+                <hr class="dashed-line">
+                <div id="commons_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'sage_cropped.png' %}" alt="Sage">
+            <button class ="title-overlay">
+                <p>Sage</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Friday: 7:00 am - 2:30 pm | 4:00 - 8:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday-Sunday: 1:30 pm - 8:00 pm
+                </p>
+                <hr class="dashed-line">
+                <div id="sage_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+    </div>
+
+    <div class="red-box"></div>
+
+    <div class="dining-halls-container">
+        <div class="image-container">
+            <img src="{% static 'blitman_cropped.png' %}" alt="Blitman">
+            <button class ="title-overlay">
+                <p>Blitman</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Friday: 7:00 am - 9:30 am | 5:00 - 8:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday-Sunday: 10:30 am - 1:30 pm | 5:00 - 8:00 pm
+                </p>                
+                <hr class="dashed-line">
+                <div id="blitman_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'barh_cropped.png' %}" alt="BARH">
+            <button class ="title-overlay">
+                <p>BARH</p>
+            </button>
+            <div class="panel">
+                <hr class="solid-line">
+                <p style="font-size: 25px; margin-top: 10px; margin-left: 20px">Hours:</p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Monday-Friday: 7:00 am - 9:30 am | 5:00 - 9:00 pm
+                </p>
+                <p style="font-size: 16px; margin-top: 10px; margin-left: 35px">
+                    Saturday-Sunday: 11:00 am - 1:00 pm 
+                </p>  
+                <hr class="dashed-line">
+                <div id="barh_distance"></div>
+                <hr class="dashed-line">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>An RCOS project</p>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("title-overlay");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
+</body>
+>>>>>>> a589fd9 (curtex-23.2: trying to gitignore pycache files)
 </html>
