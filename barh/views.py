@@ -17,13 +17,14 @@ from unidecode import unidecode
 def br_lunch_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    
+    day = 5
     return day
     
 
 def dinner_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
+    day = 5
     if(day == 6):
         return 0
     return day
