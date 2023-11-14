@@ -55,6 +55,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -282,7 +296,6 @@
         }
         
     </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="background-color: whitesmoke;">
 <div class="header-container">
@@ -300,35 +313,13 @@
 <a href="#about">About</a>
 </div>
 <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
-<script>
-    function getCurrentTime() {
-    var date = new Date();
-    var options = { timeZone: 'America/New_York', hour12: true };
-    var timeString = date.toLocaleTimeString('en-US', options);
-    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
-    }
-
-    getCurrentTime();
-    setInterval(getCurrentTime, 1000);
-    </script>
-<script>
-	let totalCalories = 0
-
-	function addCalories(calories){
-		totalCalories += calories;
-        document.getElementById("totalCalories").textContent = totalCalories;
-	}
-
-	function clearCalories(){
-		totalCalories = 0
-		document.getElementById("totalCalories").textContent = totalCalories;
-	}
-</script>
 <p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear</button></p>
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Banana Chocolate Chip Muffin <button onclick = "addCalories(189)" class = "button" data-calories = "189" style = "color: red; border: none; font-size: 20px;">189cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Banana Streusel Muffin <button onclick = "addCalories(227)" class = "button" data-calories = "227" style = "color: red; border: none; font-size: 20px;">227cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Raspberry White Chocolate Scone <button onclick = "addCalories(262)" class = "button" data-calories = "262" style = "color: red; border: none; font-size: 20px;">262cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -338,25 +329,6 @@
 <input id="star3-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="3"/><label for="star3-breakfast-bakery" title="Meh">3 stars</label>
 <input id="star2-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="2"/><label for="star2-breakfast-bakery" title="Kinda bad">2 stars</label>
 <input id="star1-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="1"/><label for="star1-breakfast-bakery" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
-<button class="accordion">CONDIMENT/GARNISH</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chocolate Sauce <button onclick = "addCalories(226)" class = "button" data-calories = "226" style = "color: red; border: none; font-size: 20px;">226cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caramel Topping <button onclick = "addCalories(71)" class = "button" data-calories = "71" style = "color: red; border: none; font-size: 20px;">71cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Whipped Topping <button onclick = "addCalories(22)" class = "button" data-calories = "22" style = "color: red; border: none; font-size: 20px;">22cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="5"/><label for="star5-breakfast-condiment/garnish" title="Rocks!">5 stars</label>
-<input id="star4-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="4"/><label for="star4-breakfast-condiment/garnish" title="Pretty good">4 stars</label>
-<input id="star3-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="3"/><label for="star3-breakfast-condiment/garnish" title="Meh">3 stars</label>
-<input id="star2-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="2"/><label for="star2-breakfast-condiment/garnish" title="Kinda bad">2 stars</label>
-<input id="star1-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="1"/><label for="star1-breakfast-condiment/garnish" title="Sucks big time">1 star</label>
 </div>
 		</div>
 
@@ -375,36 +347,19 @@
 </div>
 		</div>
 
-<button class="accordion">FRUIT</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Peach <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-breakfast-fruit" name="rating-breakfast-fruit" type="radio" value="5"/><label for="star5-breakfast-fruit" title="Rocks!">5 stars</label>
-<input id="star4-breakfast-fruit" name="rating-breakfast-fruit" type="radio" value="4"/><label for="star4-breakfast-fruit" title="Pretty good">4 stars</label>
-<input id="star3-breakfast-fruit" name="rating-breakfast-fruit" type="radio" value="3"/><label for="star3-breakfast-fruit" title="Meh">3 stars</label>
-<input id="star2-breakfast-fruit" name="rating-breakfast-fruit" type="radio" value="2"/><label for="star2-breakfast-fruit" title="Kinda bad">2 stars</label>
-<input id="star1-breakfast-fruit" name="rating-breakfast-fruit" type="radio" value="1"/><label for="star1-breakfast-fruit" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
 <button class="accordion">GRILL</button>
 <div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bacon Slices <button onclick = "addCalories(70)" class = "button" data-calories = "70" style = "color: red; border: none; font-size: 20px;">70cal </button></p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon French Toast With Berry Compote <button onclick = "addCalories(330)" class = "button" data-calories = "330" style = "color: red; border: none; font-size: 20px;">330cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Scrambled Eggs <button onclick = "addCalories(191)" class = "button" data-calories = "191" style = "color: red; border: none; font-size: 20px;">191cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hash Brown Patty <button onclick = "addCalories(132)" class = "button" data-calories = "132" style = "color: red; border: none; font-size: 20px;">132cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Warm Pancake Syrup <button onclick = "addCalories(112)" class = "button" data-calories = "112" style = "color: red; border: none; font-size: 20px;">112cal </button></p>
 		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hash Brown Patty <button onclick = "addCalories(132)" class = "button" data-calories = "132" style = "color: red; border: none; font-size: 20px;">132cal </button></p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sriracha Sauce <button onclick = "addCalories(17)" class = "button" data-calories = "17" style = "color: red; border: none; font-size: 20px;">17cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Caramelized Apples <button onclick = "addCalories(135)" class = "button" data-calories = "135" style = "color: red; border: none; font-size: 20px;">135cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bacon Slices <button onclick = "addCalories(70)" class = "button" data-calories = "70" style = "color: red; border: none; font-size: 20px;">70cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -432,8 +387,6 @@
 
 <button class="accordion">SALAD</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Cottage Cheese <button onclick = "addCalories(20)" class = "button" data-calories = "20" style = "color: red; border: none; font-size: 20px;">20cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries <button onclick = "addCalories(14)" class = "button" data-calories = "14" style = "color: red; border: none; font-size: 20px;">14cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Vanilla Yogurt <button onclick = "addCalories(97)" class = "button" data-calories = "97" style = "color: red; border: none; font-size: 20px;">97cal </button></p>
@@ -441,8 +394,6 @@
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon Applesauce <button onclick = "addCalories(65)" class = "button" data-calories = "65" style = "color: red; border: none; font-size: 20px;">65cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Watermelon <button onclick = "addCalories(9)" class = "button" data-calories = "9" style = "color: red; border: none; font-size: 20px;">9cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Vanilla Greek Yogurt <button onclick = "addCalories(23)" class = "button" data-calories = "23" style = "color: red; border: none; font-size: 20px;">23cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
 		<hr class="dashed-line">
@@ -485,11 +436,15 @@
 <div class="panel">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Oatmeal Raisin Cookies <button onclick = "addCalories(207)" class = "button" data-calories = "207" style = "color: red; border: none; font-size: 20px;">207cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Red Velvet &amp; Oreo Cupcake <button onclick = "addCalories(297)" class = "button" data-calories = "297" style = "color: red; border: none; font-size: 20px;">297cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chocolate Chip Vegan Cookie <button onclick = "addCalories(186)" class = "button" data-calories = "186" style = "color: red; border: none; font-size: 20px;">186cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Chocolate Chip Cookies <button onclick = "addCalories(227)" class = "button" data-calories = "227" style = "color: red; border: none; font-size: 20px;">227cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cookies And Cream Blondie <button onclick = "addCalories(222)" class = "button" data-calories = "222" style = "color: red; border: none; font-size: 20px;">222cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Lucky Charms Cereal Bar <button onclick = "addCalories(114)" class = "button" data-calories = "114" style = "color: red; border: none; font-size: 20px;">114cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chunky Monkey Brownie <button onclick = "addCalories(210)" class = "button" data-calories = "210" style = "color: red; border: none; font-size: 20px;">210cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Confetti Cupcake <button onclick = "addCalories(280)" class = "button" data-calories = "280" style = "color: red; border: none; font-size: 20px;">280cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -504,19 +459,27 @@
 
 <button class="accordion">CHEFS TABLE</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Lettuce <button onclick = "addCalories(2)" class = "button" data-calories = "2" style = "color: red; border: none; font-size: 20px;">2cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese Sauce <button onclick = "addCalories(89)" class = "button" data-calories = "89" style = "color: red; border: none; font-size: 20px;">89cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Refried Black Beans <button onclick = "addCalories(101)" class = "button" data-calories = "101" style = "color: red; border: none; font-size: 20px;">101cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sour Cream <button onclick = "addCalories(28)" class = "button" data-calories = "28" style = "color: red; border: none; font-size: 20px;">28cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Part Skim Shredded Mozzarella Cheese <button onclick = "addCalories(81)" class = "button" data-calories = "81" style = "color: red; border: none; font-size: 20px;">81cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese Sauce <button onclick = "addCalories(89)" class = "button" data-calories = "89" style = "color: red; border: none; font-size: 20px;">89cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jalapeno Pepper <button onclick = "addCalories(8)" class = "button" data-calories = "8" style = "color: red; border: none; font-size: 20px;">8cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese <button onclick = "addCalories(56)" class = "button" data-calories = "56" style = "color: red; border: none; font-size: 20px;">56cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chipotle Chicken Tinga Tacos <button onclick = "addCalories(445)" class = "button" data-calories = "445" style = "color: red; border: none; font-size: 20px;">445cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cilantro Jasmine Rice <button onclick = "addCalories(185)" class = "button" data-calories = "185" style = "color: red; border: none; font-size: 20px;">185cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Arroz Verde <button onclick = "addCalories(159)" class = "button" data-calories = "159" style = "color: red; border: none; font-size: 20px;">159cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jackfruit &amp; Lentil Jambalaya (mindful) <button onclick = "addCalories(70)" class = "button" data-calories = "70" style = "color: red; border: none; font-size: 20px;">70cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Lettuce <button onclick = "addCalories(2)" class = "button" data-calories = "2" style = "color: red; border: none; font-size: 20px;">2cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Taco Beef Soft Taco <button onclick = "addCalories(370)" class = "button" data-calories = "370" style = "color: red; border: none; font-size: 20px;">370cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Black Bean &amp; Corn Salsa <button onclick = "addCalories(17)" class = "button" data-calories = "17" style = "color: red; border: none; font-size: 20px;">17cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -533,8 +496,6 @@
 <div class="panel">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Guacamole <button onclick = "addCalories(37)" class = "button" data-calories = "37" style = "color: red; border: none; font-size: 20px;">37cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Black Bean &amp; Corn Salsa <button onclick = "addCalories(17)" class = "button" data-calories = "17" style = "color: red; border: none; font-size: 20px;">17cal </button></p>
-		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
 <div class="rating">
@@ -550,17 +511,17 @@
 <div class="panel">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Cheese <button onclick = "addCalories(47)" class = "button" data-calories = "47" style = "color: red; border: none; font-size: 20px;">47cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Deli Turkey Breast <button onclick = "addCalories(51)" class = "button" data-calories = "51" style = "color: red; border: none; font-size: 20px;">51cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese <button onclick = "addCalories(57)" class = "button" data-calories = "57" style = "color: red; border: none; font-size: 20px;">57cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Deli Turkey Breast <button onclick = "addCalories(51)" class = "button" data-calories = "51" style = "color: red; border: none; font-size: 20px;">51cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef <button onclick = "addCalories(64)" class = "button" data-calories = "64" style = "color: red; border: none; font-size: 20px;">64cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham <button onclick = "addCalories(37)" class = "button" data-calories = "37" style = "color: red; border: none; font-size: 20px;">37cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese <button onclick = "addCalories(111)" class = "button" data-calories = "111" style = "color: red; border: none; font-size: 20px;">111cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese <button onclick = "addCalories(111)" class = "button" data-calories = "111" style = "color: red; border: none; font-size: 20px;">111cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced <button onclick = "addCalories(53)" class = "button" data-calories = "53" style = "color: red; border: none; font-size: 20px;">53cal </button></p>
 		<hr class="dashed-line">
@@ -575,32 +536,15 @@
 </div>
 		</div>
 
-<button class="accordion">ENTREE</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ethiopian Cabbage, Potato &amp; Carrot Stew <button onclick = "addCalories(102)" class = "button" data-calories = "102" style = "color: red; border: none; font-size: 20px;">102cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Tequila Lime Roasted Vegetable Stew <button onclick = "addCalories(39)" class = "button" data-calories = "39" style = "color: red; border: none; font-size: 20px;">39cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-entree" name="rating-lunch-entree" type="radio" value="5"/><label for="star5-lunch-entree" title="Rocks!">5 stars</label>
-<input id="star4-lunch-entree" name="rating-lunch-entree" type="radio" value="4"/><label for="star4-lunch-entree" title="Pretty good">4 stars</label>
-<input id="star3-lunch-entree" name="rating-lunch-entree" type="radio" value="3"/><label for="star3-lunch-entree" title="Meh">3 stars</label>
-<input id="star2-lunch-entree" name="rating-lunch-entree" type="radio" value="2"/><label for="star2-lunch-entree" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-entree" name="rating-lunch-entree" type="radio" value="1"/><label for="star1-lunch-entree" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
 <button class="accordion">GRILL</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries <button onclick = "addCalories(205)" class = "button" data-calories = "205" style = "color: red; border: none; font-size: 20px;">205cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheeseburger <button onclick = "addCalories(373)" class = "button" data-calories = "373" style = "color: red; border: none; font-size: 20px;">373cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hamburger <button onclick = "addCalories(312)" class = "button" data-calories = "312" style = "color: red; border: none; font-size: 20px;">312cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Greek Chicken Gyro <button onclick = "addCalories(268)" class = "button" data-calories = "268" style = "color: red; border: none; font-size: 20px;">268cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries <button onclick = "addCalories(205)" class = "button" data-calories = "205" style = "color: red; border: none; font-size: 20px;">205cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Maple Chicken Cheddar Waffle Sandwich <button onclick = "addCalories(585)" class = "button" data-calories = "585" style = "color: red; border: none; font-size: 20px;">585cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -628,11 +572,7 @@
 
 <button class="accordion">PACIFICA</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jasmine Rice With Scallions <button onclick = "addCalories(155)" class = "button" data-calories = "155" style = "color: red; border: none; font-size: 20px;">155cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Korean Steak <button onclick = "addCalories(221)" class = "button" data-calories = "221" style = "color: red; border: none; font-size: 20px;">221cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chicken Potstickers <button onclick = "addCalories(145)" class = "button" data-calories = "145" style = "color: red; border: none; font-size: 20px;">145cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Beef Pho Noodle Soup <button onclick = "addCalories(291)" class = "button" data-calories = "291" style = "color: red; border: none; font-size: 20px;">291cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -647,11 +587,11 @@
 
 <button class="accordion">PIZZA</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepperoni Pizza <button onclick = "addCalories(277)" class = "button" data-calories = "277" style = "color: red; border: none; font-size: 20px;">277cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Pizza <button onclick = "addCalories(248)" class = "button" data-calories = "248" style = "color: red; border: none; font-size: 20px;">248cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Vegetable Pizza <button onclick = "addCalories(271)" class = "button" data-calories = "271" style = "color: red; border: none; font-size: 20px;">271cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Pizza <button onclick = "addCalories(248)" class = "button" data-calories = "248" style = "color: red; border: none; font-size: 20px;">248cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepperoni Pizza <button onclick = "addCalories(277)" class = "button" data-calories = "277" style = "color: red; border: none; font-size: 20px;">277cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -666,7 +606,9 @@
 
 <button class="accordion">RUSTIC ROOTS (VEGAN)</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Asian Rice Noodle Shred Salad <button onclick = "addCalories(238)" class = "button" data-calories = "238" style = "color: red; border: none; font-size: 20px;">238cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Lablabi, Tunisian Chickpea Stew <button onclick = "addCalories(212)" class = "button" data-calories = "212" style = "color: red; border: none; font-size: 20px;">212cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Falafel Grain Bowl <button onclick = "addCalories(386)" class = "button" data-calories = "386" style = "color: red; border: none; font-size: 20px;">386cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -681,67 +623,63 @@
 
 <button class="accordion">SALAD</button>
 <div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Spinach <button onclick = "addCalories(7)" class = "button" data-calories = "7" style = "color: red; border: none; font-size: 20px;">7cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranch Dressing <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt <button onclick = "addCalories(24)" class = "button" data-calories = "24" style = "color: red; border: none; font-size: 20px;">24cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions <button onclick = "addCalories(11)" class = "button" data-calories = "11" style = "color: red; border: none; font-size: 20px;">11cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crumbled Bacon <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cherry Tomatoes <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers <button onclick = "addCalories(9)" class = "button" data-calories = "9" style = "color: red; border: none; font-size: 20px;">9cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon <button onclick = "addCalories(72)" class = "button" data-calories = "72" style = "color: red; border: none; font-size: 20px;">72cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Jalapeno Peppers <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chopped Romaine <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Cottage Cheese <button onclick = "addCalories(20)" class = "button" data-calories = "20" style = "color: red; border: none; font-size: 20px;">20cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries <button onclick = "addCalories(14)" class = "button" data-calories = "14" style = "color: red; border: none; font-size: 20px;">14cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Spinach <button onclick = "addCalories(7)" class = "button" data-calories = "7" style = "color: red; border: none; font-size: 20px;">7cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions <button onclick = "addCalories(11)" class = "button" data-calories = "11" style = "color: red; border: none; font-size: 20px;">11cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cherry Tomatoes <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt <button onclick = "addCalories(24)" class = "button" data-calories = "24" style = "color: red; border: none; font-size: 20px;">24cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Vanilla Greek Yogurt <button onclick = "addCalories(23)" class = "button" data-calories = "23" style = "color: red; border: none; font-size: 20px;">23cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crumbled Bacon <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranch Dressing <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes <button onclick = "addCalories(419)" class = "button" data-calories = "419" style = "color: red; border: none; font-size: 20px;">419cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing <button onclick = "addCalories(27)" class = "button" data-calories = "27" style = "color: red; border: none; font-size: 20px;">27cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt <button onclick = "addCalories(25)" class = "button" data-calories = "25" style = "color: red; border: none; font-size: 20px;">25cal </button></p>
 		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes <button onclick = "addCalories(419)" class = "button" data-calories = "419" style = "color: red; border: none; font-size: 20px;">419cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing <button onclick = "addCalories(27)" class = "button" data-calories = "27" style = "color: red; border: none; font-size: 20px;">27cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blanched Fresh Broccoli <button onclick = "addCalories(11)" class = "button" data-calories = "11" style = "color: red; border: none; font-size: 20px;">11cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs <button onclick = "addCalories(44)" class = "button" data-calories = "44" style = "color: red; border: none; font-size: 20px;">44cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds <button onclick = "addCalories(56)" class = "button" data-calories = "56" style = "color: red; border: none; font-size: 20px;">56cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus <button onclick = "addCalories(78)" class = "button" data-calories = "78" style = "color: red; border: none; font-size: 20px;">78cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons <button onclick = "addCalories(62)" class = "button" data-calories = "62" style = "color: red; border: none; font-size: 20px;">62cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds <button onclick = "addCalories(56)" class = "button" data-calories = "56" style = "color: red; border: none; font-size: 20px;">56cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs <button onclick = "addCalories(44)" class = "button" data-calories = "44" style = "color: red; border: none; font-size: 20px;">44cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus <button onclick = "addCalories(78)" class = "button" data-calories = "78" style = "color: red; border: none; font-size: 20px;">78cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -756,29 +694,31 @@
 
 <button class="accordion">SAUTE</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Garlic <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Tomato Basil Marinara <button onclick = "addCalories(18)" class = "button" data-calories = "18" style = "color: red; border: none; font-size: 20px;">18cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Green Peppers <button onclick = "addCalories(17)" class = "button" data-calories = "17" style = "color: red; border: none; font-size: 20px;">17cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Garlic <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Alfredo Sauce <button onclick = "addCalories(195)" class = "button" data-calories = "195" style = "color: red; border: none; font-size: 20px;">195cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Tomatoes <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Dal (lentils) <button onclick = "addCalories(222)" class = "button" data-calories = "222" style = "color: red; border: none; font-size: 20px;">222cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Onions <button onclick = "addCalories(21)" class = "button" data-calories = "21" style = "color: red; border: none; font-size: 20px;">21cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Spinach With Garlic <button onclick = "addCalories(46)" class = "button" data-calories = "46" style = "color: red; border: none; font-size: 20px;">46cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Green Peppers <button onclick = "addCalories(17)" class = "button" data-calories = "17" style = "color: red; border: none; font-size: 20px;">17cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Parmesan Cheese <button onclick = "addCalories(20)" class = "button" data-calories = "20" style = "color: red; border: none; font-size: 20px;">20cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Dal (lentils) <button onclick = "addCalories(222)" class = "button" data-calories = "222" style = "color: red; border: none; font-size: 20px;">222cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Zucchini Saute <button onclick = "addCalories(58)" class = "button" data-calories = "58" style = "color: red; border: none; font-size: 20px;">58cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast <button onclick = "addCalories(141)" class = "button" data-calories = "141" style = "color: red; border: none; font-size: 20px;">141cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Extra Firm Tofu <button onclick = "addCalories(29)" class = "button" data-calories = "29" style = "color: red; border: none; font-size: 20px;">29cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Mushrooms <button onclick = "addCalories(16)" class = "button" data-calories = "16" style = "color: red; border: none; font-size: 20px;">16cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Zucchini Saute <button onclick = "addCalories(58)" class = "button" data-calories = "58" style = "color: red; border: none; font-size: 20px;">58cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Parmesan Cheese <button onclick = "addCalories(20)" class = "button" data-calories = "20" style = "color: red; border: none; font-size: 20px;">20cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Spinach With Garlic <button onclick = "addCalories(46)" class = "button" data-calories = "46" style = "color: red; border: none; font-size: 20px;">46cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -793,11 +733,13 @@
 
 <button class="accordion">SIMPLE SERVINGS</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Green Beans &amp; Stewed Tomatoes <button onclick = "addCalories(43)" class = "button" data-calories = "43" style = "color: red; border: none; font-size: 20px;">43cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simple Cajun Roasted Red Potatoes <button onclick = "addCalories(104)" class = "button" data-calories = "104" style = "color: red; border: none; font-size: 20px;">104cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Garlic And Oregano Roasted Red Potatoes <button onclick = "addCalories(118)" class = "button" data-calories = "118" style = "color: red; border: none; font-size: 20px;">118cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simply Roasted Carrots <button onclick = "addCalories(49)" class = "button" data-calories = "49" style = "color: red; border: none; font-size: 20px;">49cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Buffalo Chicken Breast <button onclick = "addCalories(143)" class = "button" data-calories = "143" style = "color: red; border: none; font-size: 20px;">143cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Rosemary Mushroom Sauce <button onclick = "addCalories(26)" class = "button" data-calories = "26" style = "color: red; border: none; font-size: 20px;">26cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Beef Top Round <button onclick = "addCalories(127)" class = "button" data-calories = "127" style = "color: red; border: none; font-size: 20px;">127cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -810,82 +752,18 @@
 </div>
 		</div>
 
-<button class="accordion">SOUP</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Italian Wedding Soup <button onclick = "addCalories(169)" class = "button" data-calories = "169" style = "color: red; border: none; font-size: 20px;">169cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cream Of Mushroom Soup <button onclick = "addCalories(163)" class = "button" data-calories = "163" style = "color: red; border: none; font-size: 20px;">163cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-soup" name="rating-lunch-soup" type="radio" value="5"/><label for="star5-lunch-soup" title="Rocks!">5 stars</label>
-<input id="star4-lunch-soup" name="rating-lunch-soup" type="radio" value="4"/><label for="star4-lunch-soup" title="Pretty good">4 stars</label>
-<input id="star3-lunch-soup" name="rating-lunch-soup" type="radio" value="3"/><label for="star3-lunch-soup" title="Meh">3 stars</label>
-<input id="star2-lunch-soup" name="rating-lunch-soup" type="radio" value="2"/><label for="star2-lunch-soup" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-soup" name="rating-lunch-soup" type="radio" value="1"/><label for="star1-lunch-soup" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
-<button class="accordion">STARCH</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simple Cajun Roasted Red Potatoes <button onclick = "addCalories(104)" class = "button" data-calories = "104" style = "color: red; border: none; font-size: 20px;">104cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Refried Black Beans <button onclick = "addCalories(101)" class = "button" data-calories = "101" style = "color: red; border: none; font-size: 20px;">101cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-starch" name="rating-lunch-starch" type="radio" value="5"/><label for="star5-lunch-starch" title="Rocks!">5 stars</label>
-<input id="star4-lunch-starch" name="rating-lunch-starch" type="radio" value="4"/><label for="star4-lunch-starch" title="Pretty good">4 stars</label>
-<input id="star3-lunch-starch" name="rating-lunch-starch" type="radio" value="3"/><label for="star3-lunch-starch" title="Meh">3 stars</label>
-<input id="star2-lunch-starch" name="rating-lunch-starch" type="radio" value="2"/><label for="star2-lunch-starch" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-starch" name="rating-lunch-starch" type="radio" value="1"/><label for="star1-lunch-starch" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
-<button class="accordion">STOCK & SAUCE</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Rosemary Mushroom Sauce <button onclick = "addCalories(26)" class = "button" data-calories = "26" style = "color: red; border: none; font-size: 20px;">26cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Allergen Free Chicken Pho Broth <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="5"/><label for="star5-lunch-stock-&-sauce" title="Rocks!">5 stars</label>
-<input id="star4-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="4"/><label for="star4-lunch-stock-&-sauce" title="Pretty good">4 stars</label>
-<input id="star3-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="3"/><label for="star3-lunch-stock-&-sauce" title="Meh">3 stars</label>
-<input id="star2-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="2"/><label for="star2-lunch-stock-&-sauce" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-stock-&-sauce" name="rating-lunch-stock-&-sauce" type="radio" value="1"/><label for="star1-lunch-stock-&-sauce" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
-<button class="accordion">VEGETABLE</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simply Roasted Carrots <button onclick = "addCalories(49)" class = "button" data-calories = "49" style = "color: red; border: none; font-size: 20px;">49cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-lunch-vegetable" name="rating-lunch-vegetable" type="radio" value="5"/><label for="star5-lunch-vegetable" title="Rocks!">5 stars</label>
-<input id="star4-lunch-vegetable" name="rating-lunch-vegetable" type="radio" value="4"/><label for="star4-lunch-vegetable" title="Pretty good">4 stars</label>
-<input id="star3-lunch-vegetable" name="rating-lunch-vegetable" type="radio" value="3"/><label for="star3-lunch-vegetable" title="Meh">3 stars</label>
-<input id="star2-lunch-vegetable" name="rating-lunch-vegetable" type="radio" value="2"/><label for="star2-lunch-vegetable" title="Kinda bad">2 stars</label>
-<input id="star1-lunch-vegetable" name="rating-lunch-vegetable" type="radio" value="1"/><label for="star1-lunch-vegetable" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Aam Ki Kheer Indian Mango Rice Pudding <button onclick = "addCalories(192)" class = "button" data-calories = "192" style = "color: red; border: none; font-size: 20px;">192cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pumpkin Whoopie Pie <button onclick = "addCalories(595)" class = "button" data-calories = "595" style = "color: red; border: none; font-size: 20px;">595cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sweet Potato Pie <button onclick = "addCalories(220)" class = "button" data-calories = "220" style = "color: red; border: none; font-size: 20px;">220cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Southern Banana Pudding <button onclick = "addCalories(245)" class = "button" data-calories = "245" style = "color: red; border: none; font-size: 20px;">245cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">White Cake With Fudge Icing <button onclick = "addCalories(204)" class = "button" data-calories = "204" style = "color: red; border: none; font-size: 20px;">204cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Oatmeal Raisin Cookies <button onclick = "addCalories(207)" class = "button" data-calories = "207" style = "color: red; border: none; font-size: 20px;">207cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Black Milk Tea 12 Oz <button onclick = "addCalories(218)" class = "button" data-calories = "218" style = "color: red; border: none; font-size: 20px;">218cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Two Chocolate Chip Cookies <button onclick = "addCalories(227)" class = "button" data-calories = "227" style = "color: red; border: none; font-size: 20px;">227cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Confetti Cupcake <button onclick = "addCalories(280)" class = "button" data-calories = "280" style = "color: red; border: none; font-size: 20px;">280cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -900,11 +778,11 @@
 
 <button class="accordion">CHEFS TABLE</button>
 <div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Southwest Flank Steak <button onclick = "addCalories(109)" class = "button" data-calories = "109" style = "color: red; border: none; font-size: 20px;">109cal </button></p>
+		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Mashed Potatoes <button onclick = "addCalories(152)" class = "button" data-calories = "152" style = "color: red; border: none; font-size: 20px;">152cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Charred Corn With Chili &amp; Garlic <button onclick = "addCalories(134)" class = "button" data-calories = "134" style = "color: red; border: none; font-size: 20px;">134cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chipotle Chicken <button onclick = "addCalories(152)" class = "button" data-calories = "152" style = "color: red; border: none; font-size: 20px;">152cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Okra And Greens <button onclick = "addCalories(55)" class = "button" data-calories = "55" style = "color: red; border: none; font-size: 20px;">55cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -919,21 +797,21 @@
 
 <button class="accordion">DELI</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced <button onclick = "addCalories(53)" class = "button" data-calories = "53" style = "color: red; border: none; font-size: 20px;">53cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese <button onclick = "addCalories(111)" class = "button" data-calories = "111" style = "color: red; border: none; font-size: 20px;">111cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham <button onclick = "addCalories(37)" class = "button" data-calories = "37" style = "color: red; border: none; font-size: 20px;">37cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese <button onclick = "addCalories(57)" class = "button" data-calories = "57" style = "color: red; border: none; font-size: 20px;">57cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef <button onclick = "addCalories(64)" class = "button" data-calories = "64" style = "color: red; border: none; font-size: 20px;">64cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Deli Turkey Breast <button onclick = "addCalories(51)" class = "button" data-calories = "51" style = "color: red; border: none; font-size: 20px;">51cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roast Beef <button onclick = "addCalories(64)" class = "button" data-calories = "64" style = "color: red; border: none; font-size: 20px;">64cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheddar Cheese <button onclick = "addCalories(57)" class = "button" data-calories = "57" style = "color: red; border: none; font-size: 20px;">57cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Cheese <button onclick = "addCalories(47)" class = "button" data-calories = "47" style = "color: red; border: none; font-size: 20px;">47cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Smoked Ham <button onclick = "addCalories(37)" class = "button" data-calories = "37" style = "color: red; border: none; font-size: 20px;">37cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Pepperoncini <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepper Jack Cheese, Sliced <button onclick = "addCalories(53)" class = "button" data-calories = "53" style = "color: red; border: none; font-size: 20px;">53cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Cheddar Cheese <button onclick = "addCalories(111)" class = "button" data-calories = "111" style = "color: red; border: none; font-size: 20px;">111cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -946,15 +824,30 @@
 </div>
 		</div>
 
+<button class="accordion">DESSERT</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranger Vegan Cookie <button onclick = "addCalories(171)" class = "button" data-calories = "171" style = "color: red; border: none; font-size: 20px;">171cal </button></p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-dessert" name="rating-dinner-dessert" type="radio" value="5"/><label for="star5-dinner-dessert" title="Rocks!">5 stars</label>
+<input id="star4-dinner-dessert" name="rating-dinner-dessert" type="radio" value="4"/><label for="star4-dinner-dessert" title="Pretty good">4 stars</label>
+<input id="star3-dinner-dessert" name="rating-dinner-dessert" type="radio" value="3"/><label for="star3-dinner-dessert" title="Meh">3 stars</label>
+<input id="star2-dinner-dessert" name="rating-dinner-dessert" type="radio" value="2"/><label for="star2-dinner-dessert" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-dessert" name="rating-dinner-dessert" type="radio" value="1"/><label for="star1-dinner-dessert" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <button class="accordion">GRILL</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Quesadilla <button onclick = "addCalories(325)" class = "button" data-calories = "325" style = "color: red; border: none; font-size: 20px;">325cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">French Fries <button onclick = "addCalories(205)" class = "button" data-calories = "205" style = "color: red; border: none; font-size: 20px;">205cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheeseburger <button onclick = "addCalories(373)" class = "button" data-calories = "373" style = "color: red; border: none; font-size: 20px;">373cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hamburger <button onclick = "addCalories(312)" class = "button" data-calories = "312" style = "color: red; border: none; font-size: 20px;">312cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chicago Style Hot Dog <button onclick = "addCalories(290)" class = "button" data-calories = "290" style = "color: red; border: none; font-size: 20px;">290cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shoestring Fries <button onclick = "addCalories(201)" class = "button" data-calories = "201" style = "color: red; border: none; font-size: 20px;">201cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -982,15 +875,9 @@
 
 <button class="accordion">PACIFICA</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sesame Ginger Green Beans <button onclick = "addCalories(84)" class = "button" data-calories = "84" style = "color: red; border: none; font-size: 20px;">84cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sweet &amp; Sour Pork Stir Fry <button onclick = "addCalories(462)" class = "button" data-calories = "462" style = "color: red; border: none; font-size: 20px;">462cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pork Char Siu Bao <button onclick = "addCalories(311)" class = "button" data-calories = "311" style = "color: red; border: none; font-size: 20px;">311cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ginger Fried Rice <button onclick = "addCalories(149)" class = "button" data-calories = "149" style = "color: red; border: none; font-size: 20px;">149cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Lemongrass Tofu Bao <button onclick = "addCalories(256)" class = "button" data-calories = "256" style = "color: red; border: none; font-size: 20px;">256cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bao Buns <button onclick = "addCalories(192)" class = "button" data-calories = "192" style = "color: red; border: none; font-size: 20px;">192cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pork Potsticker Gyoza <button onclick = "addCalories(236)" class = "button" data-calories = "236" style = "color: red; border: none; font-size: 20px;">236cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -1007,9 +894,9 @@
 <div class="panel">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Pepperoni Pizza <button onclick = "addCalories(277)" class = "button" data-calories = "277" style = "color: red; border: none; font-size: 20px;">277cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Pizza <button onclick = "addCalories(248)" class = "button" data-calories = "248" style = "color: red; border: none; font-size: 20px;">248cal </button></p>
-		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Vegetable Pizza <button onclick = "addCalories(271)" class = "button" data-calories = "271" style = "color: red; border: none; font-size: 20px;">271cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cheese Pizza <button onclick = "addCalories(248)" class = "button" data-calories = "248" style = "color: red; border: none; font-size: 20px;">248cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -1024,11 +911,9 @@
 
 <button class="accordion">RUSTIC ROOTS (VEGAN)</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cannellini Beans With Tomato &amp; Rosemary <button onclick = "addCalories(75)" class = "button" data-calories = "75" style = "color: red; border: none; font-size: 20px;">75cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Plain Cooked Farro <button onclick = "addCalories(57)" class = "button" data-calories = "57" style = "color: red; border: none; font-size: 20px;">57cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Brown Rice <button onclick = "addCalories(90)" class = "button" data-calories = "90" style = "color: red; border: none; font-size: 20px;">90cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Curry Roasted Vegetables <button onclick = "addCalories(65)" class = "button" data-calories = "65" style = "color: red; border: none; font-size: 20px;">65cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sicilian Eggplant Caponata <button onclick = "addCalories(71)" class = "button" data-calories = "71" style = "color: red; border: none; font-size: 20px;">71cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -1043,69 +928,63 @@
 
 <button class="accordion">SALAD</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds <button onclick = "addCalories(56)" class = "button" data-calories = "56" style = "color: red; border: none; font-size: 20px;">56cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chopped Romaine <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus <button onclick = "addCalories(78)" class = "button" data-calories = "78" style = "color: red; border: none; font-size: 20px;">78cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries <button onclick = "addCalories(14)" class = "button" data-calories = "14" style = "color: red; border: none; font-size: 20px;">14cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon <button onclick = "addCalories(72)" class = "button" data-calories = "72" style = "color: red; border: none; font-size: 20px;">72cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Jalapeno Peppers <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers <button onclick = "addCalories(9)" class = "button" data-calories = "9" style = "color: red; border: none; font-size: 20px;">9cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt <button onclick = "addCalories(24)" class = "button" data-calories = "24" style = "color: red; border: none; font-size: 20px;">24cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranch Dressing <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cherry Tomatoes <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crumbled Bacon <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Spinach <button onclick = "addCalories(7)" class = "button" data-calories = "7" style = "color: red; border: none; font-size: 20px;">7cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions <button onclick = "addCalories(11)" class = "button" data-calories = "11" style = "color: red; border: none; font-size: 20px;">11cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing <button onclick = "addCalories(27)" class = "button" data-calories = "27" style = "color: red; border: none; font-size: 20px;">27cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt <button onclick = "addCalories(25)" class = "button" data-calories = "25" style = "color: red; border: none; font-size: 20px;">25cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes <button onclick = "addCalories(419)" class = "button" data-calories = "419" style = "color: red; border: none; font-size: 20px;">419cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
+		<hr class="dashed-line">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blanched Fresh Broccoli <button onclick = "addCalories(11)" class = "button" data-calories = "11" style = "color: red; border: none; font-size: 20px;">11cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hardboiled Eggs <button onclick = "addCalories(44)" class = "button" data-calories = "44" style = "color: red; border: none; font-size: 20px;">44cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Thousand Island Dressing <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Hummus <button onclick = "addCalories(78)" class = "button" data-calories = "78" style = "color: red; border: none; font-size: 20px;">78cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons <button onclick = "addCalories(62)" class = "button" data-calories = "62" style = "color: red; border: none; font-size: 20px;">62cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Blueberries <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
 		<hr class="dashed-line">
 		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Balsamic Vinaigrette <button onclick = "addCalories(103)" class = "button" data-calories = "103" style = "color: red; border: none; font-size: 20px;">103cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shredded Carrots <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Homestyle Croutons <button onclick = "addCalories(62)" class = "button" data-calories = "62" style = "color: red; border: none; font-size: 20px;">62cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast Strips <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flax Seeds <button onclick = "addCalories(56)" class = "button" data-calories = "56" style = "color: red; border: none; font-size: 20px;">56cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt <button onclick = "addCalories(25)" class = "button" data-calories = "25" style = "color: red; border: none; font-size: 20px;">25cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cucumber <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fat Free Italian Dressing <button onclick = "addCalories(27)" class = "button" data-calories = "27" style = "color: red; border: none; font-size: 20px;">27cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Cantaloupe Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Red Grape Tomatoes <button onclick = "addCalories(419)" class = "button" data-calories = "419" style = "color: red; border: none; font-size: 20px;">419cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spring Mix <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cherry Tomatoes <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ranch Dressing <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Yoplait Low Fat Vanilla Yogurt <button onclick = "addCalories(24)" class = "button" data-calories = "24" style = "color: red; border: none; font-size: 20px;">24cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Red Onions <button onclick = "addCalories(11)" class = "button" data-calories = "11" style = "color: red; border: none; font-size: 20px;">11cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Spinach <button onclick = "addCalories(7)" class = "button" data-calories = "7" style = "color: red; border: none; font-size: 20px;">7cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Crumbled Bacon <button onclick = "addCalories(48)" class = "button" data-calories = "48" style = "color: red; border: none; font-size: 20px;">48cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Ginger Miso Tofu <button onclick = "addCalories(109)" class = "button" data-calories = "109" style = "color: red; border: none; font-size: 20px;">109cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Vanilla Greek Yogurt <button onclick = "addCalories(23)" class = "button" data-calories = "23" style = "color: red; border: none; font-size: 20px;">23cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chopped Romaine <button onclick = "addCalories(5)" class = "button" data-calories = "5" style = "color: red; border: none; font-size: 20px;">5cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Green Peppers <button onclick = "addCalories(6)" class = "button" data-calories = "6" style = "color: red; border: none; font-size: 20px;">6cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Cottage Cheese <button onclick = "addCalories(20)" class = "button" data-calories = "20" style = "color: red; border: none; font-size: 20px;">20cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers <button onclick = "addCalories(9)" class = "button" data-calories = "9" style = "color: red; border: none; font-size: 20px;">9cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Jalapeno Peppers <button onclick = "addCalories(4)" class = "button" data-calories = "4" style = "color: red; border: none; font-size: 20px;">4cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Diced Bacon <button onclick = "addCalories(72)" class = "button" data-calories = "72" style = "color: red; border: none; font-size: 20px;">72cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Strawberries <button onclick = "addCalories(14)" class = "button" data-calories = "14" style = "color: red; border: none; font-size: 20px;">14cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fresh Honeydew Melon Cubes <button onclick = "addCalories(10)" class = "button" data-calories = "10" style = "color: red; border: none; font-size: 20px;">10cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -1118,30 +997,13 @@
 </div>
 		</div>
 
-<button class="accordion">SAUTE</button>
-<div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Grilled Chicken Breast <button onclick = "addCalories(141)" class = "button" data-calories = "141" style = "color: red; border: none; font-size: 20px;">141cal </button></p>
-		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sauteed Yellow Squash &amp; Zucchini <button onclick = "addCalories(85)" class = "button" data-calories = "85" style = "color: red; border: none; font-size: 20px;">85cal </button></p>
-		<hr class="dashed-line">
-
-<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
-<div class="rating">
-<input id="star5-dinner-saute" name="rating-dinner-saute" type="radio" value="5"/><label for="star5-dinner-saute" title="Rocks!">5 stars</label>
-<input id="star4-dinner-saute" name="rating-dinner-saute" type="radio" value="4"/><label for="star4-dinner-saute" title="Pretty good">4 stars</label>
-<input id="star3-dinner-saute" name="rating-dinner-saute" type="radio" value="3"/><label for="star3-dinner-saute" title="Meh">3 stars</label>
-<input id="star2-dinner-saute" name="rating-dinner-saute" type="radio" value="2"/><label for="star2-dinner-saute" title="Kinda bad">2 stars</label>
-<input id="star1-dinner-saute" name="rating-dinner-saute" type="radio" value="1"/><label for="star1-dinner-saute" title="Sucks big time">1 star</label>
-</div>
-		</div>
-
 <button class="accordion">SIMPLE SERVINGS</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Peperonata <button onclick = "addCalories(56)" class = "button" data-calories = "56" style = "color: red; border: none; font-size: 20px;">56cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cajun Roasted Vegetables <button onclick = "addCalories(75)" class = "button" data-calories = "75" style = "color: red; border: none; font-size: 20px;">75cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cilantro Lime Basmati Rice <button onclick = "addCalories(137)" class = "button" data-calories = "137" style = "color: red; border: none; font-size: 20px;">137cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Mashed Sweet Potatoes <button onclick = "addCalories(110)" class = "button" data-calories = "110" style = "color: red; border: none; font-size: 20px;">110cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Simple Pork Green Chile <button onclick = "addCalories(142)" class = "button" data-calories = "142" style = "color: red; border: none; font-size: 20px;">142cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Maple Apple Roasted Turkey <button onclick = "addCalories(148)" class = "button" data-calories = "148" style = "color: red; border: none; font-size: 20px;">148cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -1156,9 +1018,9 @@
 
 <button class="accordion">SOUP</button>
 <div class="panel">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chicken Tortilla Soup <button onclick = "addCalories(123)" class = "button" data-calories = "123" style = "color: red; border: none; font-size: 20px;">123cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bacon &amp; Corn Chowder <button onclick = "addCalories(143)" class = "button" data-calories = "143" style = "color: red; border: none; font-size: 20px;">143cal </button></p>
 		<hr class="dashed-line">
-		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cream Of Mushroom Soup <button onclick = "addCalories(163)" class = "button" data-calories = "163" style = "color: red; border: none; font-size: 20px;">163cal </button></p>
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">American Bounty Vegetable Soup <button onclick = "addCalories(44)" class = "button" data-calories = "44" style = "color: red; border: none; font-size: 20px;">44cal </button></p>
 		<hr class="dashed-line">
 
 <p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
@@ -1171,9 +1033,49 @@
 </div>
 		</div>
 
+<button class="accordion">VEGETABLE</button>
+<div class="panel">
+		<p style="font-size: 20px; margin-top: 20px; margin-left: 35px">Roasted Corn <button onclick = "addCalories(30)" class = "button" data-calories = "30" style = "color: red; border: none; font-size: 20px;">30cal </button></p>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="5"/><label for="star5-dinner-vegetable" title="Rocks!">5 stars</label>
+<input id="star4-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="4"/><label for="star4-dinner-vegetable" title="Pretty good">4 stars</label>
+<input id="star3-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="3"/><label for="star3-dinner-vegetable" title="Meh">3 stars</label>
+<input id="star2-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="2"/><label for="star2-dinner-vegetable" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="1"/><label for="star1-dinner-vegetable" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
 <div class="footer">
 <p>An RCOS project</p>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
+<script>
+	let totalCalories = 0
+
+	function addCalories(calories){
+		totalCalories += calories;
+        document.getElementById("totalCalories").textContent = totalCalories;
+	}
+
+	function clearCalories(){
+		totalCalories = 0
+		document.getElementById("totalCalories").textContent = totalCalories;
+	}
+</script>
 <script>
 	var acc = document.getElementsByClassName("accordion");
 	var i;
