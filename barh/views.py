@@ -81,6 +81,7 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
 
         for course in courses:
             station_name = course.find('h5').get_text(strip=True)
+            if(station_name == "MISCELLANEOUS" or station_name == "PERIPHERALS"): continue
             modified_html += f'\n<button class="accordion">{station_name}</button>\n<div class="panel">\n'
             
             items = course.find_next_sibling('ul').find_all('li')
