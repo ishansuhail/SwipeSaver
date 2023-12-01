@@ -151,17 +151,20 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
                 item_name = re.search(r'data-fooditemname="([^"]+)"', item_renamed)
                 
                 calories = re.search(r'\d+cal', str(item))
+                
+                              
                                      
                 if item_name and calories:
                     #THIS IS WHERE I AM ADDING FOOD TO DATABASE. DO MORE CHECKS AND MAKE SURE NOT TO ADD DUPLICATES
                     item_name = item_name.group(1)
                     new_food_item = testFoodItem(
                         food_name = item_name,
-                        rating = 4.5,
+                        rating = 5,
                         vegan = False,
                         dining_hall = 'commons',
                         meal_time = 'breakfest',
-                        gluten_free = False
+                        gluten_free = False,
+                        callories = float(0)
                     )
                     new_food_item.image = 'ratedfood_images/temp.jpg'
                     new_food_item.save()

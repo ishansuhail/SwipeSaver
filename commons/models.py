@@ -18,10 +18,11 @@ class Rating(models.Model):
     meal_time = models.CharField(max_length=10, choices=MEAL_TIMES, default='dinner')
 
 class testFoodItem(models.Model):
-	food_name = models.CharField(max_length=50)
-	image = models.ImageField(upload_to='ratedfood_images/', blank=True, null=True)
-	rating = models.DecimalField(max_digits=2, decimal_places = 1)
-	vegan = models.BooleanField()
-	dining_hall = models.CharField(max_length=50, default = 'commons')
-	meal_time = models.CharField(max_length=50, default = 'breakfast')
-	gluten_free = models.BooleanField(default = False)
+    food_name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='ratedfood_images/', blank=True, null=True)
+    rating = models.DecimalField(max_digits=2, decimal_places = 1)
+    vegan = models.BooleanField()
+    dining_hall = models.CharField(max_length=50, default = 'commons')
+    meal_time = models.CharField(max_length=50, default = 'breakfast')
+    gluten_free = models.BooleanField(default = False)
+    callories = models.DecimalField(max_digits=4, decimal_places=0, default=0)
