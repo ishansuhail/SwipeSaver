@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'commons',
     'barh',
     'russellsage',
+    'blitman',
 ]
 
 MIDDLEWARE = [

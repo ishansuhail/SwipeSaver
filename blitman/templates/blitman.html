@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blitman Dining Hall</title>
+<link href="./assets/style.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="background-color: whitesmoke;">
+<div class="header-container">
+<div class="overlay-box"></div>
+<img alt="SwipeSaver" src="{% static 'newLogo.png' %}"/>
+<h1>BLITMAN DINING HALL</h1>
+</div>
+<div class="scrollmenu">
+<a href="{% url 'homepage' %}">Home</a>
+<a href="{% url 'commons' %}">Commons Dining Hall</a>
+<a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>
+<a href="{% url 'blitman' %}">Blitman Dining Hall</a>
+<a href="#contact">Contact</a>
+<a href="#about">About</a>
+</div>
+<p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+<script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
+<button class="accordion">BAKERY</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Double Chocolate Chip Muffin 173cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="5"/><label for="star5-breakfast-bakery" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="4"/><label for="star4-breakfast-bakery" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="3"/><label for="star3-breakfast-bakery" title="Meh">3 stars</label>
+<input id="star2-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="2"/><label for="star2-breakfast-bakery" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-bakery" name="rating-breakfast-bakery" type="radio" value="1"/><label for="star1-breakfast-bakery" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">BREAKFAST</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Scrambled Eggs, Jack Cheese &amp; Tomato 178cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Cinnamon Raisin French Toast 409cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sausage, Egg And Cheese Croissant 649cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="5"/><label for="star5-breakfast-breakfast" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="4"/><label for="star4-breakfast-breakfast" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="3"/><label for="star3-breakfast-breakfast" title="Meh">3 stars</label>
+<input id="star2-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="2"/><label for="star2-breakfast-breakfast" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="1"/><label for="star1-breakfast-breakfast" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">CONDIMENT/GARNISH</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Vanilla Greek Yogurt 23cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="5"/><label for="star5-breakfast-condiment/garnish" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="4"/><label for="star4-breakfast-condiment/garnish" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="3"/><label for="star3-breakfast-condiment/garnish" title="Meh">3 stars</label>
+<input id="star2-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="2"/><label for="star2-breakfast-condiment/garnish" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-condiment/garnish" name="rating-breakfast-condiment/garnish" type="radio" value="1"/><label for="star1-breakfast-condiment/garnish" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">ENTREE</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">One Cage Free Fried Egg 108cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bacon Slices 70cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-entree" name="rating-breakfast-entree" type="radio" value="5"/><label for="star5-breakfast-entree" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-entree" name="rating-breakfast-entree" type="radio" value="4"/><label for="star4-breakfast-entree" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-entree" name="rating-breakfast-entree" type="radio" value="3"/><label for="star3-breakfast-entree" title="Meh">3 stars</label>
+<input id="star2-breakfast-entree" name="rating-breakfast-entree" type="radio" value="2"/><label for="star2-breakfast-entree" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-entree" name="rating-breakfast-entree" type="radio" value="1"/><label for="star1-breakfast-entree" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">MISCELLANEOUS</button>
+<div class="panel">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-miscellaneous" name="rating-breakfast-miscellaneous" type="radio" value="5"/><label for="star5-breakfast-miscellaneous" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-miscellaneous" name="rating-breakfast-miscellaneous" type="radio" value="4"/><label for="star4-breakfast-miscellaneous" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-miscellaneous" name="rating-breakfast-miscellaneous" type="radio" value="3"/><label for="star3-breakfast-miscellaneous" title="Meh">3 stars</label>
+<input id="star2-breakfast-miscellaneous" name="rating-breakfast-miscellaneous" type="radio" value="2"/><label for="star2-breakfast-miscellaneous" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-miscellaneous" name="rating-breakfast-miscellaneous" type="radio" value="1"/><label for="star1-breakfast-miscellaneous" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">SALAD</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fruit Salad 48cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-salad" name="rating-breakfast-salad" type="radio" value="5"/><label for="star5-breakfast-salad" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-salad" name="rating-breakfast-salad" type="radio" value="4"/><label for="star4-breakfast-salad" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-salad" name="rating-breakfast-salad" type="radio" value="3"/><label for="star3-breakfast-salad" title="Meh">3 stars</label>
+<input id="star2-breakfast-salad" name="rating-breakfast-salad" type="radio" value="2"/><label for="star2-breakfast-salad" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-salad" name="rating-breakfast-salad" type="radio" value="1"/><label for="star1-breakfast-salad" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">SNACK</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Assorted Seasonal Fresh Fruit 88cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Low Fat Strawberry Yogurt 25cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-snack" name="rating-breakfast-snack" type="radio" value="5"/><label for="star5-breakfast-snack" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-snack" name="rating-breakfast-snack" type="radio" value="4"/><label for="star4-breakfast-snack" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-snack" name="rating-breakfast-snack" type="radio" value="3"/><label for="star3-breakfast-snack" title="Meh">3 stars</label>
+<input id="star2-breakfast-snack" name="rating-breakfast-snack" type="radio" value="2"/><label for="star2-breakfast-snack" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-snack" name="rating-breakfast-snack" type="radio" value="1"/><label for="star1-breakfast-snack" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">STARCH</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Tater Tots 189cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-breakfast-starch" name="rating-breakfast-starch" type="radio" value="5"/><label for="star5-breakfast-starch" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-starch" name="rating-breakfast-starch" type="radio" value="4"/><label for="star4-breakfast-starch" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-starch" name="rating-breakfast-starch" type="radio" value="3"/><label for="star3-breakfast-starch" title="Meh">3 stars</label>
+<input id="star2-breakfast-starch" name="rating-breakfast-starch" type="radio" value="2"/><label for="star2-breakfast-starch" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-starch" name="rating-breakfast-starch" type="radio" value="1"/><label for="star1-breakfast-starch" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+<button class="accordion">ACTION - MADE TO ORDER</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Moo Shu Beef 126cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-action---made-to-order" name="rating-dinner-action---made-to-order" type="radio" value="5"/><label for="star5-dinner-action---made-to-order" title="Rocks!">5 stars</label>
+<input id="star4-dinner-action---made-to-order" name="rating-dinner-action---made-to-order" type="radio" value="4"/><label for="star4-dinner-action---made-to-order" title="Pretty good">4 stars</label>
+<input id="star3-dinner-action---made-to-order" name="rating-dinner-action---made-to-order" type="radio" value="3"/><label for="star3-dinner-action---made-to-order" title="Meh">3 stars</label>
+<input id="star2-dinner-action---made-to-order" name="rating-dinner-action---made-to-order" type="radio" value="2"/><label for="star2-dinner-action---made-to-order" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-action---made-to-order" name="rating-dinner-action---made-to-order" type="radio" value="1"/><label for="star1-dinner-action---made-to-order" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">CONDIMENT/GARNISH</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sweet &amp; Sour Sauce 63cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Spicy Teriyaki Glaze 24cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-condiment/garnish" name="rating-dinner-condiment/garnish" type="radio" value="5"/><label for="star5-dinner-condiment/garnish" title="Rocks!">5 stars</label>
+<input id="star4-dinner-condiment/garnish" name="rating-dinner-condiment/garnish" type="radio" value="4"/><label for="star4-dinner-condiment/garnish" title="Pretty good">4 stars</label>
+<input id="star3-dinner-condiment/garnish" name="rating-dinner-condiment/garnish" type="radio" value="3"/><label for="star3-dinner-condiment/garnish" title="Meh">3 stars</label>
+<input id="star2-dinner-condiment/garnish" name="rating-dinner-condiment/garnish" type="radio" value="2"/><label for="star2-dinner-condiment/garnish" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-condiment/garnish" name="rating-dinner-condiment/garnish" type="radio" value="1"/><label for="star1-dinner-condiment/garnish" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">DESSERT</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Dutch Apple Pie 475cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-dessert" name="rating-dinner-dessert" type="radio" value="5"/><label for="star5-dinner-dessert" title="Rocks!">5 stars</label>
+<input id="star4-dinner-dessert" name="rating-dinner-dessert" type="radio" value="4"/><label for="star4-dinner-dessert" title="Pretty good">4 stars</label>
+<input id="star3-dinner-dessert" name="rating-dinner-dessert" type="radio" value="3"/><label for="star3-dinner-dessert" title="Meh">3 stars</label>
+<input id="star2-dinner-dessert" name="rating-dinner-dessert" type="radio" value="2"/><label for="star2-dinner-dessert" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-dessert" name="rating-dinner-dessert" type="radio" value="1"/><label for="star1-dinner-dessert" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">ENTREE</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Braised Shredded Chicken 76cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Moo Shu Pork 95cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Fried Tofu 66cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-entree" name="rating-dinner-entree" type="radio" value="5"/><label for="star5-dinner-entree" title="Rocks!">5 stars</label>
+<input id="star4-dinner-entree" name="rating-dinner-entree" type="radio" value="4"/><label for="star4-dinner-entree" title="Pretty good">4 stars</label>
+<input id="star3-dinner-entree" name="rating-dinner-entree" type="radio" value="3"/><label for="star3-dinner-entree" title="Meh">3 stars</label>
+<input id="star2-dinner-entree" name="rating-dinner-entree" type="radio" value="2"/><label for="star2-dinner-entree" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-entree" name="rating-dinner-entree" type="radio" value="1"/><label for="star1-dinner-entree" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">MISCELLANEOUS</button>
+<div class="panel">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-miscellaneous" name="rating-dinner-miscellaneous" type="radio" value="5"/><label for="star5-dinner-miscellaneous" title="Rocks!">5 stars</label>
+<input id="star4-dinner-miscellaneous" name="rating-dinner-miscellaneous" type="radio" value="4"/><label for="star4-dinner-miscellaneous" title="Pretty good">4 stars</label>
+<input id="star3-dinner-miscellaneous" name="rating-dinner-miscellaneous" type="radio" value="3"/><label for="star3-dinner-miscellaneous" title="Meh">3 stars</label>
+<input id="star2-dinner-miscellaneous" name="rating-dinner-miscellaneous" type="radio" value="2"/><label for="star2-dinner-miscellaneous" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-miscellaneous" name="rating-dinner-miscellaneous" type="radio" value="1"/><label for="star1-dinner-miscellaneous" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">PIZZA</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Flame-grilled Chicken &amp; Artichoke Pizza 347cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Individual Vegetable Pizza 502cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-pizza" name="rating-dinner-pizza" type="radio" value="5"/><label for="star5-dinner-pizza" title="Rocks!">5 stars</label>
+<input id="star4-dinner-pizza" name="rating-dinner-pizza" type="radio" value="4"/><label for="star4-dinner-pizza" title="Pretty good">4 stars</label>
+<input id="star3-dinner-pizza" name="rating-dinner-pizza" type="radio" value="3"/><label for="star3-dinner-pizza" title="Meh">3 stars</label>
+<input id="star2-dinner-pizza" name="rating-dinner-pizza" type="radio" value="2"/><label for="star2-dinner-pizza" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-pizza" name="rating-dinner-pizza" type="radio" value="1"/><label for="star1-dinner-pizza" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">SALAD</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Napa Cabbage 5cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Blue Ribbon Slaw 49cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-salad" name="rating-dinner-salad" type="radio" value="5"/><label for="star5-dinner-salad" title="Rocks!">5 stars</label>
+<input id="star4-dinner-salad" name="rating-dinner-salad" type="radio" value="4"/><label for="star4-dinner-salad" title="Pretty good">4 stars</label>
+<input id="star3-dinner-salad" name="rating-dinner-salad" type="radio" value="3"/><label for="star3-dinner-salad" title="Meh">3 stars</label>
+<input id="star2-dinner-salad" name="rating-dinner-salad" type="radio" value="2"/><label for="star2-dinner-salad" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-salad" name="rating-dinner-salad" type="radio" value="1"/><label for="star1-dinner-salad" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">SANDWICH - HOT</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Italian Turkey And Ham Loafer Sandwich 391cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Chicago Hot Dog 432cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-sandwich---hot" name="rating-dinner-sandwich---hot" type="radio" value="5"/><label for="star5-dinner-sandwich---hot" title="Rocks!">5 stars</label>
+<input id="star4-dinner-sandwich---hot" name="rating-dinner-sandwich---hot" type="radio" value="4"/><label for="star4-dinner-sandwich---hot" title="Pretty good">4 stars</label>
+<input id="star3-dinner-sandwich---hot" name="rating-dinner-sandwich---hot" type="radio" value="3"/><label for="star3-dinner-sandwich---hot" title="Meh">3 stars</label>
+<input id="star2-dinner-sandwich---hot" name="rating-dinner-sandwich---hot" type="radio" value="2"/><label for="star2-dinner-sandwich---hot" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-sandwich---hot" name="rating-dinner-sandwich---hot" type="radio" value="1"/><label for="star1-dinner-sandwich---hot" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">SNACK</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Assorted Seasonal Fresh Fruit 88cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-snack" name="rating-dinner-snack" type="radio" value="5"/><label for="star5-dinner-snack" title="Rocks!">5 stars</label>
+<input id="star4-dinner-snack" name="rating-dinner-snack" type="radio" value="4"/><label for="star4-dinner-snack" title="Pretty good">4 stars</label>
+<input id="star3-dinner-snack" name="rating-dinner-snack" type="radio" value="3"/><label for="star3-dinner-snack" title="Meh">3 stars</label>
+<input id="star2-dinner-snack" name="rating-dinner-snack" type="radio" value="2"/><label for="star2-dinner-snack" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-snack" name="rating-dinner-snack" type="radio" value="1"/><label for="star1-dinner-snack" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">STARCH</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Shoestring Fries 201cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Jasmine Rice 118cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-starch" name="rating-dinner-starch" type="radio" value="5"/><label for="star5-dinner-starch" title="Rocks!">5 stars</label>
+<input id="star4-dinner-starch" name="rating-dinner-starch" type="radio" value="4"/><label for="star4-dinner-starch" title="Pretty good">4 stars</label>
+<input id="star3-dinner-starch" name="rating-dinner-starch" type="radio" value="3"/><label for="star3-dinner-starch" title="Meh">3 stars</label>
+<input id="star2-dinner-starch" name="rating-dinner-starch" type="radio" value="2"/><label for="star2-dinner-starch" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-starch" name="rating-dinner-starch" type="radio" value="1"/><label for="star1-dinner-starch" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">STOCK & SAUCE</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Vegan Stir Fry Sauce 77cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-stock-&-sauce" name="rating-dinner-stock-&-sauce" type="radio" value="5"/><label for="star5-dinner-stock-&-sauce" title="Rocks!">5 stars</label>
+<input id="star4-dinner-stock-&-sauce" name="rating-dinner-stock-&-sauce" type="radio" value="4"/><label for="star4-dinner-stock-&-sauce" title="Pretty good">4 stars</label>
+<input id="star3-dinner-stock-&-sauce" name="rating-dinner-stock-&-sauce" type="radio" value="3"/><label for="star3-dinner-stock-&-sauce" title="Meh">3 stars</label>
+<input id="star2-dinner-stock-&-sauce" name="rating-dinner-stock-&-sauce" type="radio" value="2"/><label for="star2-dinner-stock-&-sauce" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-stock-&-sauce" name="rating-dinner-stock-&-sauce" type="radio" value="1"/><label for="star1-dinner-stock-&-sauce" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+<button class="accordion">VEGETABLE</button>
+<div class="panel">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Matchstick Carrots 12cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bok Choy 4cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Bias Cut Celery 9cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Sliced Button Mushrooms 4cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Yellow Onions 9cal</button>
+		<hr class="dashed-line">
+		<button style="font-size: 20px; margin-top: 20px; margin-left: 35px">Julienne Red Peppers 9cal</button>
+		<hr class="dashed-line">
+
+<p style="color: rgb(228, 30, 30); font-size: 19px; margin-top: 25px; margin-bottom: 10px; margin-right: 33px; text-align: right">RATE THIS STATION</p>
+<div class="rating">
+<input id="star5-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="5"/><label for="star5-dinner-vegetable" title="Rocks!">5 stars</label>
+<input id="star4-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="4"/><label for="star4-dinner-vegetable" title="Pretty good">4 stars</label>
+<input id="star3-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="3"/><label for="star3-dinner-vegetable" title="Meh">3 stars</label>
+<input id="star2-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="2"/><label for="star2-dinner-vegetable" title="Kinda bad">2 stars</label>
+<input id="star1-dinner-vegetable" name="rating-dinner-vegetable" type="radio" value="1"/><label for="star1-dinner-vegetable" title="Sucks big time">1 star</label>
+</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+<p>An RCOS project</p>
+</div>
+<script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
+<script>
+        $(".rating input[type='radio']").on('change', function() {
+            var rating = $(this).val();
+            var nameParts = $(this).attr('name').split('-'); // split the name attribute
+            var mealTime = nameParts[1]; // get the meal time
+            var station = nameParts[2]; // get the station name
+            var data = {};
+            data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
+           // alert("Made it here")
+            $.ajax({
+                url: '/russellsage/rate/',
+                data: data,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success) {
+                        alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+t 649cal
+
+
+<div class="rating">
+<input id="star5-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="5"/><label for="star5-breakfast-breakfast" title="Rocks!">5 stars</label>
+<input id="star4-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="4"/><label for="star4-breakfast-breakfast" title="Pretty good">4 stars</label>
+<input id="star3-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="3"/><label for="star3-breakfast-breakfast" title="Meh">3 stars</label>
+<input id="star2-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="2"/><label for="star2-breakfast-breakfast" title="Kinda bad">2 stars</label>
+<input id="star1-breakfast-breakfast" name="rating-breakfast-breakfast" type="radio" value="1"/><label for="star1-breakfast-breakfast" title="Sucks big time">1 star</label>
+</div>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+<div class="footer">
+<p>An RCOS project</p>
+</div>
+<script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+    </script>
+<script>
+        $(".rating input[type='radio']").on('change', function() {
+            var rating = $(this).val();
+            var nameParts = $(this).attr('name').split('-'); // split the name attribute
+            var mealTime = nameParts[1]; // get the meal time
+            var station = nameParts[2]; // get the station name
+            var data = {};
+            data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
+           // alert("Made it here")
+            $.ajax({
+                url: '/russellsage/rate/',
+                data: data,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success) {
+                        alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
+                    }
+                }
+            });
+        });
+    </script>
