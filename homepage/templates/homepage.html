@@ -322,6 +322,36 @@
         </div>
 
         <div class="image-container">
+            <img src="{% static 'barh_cropped.png' %}" alt="BARH">
+            <button class ="title-overlay">
+                <p>BARH</p>
+            </button>
+            
+            <div class="panel">
+                <hr class="solid-line">
+                <p id="barh_status">Status: Checking...</p>
+                <hr class="dashed-line">
+
+                <div id="barh_distance"></div>
+                <hr class="dashed-line">
+                
+                <p >View Menu: </p>
+                <a href="{% url 'barh' %}">BARH Dining Hall</a>    
+                <hr class="dashed-line">  
+
+                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
+                <hr class="dashed-line">
+
+                <p >Rating:</p>
+                <hr class="dashed-line">              
+            </div>
+        </div>
+    </div>
+
+    <div class="red-box"></div>
+
+    <div class="dining-halls-container">
+        <div class="image-container">
             <img src="{% static 'sage_cropped.png' %}" alt="Sage">
             <button class ="title-overlay">
                 <p>Sage</p>
@@ -346,11 +376,6 @@
                 <hr class="dashed-line">
             </div>
         </div>
-    </div>
-
-    <div class="red-box"></div>
-
-    <div class="dining-halls-container">
 
         <div class="image-container">
             <img src="{% static 'blitman_cropped.png' %}" alt="Blitman">
@@ -375,32 +400,6 @@
 
                 <p >Rating:</p>
                 <hr class="dashed-line">
-            </div>
-        </div>
-
-        <div class="image-container">
-            <img src="{% static 'barh_cropped.png' %}" alt="BARH">
-            <button class ="title-overlay">
-                <p>BARH</p>
-            </button>
-            
-            <div class="panel">
-                <hr class="solid-line">
-                <p id="barh_status">Status: Checking...</p>
-                <hr class="dashed-line">
-
-                <div id="barh_distance"></div>
-                <hr class="dashed-line">
-                
-                <p >View Menu: </p>
-                <a href="{% url 'barh' %}">BARH Dining Hall</a>    
-                <hr class="dashed-line">  
-
-                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
-                <hr class="dashed-line">
-
-                <p >Rating:</p>
-                <hr class="dashed-line">              
             </div>
         </div>
     </div>
