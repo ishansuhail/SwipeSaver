@@ -2,6 +2,8 @@
 
 
 
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -238,17 +240,7 @@
 <a href="#about">About</a>
 </div>
 <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
-<script>
-    function getCurrentTime() {
-    var date = new Date();
-    var options = { timeZone: 'America/New_York', hour12: true };
-    var timeString = date.toLocaleTimeString('en-US', options);
-    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
-    }
-
-    getCurrentTime();
-    setInterval(getCurrentTime, 1000);
-    </script>
+<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button></p>
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
@@ -622,6 +614,38 @@
 <div class="footer">
 <p>An RCOS project</p>
 </div>
+<script>
+	let totalCalories = 0
+
+	function addCalories(calories){
+		totalCalories += calories;
+		document.getElementById("totalCalories").textContent = totalCalories;
+	}
+
+	function clearCalories(){
+		totalCalories = 0
+		document.getElementById("totalCalories").textContent = totalCalories;
+	}
+</script>
+<script>
+	function scrollToTop() {
+		window.scrollTo({
+		top: 0,
+		behavior: 'smooth' 
+		});
+	}
+</script>
+<script>
+    function getCurrentTime() {
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', hour12: true };
+    var timeString = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+    }
+
+    getCurrentTime();
+    setInterval(getCurrentTime, 1000);
+    </script>
 <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
