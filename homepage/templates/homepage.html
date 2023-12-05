@@ -51,6 +51,14 @@
             color: var(--secondary-color);
         }
 
+        .logo {
+            width: 200%; /* Make the logo larger (adjust the percentage as needed) */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto; /* Center the logo */
+            max-width: 600px; /* Limit the maximum width if needed */
+        }
+
         body {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -83,8 +91,8 @@
         }
 
         .header-container img {
-            width: 200px;
-            height: 46px;
+            width: 80%; /* Set a percentage for the width (adjust as needed) */
+            height: auto; /* Maintain aspect ratio */
             display: block;
             margin: 0 auto 10px;
         }
@@ -106,37 +114,65 @@
             height:20px;
         }
 
+        /* Updated styles for dining-halls-container */
         .dining-halls-container {
             display: flex;
-            height:500px;
-            background-color: var(--primary-color);
+            flex-wrap: wrap; /* Allow items to wrap onto the next line */
             justify-content: center;
             align-items: center;
+            height: auto; /* Removed fixed height to accommodate wrapping */
         }
 
+        /* Updated styles for image-container */
         .image-container {
-            position: relative;
-            justify-content: center;
-            align-items: center;
+            margin: 10px; /* Add some space between the blocks */
+            flex-basis: calc(50% - 20px); /* Adjust width with respect to margin */
+            max-width: 600px; /* Max width of the container */
+            position: relative; /* Set position relative for absolute child positioning */
         }
 
-        .dining-halls-container img{
-            padding-right: 50px;
-            padding-left: 50px;
-            height: 100%;
-            display: block;
-            position: relative;
+        /* Updated styles for images */
+        .dining-halls-container img {
+            width: 100%; /* Full width */
+            height: auto; /* Maintain aspect ratio */
+            padding: 0; /* No padding to affect width */
+            /* Removed margin to allow title-overlay to be full width of the image-container */
         }
 
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-basis: 100%; /* Full width on smaller screens */
+            }
+            .logo {
+                width: 120%; /* Increase the percentage for smaller screens if needed */
+                max-width: 600px; /* You can adjust or remove this if needed */
+            }
+            .title-overlay {
+                left: 0; /* Align left to the container on smaller screens */
+                width: 100%; /* Full width on smaller screens */
+            }
+    
+            .panel, .title-overlay {
+                width: 100%; /* Full width on smaller screens */
+                left: 0; /* Align left on smaller screens */
+            }
+    
+            .dining-halls-container img {
+                width: 100%; /* Full width on smaller screens */
+                margin: 0; /* No margin on smaller screens */
+            }
+        }
+
+        /* Styles for title-overlay */
         .title-overlay {
             position: absolute;
             top: 0;
-            left: 50px;
-            width: 600px;
+            left: 0; /* Align left to the image-container */
+            width: 100%; /* Full width of the image-container */
             height: 15%; 
             background-color: rgb(255, 255, 255, 0.7);
             display: flex;
-            font-family: 'Montserrat', sans-serif;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -144,7 +180,7 @@
             outline: none;
             transition: 0.4s;
             cursor: pointer;
-          }
+        }
 
         .active, .title-overlay:hover {
             background-color: rgb(255, 255, 255, 0.9);
@@ -157,13 +193,11 @@
         .panel {
             position: absolute;
             top: 15%;
-            left: 50px;
-            width: 600px;
-            font-family:'Montserrat', sans-serif;
+            left: 0; /* Align left to the image-container */
+            width: 100%; /* Full width of the image-container */
             background-color: rgb(255, 255, 255, 0.9);
             max-height: 0;
-            width: 600px;
-            color: white;
+            color: var(--primary-color); /* Changed to primary-color for visibility */
             border: none;
             outline: none;
             overflow: hidden;
@@ -171,7 +205,23 @@
         }
 
         .panel p{
+            display: inline;
+            color: var(--primary-color);
+            font-size: 25px; 
+            margin-top: 10px; 
+            margin-left: 20px;
+        }
+
+        .panel a{
+            display: inline; /* or inline-block */
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 23px;
+        }
+
+        .panel a:hover {
             color: var(--accent-color);
+            text-decoration: underline;
         }
 
         .footer {
@@ -190,6 +240,26 @@
         .footer p {
             color: white;
         }
+
+        #to_top{
+            position:fixed;
+            float:right;
+            height:40px;
+            width:155px;
+            right: 10px;
+            background-color: white;
+            color: black; 
+            border: none; 
+            border-radius: 100px; 
+            padding: 10px 20px; 
+            font-weight: bold;
+            cursor: pointer; 
+          }
+          
+          #to_top:hover {
+            background-color: var(--accent-color); /* Change color on hover */
+            color: white; 
+          }
 
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
