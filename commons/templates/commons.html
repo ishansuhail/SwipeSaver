@@ -99,6 +99,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -324,6 +334,26 @@
         .rating > input:checked ~ label:hover ~ label {
             color: gold;
         }
+
+		#to_top{
+            position:fixed;
+            float:right;
+            height:40px;
+            width:155px;
+            right: 10px;
+            background-color: white;
+            color: black; 
+            border: none; 
+            border-radius: 100px; 
+            padding: 10px 20px; 
+            font-weight: bold;
+            cursor: pointer; 
+          }
+          
+          #to_top:hover {
+            background-color: var(--accent-color); /* Change color on hover */
+            color: white; 
+          }
         
     </style>
 </head>
@@ -343,7 +373,7 @@
 <a href="#about">About</a>
 </div>
 <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
-<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear</button></p>
+<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button></p>
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 <button class="accordion">BAKERY</button>
 <div class="panel">
@@ -1103,6 +1133,7 @@
 
 <div class="footer">
 <p>An RCOS project</p>
+<button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -1116,6 +1147,14 @@
     getCurrentTime();
     setInterval(getCurrentTime, 1000);
     </script>
+<script>
+	function scrollToTop() {
+		window.scrollTo({
+		top: 0,
+		behavior: 'smooth' 
+		});
+	}
+</script>
 <script>
 	let totalCalories = 0
 
