@@ -51,14 +51,6 @@
             color: var(--secondary-color);
         }
 
-        .logo {
-            width: 200%; /* Make the logo larger (adjust the percentage as needed) */
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-            margin: 0 auto; /* Center the logo */
-            max-width: 600px; /* Limit the maximum width if needed */
-        }
-
         body {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -91,8 +83,8 @@
         }
 
         .header-container img {
-            width: 80%; /* Set a percentage for the width (adjust as needed) */
-            height: auto; /* Maintain aspect ratio */
+            width: 200px;
+            height: 46px;
             display: block;
             margin: 0 auto 10px;
         }
@@ -144,10 +136,7 @@
             .image-container {
                 flex-basis: 100%; /* Full width on smaller screens */
             }
-            .logo {
-                width: 120%; /* Increase the percentage for smaller screens if needed */
-                max-width: 600px; /* You can adjust or remove this if needed */
-            }
+
             .title-overlay {
                 left: 0; /* Align left to the container on smaller screens */
                 width: 100%; /* Full width on smaller screens */
@@ -204,24 +193,8 @@
             transition: max-height 0.2s ease-out;
         }
 
-        .panel p{
-            display: inline;
-            color: var(--primary-color);
-            font-size: 25px; 
-            margin-top: 10px; 
-            margin-left: 20px;
-        }
-
-        .panel a{
-            display: inline; /* or inline-block */
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 23px;
-        }
-
-        .panel a:hover {
+        .panel p {
             color: var(--accent-color);
-            text-decoration: underline;
         }
 
         .footer {
@@ -240,26 +213,6 @@
         .footer p {
             color: white;
         }
-
-        #to_top{
-            position:fixed;
-            float:right;
-            height:40px;
-            width:155px;
-            right: 10px;
-            background-color: white;
-            color: black; 
-            border: none; 
-            border-radius: 100px; 
-            padding: 10px 20px; 
-            font-weight: bold;
-            cursor: pointer; 
-          }
-          
-          #to_top:hover {
-            background-color: var(--accent-color); /* Change color on hover */
-            color: white; 
-          }
 
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
