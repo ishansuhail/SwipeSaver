@@ -12,3 +12,4 @@ urlpatterns = [
 
     # path('parse-html/', views.parse_html, name='parse_html'),
 ]
+

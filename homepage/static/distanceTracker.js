@@ -39,6 +39,7 @@ function getClosestDiningHalls(userLat, userLon) {
     // });
 
     // Call function to display the sorted dining halls on the website
+    console.log("hi");
     displayDiningHalls();
 }
 
@@ -61,6 +62,7 @@ function deg2rad(deg) {
 }
 
 function displayDiningHalls() {
+    console.log("hi");
     var output = '';
     var commons_distance = '<p style="font-size: 25px; margin-top: 10px; margin-left: 20px">' + 'Distance: ' + diningHalls[0].distance.toFixed(2) + ' mi away'+ '</p>';
     var sage_distance = '<p style="font-size: 25px; margin-top: 10px; margin-left: 20px">' + 'Distance: ' +  diningHalls[1].distance.toFixed(2) + ' mi away</p>';
@@ -82,3 +84,7 @@ function displayDiningHalls() {
     document.getElementById('barh_distance').innerHTML = barh_distance;
     document.getElementById('blitman_distance').innerHTML = blitman_distance;
 }
+
+
+
+

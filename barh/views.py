@@ -17,13 +17,14 @@ from unidecode import unidecode
 def br_lunch_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
-    
+    day = 5
     return day
     
 
 def dinner_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
+    day = 5
     if(day == 6):
         return 0
     return day
@@ -80,7 +81,6 @@ def parse_meal(soup, meal, html_pattern, day, existing_html):
 
         for course in courses:
             station_name = course.find('h5').get_text(strip=True)
-            if(station_name == "MISCELLANEOUS" or station_name == "PERIPHERALS"): continue
             modified_html += f'\n<button class="accordion">{station_name}</button>\n<div class="panel">\n'
             
             items = course.find_next_sibling('ul').find_all('li')
