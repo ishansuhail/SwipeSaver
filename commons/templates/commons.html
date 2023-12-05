@@ -101,6 +101,12 @@
 
 
 
+
+
+
+
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -117,9 +123,17 @@
         }
 
         div.scrollmenu {
+            display: flex; /* Use Flexbox */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Align items vertically */
             background-color: var(--primary-color);
             overflow: auto;
             white-space: nowrap;
+            padding: 10px 0; /* Add some vertical padding */
+        }
+
+        div.scrollmenu {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         div.scrollmenu a {
@@ -133,6 +147,7 @@
         div.scrollmenu a:hover {
             background-color: var(--secondary-color);
             color: var(--primary-color);
+            margin: 0 10px; /* Add some horizontal spacing */
         }
 
         /* Content styles */
