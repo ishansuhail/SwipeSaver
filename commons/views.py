@@ -12,6 +12,8 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from unidecode import unidecode
+import sqlite3
+
 
 
 def br_lunch_day():
@@ -31,6 +33,29 @@ def dinner_day():
     
     return day
 
+def current_meal():
+    current_time = datetime.time()
+    print(current_time)
+    db_file_path = "../homepage/static/DiningHallSchedules.sqlite"
+
+    # Connect to the SQLite database
+    conn = sqlite3.connect(db_file_path)
+
+    # Create a cursor object to execute SQL queries
+    cursor = conn.cursor()
+
+    #execute a query to fetch data from a table
+    cursor.execute("SELECT commons FROM DiningHallSchedules")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+
+    # Close the cursor and connection when done
+    cursor.close()
+    conn.close()
+
+
+
 def parse_html(request):
     # Open the existing HTML file
     with open('commons/templates/commons.html', 'r') as file:
@@ -47,6 +72,7 @@ def parse_html(request):
         br_lunch = br_lunch_day()
         dinner = dinner_day()
         current_date = datetime.date.today()
+        current_meal()
         day = current_date.weekday()
         
         
@@ -258,5 +284,3 @@ def rate(request):
 
             return JsonResponse({'success': True, 'average_rating': average_rating})
     return JsonResponse({'success': False})
-
-
