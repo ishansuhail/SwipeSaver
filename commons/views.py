@@ -72,7 +72,6 @@ def parse_html(request):
         br_lunch = br_lunch_day()
         dinner = dinner_day()
         current_date = datetime.date.today()
-        current_meal()
         day = current_date.weekday()
         
         
