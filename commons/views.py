@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 import datetime
+import sqlite3
 
 from django.http import JsonResponse
 from django.db.models import Avg
@@ -12,7 +13,7 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from unidecode import unidecode
-import sqlite3
+
 
 
 
@@ -36,7 +37,7 @@ def dinner_day():
 def current_meal():
     current_time = datetime.time()
     print(current_time)
-    db_file_path = "../homepage/static/DiningHallSchedules.sqlite"
+    db_file_path = "homepage/static/DiningHallSchedules.sqlite"
 
     # Connect to the SQLite database
     conn = sqlite3.connect(db_file_path)
@@ -45,7 +46,7 @@ def current_meal():
     cursor = conn.cursor()
 
     #execute a query to fetch data from a table
-    cursor.execute("SELECT commons FROM DiningHallSchedules")
+    cursor.execute("SELECT diningHallName FROM DiningHallSchedules")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
@@ -71,6 +72,7 @@ def parse_html(request):
 
         br_lunch = br_lunch_day()
         dinner = dinner_day()
+        current_meal()
         current_date = datetime.date.today()
         day = current_date.weekday()
         
