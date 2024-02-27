@@ -15,8 +15,6 @@ import re
 from unidecode import unidecode
 
 
-
-
 def br_lunch_day():
     current_date = datetime.date.today()
     day = current_date.weekday()
@@ -48,17 +46,28 @@ def current_meal(day):
 
     #execute a query to fetch data from a table
     if weekday == True:
-        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'commons'")
+        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'commons' AND weekDay = 'True'")
     else:
-        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'commons' AND weekDay = False")
+        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'commons' AND weekDay = 'False'")
     rows = cursor.fetchall()
     meal_times = {}
     for row in rows:
-        print(row)
+        if row[1] == 'breakfast':
+            meal_times["Breakfast"] = row[2] + " - " + row[3]
+        
+        if row[1] == 'brunch':
+            meal_times["Brunch"] = row[2] + " - " + row[3]
+
+        if row[1] == 'lunch':
+            meal_times["Lunch"] = row[2] + " - " + row[3]
+
+        if row[1] == 'dinner':
+            meal_times["Dinner"] = row[2] + " - " + row[3]
 
     # Close the cursor and connection when done
     cursor.close()
     conn.close()
+    return meal_times
 
 
 def parse_html(request):
@@ -78,7 +87,7 @@ def parse_html(request):
         dinner = dinner_day()
         current_date = datetime.date.today()
         day = current_date.weekday()
-        current_meal(day)
+        current_meals = current_meal(day)
         
         if day >= 5:
             
