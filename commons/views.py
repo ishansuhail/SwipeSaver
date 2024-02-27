@@ -34,11 +34,12 @@ def dinner_day():
     
     return day
 
-def current_meal():
+def current_meal(day):
     current_time = datetime.time()
     print(current_time)
-    db_file_path = "homepage/static/DiningHallSchedules.sqlite"
+    weekday = day <= 5
 
+    db_file_path = "homepage/static/DiningHallSchedules.sqlite"
     # Connect to the SQLite database
     conn = sqlite3.connect(db_file_path)
 
@@ -46,8 +47,12 @@ def current_meal():
     cursor = conn.cursor()
 
     #execute a query to fetch data from a table
-    cursor.execute("SELECT diningHallName FROM DiningHallSchedules")
+    if weekday == True:
+        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'commons'")
+    else:
+        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'commons' AND weekDay = False")
     rows = cursor.fetchall()
+    meal_times = {}
     for row in rows:
         print(row)
 
@@ -72,10 +77,9 @@ def parse_html(request):
 
         br_lunch = br_lunch_day()
         dinner = dinner_day()
-        current_meal()
         current_date = datetime.date.today()
         day = current_date.weekday()
-        
+        current_meal(day)
         
         if day >= 5:
             
