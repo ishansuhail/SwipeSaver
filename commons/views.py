@@ -61,7 +61,6 @@ def current_meal(day):
     conn.close()
 
 
-
 def parse_html(request):
     # Open the existing HTML file
     with open('commons/templates/commons.html', 'r') as file:
