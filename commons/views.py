@@ -34,8 +34,7 @@ def dinner_day():
 
 def current_meal(day):
     current_time = datetime.time()
-    print(current_time)
-    weekday = day <= 5
+    weekday = day <= 4
 
     db_file_path = "homepage/static/DiningHallSchedules.sqlite"
     # Connect to the SQLite database
@@ -87,11 +86,11 @@ def parse_html(request):
         dinner = dinner_day()
         current_date = datetime.date.today()
         day = current_date.weekday()
+        
         current_meals = current_meal(day)
+        print(current_meals)
         
         if day >= 5:
-            
-            
             soup2 = BeautifulSoup(existing_html, 'html.parser')
         
             target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
@@ -150,12 +149,14 @@ def parse_html(request):
         # else:
         #     existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BRUNCH (7:00 - 9:30)</p>', br_lunch, existing_html)
             
-            
-        
-                
     return render(request, 'commons.html')
 
-
+def parse_meal_times(request):
+    current_date = datetime.date.today()
+    day = current_date.weekday()
+    current_meals = current_meal(day)
+    print(current_meals)
+    return render(request, 'commons.html', {'current_meals': current_meals})
 
 def parse_meal(soup, meal, html_pattern, day, existing_html):
     meal = meal.split(' ')[1]
