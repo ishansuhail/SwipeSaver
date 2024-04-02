@@ -149,12 +149,6 @@ def parse_html(request):
             
     return render(request, 'commons.html', {'current_meals': current_meals})
 
-def parse_meal_times(request):
-    current_date = datetime.date.today()
-    day = current_date.weekday()
-    current_meals = current_meal(day)
-    return render(request, 'commons.html', {'current_meals': current_meals})
-
 def parse_meal(soup, meal, html_pattern, day, existing_html):
     meal = meal.split(' ')[1]
     meal_type = soup.find_all('div', class_= meal)
