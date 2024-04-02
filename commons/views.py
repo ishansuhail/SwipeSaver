@@ -86,9 +86,7 @@ def parse_html(request):
         current_date = datetime.date.today()
         day = current_date.weekday()
         
-        current_meals = current_meal(day)
-        print(current_meals)
-        
+        current_meals = current_meal(day)        
         
         if day >= 5:
             soup2 = BeautifulSoup(existing_html, 'html.parser')
