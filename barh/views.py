@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 import datetime
+import sqlite3
 
 from django.http import JsonResponse
 from django.db.models import Avg
@@ -30,6 +31,42 @@ def dinner_day():
     return day
     
 
+def current_meal(day):
+    weekday = day <= 4
+
+    db_file_path = "homepage/static/DiningHallSchedules.sqlite"
+    # Connect to the SQLite database
+    conn = sqlite3.connect(db_file_path)
+
+    # Create a cursor object to execute SQL queries
+    cursor = conn.cursor()
+
+    #execute a query to fetch data from a table
+    if weekday == True:
+        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'barh' AND weekDay = 'True'")
+    else:
+        cursor.execute("SELECT * FROM DiningHallSchedules WHERE diningHallName = 'barh' AND weekDay = 'False'")
+    rows = cursor.fetchall()
+    meal_times = {}
+    for row in rows:
+        if row[1] == 'breakfast':
+            meal_times["Breakfast"] = row[2] + " - " + row[3]
+        
+        if row[1] == 'brunch':
+            meal_times["Brunch"] = row[2] + " - " + row[3]
+
+        if row[1] == 'lunch':
+            meal_times["Lunch"] = row[2] + " - " + row[3]
+
+        if row[1] == 'dinner':
+            meal_times["Dinner"] = row[2] + " - " + row[3]
+
+    # Close the cursor and connection when done
+    cursor.close()
+    conn.close()
+    return meal_times
+
+
 def parse_html(request):
     # Open the existing HTML file
     with open('barh/templates/barh.html', 'r') as file:
@@ -45,6 +82,10 @@ def parse_html(request):
 
         br_lunch = br_lunch_day()
         dinner = dinner_day()
+        current_date = datetime.date.today()
+        day = current_date.weekday()
+
+        current_meals = current_meal(day)
         
         existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>', br_lunch, existing_html)
         existing_html = parse_meal(soup, 'accordion-block dinner', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>', dinner, existing_html)
@@ -53,8 +94,7 @@ def parse_html(request):
         with open('barh/templates/barh.html', 'w') as file:
             file.write(existing_html)
 
-    return render(request, 'barh.html')
-
+    return render(request, 'barh.html', {'current_meals': current_meals})
 
 
 def parse_meal(soup, meal, html_pattern, day, existing_html):

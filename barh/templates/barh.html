@@ -58,6 +58,9 @@
 
 
 
+
+
+
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
 
 {% load static %}
@@ -309,6 +312,11 @@
 <a href="#contact">Contact</a>
 <a href="#about">About</a>
 </div>
+<ul>
+    {% for meal, time_range in current_meals.items %}
+        <li style="color: rgb(228, 30, 30);">{{ meal }}: {{ time_range }}</li>
+    {% endfor %}
+</ul>
 <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
 <script>
     function getCurrentTime() {
