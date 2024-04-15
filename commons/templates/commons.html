@@ -71,6 +71,8 @@
 
 
 
+
+
 {% load static %}
 <html lang="en">
 <head>
@@ -327,6 +329,39 @@
           }
         
     </style>
+<script>
+	function hideBreakfast() {
+		var currentTime = new Date();
+		var hours = currentTime.getHours();
+		var minutes = currentTime.getMinutes();
+		var seconds = currentTime.getSeconds();
+		
+		// Define the start and end time for breakfast
+		var startHour = 7;
+		var startMinute = 0;
+		var endHour = 9;
+		var endMinute = 30;
+
+		// Convert all times to minutes for easier comparison
+		var currentTimeInMinutes = hours * 60 + minutes;
+		var startTimeInMinutes = startHour * 60 + startMinute;
+		var endTimeInMinutes = endHour * 60 + endMinute;
+
+		// Check if current time is within breakfast hours
+		if (currentTimeInMinutes >= startTimeInMinutes && currentTimeInMinutes <= endTimeInMinutes) {
+			// Breakfast time, hide breakfast options
+			document.getElementById("breakfast").style.display = "block";
+		} else {
+			// Not breakfast time, hide breakfast options
+			document.getElementById("breakfast").style.display = "none";
+		}
+
+		// Repeat every second
+		setTimeout(hideBreakfast, 1000);
+	}
+	// Run the function when the page loads
+	window.onload = hideBreakfast;
+</script>
 </head>
 <body style="background-color: whitesmoke;">
 <div class="header-container">
