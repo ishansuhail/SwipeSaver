@@ -147,7 +147,7 @@ def parse_html(request):
         # else:
         #     existing_html = parse_meal(soup, 'accordion-block breakfast', '<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 10px; margin-left: 68px; margin-bottom: 5px">BRUNCH (7:00 - 9:30)</p>', br_lunch, existing_html)
             
-
+    #this section for "context" not working correctly
     now = datetime.datetime.now()
     is_breakfast_time = True
     
