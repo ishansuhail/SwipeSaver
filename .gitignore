@@ -2,4 +2,3 @@ db.sqlite3
 /commons/templates/commons.html
 **/__pycache__/
 __pycache__/
-.venv/
