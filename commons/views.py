@@ -52,11 +52,11 @@ def parse_html(request):
         
         if day >= 5:
             
-            
+            print("reached")
             soup2 = BeautifulSoup(existing_html, 'html.parser')
         
             target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
-        
+            print(target_elements)
             breakfast_tag = "BREAKFAST (7:00 - 9:30)"
 
             for tag in target_elements:
