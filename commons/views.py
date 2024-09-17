@@ -45,9 +45,6 @@ def parse_html(request):
     
         if r.status_code != 200:
             return HttpResponse("Error fetching the menu")
-    
-        
-        
         
         html_content = r.content
 
