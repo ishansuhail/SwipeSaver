@@ -39,15 +39,14 @@ def parse_html(request):
     # Check if the html file has already been parsed
     if '<hr class="dashed-line">' not in existing_html:
         # Perform the parsing and modification logic
-        r = requests.get("https://menus.sodexomyway.com/BiteMenu/Menu?menuId=15465&locationId=76929001&whereami=http://rpi.sodexomyway.com/dining-near-me/commons-dining-hall")
-<<<<<<< HEAD
+        r = requests.get("https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
+
         print(r.status_code)
     
         if r.status_code != 200:
             return HttpResponse("Error fetching the menu")
         
-=======
->>>>>>> parent of bffbe01 (Error meesage with scraping)
+
         html_content = r.content
 
         soup = BeautifulSoup(html_content, 'html.parser')
@@ -93,7 +92,7 @@ def parse_html(request):
             soup2 = BeautifulSoup(existing_html, 'html.parser')
         
             target_elements = soup2.find_all('p', style = 'color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px')
-            
+            print("target_elements", target_elements)
             breakfast_tag = "BRUNCH (7:00 - 9:30)"
 
             for tag in target_elements:
