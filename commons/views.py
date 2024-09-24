@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from populate_db.views import populate
 
 import datetime
 
@@ -17,11 +18,11 @@ from unidecode import unidecode
 
 
 def commons(request):
-    populate()
+    populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
     return render(request, 'commons.html')
 
 
-def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall"):
+def populate(url):
     response = requests.get(url)
     html_content = response.text
     
@@ -34,10 +35,6 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
         split_content = script_content.split('window.__PRELOADED_STATE__ = ')
         
         if split_content:
-        # Print the parts before and after the split
-        # print("Part before 'window.__PRELOADED_STATE__':")
-        # print(split_content[0].strip())  # Part before the delimiter
-        # print("\nPart after 'window.__PRELOADED_STATE__':")
             try: 
                 json_data = json.loads(split_content[1].strip())  # Parse the JSON string into a Python dictionary
                 file_name = 'output.txt'  # You can change this to any file name or path
