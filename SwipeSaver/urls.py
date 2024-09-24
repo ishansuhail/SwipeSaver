@@ -25,4 +25,5 @@ urlpatterns = [
     path('barh/', include('barh.urls')),
     path('russellsage/', include('russellsage.urls')),
     path('blitman/', include('blitman.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
