@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'barh',
     'russellsage',
     'blitman',
+    'populate_db',
 ]
 
 MIDDLEWARE = [
