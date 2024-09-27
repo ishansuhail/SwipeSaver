@@ -77,6 +77,33 @@
             margin-bottom: 100px;
         }
 
+        /* Top-right login status */
+        .user-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+
+        .user-status a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .user-status a:hover {
+            text-decoration: underline;
+        }
+
+        /* Additional styles for scrollmenu */
+        .disabled {
+            background-color: gray;
+            color: white;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
         a {
             color: var(--secondary-color);
             text-decoration: none;
@@ -269,18 +296,27 @@
             background-color: var(--accent-color); /* Change color on hover */
             color: white; 
           }
-
-
-
+      
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'distanceTracker.js' %}"></script>
 </head>
+
+
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
         <img src="{% static 'logo.png' %}" alt="SwipeSaver" class="logo">
-    </div>        
+    </div>       
+    
+    <!-- Top-right user status -->
+    <div class="user-status">
+        {% if user.is_authenticated %}
+            <!-- Display when the user is logged in -->
+            <span>Logged in as {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+    </div>
 
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
@@ -290,6 +326,12 @@
         <a href="{% url 'blitman' %}">Blitman Dining Hall</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
+
+        {% if not user.is_authenticated %}
+            <!-- Show login and signup buttons when user is not logged in -->
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
     </div>
 
     <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>

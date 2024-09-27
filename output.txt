@@ -1,0 +1,2795 @@
+[
+  {
+    "name": "BREAKFAST",
+    "groups": [
+      {
+        "name": null,
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": null,
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758274,
+            "formalName": "Have A Nice Day",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "",
+            "caloriesFromFat": "",
+            "fat": "",
+            "saturatedFat": "",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "",
+            "sodium": "0mg",
+            "carbohydrates": "",
+            "dietaryFiber": "",
+            "sugar": "",
+            "protein": "",
+            "potassium": "",
+            "iron": "0mg",
+            "calcium": "0mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "GRILL",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758275,
+            "formalName": "Scrambled Eggs",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "190",
+            "caloriesFromFat": "130",
+            "fat": "14g",
+            "saturatedFat": "4.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "400mg",
+            "sodium": "160mg",
+            "carbohydrates": "1g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "14g",
+            "potassium": "135mg",
+            "iron": "1mg",
+            "calcium": "54mg",
+            "vitaminA": "560IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758276,
+            "formalName": "10\" Flour Tortilla",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "200",
+            "caloriesFromFat": "50",
+            "fat": "6g",
+            "saturatedFat": "3g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "400mg",
+            "carbohydrates": "34g",
+            "dietaryFiber": "1g",
+            "sugar": "1g",
+            "protein": "6g",
+            "potassium": "50mg",
+            "iron": "2mg",
+            "calcium": "84mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758277,
+            "formalName": "Scrambled Eggs, Jack Cheese & Tomato",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "180",
+            "caloriesFromFat": "110",
+            "fat": "13g",
+            "saturatedFat": "6g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "295mg",
+            "sodium": "270mg",
+            "carbohydrates": "1g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "14g",
+            "potassium": "140mg",
+            "iron": "2mg",
+            "calcium": "177mg",
+            "vitaminA": "136IU",
+            "vitaminC": "2mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758278,
+            "formalName": "House Baked Buttermilk Biscuit",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "170",
+            "caloriesFromFat": "70",
+            "fat": "7g",
+            "saturatedFat": "5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "520mg",
+            "carbohydrates": "24g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "3g",
+            "potassium": "40mg",
+            "iron": "1mg",
+            "calcium": "30mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758279,
+            "formalName": "Sausage Patties",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "350",
+            "caloriesFromFat": "310",
+            "fat": "34g",
+            "saturatedFat": "12g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "6g",
+            "cholesterol": "60mg",
+            "sodium": "580mg",
+            "carbohydrates": "1g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "9g",
+            "potassium": "170mg",
+            "iron": "1mg",
+            "calcium": "20mg",
+            "vitaminA": "3IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758280,
+            "formalName": "Scrambled Tofu",
+            "description": "Tofu scrambled with scallions, garlic, jalapeno peppers and seasoned with paprika, oregano and lime juice",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "100",
+            "caloriesFromFat": "50",
+            "fat": "5g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "160mg",
+            "carbohydrates": "5g",
+            "dietaryFiber": "2g",
+            "sugar": "1g",
+            "protein": "8g",
+            "potassium": "150mg",
+            "iron": "1mg",
+            "calcium": "116mg",
+            "vitaminA": "384IU",
+            "vitaminC": "4mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758281,
+            "formalName": "Home Fried Potatoes",
+            "description": "Chef potatoes, canola oil, onions, kosher salt, pepper",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "160",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "1g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "3g",
+            "cholesterol": "0mg",
+            "sodium": "150mg",
+            "carbohydrates": "16g",
+            "dietaryFiber": "2g",
+            "sugar": "1g",
+            "protein": "2g",
+            "potassium": "400mg",
+            "iron": "1mg",
+            "calcium": "11mg",
+            "vitaminA": "9IU",
+            "vitaminC": "9mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758282,
+            "formalName": "Homestyle Strawberry Pancakes",
+            "description": "Fluffy, irresistible griddle cooked plant-based pancakes made with sweet strawberries",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "420",
+            "caloriesFromFat": "130",
+            "fat": "14g",
+            "saturatedFat": "3.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "4g",
+            "cholesterol": "0mg",
+            "sodium": "1070mg",
+            "carbohydrates": "67g",
+            "dietaryFiber": "2g",
+            "sugar": "23g",
+            "protein": "6g",
+            "potassium": "200mg",
+            "iron": "3mg",
+            "calcium": "347mg",
+            "vitaminA": "0IU",
+            "vitaminC": "17mg"
+          }
+        ]
+      },
+      {
+        "name": "SALAD BAR",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SALAD BAR",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758283,
+            "formalName": "Vanilla Belgian Waffle",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "260",
+            "caloriesFromFat": "25",
+            "fat": "3g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "0mg",
+            "sodium": "1150mg",
+            "carbohydrates": "53g",
+            "dietaryFiber": "0g",
+            "sugar": "7g",
+            "protein": "5g",
+            "potassium": "95mg",
+            "iron": "3mg",
+            "calcium": "20mg",
+            "vitaminA": "9IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "SALAD BAR",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758284,
+            "formalName": "Oatmeal",
+            "description": "A hearty bowl of oatmeal",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "110",
+            "caloriesFromFat": "20",
+            "fat": "2g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "5mg",
+            "carbohydrates": "21g",
+            "dietaryFiber": "3g",
+            "sugar": "0g",
+            "protein": "4g",
+            "potassium": "110mg",
+            "iron": "1mg",
+            "calcium": "19mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "TWISTS",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "BREAKFAST",
+            "menuItemId": 6293758285,
+            "formalName": "Everything Omelet",
+            "description": "Cage free egg omelet with green onions, green pepper, mushrooms, spinach, tomatoes, cheddar and mozzarella cheeses",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "290",
+            "caloriesFromFat": "190",
+            "fat": "21g",
+            "saturatedFat": "8g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "455mg",
+            "sodium": "320mg",
+            "carbohydrates": "5g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "19g",
+            "potassium": "330mg",
+            "iron": "3mg",
+            "calcium": "184mg",
+            "vitaminA": "1118IU",
+            "vitaminC": "16mg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "LUNCH",
+    "groups": [
+      {
+        "name": null,
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": null,
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758286,
+            "formalName": "Have A Nice Day",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "",
+            "caloriesFromFat": "",
+            "fat": "",
+            "saturatedFat": "",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "",
+            "sodium": "0mg",
+            "carbohydrates": "",
+            "dietaryFiber": "",
+            "sugar": "",
+            "protein": "",
+            "potassium": "",
+            "iron": "0mg",
+            "calcium": "0mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "CHEF'S TABLE",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758287,
+            "formalName": "Italian Green Beans",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "20",
+            "caloriesFromFat": "0",
+            "fat": "0g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "0mg",
+            "carbohydrates": "5g",
+            "dietaryFiber": "2g",
+            "sugar": "1g",
+            "protein": "1g",
+            "potassium": "120mg",
+            "iron": "1mg",
+            "calcium": "32mg",
+            "vitaminA": "321IU",
+            "vitaminC": "3mg"
+          },
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758288,
+            "formalName": "Cilantro Chili Lime Rice",
+            "description": "White rice seasoned with lime juice, chili powder and cilantro",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "120",
+            "caloriesFromFat": "0",
+            "fat": "0g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "15mg",
+            "carbohydrates": "25g",
+            "dietaryFiber": "0g",
+            "sugar": "0g",
+            "protein": "2g",
+            "potassium": "95mg",
+            "iron": "1mg",
+            "calcium": "29mg",
+            "vitaminA": "521IU",
+            "vitaminC": "3mg"
+          },
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758289,
+            "formalName": "Fish Tacos",
+            "description": "Cumin dusted seared cod with cabbage, onions and peppers in a flour tortilla with pico de gallo and lime sour cream",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 8,
+                "name": "Fish"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "170",
+            "caloriesFromFat": "50",
+            "fat": "6g",
+            "saturatedFat": "1.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "25mg",
+            "sodium": "410mg",
+            "carbohydrates": "19g",
+            "dietaryFiber": "2g",
+            "sugar": "3g",
+            "protein": "12g",
+            "potassium": "320mg",
+            "iron": "2mg",
+            "calcium": "59mg",
+            "vitaminA": "686IU",
+            "vitaminC": "25mg"
+          }
+        ]
+      },
+      {
+        "name": "ENTREE",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "ENTREE",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758290,
+            "formalName": "Marinated Portobello With Quinoa Pilaf",
+            "description": "Balsamic-sweetened portobello mushrooms with a quinoa & zucchini pilaf seasoned with fresh basil, rosemary & garlic",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "180",
+            "caloriesFromFat": "70",
+            "fat": "8g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "3g",
+            "cholesterol": "0mg",
+            "sodium": "170mg",
+            "carbohydrates": "22g",
+            "dietaryFiber": "4g",
+            "sugar": "5g",
+            "protein": "6g",
+            "potassium": "580mg",
+            "iron": "2mg",
+            "calcium": "31mg",
+            "vitaminA": "503IU",
+            "vitaminC": "9mg"
+          }
+        ]
+      },
+      {
+        "name": "GRILL",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758291,
+            "formalName": "Cheeseburger On Bun",
+            "description": "A hamburger patty With American cheese, lettuce and tomato on a bun",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "450",
+            "caloriesFromFat": "240",
+            "fat": "27g",
+            "saturatedFat": "12g",
+            "transFat": "2g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "70mg",
+            "sodium": "740mg",
+            "carbohydrates": "29g",
+            "dietaryFiber": "1g",
+            "sugar": "5g",
+            "protein": "21g",
+            "potassium": "340mg",
+            "iron": "3mg",
+            "calcium": "148mg",
+            "vitaminA": "800IU",
+            "vitaminC": "4mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758292,
+            "formalName": "Black Bean Burger",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "240",
+            "caloriesFromFat": "35",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "810mg",
+            "carbohydrates": "38g",
+            "dietaryFiber": "6g",
+            "sugar": "5g",
+            "protein": "13g",
+            "potassium": "250mg",
+            "iron": "4mg",
+            "calcium": "91mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758293,
+            "formalName": "Ham & Cheddar Loafer Sandwich",
+            "description": "Toasted ham baguette with dijonnaise and cheddar cheese",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "400",
+            "caloriesFromFat": "190",
+            "fat": "21g",
+            "saturatedFat": "7g",
+            "transFat": "1g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "55mg",
+            "sodium": "1300mg",
+            "carbohydrates": "34g",
+            "dietaryFiber": "2g",
+            "sugar": "3g",
+            "protein": "19g",
+            "potassium": "370mg",
+            "iron": "2mg",
+            "calcium": "203mg",
+            "vitaminA": "323IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758294,
+            "formalName": "French Fries",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "150",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "1.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "5g",
+            "cholesterol": "0mg",
+            "sodium": "20mg",
+            "carbohydrates": "16g",
+            "dietaryFiber": "1g",
+            "sugar": "1g",
+            "protein": "1g",
+            "potassium": "250mg",
+            "iron": "0mg",
+            "calcium": "9mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758296,
+            "formalName": "Hamburger On Bun",
+            "description": "Hamburger with lettuce and tomato on a toasted bun",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "400",
+            "caloriesFromFat": "210",
+            "fat": "23g",
+            "saturatedFat": "9g",
+            "transFat": "2g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "55mg",
+            "sodium": "510mg",
+            "carbohydrates": "28g",
+            "dietaryFiber": "1g",
+            "sugar": "4g",
+            "protein": "19g",
+            "potassium": "330mg",
+            "iron": "3mg",
+            "calcium": "67mg",
+            "vitaminA": "796IU",
+            "vitaminC": "4mg"
+          }
+        ]
+      },
+      {
+        "name": "GROWN",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "GROWN",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758297,
+            "formalName": "Korean Tofu Bowl",
+            "description": "Jasmine rice topped with Korean tofu, Asian slaw, sriracha mayonnaise, green onions and fresh cilantro",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "450",
+            "caloriesFromFat": "210",
+            "fat": "24g",
+            "saturatedFat": "3g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "3g",
+            "cholesterol": "5mg",
+            "sodium": "900mg",
+            "carbohydrates": "51g",
+            "dietaryFiber": "3g",
+            "sugar": "10g",
+            "protein": "10g",
+            "potassium": "340mg",
+            "iron": "2mg",
+            "calcium": "108mg",
+            "vitaminA": "1450IU",
+            "vitaminC": "26mg"
+          }
+        ]
+      },
+      {
+        "name": "INTERNATIONAL",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "INTERNATIONAL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758299,
+            "formalName": "Braised Korean Pork Bowl",
+            "description": "Jasmine rice topped with Korean pork, Asian slaw, sriracha mayonnaise, green onions and fresh cilantro",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 5,
+                "name": "Shellfish"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "550",
+            "caloriesFromFat": "330",
+            "fat": "36g",
+            "saturatedFat": "7g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "4g",
+            "cholesterol": "50mg",
+            "sodium": "650mg",
+            "carbohydrates": "44g",
+            "dietaryFiber": "3g",
+            "sugar": "5g",
+            "protein": "14g",
+            "potassium": "250mg",
+            "iron": "2mg",
+            "calcium": "63mg",
+            "vitaminA": "1453IU",
+            "vitaminC": "25mg"
+          },
+          {
+            "course": "INTERNATIONAL",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758301,
+            "formalName": "Bok Choi Shanghai",
+            "description": "Baby bok choy stir fried with garlic and low sodium soy sauce",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "45",
+            "caloriesFromFat": "35",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "190mg",
+            "carbohydrates": "2g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "2g",
+            "potassium": "300mg",
+            "iron": "1mg",
+            "calcium": "74mg",
+            "vitaminA": "3193IU",
+            "vitaminC": "20mg"
+          }
+        ]
+      },
+      {
+        "name": "PIZZA",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "PIZZA",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758305,
+            "formalName": "Cheese Pizza",
+            "description": "Pizza crust topped with tomato sauce and shredded mozzarella cheese",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "250",
+            "caloriesFromFat": "70",
+            "fat": "8g",
+            "saturatedFat": "4g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "15mg",
+            "sodium": "730mg",
+            "carbohydrates": "34g",
+            "dietaryFiber": "2g",
+            "sugar": "3g",
+            "protein": "11g",
+            "potassium": "170mg",
+            "iron": "2mg",
+            "calcium": "169mg",
+            "vitaminA": "174IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "PIZZA",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758306,
+            "formalName": "Everything Breadstick Twist",
+            "description": "Baked with sesame, rosemary, poppy seeds, onions and steak seasoning",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "60",
+            "caloriesFromFat": "10",
+            "fat": "1g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "200mg",
+            "carbohydrates": "11g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "2g",
+            "potassium": "30mg",
+            "iron": "1mg",
+            "calcium": "14mg",
+            "vitaminA": "2IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "PIZZA",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758310,
+            "formalName": "Pepperoni Pizza",
+            "description": "Pizza crust topped with tomato sauce, shredded mozzarella cheese and pepperoni",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "280",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "20mg",
+            "sodium": "820mg",
+            "carbohydrates": "34g",
+            "dietaryFiber": "2g",
+            "sugar": "3g",
+            "protein": "13g",
+            "potassium": "190mg",
+            "iron": "2mg",
+            "calcium": "179mg",
+            "vitaminA": "185IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "SALAD BAR",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SALAD BAR",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758315,
+            "formalName": "Cucumber, Tomato & Onion Salad",
+            "description": "Cucumber, tomato, red onion, kalamata olives, extra virgin olive oil, white wine vinegar and fresh parsley",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "50",
+            "caloriesFromFat": "35",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "100mg",
+            "carbohydrates": "3g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "0g",
+            "potassium": "150mg",
+            "iron": "0mg",
+            "calcium": "14mg",
+            "vitaminA": "498IU",
+            "vitaminC": "12mg"
+          },
+          {
+            "course": "SALAD BAR",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758321,
+            "formalName": "Asian Noodle Salad",
+            "description": "Noodles tossed with a spicy sesame and soy sauce vinaigrette",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "150",
+            "caloriesFromFat": "40",
+            "fat": "4g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "0mg",
+            "sodium": "230mg",
+            "carbohydrates": "24g",
+            "dietaryFiber": "1g",
+            "sugar": "4g",
+            "protein": "4g",
+            "potassium": "95mg",
+            "iron": "1mg",
+            "calcium": "13mg",
+            "vitaminA": "130IU",
+            "vitaminC": "1mg"
+          }
+        ]
+      },
+      {
+        "name": "SIMPLE SERVINGS",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SIMPLE SERVINGS",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758322,
+            "formalName": "Baked Herbed Pork Chop",
+            "description": "Pork chop basted and seasoned with a savory vegetable & herb glaze",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "150",
+            "caloriesFromFat": "70",
+            "fat": "7g",
+            "saturatedFat": "2.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "55mg",
+            "sodium": "125mg",
+            "carbohydrates": "3g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "17g",
+            "potassium": "320mg",
+            "iron": "1mg",
+            "calcium": "24mg",
+            "vitaminA": "635IU",
+            "vitaminC": "3mg"
+          },
+          {
+            "course": "SIMPLE SERVINGS",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758330,
+            "formalName": "Balsamic Collard Greens",
+            "description": "Collard greens simmered with onions, garlic, and balsamic vinegar",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "330",
+            "caloriesFromFat": "270",
+            "fat": "30g",
+            "saturatedFat": "2g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "9g",
+            "cholesterol": "0mg",
+            "sodium": "15mg",
+            "carbohydrates": "14g",
+            "dietaryFiber": "2g",
+            "sugar": "9g",
+            "protein": "2g",
+            "potassium": "125mg",
+            "iron": "1mg",
+            "calcium": "62mg",
+            "vitaminA": "2307IU",
+            "vitaminC": "8mg"
+          },
+          {
+            "course": "SIMPLE SERVINGS",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758334,
+            "formalName": "Simple Roasted Sweet Potatoes",
+            "description": "Sweet potatoes oven-roasted with olive oil, salt and pepper",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "110",
+            "caloriesFromFat": "20",
+            "fat": "2g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "130mg",
+            "carbohydrates": "22g",
+            "dietaryFiber": "3g",
+            "sugar": "5g",
+            "protein": "2g",
+            "potassium": "380mg",
+            "iron": "1mg",
+            "calcium": "34mg",
+            "vitaminA": "15772IU",
+            "vitaminC": "3mg"
+          }
+        ]
+      },
+      {
+        "name": "SOUP",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SOUP",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758340,
+            "formalName": "Acorn & Butternut Squash Chili",
+            "description": "Acorn and butternut squash simmered in vegetable broth with kidney beans, tomatoes, garlic",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "90",
+            "caloriesFromFat": "25",
+            "fat": "3g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "220mg",
+            "carbohydrates": "16g",
+            "dietaryFiber": "4g",
+            "sugar": "4g",
+            "protein": "3g",
+            "potassium": "490mg",
+            "iron": "2mg",
+            "calcium": "74mg",
+            "vitaminA": "2445IU",
+            "vitaminC": "23mg"
+          },
+          {
+            "course": "SOUP",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758342,
+            "formalName": "Cajun Chicken Bisque",
+            "description": "Spicy and creamy chicken soup",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "100",
+            "caloriesFromFat": "40",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "20mg",
+            "sodium": "90mg",
+            "carbohydrates": "7g",
+            "dietaryFiber": "0g",
+            "sugar": "4g",
+            "protein": "8g",
+            "potassium": "250mg",
+            "iron": "0mg",
+            "calcium": "79mg",
+            "vitaminA": "262IU",
+            "vitaminC": "6mg"
+          }
+        ]
+      },
+      {
+        "name": "TWISTS",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758343,
+            "formalName": "Marinara Sauce",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "50",
+            "caloriesFromFat": "10",
+            "fat": "1g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "240mg",
+            "carbohydrates": "8g",
+            "dietaryFiber": "2g",
+            "sugar": "5g",
+            "protein": "2g",
+            "potassium": "440mg",
+            "iron": "1mg",
+            "calcium": "20mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758350,
+            "formalName": "Alfredo Sauce",
+            "description": "Creamy white sauce finished with parmesan cheese",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "190",
+            "caloriesFromFat": "140",
+            "fat": "16g",
+            "saturatedFat": "9g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "35mg",
+            "sodium": "370mg",
+            "carbohydrates": "7g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "5g",
+            "potassium": "150mg",
+            "iron": "0mg",
+            "calcium": "154mg",
+            "vitaminA": "428IU",
+            "vitaminC": "1mg"
+          },
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "LUNCH",
+            "menuItemId": 6293758357,
+            "formalName": "Chickpea Rotini",
+            "description": "Chickpea rotini pasta",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "410",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "1.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "60mg",
+            "carbohydrates": "69g",
+            "dietaryFiber": "17g",
+            "sugar": "3g",
+            "protein": "22g",
+            "potassium": "1260mg",
+            "iron": "6mg",
+            "calcium": "62mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "DINNER",
+    "groups": [
+      {
+        "name": null,
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": null,
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758363,
+            "formalName": "Have A Nice Day",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "",
+            "caloriesFromFat": "",
+            "fat": "",
+            "saturatedFat": "",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "",
+            "sodium": "0mg",
+            "carbohydrates": "",
+            "dietaryFiber": "",
+            "sugar": "",
+            "protein": "",
+            "potassium": "",
+            "iron": "0mg",
+            "calcium": "0mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "CHEF'S TABLE",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758365,
+            "formalName": "Tandoori Chicken Breast",
+            "description": "Roasted tandoori marinated chicken breast",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "110",
+            "caloriesFromFat": "25",
+            "fat": "3g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "55mg",
+            "sodium": "135mg",
+            "carbohydrates": "0g",
+            "dietaryFiber": "0g",
+            "sugar": "0g",
+            "protein": "20g",
+            "potassium": "170mg",
+            "iron": "1mg",
+            "calcium": "15mg",
+            "vitaminA": "42IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758374,
+            "formalName": "Steamed Jasmine Rice",
+            "description": "Aromatic white rice from Thailand",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "100",
+            "caloriesFromFat": "0",
+            "fat": "0g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "0mg",
+            "carbohydrates": "23g",
+            "dietaryFiber": "0g",
+            "sugar": "0g",
+            "protein": "2g",
+            "potassium": "35mg",
+            "iron": "0mg",
+            "calcium": "3mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758379,
+            "formalName": "Moroccan Spiced Roasted Vegetables",
+            "description": "Butternut squash, acorn squash and sweet potatoes roasted with sweet cinnamon spice blend",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "60",
+            "caloriesFromFat": "35",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "5mg",
+            "carbohydrates": "6g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "0g",
+            "potassium": "120mg",
+            "iron": "0mg",
+            "calcium": "15mg",
+            "vitaminA": "2600IU",
+            "vitaminC": "4mg"
+          },
+          {
+            "course": "CHEF'S TABLE",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758386,
+            "formalName": "Naan Bread",
+            "description": "Traditional house baked Indian and southeast Asian flatbread",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "260",
+            "caloriesFromFat": "80",
+            "fat": "9g",
+            "saturatedFat": "6g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "20mg",
+            "sodium": "160mg",
+            "carbohydrates": "39g",
+            "dietaryFiber": "1g",
+            "sugar": "1g",
+            "protein": "6g",
+            "potassium": "60mg",
+            "iron": "2mg",
+            "calcium": "11mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "GRILL",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758395,
+            "formalName": "Black Bean Burger",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "240",
+            "caloriesFromFat": "35",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "810mg",
+            "carbohydrates": "38g",
+            "dietaryFiber": "6g",
+            "sugar": "5g",
+            "protein": "13g",
+            "potassium": "250mg",
+            "iron": "4mg",
+            "calcium": "91mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758400,
+            "formalName": "Cheeseburger On Bun",
+            "description": "A hamburger patty With American cheese, lettuce and tomato on a bun",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "450",
+            "caloriesFromFat": "240",
+            "fat": "27g",
+            "saturatedFat": "12g",
+            "transFat": "2g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "70mg",
+            "sodium": "740mg",
+            "carbohydrates": "29g",
+            "dietaryFiber": "1g",
+            "sugar": "5g",
+            "protein": "21g",
+            "potassium": "340mg",
+            "iron": "3mg",
+            "calcium": "148mg",
+            "vitaminA": "800IU",
+            "vitaminC": "4mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758425,
+            "formalName": "Grilled Cheese",
+            "description": "Slow grilled sandwich on white bread with American cheese",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "320",
+            "caloriesFromFat": "150",
+            "fat": "17g",
+            "saturatedFat": "9g",
+            "transFat": "1g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "35mg",
+            "sodium": "1000mg",
+            "carbohydrates": "28g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "13g",
+            "potassium": "95mg",
+            "iron": "2mg",
+            "calcium": "286mg",
+            "vitaminA": "0IU",
+            "vitaminC": "4mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758437,
+            "formalName": "Hamburger On Bun",
+            "description": "Hamburger with lettuce and tomato on a toasted bun",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "400",
+            "caloriesFromFat": "210",
+            "fat": "23g",
+            "saturatedFat": "9g",
+            "transFat": "2g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "55mg",
+            "sodium": "510mg",
+            "carbohydrates": "28g",
+            "dietaryFiber": "1g",
+            "sugar": "4g",
+            "protein": "19g",
+            "potassium": "330mg",
+            "iron": "3mg",
+            "calcium": "67mg",
+            "vitaminA": "796IU",
+            "vitaminC": "4mg"
+          },
+          {
+            "course": "GRILL",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758439,
+            "formalName": "French Fries",
+            "description": "",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "150",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "1.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "5g",
+            "cholesterol": "0mg",
+            "sodium": "20mg",
+            "carbohydrates": "16g",
+            "dietaryFiber": "1g",
+            "sugar": "1g",
+            "protein": "1g",
+            "potassium": "250mg",
+            "iron": "0mg",
+            "calcium": "9mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "GROWN",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "GROWN",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758448,
+            "formalName": "Black Beans Frijoles Negros",
+            "description": "Black beans simmered with onion and garlic",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "100",
+            "caloriesFromFat": "0",
+            "fat": "0g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "330mg",
+            "carbohydrates": "18g",
+            "dietaryFiber": "4g",
+            "sugar": "1g",
+            "protein": "6g",
+            "potassium": "410mg",
+            "iron": "1mg",
+            "calcium": "67mg",
+            "vitaminA": "5IU",
+            "vitaminC": "1mg"
+          },
+          {
+            "course": "GROWN",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758465,
+            "formalName": "Kogi Tofu",
+            "description": "Tofu marinated in chipotle salsa, orange juice, lime juice and garlic",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "50",
+            "caloriesFromFat": "25",
+            "fat": "3g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "0mg",
+            "carbohydrates": "2g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "6g",
+            "potassium": "80mg",
+            "iron": "1mg",
+            "calcium": "76mg",
+            "vitaminA": "14IU",
+            "vitaminC": "1mg"
+          }
+        ]
+      },
+      {
+        "name": "PIZZA",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "PIZZA",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758471,
+            "formalName": "Everything Breadstick Twist",
+            "description": "Baked with sesame, rosemary, poppy seeds, onions and steak seasoning",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 2,
+                "name": "Eggs"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "60",
+            "caloriesFromFat": "10",
+            "fat": "1g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "200mg",
+            "carbohydrates": "11g",
+            "dietaryFiber": "0g",
+            "sugar": "1g",
+            "protein": "2g",
+            "potassium": "30mg",
+            "iron": "1mg",
+            "calcium": "14mg",
+            "vitaminA": "2IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "PIZZA",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758476,
+            "formalName": "Cheese Pizza",
+            "description": "Pizza crust topped with tomato sauce and shredded mozzarella cheese",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "250",
+            "caloriesFromFat": "70",
+            "fat": "8g",
+            "saturatedFat": "4g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "15mg",
+            "sodium": "730mg",
+            "carbohydrates": "34g",
+            "dietaryFiber": "2g",
+            "sugar": "3g",
+            "protein": "11g",
+            "potassium": "170mg",
+            "iron": "2mg",
+            "calcium": "169mg",
+            "vitaminA": "174IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "PIZZA",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758484,
+            "formalName": "Pepperoni Pizza",
+            "description": "Pizza crust topped with tomato sauce, shredded mozzarella cheese and pepperoni",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "280",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "20mg",
+            "sodium": "820mg",
+            "carbohydrates": "34g",
+            "dietaryFiber": "2g",
+            "sugar": "3g",
+            "protein": "13g",
+            "potassium": "190mg",
+            "iron": "2mg",
+            "calcium": "179mg",
+            "vitaminA": "185IU",
+            "vitaminC": "0mg"
+          }
+        ]
+      },
+      {
+        "name": "SALAD BAR",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SALAD BAR",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758499,
+            "formalName": "Lemon Za'atar Chickpea Salad",
+            "description": "Chickpeas tossed with celery, lemon juice, fresh mint and za'atar seasoning",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "80",
+            "caloriesFromFat": "15",
+            "fat": "1g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "140mg",
+            "carbohydrates": "13g",
+            "dietaryFiber": "2g",
+            "sugar": "1g",
+            "protein": "4g",
+            "potassium": "160mg",
+            "iron": "1mg",
+            "calcium": "24mg",
+            "vitaminA": "107IU",
+            "vitaminC": "2mg"
+          },
+          {
+            "course": "SALAD BAR",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758507,
+            "formalName": "Asian Noodle Salad",
+            "description": "Noodles tossed with a spicy sesame and soy sauce vinaigrette",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 16,
+                "name": "Sesame Seeds"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "150",
+            "caloriesFromFat": "40",
+            "fat": "4g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "2g",
+            "cholesterol": "0mg",
+            "sodium": "230mg",
+            "carbohydrates": "24g",
+            "dietaryFiber": "1g",
+            "sugar": "4g",
+            "protein": "4g",
+            "potassium": "95mg",
+            "iron": "1mg",
+            "calcium": "13mg",
+            "vitaminA": "130IU",
+            "vitaminC": "1mg"
+          }
+        ]
+      },
+      {
+        "name": "SIMPLE SERVINGS",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SIMPLE SERVINGS",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758510,
+            "formalName": "Arroz Verde",
+            "description": "Rice simmered in vegetable broth with green peppers, onions, garlic, chiles, tomatillos and cilantro",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "160",
+            "caloriesFromFat": "20",
+            "fat": "2g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "270mg",
+            "carbohydrates": "30g",
+            "dietaryFiber": "1g",
+            "sugar": "1g",
+            "protein": "3g",
+            "potassium": "160mg",
+            "iron": "1mg",
+            "calcium": "34mg",
+            "vitaminA": "74IU",
+            "vitaminC": "5mg"
+          },
+          {
+            "course": "SIMPLE SERVINGS",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758515,
+            "formalName": "Sauteed Spinach With Lime & Chiles",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "50",
+            "caloriesFromFat": "30",
+            "fat": "3g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "250mg",
+            "carbohydrates": "6g",
+            "dietaryFiber": "2g",
+            "sugar": "1g",
+            "protein": "3g",
+            "potassium": "580mg",
+            "iron": "3mg",
+            "calcium": "103mg",
+            "vitaminA": "9459IU",
+            "vitaminC": "31mg"
+          },
+          {
+            "course": "SIMPLE SERVINGS",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758524,
+            "formalName": "Tuscan Herb Pollock",
+            "description": "Pollock fillet crusted in a garlic, thyme and fresh parsley blend",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 8,
+                "name": "Fish"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "110",
+            "caloriesFromFat": "10",
+            "fat": "1g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "75mg",
+            "sodium": "370mg",
+            "carbohydrates": "2g",
+            "dietaryFiber": "0g",
+            "sugar": "0g",
+            "protein": "21g",
+            "potassium": "420mg",
+            "iron": "1mg",
+            "calcium": "80mg",
+            "vitaminA": "214IU",
+            "vitaminC": "4mg"
+          }
+        ]
+      },
+      {
+        "name": "SOUP",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "SOUP",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758555,
+            "formalName": "Cajun Chicken Bisque",
+            "description": "Spicy and creamy chicken soup",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": false,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "100",
+            "caloriesFromFat": "40",
+            "fat": "4g",
+            "saturatedFat": "0.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "20mg",
+            "sodium": "90mg",
+            "carbohydrates": "7g",
+            "dietaryFiber": "0g",
+            "sugar": "4g",
+            "protein": "8g",
+            "potassium": "250mg",
+            "iron": "0mg",
+            "calcium": "79mg",
+            "vitaminA": "262IU",
+            "vitaminC": "6mg"
+          },
+          {
+            "course": "SOUP",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758583,
+            "formalName": "Acorn & Butternut Squash Chili",
+            "description": "Acorn and butternut squash simmered in vegetable broth with kidney beans, tomatoes, garlic",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": true,
+            "isSwell": false,
+            "calories": "90",
+            "caloriesFromFat": "25",
+            "fat": "3g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "220mg",
+            "carbohydrates": "16g",
+            "dietaryFiber": "4g",
+            "sugar": "4g",
+            "protein": "3g",
+            "potassium": "490mg",
+            "iron": "2mg",
+            "calcium": "74mg",
+            "vitaminA": "2445IU",
+            "vitaminC": "23mg"
+          }
+        ]
+      },
+      {
+        "name": "TWISTS",
+        "sortOrder": 0,
+        "items": [
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758592,
+            "formalName": "Marinara Sauce",
+            "description": "",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "50",
+            "caloriesFromFat": "10",
+            "fat": "1g",
+            "saturatedFat": "0g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "0g",
+            "cholesterol": "0mg",
+            "sodium": "240mg",
+            "carbohydrates": "8g",
+            "dietaryFiber": "2g",
+            "sugar": "5g",
+            "protein": "2g",
+            "potassium": "440mg",
+            "iron": "1mg",
+            "calcium": "20mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758609,
+            "formalName": "Chickpea Rotini",
+            "description": "Chickpea rotini pasta",
+            "price": 0,
+            "allergens": [],
+            "sizes": [],
+            "addons": [],
+            "isVegan": true,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "410",
+            "caloriesFromFat": "90",
+            "fat": "10g",
+            "saturatedFat": "1.5g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "0mg",
+            "sodium": "60mg",
+            "carbohydrates": "69g",
+            "dietaryFiber": "17g",
+            "sugar": "3g",
+            "protein": "22g",
+            "potassium": "1260mg",
+            "iron": "6mg",
+            "calcium": "62mg",
+            "vitaminA": "0IU",
+            "vitaminC": "0mg"
+          },
+          {
+            "course": "TWISTS",
+            "courseSortOrder": 0,
+            "meal": "DINNER",
+            "menuItemId": 6293758617,
+            "formalName": "Alfredo Sauce",
+            "description": "Creamy white sauce finished with parmesan cheese",
+            "price": 0,
+            "allergens": [
+              {
+                "allergen": 1,
+                "name": "Milk"
+              },
+              {
+                "allergen": 6,
+                "name": "Wheat"
+              },
+              {
+                "allergen": 7,
+                "name": "Soybean"
+              },
+              {
+                "allergen": 11,
+                "name": "Gluten"
+              }
+            ],
+            "sizes": [],
+            "addons": [],
+            "isVegan": false,
+            "isVegetarian": true,
+            "isMindful": false,
+            "isSwell": false,
+            "calories": "190",
+            "caloriesFromFat": "140",
+            "fat": "16g",
+            "saturatedFat": "9g",
+            "transFat": "0g",
+            "polyunsaturatedFat": "1g",
+            "cholesterol": "35mg",
+            "sodium": "370mg",
+            "carbohydrates": "7g",
+            "dietaryFiber": "0g",
+            "sugar": "2g",
+            "protein": "5g",
+            "potassium": "150mg",
+            "iron": "0mg",
+            "calcium": "154mg",
+            "vitaminA": "428IU",
+            "vitaminC": "1mg"
+          }
+        ]
+      }
+    ]
+  }
+]

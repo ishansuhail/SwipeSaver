@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {% load static %}
 <html lang="en">
 <head>
@@ -73,6 +74,33 @@
             margin: 0;
             padding: 0;
             margin-bottom: 65px;
+        }
+
+        /* Top-right login status */
+        .user-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+
+        .user-status a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .user-status a:hover {
+            text-decoration: underline;
+        }
+
+        /* Additional styles for scrollmenu */
+        .disabled {
+            background-color: gray;
+            color: white;
+            cursor: not-allowed;
+            opacity: 0.6;
         }
 
         a {
@@ -257,7 +285,50 @@
     </style>
 </head>
 
-    <div></div>
+<body style="background-color: whitesmoke;">
+<div class="header-container">
+<div class="overlay-box"></div>
+
+<img alt="SwipeSaver" src="{% static 'newLogo.png' %}"/>
+
+<h1>COMMONS DINING HALL</h1>
+
+</div>
+
+    <!-- Top-right user status -->
+    <div class="user-status">
+        {% if user.is_authenticated %}
+            <!-- Display when the user is logged in -->
+            <span>Logged in as {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+    </div>
+
+<div class="scrollmenu">
+    <a href="{% url 'homepage' %}">Home</a>
+    <a href="{% url 'commons' %}">Commons Dining Hall</a>
+    <a href="{% url 'barh' %}">Barh Dining Hall</a>
+    <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>
+    <a href="{% url 'blitman' %}">Blitman Dining Hall</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    
+    {% if not user.is_authenticated %}
+    <!-- Show login and signup buttons when user is not logged in -->
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+</div>
+
+<p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
+<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button></p>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
+<p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
+<div class="footer">
+<p>An RCOS project</p>
+<button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function getCurrentTime() {
