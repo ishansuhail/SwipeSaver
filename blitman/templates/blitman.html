@@ -11,6 +11,7 @@
 
 
 
+
 {% load static %}
 <html lang="en">
 <head>
@@ -259,7 +260,6 @@
 <a href="#about">About</a>
 <a href="{% url 'login' %}">Login</a>
 <a href="{% url 'signup' %}">Sign Up</a>
-
 </div>
 <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
 <p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button></p>

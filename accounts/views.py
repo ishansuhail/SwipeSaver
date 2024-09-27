@@ -4,6 +4,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignupForm
 
+# need to show that we've already logged in, meaning can't login again
+# needs signout feature
+
 def signup_view(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
