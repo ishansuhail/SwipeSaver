@@ -22,33 +22,7 @@ def commons(request):
     return render(request, 'commons.html')
 
 
-def populate(url):
-    response = requests.get(url)
-    html_content = response.text
-    
-    soup = BeautifulSoup(html_content, 'html.parser')
-    script_tag = soup.find('script', text=re.compile(r'window\.__PRELOADED_STATE__'))
-    if script_tag:
-        script_content = script_tag.string
 
-        # print(script_content)
-        split_content = script_content.split('window.__PRELOADED_STATE__ = ')
-        
-        if split_content:
-            try: 
-                json_data = json.loads(split_content[1].strip())  # Parse the JSON string into a Python dictionary
-                file_name = 'output.txt'  # You can change this to any file name or path
-
-# Open the file in write mode and save the content
-                with open(file_name, 'w', encoding='utf-8') as file:
-                    data = json_data.get('composition').get('subject').get('regions')[1].get('fragments')[0].get('content').get('main').get('sections')
-                    print(data[0].get('name'))
-                    print(data[1].get('name'))
-                    print(data[2].get('name'))
-                    file.write(json.dumps(data, indent= 2))
-                # Get the ratings data
-            except json.JSONDecodeError as e:
-                print("Error decoding JSON:", e)  # Part after the delimiter
         
         # if s:
         #     json_data_str = json_data_match.group(1)  # Extract the matched JSON string

@@ -35,9 +35,9 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                 with open(file_name, 'w', encoding='utf-8') as file:
                     data = json_data.get('composition').get('subject').get('regions')[1].get('fragments')[0].get('content').get('main').get('sections')
                     print(data[0].get('name'))
-                    print(data[1].get('name'))
-                    print(data[2].get('name'))
-                    file.write(json.dumps(data, indent= 2))
+                    for x in data[0].get('groups'):
+                        if x.get('name') != None:
+                            file.write(json.dumps(x, indent= 2))
                 # Get the ratings data
             except json.JSONDecodeError as e:
                 print("Error decoding JSON:", e)  # Part after the delimiter
