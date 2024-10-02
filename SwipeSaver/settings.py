@@ -91,6 +91,8 @@ DATABASES = {
      'PostgresDB': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
 }
 
+DATABASE_ROUTERS = ['SwipeSaver.postgres_router.SwipeSaverRouter']
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

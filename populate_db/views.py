@@ -1,16 +1,16 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 
 import datetime
 
-
-from bs4 import BeautifulSoup
 import requests
-import re
 import json
-from unidecode import unidecode
+import re
+from bs4 import BeautifulSoup
+from populate_db.models import FoodItem
 
 # Create your views here.
-def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall"):
+def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall", dining_hall = "commons"):
     response = requests.get(url)
     html_content = response.text
     
@@ -18,41 +18,52 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
     script_tag = soup.find('script', text=re.compile(r'window\.__PRELOADED_STATE__'))
     if script_tag:
         script_content = script_tag.string
-
-        # print(script_content)
         split_content = script_content.split('window.__PRELOADED_STATE__ = ')
         
         if split_content:
-        # Print the parts before and after the split
-        # print("Part before 'window.__PRELOADED_STATE__':")
-        # print(split_content[0].strip())  # Part before the delimiter
-        # print("\nPart after 'window.__PRELOADED_STATE__':")
             try: 
                 json_data = json.loads(split_content[1].strip())  # Parse the JSON string into a Python dictionary
-                file_name = 'output.txt'  # You can change this to any file name or path
+                data = json_data.get('composition').get('subject').get('regions')[1].get('fragments')[0].get('content').get('main').get('sections')
+                
+                # Extract info that we want
+                for meal in data:
+                    print(f"Meal: {meal.get('name')}")
+                    for group in meal.get('groups', []):  # Ensure 'groups' is available
+                        print(f"  Group name: {group.get('name')}")
+                        for item in group.get('items', []):  # Ensure 'items' is available
+                            
+                            item_station = item.get('course')
+                            item_meal = item.get('meal')
+                            item_id = item.get('menuItemId')
+                            item_name = item.get('formalName')
+                            item_desc = item.get('description')
+                            item_dining_hall = dining_hall
 
-# Open the file in write mode and save the content
-                with open(file_name, 'w', encoding='utf-8') as file:
-                    data = json_data.get('composition').get('subject').get('regions')[1].get('fragments')[0].get('content').get('main').get('sections')
-                    print(data[0].get('name'))
-                    for x in data[0].get('groups'):
-                        if x.get('name') != None:
-                            file.write(json.dumps(x, indent= 2))
-                # Get the ratings data
+                            # Create a FoodItem instance
+                            food_item = FoodItem(
+                                id = item_id,
+                                name=item_name,
+                                description=item_desc,
+                                meal=item_meal,
+                                station=item_station,
+                                dining_hall=item_dining_hall
+                            )
+                            
+                            # Save the FoodItem instance to the database
+                            food_item.save(using='PostgresDB')
+                            
+
+                #print(json.dumps(data, indent=4))
             except json.JSONDecodeError as e:
                 print("Error decoding JSON:", e)  # Part after the delimiter
-        
-        # if s:
-        #     json_data_str = json_data_match.group(1)  # Extract the matched JSON string
-            
-        #     try:
-        #         # Step 3: Parse the JSON string into a Python dictionary
-        #         json_data = json.loads(json_data_str)
-                
-        #         # Print the extracted JSON data
-        #         print(json.dumps(json_data, indent=4))  # Pretty print the JSON data
-        #     except json.JSONDecodeError as e:
-        #         print("Error decoding JSON:", e)
-        # else:
-        #     print("No JSON data found.")
+
+def food_item_list(request):
+    # Fetch all food items
+    food_items = FoodItem.objects.all().values('id', 'name', 'description', 'station', 'dining_hall', 'meal')
+    
+    # Convert to list
+    food_items_list = list(food_items)
+    
+    return JsonResponse(food_items_list, safe=False)
+
     
