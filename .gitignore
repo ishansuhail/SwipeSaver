@@ -1,5 +1,37 @@
-db.sqlite3
-/commons/templates/commons.html
-**/__pycache__/
+# Python cache files
 __pycache__/
-output.txt
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+env/
+env.bak/
+*.env
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+!*/migrations/__init__.py
+
+# Database files
+db.sqlite3
+
+# Static files
+/staticfiles/
+media/
+
+# IDE configurations
+.idea/
+*.swp
+*.swo
+*.DS_Store
+.vscode/
+*.egg-info/
+*.egg
+
+# Log files
+*.log
+
+# Local settings
+local_settings.py

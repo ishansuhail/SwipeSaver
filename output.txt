@@ -1,0 +1,715 @@
+{
+  "name": "BAKERY",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "BAKERY",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192464,
+      "formalName": "Classic Blueberry Muffin",
+      "description": "Muffin baked with blueberries",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 2,
+          "name": "Eggs"
+        },
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "170",
+      "caloriesFromFat": "45",
+      "fat": "5g",
+      "saturatedFat": "2.5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "0mg",
+      "sodium": "260mg",
+      "carbohydrates": "31g",
+      "dietaryFiber": "0g",
+      "sugar": "17g",
+      "protein": "1g",
+      "potassium": "55mg",
+      "iron": "1mg",
+      "calcium": "13mg",
+      "vitaminA": "5IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "BAKERY",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192465,
+      "formalName": "Banana Yogurt Coffee Cake",
+      "description": "Banana vanilla yogurt coffee cake with streusel topping",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 2,
+          "name": "Eggs"
+        },
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "210",
+      "caloriesFromFat": "60",
+      "fat": "6g",
+      "saturatedFat": "3.5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "5mg",
+      "sodium": "270mg",
+      "carbohydrates": "37g",
+      "dietaryFiber": "1g",
+      "sugar": "20g",
+      "protein": "2g",
+      "potassium": "130mg",
+      "iron": "1mg",
+      "calcium": "17mg",
+      "vitaminA": "16IU",
+      "vitaminC": "2mg"
+    }
+  ]
+}{
+  "name": "ENTREE",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "ENTREE",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192466,
+      "formalName": "Chickpea Hash On Toast",
+      "description": "Chickpea, sweet potato and red pepper hash and fresh cilantro on sourdough toast",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": true,
+      "isVegetarian": true,
+      "isMindful": true,
+      "isSwell": false,
+      "calories": "230",
+      "caloriesFromFat": "70",
+      "fat": "7g",
+      "saturatedFat": "1g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "1g",
+      "cholesterol": "0mg",
+      "sodium": "610mg",
+      "carbohydrates": "34g",
+      "dietaryFiber": "3g",
+      "sugar": "3g",
+      "protein": "6g",
+      "potassium": "330mg",
+      "iron": "2mg",
+      "calcium": "45mg",
+      "vitaminA": "5862IU",
+      "vitaminC": "21mg"
+    }
+  ]
+}{
+  "name": "GRILL",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192467,
+      "formalName": "Hash Brown Cubed Potato",
+      "description": "Diced hash browns fried in oil and seasoned with salt and pepper",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": true,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "160",
+      "caloriesFromFat": "90",
+      "fat": "11g",
+      "saturatedFat": "2g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "5g",
+      "cholesterol": "0mg",
+      "sodium": "400mg",
+      "carbohydrates": "16g",
+      "dietaryFiber": "1g",
+      "sugar": "1g",
+      "protein": "1g",
+      "potassium": "240mg",
+      "iron": "0mg",
+      "calcium": "10mg",
+      "vitaminA": "1IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192468,
+      "formalName": "10\" Flour Tortilla",
+      "description": "",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": true,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "200",
+      "caloriesFromFat": "50",
+      "fat": "6g",
+      "saturatedFat": "3g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "0mg",
+      "sodium": "400mg",
+      "carbohydrates": "34g",
+      "dietaryFiber": "1g",
+      "sugar": "1g",
+      "protein": "6g",
+      "potassium": "50mg",
+      "iron": "2mg",
+      "calcium": "84mg",
+      "vitaminA": "0IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192469,
+      "formalName": "Scrambled Eggs",
+      "description": "",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 2,
+          "name": "Eggs"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "190",
+      "caloriesFromFat": "120",
+      "fat": "13g",
+      "saturatedFat": "4g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "1g",
+      "cholesterol": "445mg",
+      "sodium": "170mg",
+      "carbohydrates": "0g",
+      "dietaryFiber": "0g",
+      "sugar": "0g",
+      "protein": "15g",
+      "potassium": "170mg",
+      "iron": "2mg",
+      "calcium": "67mg",
+      "vitaminA": "0IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192470,
+      "formalName": "Buttermilk Pancakes",
+      "description": "",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 2,
+          "name": "Eggs"
+        },
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "180",
+      "caloriesFromFat": "30",
+      "fat": "3g",
+      "saturatedFat": "1g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "2g",
+      "cholesterol": "5mg",
+      "sodium": "400mg",
+      "carbohydrates": "33g",
+      "dietaryFiber": "1g",
+      "sugar": "6g",
+      "protein": "4g",
+      "potassium": "0mg",
+      "iron": "2mg",
+      "calcium": "19mg",
+      "vitaminA": "0IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192471,
+      "formalName": "Sausage Gravy",
+      "description": "",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": false,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "80",
+      "caloriesFromFat": "50",
+      "fat": "6g",
+      "saturatedFat": "2.5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "1g",
+      "cholesterol": "10mg",
+      "sodium": "230mg",
+      "carbohydrates": "4g",
+      "dietaryFiber": "0g",
+      "sugar": "3g",
+      "protein": "3g",
+      "potassium": "90mg",
+      "iron": "0mg",
+      "calcium": "63mg",
+      "vitaminA": "96IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192472,
+      "formalName": "House Baked Buttermilk Biscuit",
+      "description": "",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "170",
+      "caloriesFromFat": "70",
+      "fat": "7g",
+      "saturatedFat": "5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "0mg",
+      "sodium": "520mg",
+      "carbohydrates": "24g",
+      "dietaryFiber": "0g",
+      "sugar": "2g",
+      "protein": "3g",
+      "potassium": "40mg",
+      "iron": "1mg",
+      "calcium": "30mg",
+      "vitaminA": "0IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "GRILL",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192473,
+      "formalName": "Two Pork Sausage Links",
+      "description": null,
+      "price": 0,
+      "allergens": [],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": false,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "200",
+      "caloriesFromFat": "170",
+      "fat": "19g",
+      "saturatedFat": "7g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "3g",
+      "cholesterol": "35mg",
+      "sodium": "390mg",
+      "carbohydrates": "0g",
+      "dietaryFiber": "0g",
+      "sugar": "0g",
+      "protein": "6g",
+      "potassium": "115mg",
+      "iron": "0mg",
+      "calcium": "16mg",
+      "vitaminA": "1IU",
+      "vitaminC": "0mg"
+    }
+  ]
+}{
+  "name": "SALAD BAR",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "SALAD BAR",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192474,
+      "formalName": "Vanilla Belgian Waffle",
+      "description": "",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 6,
+          "name": "Wheat"
+        },
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        },
+        {
+          "allergen": 11,
+          "name": "Gluten"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "260",
+      "caloriesFromFat": "25",
+      "fat": "3g",
+      "saturatedFat": "0.5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "2g",
+      "cholesterol": "0mg",
+      "sodium": "1150mg",
+      "carbohydrates": "53g",
+      "dietaryFiber": "0g",
+      "sugar": "7g",
+      "protein": "5g",
+      "potassium": "95mg",
+      "iron": "3mg",
+      "calcium": "20mg",
+      "vitaminA": "9IU",
+      "vitaminC": "0mg"
+    }
+  ]
+}{
+  "name": "SOUP",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "SOUP",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192475,
+      "formalName": "Oatmeal",
+      "description": "A hearty bowl of oatmeal",
+      "price": 0,
+      "allergens": [],
+      "sizes": [],
+      "addons": [],
+      "isVegan": true,
+      "isVegetarian": true,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "110",
+      "caloriesFromFat": "20",
+      "fat": "2g",
+      "saturatedFat": "0g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "1g",
+      "cholesterol": "0mg",
+      "sodium": "5mg",
+      "carbohydrates": "21g",
+      "dietaryFiber": "3g",
+      "sugar": "0g",
+      "protein": "4g",
+      "potassium": "110mg",
+      "iron": "1mg",
+      "calcium": "19mg",
+      "vitaminA": "0IU",
+      "vitaminC": "0mg"
+    }
+  ]
+}{
+  "name": "STARCH",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "STARCH",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192476,
+      "formalName": "Simply Steamed Red Quinoa",
+      "description": "Steamed red quinoa seasoned with EVOO, kosher salt, black pepper",
+      "price": 0,
+      "allergens": [],
+      "sizes": [],
+      "addons": [],
+      "isVegan": true,
+      "isVegetarian": true,
+      "isMindful": true,
+      "isSwell": false,
+      "calories": "130",
+      "caloriesFromFat": "25",
+      "fat": "3g",
+      "saturatedFat": "0g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "1g",
+      "cholesterol": "0mg",
+      "sodium": "70mg",
+      "carbohydrates": "20g",
+      "dietaryFiber": "2g",
+      "sugar": "2g",
+      "protein": "4g",
+      "potassium": "180mg",
+      "iron": "1mg",
+      "calcium": "17mg",
+      "vitaminA": "5IU",
+      "vitaminC": "0mg"
+    }
+  ]
+}{
+  "name": "TWISTS",
+  "sortOrder": 0,
+  "items": [
+    {
+      "course": "TWISTS",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192477,
+      "formalName": "Everything Omelet",
+      "description": "Cage free egg omelet with green onions, green pepper, mushrooms, spinach, tomatoes, cheddar and mozzarella cheeses",
+      "price": 0,
+      "allergens": [
+        {
+          "allergen": 1,
+          "name": "Milk"
+        },
+        {
+          "allergen": 2,
+          "name": "Eggs"
+        },
+        {
+          "allergen": 7,
+          "name": "Soybean"
+        }
+      ],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": true,
+      "isMindful": true,
+      "isSwell": false,
+      "calories": "290",
+      "caloriesFromFat": "190",
+      "fat": "21g",
+      "saturatedFat": "8g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "455mg",
+      "sodium": "320mg",
+      "carbohydrates": "5g",
+      "dietaryFiber": "0g",
+      "sugar": "2g",
+      "protein": "19g",
+      "potassium": "330mg",
+      "iron": "3mg",
+      "calcium": "184mg",
+      "vitaminA": "1118IU",
+      "vitaminC": "16mg"
+    },
+    {
+      "course": "TWISTS",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192478,
+      "formalName": "Crumbled Bacon",
+      "description": "",
+      "price": 0,
+      "allergens": [],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": false,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "50",
+      "caloriesFromFat": "35",
+      "fat": "4g",
+      "saturatedFat": "1.5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "10mg",
+      "sodium": "150mg",
+      "carbohydrates": "0g",
+      "dietaryFiber": "",
+      "sugar": "0g",
+      "protein": "3g",
+      "potassium": "50mg",
+      "iron": "0mg",
+      "calcium": "4mg",
+      "vitaminA": "1IU",
+      "vitaminC": "0mg"
+    },
+    {
+      "course": "TWISTS",
+      "courseSortOrder": 0,
+      "meal": "BREAKFAST",
+      "menuItemId": 6301192479,
+      "formalName": "Smoked Ham",
+      "description": "",
+      "price": 0,
+      "allergens": [],
+      "sizes": [],
+      "addons": [],
+      "isVegan": false,
+      "isVegetarian": false,
+      "isMindful": false,
+      "isSwell": false,
+      "calories": "35",
+      "caloriesFromFat": "15",
+      "fat": "2g",
+      "saturatedFat": "0.5g",
+      "transFat": "0g",
+      "polyunsaturatedFat": "0g",
+      "cholesterol": "15mg",
+      "sodium": "300mg",
+      "carbohydrates": "0g",
+      "dietaryFiber": "0g",
+      "sugar": "1g",
+      "protein": "5g",
+      "potassium": "140mg",
+      "iron": "0mg",
+      "calcium": "2mg",
+      "vitaminA": "1IU",
+      "vitaminC": "0mg"
+    }
+  ]
+}
