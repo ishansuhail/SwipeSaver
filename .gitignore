@@ -136,3 +136,14 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Application specific migrations files
+accounts/migrations/*
+barh/migrations/*
+blitman/migrations/*
+commons/migrations/*
+homepage/migrations/*
+populate_db/migrations/*
+russellsage/migrations/*
+SwipeSaver/migrations/*
+
