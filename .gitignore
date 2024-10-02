@@ -3,6 +3,7 @@
 *.pot
 *.pyc
 __pycache__
+*/__pycache__/*
 db.sqlite3
 media
 
@@ -137,13 +138,9 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 
-# Application specific migrations files
-accounts/migrations/*
-barh/migrations/*
-blitman/migrations/*
-commons/migrations/*
-homepage/migrations/*
-populate_db/migrations/*
-russellsage/migrations/*
-SwipeSaver/migrations/*
+# Migrations
+*/migrations/*
+
+# Exclude .DS_Store files
+*/.DS_Store/*
 
