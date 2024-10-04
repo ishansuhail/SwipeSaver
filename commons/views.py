@@ -1,58 +1,42 @@
-from django.db import connections
-from django.shortcuts import render
-from populate_db.views import populate
-
+# Standard Library Imports
 import datetime
-
-from django.http import JsonResponse
-from django.db.models import Avg
-from .models import Rating, Station
-# Create your views here.
-from django.http import HttpResponse
-
-from bs4 import BeautifulSoup
-import requests
 import re
 import json
+
+# Third-Party Library Imports
+from bs4 import BeautifulSoup
+import requests
 from unidecode import unidecode
+
+# Django Imports
+from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse
+from django.db.models import Avg
+
+# Local Application Imports
+from populate_db.views import populate
+from populate_db.models import FoodItem
+from .models import Rating, Station
+
 
 
 
 def commons(request):
-    # populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
-    food_items = []
-    try:
-        with connections['PostgresDB'].cursor() as cursor:
-            cursor.execute('SELECT * FROM "populate_db_fooditem" WHERE "dining_hall" = %s', ('commons',))
-            
-            food_items =  cursor.fetchall()
+    #populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
 
-        # Iterate over the rows and add each row (or specific columns) to the food_items array
-            print(food_items)
-            
-    except Exception as e:
-        print("Failed to fetch data: ", e)
-    return render(request, 'commons.html')
+    food_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons")
 
-
-
-        
-        # if s:
-        #     json_data_str = json_data_match.group(1)  # Extract the matched JSON string
-            
-        #     try:
-        #         # Step 3: Parse the JSON string into a Python dictionary
-        #         json_data = json.loads(json_data_str)
-                
-        #         # Print the extracted JSON data
-        #         print(json.dumps(json_data, indent=4))  # Pretty print the JSON data
-        #     except json.JSONDecodeError as e:
-        #         print("Error decoding JSON:", e)
-        # else:
-        #     print("No JSON data found.")
+    for item in food_items:
+        print(f"Name: {item.name}")
+        print(f"Description: {item.description}")
+        print(f"Meal: {item.meal}")
+        print(f"Station: {item.station}")
+        print(f"Dining Hall: {item.dining_hall}")
+        print("---")  # Separator for readability
     
-
-
+    # Pass the result to the template
+    return render(request, 'commons.html', {'food_items': food_items})
+    
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
