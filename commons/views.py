@@ -1,3 +1,4 @@
+from django.db import connections
 from django.shortcuts import render
 from populate_db.views import populate
 
@@ -18,7 +19,23 @@ from unidecode import unidecode
 
 
 def commons(request):
-    populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
+    # populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
+    food_items = []
+    try:
+        with connections['PostgresDB'].cursor() as cursor:
+            cursor.execute('SELECT * FROM "populate_db_fooditem" WHERE "dining_hall" = %s', ('commons',))
+            
+            rows = cursor.fetchall()
+
+        # Iterate over the rows and add each row (or specific columns) to the food_items array
+            for row in rows:
+                food_items.append(row)
+            
+            
+            print(food_items)
+            
+    except Exception as e:
+        print("Failed to fetch data: ", e)
     return render(request, 'commons.html')
 
 
