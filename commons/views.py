@@ -18,7 +18,7 @@ from unidecode import unidecode
 
 
 def commons(request):
-    #populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
+    populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
     return render(request, 'commons.html')
 
 
