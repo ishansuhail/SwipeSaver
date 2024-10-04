@@ -25,13 +25,9 @@ def commons(request):
         with connections['PostgresDB'].cursor() as cursor:
             cursor.execute('SELECT * FROM "populate_db_fooditem" WHERE "dining_hall" = %s', ('commons',))
             
-            rows = cursor.fetchall()
+            food_items =  cursor.fetchall()
 
         # Iterate over the rows and add each row (or specific columns) to the food_items array
-            for row in rows:
-                food_items.append(row)
-            
-            
             print(food_items)
             
     except Exception as e:
