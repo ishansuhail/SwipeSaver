@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'russellsage',
     'blitman',
     'populate_db',
+    'SwipeSaver',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'homepage/static'),
+    os.path.join(BASE_DIR, 'SwipeSaver/static'),
 ]
 
 # Default primary key field type
