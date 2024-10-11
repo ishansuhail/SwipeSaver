@@ -281,6 +281,62 @@
             background-color: var(--accent-color); /* Change color on hover */
             color: white; 
           }
+
+          .chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            max-height: 400px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        
+        .chatbox-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbox-content {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: #f1f1f1;
+        }
+        
+        .chatbox-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+        
+        .chatbox-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        
+        .chatbox-input button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .chatbox-toggle {
+            cursor: pointer;
+        }
         
     </style>
 </head>
@@ -348,11 +404,30 @@
     {% endif %}
     {% comment %} <p>{{item.meal}} {% endcomment %}
 {% endfor %}
+<div class="chatbox" id="chatbox">
+    <div class="chatbox-header">
+        Chat with us!
+        <span class="chatbox-toggle" onclick="toggleChatbox()">✖</span>
+    </div>
+    <div class="chatbox-content" id="chatbox-content"></div>
+    <div class="chatbox-input">
+        <input type="text" id="chat-input" placeholder="Type your message..." onkeydown="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+
 <div class="footer">
 <p>An RCOS project</p>
 <button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
+
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script src={% static 'chatbox.js' %}></script>
+
 <script>
     function getCurrentTime() {
     var date = new Date();
