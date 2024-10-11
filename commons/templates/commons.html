@@ -320,34 +320,64 @@
     {% endif %}
 </div>
 
+<!-- Total Calories Display -->
+<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">
+    Total Calories: <span id="totalCalories">0</span>
+    <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button>
+</p>
 
-<p style="text-align: center; font-size: 24px; margin-left: 40px; margin-right: 10px">Total Calories: <span id="totalCalories">0 </span> <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button></p>
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">BREAKFAST (7:00 - 9:30)</p>
 
-<p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
-{% for item in food_items %}
-    {% if item.meal == 'BREAKFAST'%}
-        <p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{{item.name}} <button onclick = "addCalories({cal})" class = "button" data-calories = "{cal}" style = "color: red; border: none; font-size: 20px;"> </button></p><hr class="dashed-line">
-    {% endif %}
-    {% comment %} <p>{{item.meal}} {% endcomment %}
-{% endfor %}
-
+<!-- Accordion for Breakfast -->
+<button class="accordion">View Menu</button>
+<div class="panel">
+    {% for item in food_items %}
+        {% if item.meal == 'BREAKFAST' %}
+            <p style="font-size: 20px; margin-top: 20px; margin-left: 35px">
+                {{ item.name }}
+                <!-- Calories button (adjust as needed) -->
+                <button onclick="addCalories({{ item.calories }})" class="button" style="color: red; border: none; font-size: 20px;">Add Calories</button>
+            </p>
+            <hr class="dashed-line">
+        {% endif %}
+    {% endfor %}
+</div>
 
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">LUNCH (11:00 - 3:00)</p>
-<p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px"></p>
-{% for item in food_items %}
-    {% if item.meal == 'LUNCH'%}
-        <p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{{item.name}} <button onclick = "addCalories({cal})" class = "button" data-calories = "{cal}" style = "color: red; border: none; font-size: 20px;"> </button></p><hr class="dashed-line">
-    {% endif %}
-    {% comment %} <p>{{item.meal}} {% endcomment %}
-{% endfor %}
+
+<!-- Accordion for Lunch -->
+<button class="accordion">View Menu</button>
+<div class="panel">
+    {% for item in food_items %}
+        {% if item.meal == 'LUNCH' %}
+            <p style="font-size: 20px; margin-top: 20px; margin-left: 35px">
+                {{ item.name }}
+                <!-- Calories button (adjust as needed) -->
+                <button onclick="addCalories({{ item.calories }})" class="button" style="color: red; border: none; font-size: 20px;">Add Calories</button>
+            </p>
+            <hr class="dashed-line">
+        {% endif %}
+    {% endfor %}
+</div>
+
+
 <p style="color: rgb(228, 30, 30); font-size: 32px; margin-top: 35px; margin-left: 68px; margin-bottom: 5px">DINNER (4:30 - 8:00)</p>
-{% for item in food_items %}
-    {% if item.meal == 'DINNER'%}
-        <p style="font-size: 20px; margin-top: 20px; margin-left: 35px">{{item.name}} <button onclick = "addCalories({cal})" class = "button" data-calories = "{cal}" style = "color: red; border: none; font-size: 20px;"> </button></p><hr class="dashed-line">
-    {% endif %}
-    {% comment %} <p>{{item.meal}} {% endcomment %}
-{% endfor %}
+
+<!-- Accordion for Dinner -->
+<button class="accordion">View Menu</button>
+<div class="panel">
+    {% for item in food_items %}
+        {% if item.meal == 'DINNER' %}
+            <p style="font-size: 20px; margin-top: 20px; margin-left: 35px">
+                {{ item.name }}
+                <!-- Calories button (adjust as needed) -->
+                <button onclick="addCalories({{ item.calories }})" class="button" style="color: red; border: none; font-size: 20px;">Add Calories</button>
+            </p>
+            <hr class="dashed-line">
+        {% endif %}
+    {% endfor %}
+</div>
+
 <div class="footer">
 <p>An RCOS project</p>
 <button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
