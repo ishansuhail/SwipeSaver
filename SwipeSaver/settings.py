@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'russellsage',
     'blitman',
     'populate_db',
+    'chatbot',
 ]
 
 MIDDLEWARE = [
