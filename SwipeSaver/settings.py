@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'blitman',
     'populate_db',
     'SwipeSaver',
+    'chatbot',
 ]
 
 MIDDLEWARE = [
