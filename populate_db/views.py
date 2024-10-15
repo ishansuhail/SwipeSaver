@@ -37,7 +37,10 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             item_id = item.get('menuItemId')
                             item_name = item.get('formalName')
                             item_desc = item.get('description')
+                            item_calories = item.get('calories')
+                            item_allergens = item.get('allergens')
                             item_dining_hall = dining_hall
+                            print(item)
 
                             # Create a FoodItem instance
                             food_item = FoodItem(
@@ -46,7 +49,9 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                                 description=item_desc,
                                 meal=item_meal,
                                 station=item_station,
-                                dining_hall=item_dining_hall
+                                calories = item_calories,
+                                allergens = item_allergens,
+                                dining_hall=item_dining_hall,
                             )
                             
                             # Save the FoodItem instance to the database

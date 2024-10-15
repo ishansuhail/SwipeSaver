@@ -7,5 +7,7 @@ class FoodItem(models.Model):
     meal = models.TextField(null=True)
     station = models.TextField(null=True)
     dining_hall = models.TextField(null=True)
+    calories = models.TextField(null=True)
+    allergens = models.JSONField(null=True, blank=True)
 
     

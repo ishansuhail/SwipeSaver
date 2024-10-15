@@ -19,7 +19,7 @@ from populate_db.models import FoodItem
 from .models import Rating, Station
 
 def commons(request):
-    #populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
+    # populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
 
     breakfast_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons", meal='BREAKFAST').order_by('station', 'name')
     lunch_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons", meal='LUNCH').order_by('station', 'name')
