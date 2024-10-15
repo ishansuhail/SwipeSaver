@@ -7,7 +7,6 @@ register = template.Library()
 def render_meal_info(meal_items):
     html_parts = []
     prev_station = ""
-    meal_count = 0
     
     for item in meal_items:
         if str(item.station) != "None":
@@ -22,26 +21,25 @@ def render_meal_info(meal_items):
                     <div class="panel">
                 ''')
                 prev_station = item.station
-                meal_count = 0  # Reset meal count for the new station
 
-            description = item.description if item.description != "" else "No description available"
+            # Safely check if the description is meaningful
+            description = item.description.strip() if item.description else "No description available"
+            show_description = item.description and description.lower() != "no description available"
+            
+            # Add the meal item, only show the button and description if `show_description` is True
             html_parts.append(f'''
             <div class="meal-item">
                 <div class="meal-header">
                     <p class="meal-name">{item.name}</p>
-                    <button onclick="toggleDescription(this);" class="toggle-button">+</button>
+                    {'<button onclick="toggleDescription(this);" class="toggle-button">+</button>' if show_description else ''}
                 </div>
-                <div style="display: none;">
-                    <p class="meal-description">{description}</p>
-                </div>
+                {f'<div style="display: none;"><p class="meal-description">{description}</p></div>' if show_description else ''}
             </div>
             ''')
-            
-            # Add red dotted line after each item except the last one
-            meal_count += 1
-            if meal_count < len(meal_items):
-                html_parts.append('<hr class="dashed-line">')
-    
+
+            # Add a red dotted line after each item
+            html_parts.append('<hr class="dashed-line">')
+
     # Close the last panel if there are items
     if prev_station:
         html_parts.append('</div>')
