@@ -154,5 +154,24 @@
 		}
 	}
 </script>
+<script>
+    function toggleDescription(button) {
+        var descriptionDiv = button.parentNode.nextElementSibling;
+        if (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") {
+            descriptionDiv.style.display = "block";
+            button.textContent = "-";
+        } else {
+            descriptionDiv.style.display = "none";
+            button.textContent = "+";
+        }
+
+        // Update accordion panel height after description toggling
+        var panel = button.closest('.panel');
+        if (panel) {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    }
+</script>
+
 </body>
 </html>
