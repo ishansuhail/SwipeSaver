@@ -18,24 +18,15 @@ from populate_db.views import populate
 from populate_db.models import FoodItem
 from .models import Rating, Station
 
-
-
-
 def commons(request):
     #populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dining-hall")
 
-    food_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons")
-
-    for item in food_items:
-        print(f"Name: {item.name}")
-        print(f"Description: {item.description}")
-        print(f"Meal: {item.meal}")
-        print(f"Station: {item.station}")
-        print(f"Dining Hall: {item.dining_hall}")
-        print("---")  # Separator for readability
+    breakfast_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons", meal='BREAKFAST').order_by('station', 'name')
+    lunch_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons", meal='LUNCH').order_by('station', 'name')
+    dinner_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="commons", meal='DINNER').order_by('station', 'name')
     
     # Pass the result to the template
-    return render(request, 'commons.html', {'food_items': food_items})
+    return render(request, 'commons.html', {'breakfast_items': breakfast_items, 'lunch_items': lunch_items, 'dinner_items': dinner_items})
     
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
