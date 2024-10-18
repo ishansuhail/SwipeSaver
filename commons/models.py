@@ -7,12 +7,8 @@ class Station(models.Model):
     name = models.CharField(max_length=200)
 
 class Rating(models.Model):
-    MEAL_TIMES = [
-        ('breakfast', 'Breakfast'),
-        ('lunch', 'Lunch'),
-        ('dinner', 'Dinner'),
-    ]
-    date = models.DateField(default=datetime.date.today)
-    station = models.ForeignKey(Station, on_delete=models.CASCADE)
-    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-    meal_time = models.CharField(max_length=10, choices=MEAL_TIMES, default='dinner')
+    user_id = models.BigIntegerField(null=True)
+    meal = models.TextField(null=True)
+    station = models.TextField(null=True)
+    dining_hall = models.TextField(null=True)
+    rating = models.IntegerField(null=True)
