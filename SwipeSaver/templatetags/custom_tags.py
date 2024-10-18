@@ -19,7 +19,7 @@ def render_meal_info(meal_items):
         if meal in grouped_meals:
             # Create top-level accordion for each meal
             html_parts.append(f'''
-                <button class="accordion">{meal.capitalize()}</button>
+                <button class="accordion">View Menu</button>
                 <div class="panel">
             ''')
 
