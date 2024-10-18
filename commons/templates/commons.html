@@ -54,18 +54,18 @@
 
 <p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
 <div>
-    {% render_meal_info breakfast_items %}
+    {% render_meal_info breakfast_items ratings %}
 </div>
 
 
 <p class="meal-title">LUNCH (11:00 - 3:00)</p>
 <div>
-    {% render_meal_info lunch_items %}
+    {% render_meal_info lunch_items ratings %}
 </div>
 
 <p class="meal-title">DINNER (4:30 - 8:00)</p>
 <div>
-    {% render_meal_info dinner_items %}
+    {% render_meal_info dinner_items ratings %}
 </div>
 
 <div class="footer">
@@ -128,27 +128,6 @@
 	}
 </script>
 <script>
-	$(".rating input[type='radio']").on('change', function() {
-		var rating = $(this).val();
-		var nameParts = $(this).attr('name').split('-'); // split the name attribute
-		var mealTime = nameParts[1]; // get the meal time
-		var station = nameParts[2]; // get the station name
-		var data = {};
-		data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
-	   // alert("Made it here")
-		$.ajax({
-			url: '/commons/rate/',
-			data: data,
-			dataType: 'json',
-			success: function (data) {
-				if (data.success) {
-					alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
-				}
-			}
-		});
-	});
-</script>
-<script>
 	function toggleDescription(button) {
 		const descriptionDiv = button.parentElement.nextElementSibling; // Get the next sibling of the meal-header div
 		if (descriptionDiv.style.display === "none") {
@@ -178,6 +157,48 @@
         }
     }
 </script>
+<script>
+	$(document).ready(function() {
+		$(".star-rating .star").on('click', function() {
+			var rating = $(this).data('value');                                      // Get the rating value from the clicked star
+			var station = $(this).closest('.star-rating').data('station');           // Get the station name from the parent div
+			var dining_hall = $(this).closest('.star-rating').data('dining-hall');   // Get dining hall name from parent div
+			var meal = $(this).closest('.star-rating').data('meal');                 // Get meal info from parent div
 
+			// Call the function to submit the rating
+			submitRating(rating, station, dining_hall, meal);
+		});
+
+		function submitRating(rating, station, dining_hall, meal) {
+			fetch('/commons/submit-rating/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'X-CSRFToken': '{{ csrf_token }}'  // CSRF token from Django
+				},
+				body: JSON.stringify({ rating: rating, station: station, dining_hall: dining_hall, meal: meal })  // Include rating and station in the body
+			})
+			.then(response => response.json())
+			.then(data => {
+				// Handle the response
+				alert(data.message);
+				if (data.success) {
+					updateStarRatings(station, meal, rating);  // Call to update stars
+				}
+			})
+			.catch(error => console.error('Error:', error));
+		}
+
+		function updateStarRatings(station, meal, newRating) {
+			const starElements = $(`.star-rating[data-station='${station}'][data-meal='${meal}'] .star`);
+			
+			// Loop through each star and update the class based on the new rating
+			starElements.each(function() {
+				const starValue = $(this).data('value');
+				$(this).toggleClass('selected', starValue <= newRating);
+			});
+		}
+	});
+</script>
 </body>
 </html>

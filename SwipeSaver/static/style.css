@@ -322,6 +322,48 @@ a {
     color: white;
 }
 
+.center-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.rating-section {
+    display: flex;                   /* Use Flexbox layout */
+    align-items: center;            /* Center items horizontally */
+    text-align: center;             /* Center text */
+    gap: 10px;
+}
+
+.star-rating {
+    display: inline-flex;
+    gap: 5px;
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 32px; /* Adjust size here */
+    cursor: pointer;
+    color: lightgray; /* Default star color */
+    transition: color 0.3s;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: gold; /* Color when hovered */
+}
+
+.star.selected,
+.star.selected ~ .star {
+    color: gold; /* Color for selected stars */
+}
+
+/* Optional: Disable outline on focus */
+.star:focus {
+    outline: none;
+}
+
 #to_top{
     position:fixed;
     float:right;
@@ -342,9 +384,3 @@ a {
     color: white; 
   }
 
-
-.center-container {
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
