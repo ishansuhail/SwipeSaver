@@ -40,7 +40,6 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             item_calories = item.get('calories')
                             item_allergens = item.get('allergens')
                             item_dining_hall = dining_hall
-                            print(item)
 
                             # Create a FoodItem instance
                             food_item = FoodItem(
@@ -55,7 +54,7 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             )
                             
                             # Save the FoodItem instance to the database
-                            food_item.save(using='PostgresDB')
+                            food_item.save()
                             
 
                 #print(json.dumps(data, indent=4))
