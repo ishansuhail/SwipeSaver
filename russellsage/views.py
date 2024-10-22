@@ -23,7 +23,7 @@ from .models import Rating, Station
 
 
 def russellsage(request):
-   #populate(url = "https://rpi.sodexomyway.com/en-us/locations/russell-sage-dining-hall")
+   populate(url = "https://rpi.sodexomyway.com/en-us/locations/russell-sage-dining-hall", dining_hall = "russellsage")
 
 
    breakfast_items = FoodItem.objects.using('PostgresDB').filter(dining_hall="russellsage", meal='BREAKFAST').order_by('station', 'name')
