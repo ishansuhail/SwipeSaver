@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-owhocqew%b896oy1b4bnfhn^qpyg(p#g!6ih@vv53%9na55=!y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu']
+ALLOWED_HOSTS = ['swipesaver.cs.rpi.edu']
 
 
 # Application definition
@@ -87,15 +87,10 @@ WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'swipesaver',
-        'PASSWORD': 'swipesaver',
-        'USER':'ishan',
-        'HOST':'128.113.126.74',
-        'PORT':'',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     },
-
-    # 'PostgresDB': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
+     'PostgresDB': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
 }
 
 DATABASE_ROUTERS = ['SwipeSaver.postgres_router.SwipeSaverRouter']
@@ -142,7 +137,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'homepage/static'),
     os.path.join(BASE_DIR, 'SwipeSaver/static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
