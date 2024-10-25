@@ -27,9 +27,7 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                 
                 # Extract info that we want
                 for meal in data:
-                    print(f"Meal: {meal.get('name')}")
                     for group in meal.get('groups', []):  # Ensure 'groups' is available
-                        print(f"  Group name: {group.get('name')}")
                         for item in group.get('items', []):  # Ensure 'items' is available
                             
                             item_station = item.get('course')

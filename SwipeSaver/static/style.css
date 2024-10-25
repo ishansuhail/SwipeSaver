@@ -362,6 +362,31 @@ a {
     outline: none;
 }
 
+.login-alert {
+    background-color: #ffcccb;  /* Light red background */
+    color: #d8000c;              /* Dark red text */
+    border: 1px solid #d8000c;  /* Dark red border */
+    padding: 15px;               /* Padding around the text */
+    border-radius: 5px;         /* Rounded corners */
+    margin: 20px 0;             /* Margin above and below */
+    font-family: 'Montserrat', sans-serif;  /* Font family */
+    font-size: 16px;            /* Font size */
+    display: flex;              /* Flexbox for alignment */
+    align-items: center;        /* Center align vertically */
+}
+
+.login-alert p {
+    margin: 0;                  /* Remove default paragraph margin */
+}
+
+.login-alert::before {
+    content: "⚠️";              /* Warning icon */
+    font-size: 20px;           /* Size of the icon */
+    margin-right: 10px;        /* Space between icon and text */
+    margin-left: 40px; 
+}
+
+
 #to_top{
     position:fixed;
     float:right;

@@ -52,20 +52,27 @@
 	<p id="time" class="time-style"></p>
 </div>
 
+<!-- Example usage in the HTML -->
+{% if not is_authenticated %}
+<div class="login-alert">
+    <p>You need to be logged in to vote.</p> 
+</div>
+{% endif %}
+
 <p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
 <div>
-    {% render_meal_info breakfast_items ratings %}
+    {% render_meal_info breakfast_items ratings is_authenticated%}
 </div>
 
 
 <p class="meal-title">LUNCH (11:00 - 3:00)</p>
 <div>
-    {% render_meal_info lunch_items ratings %}
+    {% render_meal_info lunch_items ratings is_authenticated%}
 </div>
 
 <p class="meal-title">DINNER (4:30 - 8:00)</p>
 <div>
-    {% render_meal_info dinner_items ratings %}
+    {% render_meal_info dinner_items ratings is_authenticated%}
 </div>
 
 <div class="footer">
@@ -210,11 +217,13 @@
 </script>
 <script>
 	$(document).ready(function() {
-		$(".star-rating .star").on('click', function() {
-			var rating = $(this).data('value');                                      // Get the rating value from the clicked star
-			var station = $(this).closest('.star-rating').data('station');           // Get the station name from the parent div
-			var dining_hall = $(this).closest('.star-rating').data('dining-hall');   // Get dining hall name from parent div
-			var meal = $(this).closest('.star-rating').data('meal');                 // Get meal info from parent div
+		$(document).on('click', '.star-rating .star', function() {
+			var rating = $(this).data('value');
+        	var station = $(this).closest('.rating-section').data('station');
+        	var dining_hall = $(this).closest('.rating-section').data('dining-hall');
+        	var meal = $(this).closest('.rating-section').data('meal');             // Get meal info from parent div
+
+			console.log(rating, station, dining_hall, meal)
 
 			// Call the function to submit the rating
 			submitRating(rating, station, dining_hall, meal);
@@ -241,11 +250,12 @@
 		}
 
 		function updateStarRatings(station, meal, newRating) {
-			const starElements = $(`.star-rating[data-station='${station}'][data-meal='${meal}'] .star`);
+			const starElements = $(`.rating-section[data-station='${station}'][data-meal='${meal}'] .star`);
 			
 			// Loop through each star and update the class based on the new rating
 			starElements.each(function() {
 				const starValue = $(this).data('value');
+				console.log("Star Value:", starValue)
 				$(this).toggleClass('selected', starValue <= newRating);
 			});
 		}
