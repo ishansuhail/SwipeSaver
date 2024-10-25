@@ -179,10 +179,8 @@ a {
     padding: 0 18px; /* Ensure padding is applied when expanded */
 }
 
-/* Allow expanded panel to show content */
 .accordion.active + .panel {
-    max-height: 2000px; /* Set a large enough max-height */
-    padding: 10px 18px; /* Add padding when expanded */
+    padding: 10px 18px;
 }
 
 .footer {

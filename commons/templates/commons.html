@@ -71,15 +71,9 @@
 <div class="footer">
 <p>An RCOS project</p>
 <button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
-
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-<script src={% static 'chatbox.js' %}></script>
-
 <script>
     function getCurrentTime() {
     var date = new Date();
@@ -128,20 +122,80 @@
 	}
 </script>
 <script>
-	function toggleDescription(button) {
-		const descriptionDiv = button.parentElement.nextElementSibling; // Get the next sibling of the meal-header div
-		if (descriptionDiv.style.display === "none") {
-			descriptionDiv.style.display = "block"; // Show the description
-			button.innerText = "-";  // Change button to -
-		} else {
-			descriptionDiv.style.display = "none"; // Hide the description
-			button.innerText = "+";  // Change button back to +
-		}
-	}
+	$(".rating input[type='radio']").on('change', function() {
+		var rating = $(this).val();
+		var nameParts = $(this).attr('name').split('-'); // split the name attribute
+		var mealTime = nameParts[1]; // get the meal time
+		var station = nameParts[2]; // get the station name
+		var data = {};
+		data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
+	   // alert("Made it here")
+		$.ajax({
+			url: '/commons/rate/',
+			data: data,
+			dataType: 'json',
+			success: function (data) {
+				if (data.success) {
+					alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
+				}
+			}
+		});
+	});
 </script>
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var acc = document.querySelectorAll(".accordion");
+
+        console.log(acc.length + " accordions found");
+
+        // Attach event listeners to each accordion
+        for (var i = 0; i < acc.length; i++) {
+            console.log("Attaching event to accordion:", acc[i].innerText);
+
+            acc[i].addEventListener("click", function() {
+                console.log("Accordion clicked:", this.innerText);
+
+                // Toggle the active class
+                this.classList.toggle("active");
+
+                // Get the associated panel (next sibling)
+                var panel = this.nextElementSibling;
+
+                if (!panel) return;  // If no panel is found, skip
+
+                // Check whether the panel is open or closed
+                var computedMaxHeight = window.getComputedStyle(panel).maxHeight;
+
+                if (computedMaxHeight !== "0px" && computedMaxHeight !== "none") {
+                    console.log("Closing panel:", panel);
+                    panel.style.maxHeight = "0px"; // Explicitly set max-height to 0 to close
+                } else {
+                    console.log("Opening panel:", panel);
+                    panel.style.maxHeight = panel.scrollHeight + "px"; // Open panel based on scrollHeight
+                }
+
+                // Delay the outer panel height adjustment slightly to allow for DOM updates
+                setTimeout(() => adjustOuterPanelHeight(this), 350); // Adjust timing to give animation time to finish
+            });
+        }
+    });
+
+    // Helper function to adjust the outer panel height
+    function adjustOuterPanelHeight(element) {
+        var outerPanel = element.closest('.panel');
+        if (outerPanel) {
+            console.log("Adjusting outer panel height before recalculation: " + outerPanel.style.maxHeight);
+
+            // Recalculate the scrollHeight of the outer panel
+            outerPanel.style.maxHeight = outerPanel.scrollHeight + "px";
+            console.log("Adjusting outer panel height after recalculation: " + outerPanel.style.maxHeight);
+        }
+    }
+
+    // Toggle description expansion and adjust the outer accordion dynamically
     function toggleDescription(button) {
         var descriptionDiv = button.parentNode.nextElementSibling;
+
         if (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") {
             descriptionDiv.style.display = "block";
             button.textContent = "-";
@@ -150,11 +204,8 @@
             button.textContent = "+";
         }
 
-        // Update accordion panel height after description toggling
-        var panel = button.closest('.panel');
-        if (panel) {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
+        // Delay the outer panel height adjustment slightly to ensure content is fully expanded/collapsed
+        setTimeout(() => adjustOuterPanelHeight(button), 350); // Adjust timing to ensure correct recalculation
     }
 </script>
 <script>
