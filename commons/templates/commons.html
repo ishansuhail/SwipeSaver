@@ -52,24 +52,27 @@
 	<p id="time" class="time-style"></p>
 </div>
 
-<p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
-<div>
-    {% render_meal_info breakfast_items %}
-</div>
+<div class = "mobile-view">
+
+	<p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
+	<div>
+		{% render_meal_info breakfast_items %}
+	</div>
 
 
-<p class="meal-title">LUNCH (11:00 - 3:00)</p>
-<div>
-    {% render_meal_info lunch_items %}
-</div>
+	<p class="meal-title">LUNCH (11:00 - 3:00)</p>
+	<div>
+		{% render_meal_info lunch_items %}
+	</div>
 
-<p class="meal-title">DINNER (4:30 - 8:00)</p>
-<div>
-    {% render_meal_info dinner_items %}
+	<p class="meal-title">DINNER (4:30 - 8:00)</p>
+	<div>
+		{% render_meal_info dinner_items %}
+	</div>
 </div>
 
 <div class="footer">
-<p>An RCOS project</p>
+<p class = "footer-label">An RCOS project</p>
 <button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
 </div>
 

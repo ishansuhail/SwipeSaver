@@ -210,6 +210,26 @@ a {
     .header-container h1 {
         font-size: 30px;
     }
+    .time-style {
+        display: none;
+    }
+    .meal-title{
+        color: rgb(228, 30, 30); 
+        font-size: 24px !important;
+        margin-left: 20px !important; 
+        
+    }
+    .mobile-view{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .accordion {
+        margin: 20px 20px 10px 20px !important;
+    }
+    .footer{
+        display: none;
+    }
 }
 
 .rating {
