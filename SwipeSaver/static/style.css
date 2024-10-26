@@ -386,6 +386,13 @@ a {
     margin-left: 40px; 
 }
 
+.station-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between items */
+}
+
 
 #to_top{
     position:fixed;
