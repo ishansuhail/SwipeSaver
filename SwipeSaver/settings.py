@@ -92,8 +92,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'swipesaver_dev',
-        'USER': 'Enter your username',
-        'PASSWORD': 'Enter your password',
+        'USER': 'aiden',
+        'PASSWORD': 'W@alkingPro1110',
         'HOST': 'swipesaver.cs.rpi.edu',
         'PORT': '5432',
     }
