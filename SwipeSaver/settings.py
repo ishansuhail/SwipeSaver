@@ -34,13 +34,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'accounts',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
     'homepage',
     'commons',
     'barh',
@@ -49,6 +44,13 @@ INSTALLED_APPS = [
     'populate_db',
     'SwipeSaver',
     'chatbot',
+    'channels',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -80,13 +82,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
+ASGI_APPLICATION = 'SwipeSaver.asgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-     'default': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'swipesaver_dev',
+        'USER': 'Enter your username',
+        'PASSWORD': 'Enter your password',
+        'HOST': 'swipesaver.cs.rpi.edu',
+        'PORT': '5432',
+    }
 }
 
 #'default': {
