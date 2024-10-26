@@ -28,8 +28,10 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                 if not station or station.lower() == "none":
                     continue  # Skip None or empty stations
 
-                html_parts.append(f'''
-                    <button class="accordion">{station}</button>
+                html_parts.append(f'''             
+                     <button class="accordion">
+                        {station} - <span class="star selected">★</span><span id="rating-{station}-{meal}"> Unrated </span>
+                    </button>
                     <div class="panel">
                 ''')
                 
@@ -63,7 +65,10 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
 
                     # Append the rating information
                     html_parts.append(f'''
-                        <div class="rating-section" data-station={item.station} data-dining-hall={item.dining_hall} data-meal={item.meal}>
+                        <div class="rating-section" 
+                            data-station="{item.station}" 
+                            data-dining-hall="{item.dining_hall}" 
+                            data-meal="{item.meal}">
                             <span class="meal-title">Rate Station: </span>
                             <div class="star-rating">
                                 <button class="star {'selected' if user_rating == 5 else ''}" data-value="5">★</button>
