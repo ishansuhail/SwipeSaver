@@ -30,7 +30,13 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
 
                 html_parts.append(f'''             
                      <button class="accordion">
-                        {station} - <span class="star selected">★</span><span id="rating-{station}-{meal}"> Unrated </span>
+                        <div class="accordion-title">
+                            <span class="station-name">{station}</span>
+                            <div class="rating-display">
+                                <span class="rating-icon">★</span>
+                                <span class="rating-score" id="rating-{station}-{meal}"> Unrated </span>
+                            </div>
+                        </div>
                     </button>
                     <div class="panel">
                 ''')
@@ -69,7 +75,7 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                             data-station="{item.station}" 
                             data-dining-hall="{item.dining_hall}" 
                             data-meal="{item.meal}">
-                            <span class="meal-title">Rate Station: </span>
+                            <span class="rate-message-style">Rate Station: </span>
                             <div class="star-rating">
                                 <button class="star {'selected' if user_rating == 5 else ''}" data-value="5">★</button>
                                 <button class="star {'selected' if user_rating == 4 else ''}" data-value="4">★</button>
