@@ -34,13 +34,8 @@ ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu']
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'accounts',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
     'homepage',
     'commons',
     'barh',
@@ -49,6 +44,13 @@ INSTALLED_APPS = [
     'populate_db',
     'SwipeSaver',
     'chatbot',
+    'channels',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
+ASGI_APPLICATION = 'SwipeSaver.asgi.application'
 
 
 # Database
@@ -87,18 +90,19 @@ WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'swipesaver',
-        'PASSWORD': 'swipesaver',
-        'USER':'ishan',
-        'HOST':'128.113.126.74',
-        'PORT':'',
-    },
-
-    # 'PostgresDB': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'swipesaver_dev',
+        'USER': 'Enter your username',
+        'PASSWORD': 'Enter your password',
+        'HOST': 'swipesaver.cs.rpi.edu',
+        'PORT': '5432',
+    }
 }
 
-DATABASE_ROUTERS = ['SwipeSaver.postgres_router.SwipeSaverRouter']
+#'default': {
+#    'ENGINE': 'django.db.backends.sqlite3',
+#    'NAME': BASE_DIR / 'db.sqlite3',
+#},
 
 
 # Password validation

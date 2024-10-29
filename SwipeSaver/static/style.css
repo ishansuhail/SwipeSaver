@@ -148,6 +148,8 @@ a {
     border: none;
     outline: none;
     transition: 0.4s;
+    display: flex;
+    align-items: center;
 }
 
 .accordion.active, .accordion:hover {
@@ -164,6 +166,36 @@ a {
 
 .accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.station-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    color: #444;
+}
+
+.rating-icon {
+    color: #FFD700; /* Gold color for the star icon */
+    font-size: 18px;
+}
+
+.rating-score {
+    font-weight: bold;
+    color: #333; /* Dark color for readability */
 }
 
 .panel {
@@ -340,6 +372,129 @@ a {
     color: white;
 }
 
+.center-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.rating-section {
+    display: flex;                   /* Use Flexbox layout */
+    align-items: center;            /* Center items horizontally */
+    text-align: center;             /* Center text */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.rate-message-style {
+    color: #333333; /* Rich dark color for readability */
+    font-size: 20px; /* Large, but not overwhelming */
+    font-weight: 600; /* Slightly bold for emphasis */
+    padding: 10px 20px; /* Comfortable padding for a balanced look */
+    background-color: #F7F9FB; /* Light, subtle background */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
+    display: inline-block; /* Keeps the text contained */
+    letter-spacing: 1px; /* Small letter spacing for elegance */
+    text-transform: uppercase; /* Adds a touch of emphasis */
+}
+
+.star-rating {
+    display: inline-flex;
+    flex-direction: row-reverse; /* Enables left-to-right fill effect */
+    gap: 8px; /* Adjusted gap for a clean look */
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 30px; /* Adjusted for uniform size */
+    cursor: pointer;
+    color: #D3D3D3; /* Subtle light gray color for inactive stars */
+    transition: color 0.25s ease, transform 0.15s ease; /* Smooth transition for color and scale */
+    padding: 4px; /* Adds padding for better click area */
+}
+
+.star:hover {
+    color: #FFD700; /* Bright gold on hover */
+    transform: scale(1.1); /* Adds slight zoom on hover for engagement */
+}
+
+.star:hover ~ .star {
+    color: #FFD700; /* Ensure all stars to the left also turn gold on hover */
+}
+
+.star.selected {
+    color: #FFC107 !important; /* Richer gold for selected stars */
+}
+
+.star.selected ~ .star {
+    color: #FFC107 !important; /* Maintain gold for all selected stars to the left */
+}
+
+.star.selected:hover {
+    color: #FFB300 !important; /* Slightly deeper gold when hovering over selected stars */
+    transform: scale(1.1);
+}
+
+.star.selected:hover ~ .star {
+    color: #FFB300 !important;;
+}
+
+/* Optional: Disable outline on focus */
+.star:focus {
+    outline: none; /* No outline for focused stars */
+}
+
+/* Animation on selection */
+.star-rating .star.selected {
+    animation: pop 0.2s ease-in-out; /* Subtle pop effect on selection */
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.login-alert {
+    background-color: #ffcccb;  /* Light red background */
+    color: #d8000c;              /* Dark red text */
+    border: 1px solid #d8000c;  /* Dark red border */
+    padding: 15px;               /* Padding around the text */
+    border-radius: 5px;         /* Rounded corners */
+    margin: 20px 0;             /* Margin above and below */
+    font-family: 'Montserrat', sans-serif;  /* Font family */
+    font-size: 16px;            /* Font size */
+    display: flex;              /* Flexbox for alignment */
+    align-items: center;        /* Center align vertically */
+}
+
+.login-alert p {
+    margin: 0;                  /* Remove default paragraph margin */
+}
+
+.login-alert::before {
+    content: "⚠️";              /* Warning icon */
+    font-size: 20px;           /* Size of the icon */
+    margin-right: 10px;        /* Space between icon and text */
+    margin-left: 40px; 
+}
+
+.station-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between items */
+}
+
 #to_top{
     position:fixed;
     float:right;
@@ -359,10 +514,3 @@ a {
     background-color: var(--accent-color);
     color: white; 
   }
-
-
-.center-container {
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}

@@ -52,23 +52,27 @@
 	<p id="time" class="time-style"></p>
 </div>
 
-<div class = "mobile-view">
+<!-- Example usage in the HTML -->
+{% if not is_authenticated %}
+<div class="login-alert">
+    <p>You need to be logged in to vote.</p> 
+</div>
+{% endif %}
 
-	<p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
-	<div>
-		{% render_meal_info breakfast_items %}
-	</div>
+<p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
+<div>
+    {% render_meal_info breakfast_items ratings is_authenticated%}
+</div>
 
 
-	<p class="meal-title">LUNCH (11:00 - 3:00)</p>
-	<div>
-		{% render_meal_info lunch_items %}
-	</div>
+<p class="meal-title">LUNCH (11:00 - 3:00)</p>
+<div>
+    {% render_meal_info lunch_items ratings is_authenticated%}
+</div>
 
-	<p class="meal-title">DINNER (4:30 - 8:00)</p>
-	<div>
-		{% render_meal_info dinner_items %}
-	</div>
+<p class="meal-title">DINNER (4:30 - 8:00)</p>
+<div>
+    {% render_meal_info dinner_items ratings is_authenticated%}
 </div>
 
 <div class="footer">
@@ -132,7 +136,6 @@
 		var station = nameParts[2]; // get the station name
 		var data = {};
 		data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
-	   // alert("Made it here")
 		$.ajax({
 			url: '/commons/rate/',
 			data: data,
@@ -149,14 +152,10 @@
     document.addEventListener("DOMContentLoaded", function() {
         var acc = document.querySelectorAll(".accordion");
 
-        console.log(acc.length + " accordions found");
-
         // Attach event listeners to each accordion
         for (var i = 0; i < acc.length; i++) {
-            console.log("Attaching event to accordion:", acc[i].innerText);
 
             acc[i].addEventListener("click", function() {
-                console.log("Accordion clicked:", this.innerText);
 
                 // Toggle the active class
                 this.classList.toggle("active");
@@ -170,10 +169,8 @@
                 var computedMaxHeight = window.getComputedStyle(panel).maxHeight;
 
                 if (computedMaxHeight !== "0px" && computedMaxHeight !== "none") {
-                    console.log("Closing panel:", panel);
                     panel.style.maxHeight = "0px"; // Explicitly set max-height to 0 to close
                 } else {
-                    console.log("Opening panel:", panel);
                     panel.style.maxHeight = panel.scrollHeight + "px"; // Open panel based on scrollHeight
                 }
 
@@ -187,11 +184,9 @@
     function adjustOuterPanelHeight(element) {
         var outerPanel = element.closest('.panel');
         if (outerPanel) {
-            console.log("Adjusting outer panel height before recalculation: " + outerPanel.style.maxHeight);
 
             // Recalculate the scrollHeight of the outer panel
             outerPanel.style.maxHeight = outerPanel.scrollHeight + "px";
-            console.log("Adjusting outer panel height after recalculation: " + outerPanel.style.maxHeight);
         }
     }
 
@@ -211,6 +206,68 @@
         setTimeout(() => adjustOuterPanelHeight(button), 350); // Adjust timing to ensure correct recalculation
     }
 </script>
+<script>
+	$(document).ready(function() {
+		$(document).on('click', '.star-rating .star', function() {
+			var rating = $(this).data('value');
+        	var station = $(this).closest('.rating-section').data('station');
+        	var dining_hall = $(this).closest('.rating-section').data('dining-hall');
+        	var meal = $(this).closest('.rating-section').data('meal');             // Get meal info from parent div
 
+			// Call the function to submit the rating
+			submitRating(rating, station, dining_hall, meal);
+		});
+
+		function submitRating(rating, station, dining_hall, meal) {
+			fetch('/commons/submit-rating/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'X-CSRFToken': '{{ csrf_token }}'  // CSRF token from Django
+				},
+				body: JSON.stringify({ rating: rating, station: station, dining_hall: dining_hall, meal: meal })  // Include rating and station in the body
+			})
+			.then(response => response.json())
+			.then(data => {
+				// Handle the response
+				alert(data.message);
+				if (data.success) {
+					updateStarRatings(station, meal, rating);  // Call to update stars
+				}
+			})
+			.catch(error => console.error('Error:', error));
+		}
+
+		function updateStarRatings(station, meal, newRating) {
+			const starElements = $(`.rating-section[data-station='${station}'][data-meal='${meal}'] .star`);
+			
+			// Loop through each star and update the class based on the new rating
+			starElements.each(function() {
+				const starValue = $(this).data('value');
+				$(this).toggleClass('selected', starValue <= newRating);
+			});
+		}
+	});
+</script>
+<script>
+	const ratingSocket = new WebSocket(
+		'ws://' + window.location.host + '/ws/log/'
+	);
+
+	ratingSocket.onmessage = function(e) {
+		const data = JSON.parse(e.data);
+		const ratingsArray = data.average_ratings
+		ratingsArray.forEach(item => {
+			const ratingElement = document.getElementById(`rating-${item.station}-${item.meal}`);
+			if (ratingElement) {
+				ratingElement.textContent = item.average_rating
+			}
+		});
+	};
+
+	ratingSocket.onclose = function(e) {
+		console.error('Rating socket closed unexpectedly');
+	};
+</script>
 </body>
 </html>

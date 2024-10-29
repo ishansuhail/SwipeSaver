@@ -27,9 +27,7 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                 
                 # Extract info that we want
                 for meal in data:
-                    print(f"Meal: {meal.get('name')}")
                     for group in meal.get('groups', []):  # Ensure 'groups' is available
-                        print(f"  Group name: {group.get('name')}")
                         for item in group.get('items', []):  # Ensure 'items' is available
                             
                             item_station = item.get('course')
@@ -40,7 +38,6 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             item_calories = item.get('calories')
                             item_allergens = item.get('allergens')
                             item_dining_hall = dining_hall
-                            print(item)
 
                             # Create a FoodItem instance
                             food_item = FoodItem(
@@ -55,7 +52,7 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             )
                             
                             # Save the FoodItem instance to the database
-                            food_item.save(using='PostgresDB')
+                            food_item.save()
                             
 
                 #print(json.dumps(data, indent=4))
