@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-owhocqew%b896oy1b4bnfhn^qpyg(p#g!6ih@vv53%9na55=!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -92,8 +92,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'swipesaver_dev',
-        'USER': 'Enter your username',
-        'PASSWORD': 'Enter your password',
+        'USER': 'your_username',
+        'PASSWORD': 'your_password',
         'HOST': 'swipesaver.cs.rpi.edu',
         'PORT': '5432',
     }
