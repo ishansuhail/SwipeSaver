@@ -4,58 +4,14 @@
     --accent-color: #333333;
 }
 
-div.scrollmenu {
-    display: flex; /* Use Flexbox */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Align items vertically */
-    background-color: var(--primary-color);
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px 0; /* Add some vertical padding */
-}
-
-div.scrollmenu {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-div.scrollmenu a {
-    display: inline-block;
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-}
-
-div.scrollmenu a:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    margin: 0 10px; /* Add some horizontal spacing */
-}
-
-/* Content styles */
-.content-container {
-    text-align: center;
-    padding: 20px;
-}
-
-p {
-    font-size: 32px;
-    color: var(--accent-color);
+/* Reset default styles for better control */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-.quote {
-    font-size: 20px;
-    margin-top: 30px;
-    color: var(--secondary-color);
-}
-
-.dashed-line {
-    border: 1px dashed red;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
+/* Body Styles */
 body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -63,40 +19,10 @@ body {
     margin: 0;
     padding: 0;
     margin-bottom: 65px;
+    padding-bottom: 60px; /* Prevent content overlap with fixed footer */
 }
 
-/* Top-right login status */
-.user-status {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 16px;
-    color: var(--primary-color);
-}
-
-.user-status a {
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.user-status a:hover {
-    text-decoration: underline;
-}
-
-/* Additional styles for scrollmenu */
-.disabled {
-    background-color: gray;
-    color: white;
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-
+/* Header Styles */
 .header-container {
     position: relative;
     background-color: var(--secondary-color);
@@ -105,19 +31,14 @@ a {
 }
 
 .header-container img {
-    width: 200px;
-    height: 46px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto 10px;
 }
 
-.button:hover {
-    background-color: lightgrey;
-    color: white;
-  }
-
 .header-container h1 {
-    font-size: 60px;
+    font-size: 3rem;
     margin: 0;
     color: var(--primary-color);
     text-align: center;
@@ -134,20 +55,78 @@ a {
     z-index: -1;
 }
 
+/* Scroll Menu */
+.scrollmenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    overflow: auto;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scrollmenu a {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.scrollmenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* User Status */
+.user-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.user-status a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.user-status a:hover {
+    text-decoration: underline;
+}
+
+/* Meal Title */
+.meal-title {
+    color: rgb(228, 30, 30);
+    font-size: 2rem;
+    margin-top: 35px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
+/* Accordion Styles */
 .accordion {
     background-color: #eee;
     font-family: Verdana, sans-serif;
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 90%;
-    font-size: 20px;
+    width: 95%;
+    max-width: 1200px;
+    font-size: 1.25rem;
     font-weight: bold;
     text-align: left;
-    margin: 20px 20px 10px 64px;
+    margin: 20px auto;
     border: none;
     outline: none;
-    transition: 0.4s;
+    transition: background-color 0.4s;
+    display: block;
+    position: relative; /* Needed for positioning the pseudo-element */
 }
 
 .accordion.active, .accordion:hover {
@@ -155,159 +134,80 @@ a {
 }
 
 .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
+    content: '\02795'; /* Plus sign */
+    font-size: 1rem;
     color: #777;
-    float: right;
-    margin-left: 5px;
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .accordion.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\2796"; /* Minus sign */
 }
 
+/* Panel Styles */
 .panel {
+    color: #333333;
     font-family: 'Montserrat', sans-serif;
     background-color: white;
     max-height: 0; /* Start collapsed */
     overflow: hidden;
-    width: 87%;
+    width: 95%; /* Increased width */
+    max-width: 1200px; /* Increased max-width */
     border: none;
     outline: none;
-    margin: 0px 20px 0px 65px;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    padding: 0 18px; /* Ensure padding is applied when expanded */
+    margin: 0 auto; /* Centered */
+    transition: max-height 0.3s ease-out;
+    padding: 0 18px;
 }
 
+/* Panel Expanded */
 .accordion.active + .panel {
     padding: 10px 18px;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #333;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer p {
-    color: white;
-}
-
-@media (max-width: 600px) {
-    .header-container img {
-        width: 50px;
-        height: 50px;
-        margin: 10px 10px 5px 10px;
-    }
-
-    .header-container h1 {
-        font-size: 30px;
-    }
-}
-
-.rating {
-    float: right;
-    margin-right: 30px;
-    margin-bottom: 25px;
-}
-
-.rating:not(:checked) > input {
-    position: absolute;
-    clip: rect(0,0,0,0);
-}
-
-.rating:not(:checked) > label {
-    float: right;
-    width: 1em;
-    padding: 0 .1em;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 200%;
-    line-height: 1.2;
-    color: lightgrey;
-}
-
-.rating:not(:checked) > label:before {
-    content: '★ ';
-}
-
-.rating > input:checked ~ label {
-    color: gold;
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: gold;
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label,
-.rating > input:checked ~ label:hover ~ label {
-    color: gold;
-}
-
-.time-style {
-    text-align: right; 
-    font-size: 24px; 
-    margin-left: 40px; 
-    margin-right: 10px;
-}
-
-.meal-title{
-    color: rgb(228, 30, 30); 
-    font-size: 32px; 
-    margin-top: 35px; 
-    margin-left: 68px; 
-    margin-bottom: 30px
-}
-
+/* Meal Items */
 .meal-item {
-    margin-bottom: 10px; /* Add some space between meal items */
-    margin-left: 60px; 
+    margin-bottom: 10px;
+    margin-left: 0;
 }
 
 .meal-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px; /* Add this line */
 }
+
 
 .meal-name {
     margin: 0;
-    padding-right: 10px; /* Adds space between the meal name and the button */
-    font-size: 25px
+    padding-right: 10px;
+    font-size: 1.25rem;
+    flex: 1;
+    color: #333333; /* Ensure text is visible */
 }
 
 .meal-description {
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-left: 20px; /* Optional padding to indent the description */
-    font-size: 20px;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #333333; /* Ensure text is visible */
 }
 
-.station-style {
-    margin-left: 90px; 
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-decoration: underline;
-}
-
+/* Toggle Button */
 .toggle-button {
-    border: solid; /* Remove border */
+    border: solid;
     border-color: rgb(228, 30, 30);
     border-radius: 10px;
-    color: rgb(228, 30, 30); /* Color of the text */
-    cursor: pointer; /* Change cursor to pointer */
-    font-size: 16px; /* Adjust font size */
-    margin-left: 10px; /* Space between name and button */
+    color: rgb(228, 30, 30);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -316,33 +216,189 @@ a {
 }
 
 .toggle-button:hover {
-    background-color: rgb(228, 30, 30); 
+    background-color: rgb(228, 30, 30);
     color: white;
 }
 
-#to_top{
-    position:fixed;
-    float:right;
-    height:40px;
-    width:155px;
-    right: 10px;
-    background-color: white;
-    color: black; 
-    border: none; 
-    border-radius: 100px; 
-    padding: 10px 20px; 
-    font-weight: bold;
-    cursor: pointer; 
-  }
-  
-  #to_top:hover {
-    background-color: var(--accent-color);
-    color: white; 
-  }
+/* Time Style */
+.time-style {
+    text-align: right; 
+    font-size: 1.5rem; 
+    margin-left: 40px; 
+    margin-right: 10px;
+    color: #333333; /* Ensure text is visible */
+}
 
-
+/* Center Container */
 .center-container {
     display: flex; 
     align-items: center; 
     justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.calorie-info {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333333; /* Ensure text is visible */
+}
+
+/* Clear Calories Button */
+.button {
+    font-size: 1rem;
+    border: none;
+    color: red;
+    background: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    position: fixed; /* Fix the footer to the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    padding: 10px 0;
+    z-index: 1000; /* Ensure the footer stays above other content */
+}
+
+.footer p {
+    color: white;
+    margin: 0;
+    padding-right: 20px; /* Space between text and button */
+}
+
+#to_top {
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#to_top:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 1400px) {
+    .accordion, .panel {
+        width: 90%; /* Slightly reduce width to keep margins */
+        max-width: 1400px; /* Allow more expansion */
+    }
+}
+
+@media (min-width: 1800px) {
+    .accordion, .panel {
+        width: 85%; /* Further reduce width percentage */
+        max-width: none; /* Remove max-width to allow full expansion */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container h1 {
+        font-size: 2rem;
+    }
+
+    .accordion, .panel {
+        width: 95%;
+        max-width: 100%; /* Ensure full width on small screens */
+    }
+
+    .meal-title {
+        font-size: 1.5rem;
+        margin-left: 5%;
+    }
+
+    .meal-name {
+        font-size: 1rem;
+    }
+
+    .toggle-button {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+
+    .meal-description {
+        font-size: 0.9rem;
+    }
+
+    .time-style {
+        font-size: 1.2rem;
+    }
+
+    #to_top {
+        bottom: 80px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .scrollmenu a {
+        padding: 10px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .scrollmenu a {
+        padding: 8px;
+        margin: 0 3px;
+        font-size: 0.9rem;
+    }
+
+    .user-status {
+        font-size: 0.8rem;
+    }
+
+    .time-style {
+        font-size: 1rem;
+    }
+
+    .center-container p {
+        font-size: 1rem;
+    }
+
+    .meal-title {
+        font-size: 1.2rem;
+        margin-left: 5%;
+    }
+
+    .meal-name {
+        font-size: 0.9rem;
+    }
+
+    .toggle-button {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+
+    .meal-description {
+        font-size: 0.8rem;
+    }
+
+    #to_top {
+        bottom: 90px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
 }

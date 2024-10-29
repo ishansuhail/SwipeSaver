@@ -195,17 +195,36 @@
     // Toggle description expansion and adjust the outer accordion dynamically
     function toggleDescription(button) {
         var descriptionDiv = button.parentNode.nextElementSibling;
-
-        if (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") {
+    
+        if (descriptionDiv.style.display === "none" || 
+            descriptionDiv.style.display === "") {
             descriptionDiv.style.display = "block";
             button.textContent = "-";
         } else {
             descriptionDiv.style.display = "none";
             button.textContent = "+";
         }
+    
+        // Adjust the heights of all parent panels
+        adjustParentPanels(button);
+    }
 
-        // Delay the outer panel height adjustment slightly to ensure content is fully expanded/collapsed
-        setTimeout(() => adjustOuterPanelHeight(button), 350); // Adjust timing to ensure correct recalculation
+    function adjustParentPanels(element) {
+        var parentPanel = element.closest('.panel');
+    
+        if (parentPanel) {
+            // Temporarily set max-height to 'none' to get full scrollHeight
+            parentPanel.style.maxHeight = 'none';
+    
+            // Force reflow to ensure the browser calculates the new height
+            parentPanel.offsetHeight;
+    
+            // Set the max-height to the new scrollHeight
+            parentPanel.style.maxHeight = parentPanel.scrollHeight + "px";
+    
+            // Recursively adjust parent panels
+            adjustParentPanels(parentPanel.parentNode);
+        }
     }
 </script>
 
