@@ -148,6 +148,8 @@ a {
     border: none;
     outline: none;
     transition: 0.4s;
+    display: flex;
+    align-items: center;
 }
 
 .accordion.active, .accordion:hover {
@@ -164,6 +166,36 @@ a {
 
 .accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.station-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    color: #444;
+}
+
+.rating-icon {
+    color: #FFD700; /* Gold color for the star icon */
+    font-size: 18px;
+}
+
+.rating-score {
+    font-weight: bold;
+    color: #333; /* Dark color for readability */
 }
 
 .panel {
@@ -331,36 +363,86 @@ a {
     align-items: center;            /* Center items horizontally */
     text-align: center;             /* Center text */
     gap: 10px;
+    margin-top: 15px;
+}
+
+.rate-message-style {
+    color: #333333; /* Rich dark color for readability */
+    font-size: 20px; /* Large, but not overwhelming */
+    font-weight: 600; /* Slightly bold for emphasis */
+    padding: 10px 20px; /* Comfortable padding for a balanced look */
+    background-color: #F7F9FB; /* Light, subtle background */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
+    display: inline-block; /* Keeps the text contained */
+    letter-spacing: 1px; /* Small letter spacing for elegance */
+    text-transform: uppercase; /* Adds a touch of emphasis */
 }
 
 .star-rating {
     display: inline-flex;
-    gap: 5px;
+    flex-direction: row-reverse; /* Enables left-to-right fill effect */
+    gap: 8px; /* Adjusted gap for a clean look */
 }
 
 .star {
     background: none;
     border: none;
-    font-size: 32px; /* Adjust size here */
+    font-size: 30px; /* Adjusted for uniform size */
     cursor: pointer;
-    color: lightgray; /* Default star color */
-    transition: color 0.3s;
+    color: #D3D3D3; /* Subtle light gray color for inactive stars */
+    transition: color 0.25s ease, transform 0.15s ease; /* Smooth transition for color and scale */
+    padding: 4px; /* Adds padding for better click area */
 }
 
-.star:hover,
+.star:hover {
+    color: #FFD700; /* Bright gold on hover */
+    transform: scale(1.1); /* Adds slight zoom on hover for engagement */
+}
+
 .star:hover ~ .star {
-    color: gold; /* Color when hovered */
+    color: #FFD700; /* Ensure all stars to the left also turn gold on hover */
 }
 
-.star.selected,
+.star.selected {
+    color: #FFC107 !important; /* Richer gold for selected stars */
+}
+
 .star.selected ~ .star {
-    color: gold; /* Color for selected stars */
+    color: #FFC107 !important; /* Maintain gold for all selected stars to the left */
+}
+
+.star.selected:hover {
+    color: #FFB300 !important; /* Slightly deeper gold when hovering over selected stars */
+    transform: scale(1.1);
+}
+
+.star.selected:hover ~ .star {
+    color: #FFB300 !important;;
 }
 
 /* Optional: Disable outline on focus */
 .star:focus {
-    outline: none;
+    outline: none; /* No outline for focused stars */
 }
+
+/* Animation on selection */
+.star-rating .star.selected {
+    animation: pop 0.2s ease-in-out; /* Subtle pop effect on selection */
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .login-alert {
     background-color: #ffcccb;  /* Light red background */
@@ -392,7 +474,6 @@ a {
     justify-content: center;
     gap: 5px; /* Space between items */
 }
-
 
 #to_top{
     position:fixed;
