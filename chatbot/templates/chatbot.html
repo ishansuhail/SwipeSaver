@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatbot</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Chatbot</h1>
     <div id="chat-window"></div>
-    <input type="text" id="user-input" placeholder="Ask a question!">
+    <input type="text" id="user-input" placeholder="Ask a question!" />
     <button onclick="sendMessage()">Send</button>
+    <input type="hidden" id="csrf-token" value="{% csrf_token %}" />
 
     <script>
-        async function sendMessage() {
-            const userInput = document.getElementById("user-input").value;
-            const response = await fetch('/chatbot/api/chat/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: userInput })
-            });
-            const data = await response.json();
-            const chatWindow = document.getElementById("chat-window");
-            chatWindow.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
-            chatWindow.innerHTML += `<p><strong>Bot:</strong> ${data.message}</p>`;
-            document.getElementById("user-input").value = "";
+      function getCSRFToken() {
+        return document.getElementById("csrf-token").value;
+      }
+      async function sendMessage() {
+        console.log("Send Message");
+        const userInput = document.getElementById("user-input").value;
+        const response = await fetch('{% url "chatbot_response" %}', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCSRFToken(),
+          },
+          body: JSON.stringify({ message: userInput }),
+        });
+
+        if (!response.ok) {  // Check if the response is not successful
+            console.error("Server error:", response.status);
+            const errorText = await response.text();  // Get error message from the response
+            console.error("Error details:", errorText);
+            return;
         }
+
+        console.log(response);
+        const data = await response.json();
+        const chatWindow = document.getElementById("chat-window");
+        chatWindow.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+        chatWindow.innerHTML += `<p><strong>Bot:</strong> ${data.message}</p>`;
+        document.getElementById("user-input").value = "";
+      }
     </script>
-</body>
+  </body>
 </html>

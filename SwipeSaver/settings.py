@@ -38,9 +38,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-owhocqew%b896oy1b4bnfhn^qpyg(p#g!6ih@vv53%9na55=!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu']
+ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu', '127.0.0.1']
 
 
 # Application definition
@@ -100,14 +100,14 @@ WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': NAME,
-        'PASSWORD': PASSWORD,
-        'USER': USER,
-        'HOST': HOST,
+        'NAME': 'swipesaver',
+        'PASSWORD': 'swipesaver',
+        'USER': 'ishan',
+        'HOST': '128.113.126.74',
         'PORT':'',
     },
 
-    # 'PostgresDB': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
+    'PostgresDB': dj_database_url.parse("postgresql://postgres:AmqoUbzNAxfjdBUwFOCvjiDEtwEbMVFp@autorack.proxy.rlwy.net:24414/railway")
 }
 
 DATABASE_ROUTERS = ['SwipeSaver.postgres_router.SwipeSaverRouter']
