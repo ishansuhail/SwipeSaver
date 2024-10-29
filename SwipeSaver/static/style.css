@@ -29,7 +29,6 @@ div.scrollmenu a {
 div.scrollmenu a:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    margin: 0 10px; /* Add some horizontal spacing */
 }
 
 /* Content styles */
@@ -101,14 +100,15 @@ a {
     position: relative;
     background-color: var(--secondary-color);
     padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-container img {
-    width: 200px;
-    height: 46px;
-    display: block;
-    margin: 0 auto 10px;
+    width: 10%;
+    height: 10%;
+    margin-right: 20px;
 }
 
 .button:hover {
@@ -120,8 +120,6 @@ a {
     font-size: 60px;
     margin: 0;
     color: var(--primary-color);
-    text-align: center;
-    margin-top: 20px;
 }
 
 .overlay-box {
