@@ -15,6 +15,18 @@ from pathlib import Path
 
 import dj_database_url
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+NAME = os.getenv('NAME')
+PASSWORD = os.getenv('PASSWORD')
+USER = os.getenv('USER')
+HOST = os.getenv('HOST')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -88,10 +100,10 @@ WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'swipesaver',
-        'PASSWORD': 'swipesaver',
-        'USER':'ishan',
-        'HOST':'128.113.126.74',
+        'NAME': NAME,
+        'PASSWORD': PASSWORD,
+        'USER': USER,
+        'HOST': HOST,
         'PORT':'',
     },
 
