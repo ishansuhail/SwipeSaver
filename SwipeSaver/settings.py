@@ -35,6 +35,9 @@ ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu']
 
 INSTALLED_APPS = [
     'daphne',
+    'SwipeSaver',
+    'django_celery_results',
+    'django_celery_beat',
     'accounts',
     'homepage',
     'commons',
@@ -42,7 +45,6 @@ INSTALLED_APPS = [
     'russellsage',
     'blitman',
     'populate_db',
-    'SwipeSaver',
     'chatbot',
     'channels',
     'django.contrib.admin',
@@ -84,16 +86,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'SwipeSaver.wsgi.application'
 ASGI_APPLICATION = 'SwipeSaver.asgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swipesaver_dev',
-        'USER': 'Enter your username',
-        'PASSWORD': 'Enter your password',
+        'NAME': 'swipesaver',
+        'USER': 'ishan',
+        'PASSWORD': 'swipesaver',
         'HOST': 'swipesaver.cs.rpi.edu',
         'PORT': '5432',
     }
@@ -104,6 +105,8 @@ DATABASES = {
 #    'NAME': BASE_DIR / 'db.sqlite3',
 #},
 
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'db+postgresql://ishan:swipesaver@swipesaver.cs.rpi.edu/swipesaver'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -129,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
