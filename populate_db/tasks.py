@@ -1,7 +1,7 @@
 from celery import shared_task
 from .models import FoodItem
 from .views import populate
-from commons.models import Rating
+from populate_db.models import Rating
 
 @shared_task
 def update_food_items():

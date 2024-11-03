@@ -1,7 +1,7 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from django.db.models import Avg
-from .models import Rating  # Assume you have a Rating model with a 'score' field
+from populate_db.models import Rating
 from channels.db import database_sync_to_async
 import asyncio
 
