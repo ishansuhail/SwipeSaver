@@ -15,7 +15,7 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
     html_parts = []
 
     # Iterate over meal types (BREAKFAST, LUNCH, DINNER)
-    for meal in ["BREAKFAST", "LUNCH", "DINNER"]:
+    for meal in ["BREAKFAST", "BRUNCH", "LUNCH", "DINNER"]:
         if meal in grouped_meals:
             # Create top-level accordion for each meal
             html_parts.append(f'''
