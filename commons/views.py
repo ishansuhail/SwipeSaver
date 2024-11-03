@@ -1,6 +1,4 @@
 # Standard Library Imports
-import datetime
-import re
 import json
 
 # Third-Party Library Imports
@@ -9,12 +7,11 @@ from unidecode import unidecode
 # Django Imports
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.db.models import Avg
 
 # Local Application Imports
 from populate_db.views import populate
 from populate_db.models import FoodItem
-from .models import Rating, Station
+from populate_db.models import Rating
 
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
@@ -25,12 +22,13 @@ def commons(request):
     breakfast_items = FoodItem.objects.filter(dining_hall="commons", meal='BREAKFAST').order_by('station', 'name')
     lunch_items = FoodItem.objects.filter(dining_hall="commons", meal='LUNCH').order_by('station', 'name')
     dinner_items = FoodItem.objects.filter(dining_hall="commons", meal='DINNER').order_by('station', 'name')
+    brunch_items = FoodItem.objects.filter(dining_hall="commons", meal="BRUNCH").order_by('station', 'name')
     
     user_id = request.user.id
     ratings = Rating.objects.filter(dining_hall="commons", user_id=user_id)
     
     # Pass the result to the template
-    return render(request, 'commons.html', {'breakfast_items': breakfast_items, 'lunch_items': lunch_items, 'dinner_items': dinner_items, 'ratings': ratings, 'is_authenticated': request.user.is_authenticated})
+    return render(request, 'commons.html', {'breakfast_items': breakfast_items, 'brunch_items': brunch_items, 'lunch_items': lunch_items, 'dinner_items': dinner_items, 'ratings': ratings, 'is_authenticated': request.user.is_authenticated})
  
 @login_required
 @require_POST  

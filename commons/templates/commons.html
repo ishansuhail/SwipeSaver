@@ -59,21 +59,33 @@
 </div>
 {% endif %}
 
-<p class="meal-title">BREAKFAST (7:00 - 9:30)</p>
-<div>
-    {% render_meal_info breakfast_items ratings is_authenticated%}
-</div>
+{% if breakfast_items|length > 0 %}
+    <p class="meal-title">BREAKFAST</p>
+    <div>
+        {% render_meal_info breakfast_items ratings is_authenticated %}
+    </div>
+{% endif %}
 
+{% if brunch_items|length > 0 %}
+	<p class="meal-title">BRUNCH</p>
+	<div>
+		{% render_meal_info brunch_items ratings is_authenticated%}
+	</div>
+{% endif %}
 
-<p class="meal-title">LUNCH (11:00 - 3:00)</p>
-<div>
-    {% render_meal_info lunch_items ratings is_authenticated%}
-</div>
+{% if lunch_items|length > 0 %}
+	<p class="meal-title">LUNCH</p>
+	<div>
+		{% render_meal_info lunch_items ratings is_authenticated%}
+	</div>
+{% endif %}
 
-<p class="meal-title">DINNER (4:30 - 8:00)</p>
-<div>
-    {% render_meal_info dinner_items ratings is_authenticated%}
-</div>
+{% if dinner_items|length > 0 %}
+	<p class="meal-title">DINNER</p>
+	<div>
+		{% render_meal_info dinner_items ratings is_authenticated%}
+	</div>
+{% endif %}
 
 <div class="footer">
 <p class = "footer-label">An RCOS project</p>
@@ -127,26 +139,6 @@
 		}
 	});
 	}
-</script>
-<script>
-	$(".rating input[type='radio']").on('change', function() {
-		var rating = $(this).val();
-		var nameParts = $(this).attr('name').split('-'); // split the name attribute
-		var mealTime = nameParts[1]; // get the meal time
-		var station = nameParts[2]; // get the station name
-		var data = {};
-		data['rating-' + mealTime + '-' + station] = rating; // create data object dynamically
-		$.ajax({
-			url: '/commons/rate/',
-			data: data,
-			dataType: 'json',
-			success: function (data) {
-				if (data.success) {
-					alert("Rating saved for " + station.charAt(0).toUpperCase() + station.slice(1) + " at " + mealTime + "! Average rating: " + data.average_rating + ".");
-				}
-			}
-		});
-	});
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -239,7 +231,7 @@
 		}
 
 		function updateStarRatings(station, meal, newRating) {
-			const starElements = $(`.rating-section[data-station='${station}'][data-meal='${meal}'] .star`);
+			const starElements = $(`.rating-section[data-station="${station}"][data-meal="${meal}"] .star`);
 			
 			// Loop through each star and update the class based on the new rating
 			starElements.each(function() {
