@@ -1,0 +1,218 @@
+*********************************
+SwipeSaver Production Information
+*********************************
+
+Introduction:
+-------------
+
+The production version of SwipeSaver is hosted within the RPI network
+on a virtual machine with a domain of swipesaver.cs.rpi.edu. You can ssh
+into the machine using the following command, provided you have a user
+account:
+
+    ssh <your_user>@swipesaver.cs.rpi.edu
+
+Note: you must be on the RPI network in order for the ssh command to 
+work. If you are not on the RPI wifi and want to work on the project, 
+you must connect the Cisco RPI VPN first. The following link explains
+how to download and run the VPN:
+
+    https://itssc.rpi.edu/hc/en-us/articles/360008783172-VPN-Installation-and-Connection
+
+VM Users and Project Directory
+------------------------------
+
+The GitHub repository for the project is located at /home/SwipeSaver 
+on the VM. In Linux, the ability to enter directories and run files 
+depends on the permissions of the user. To make sure that all developers
+can run and execute files, we have created a user group called swipesaver-dev.
+
+To our knowledge, all project files/directories and all the files/directories 
+for the services required to host the website have swipesaver-dev group ownership
+to ensure all developers can edit and update production. If you are having 
+permission issues, contact the developer responsible for managing SwipeSaver 
+production so that they can add you to swipesaver-dev or update the group 
+ownership of a file that we may have missed.
+
+Databases on the VM
+-------------------
+
+The PostgreSQL databases for the application are stored on our VM. There are two
+databases that we use: 'swipesaver' and 'swipesaver_dev'.
+
+Unless working directly on the virtual machine, developers should not be connecting
+to the swipesaver database, as it is used for production and should be working 
+at all times for application users.
+
+We created swipesaver_dev for developing new features. To connect your local 
+development version of SwipeSaver to the database, make sure you have the 
+following in your /SwipeSaver/SwipeSaver/settings.py file:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'swipesaver_dev',
+            'USER': 'your_username',
+            'PASSWORD': 'your_password',
+            'HOST': 'swipesaver.cs.rpi.edu',
+            'PORT': '5432',
+        }
+    }
+
+Note: if you do not have a username or password for swipesaver_dev, contact the 
+developer managing the server to get them to add a user account for you.
+
+Tip: when developing new features, it is very helpful to have a GUI method of 
+navigating the database to ensure everything is working/updating as expected.
+pgAdmin4 is an application that you can use to connect to swipesaver-dev with 
+a GUI. There are other similar applications availale to download.
+
+Services Used to Host SwipeSaver Production
+-------------------------------------------
+
+There are a variety of services running on the VM that are necessary to host 
+the production version of our application. The following is a description of 
+each service and a short summary of their functionalities:
+
+    Gunicorn:
+    ~~~~~~~~~
+
+        What it is: Gunicorn (Green Unicorn) is a Python WSGI HTTP server 
+        for UNIX. It’s a pre-fork worker model that runs multiple worker 
+        processes to handle requests.
+        
+        Role in the Django app: Gunicorn serves the Django application by 
+        interfacing with the WSGI protocol. It handles incoming HTTP requests, 
+        passing them to the Django application and returning the responses. 
+        Gunicorn is responsible for serving dynamic content and can be configured 
+        with different worker types based on our needs.
+
+    Nginx:
+    ~~~~~~
+
+        What it is: Nginx is a high-performance web server and reverse proxy server.
+        
+        Role in the Django app: Nginx typically acts as a front-facing server that 
+        handles all incoming HTTP requests before they reach the application server 
+        (like Gunicorn). Its roles include:
+
+            Serving static files: Nginx can efficiently serve static files (e.g., 
+            images, CSS, JavaScript) directly to clients without involving the 
+            application server, freeing it to handle dynamic content.
+            
+            Reverse proxying: Nginx can proxy requests to Gunicorn for dynamic 
+            content, providing features like load balancing and request handling.
+            
+            Handling SSL: Nginx can manage SSL certificates for secure HTTPS 
+            connections.
+
+    Daphne:
+    ~~~~~~~
+
+        What it is: Daphne is an HTTP and WebSocket protocol server for ASGI and 
+        ASGI-HTTP, developed as part of the Django Channels project.
+        
+        Role in the Django app: The application uses Django Channels for 
+        handling WebSockets and long-lived connections, so Daphne serves as the 
+        ASGI server. It can handle both HTTP and WebSocket traffic, allowing real-time 
+        features (like our real-time average updating of average station ratings)
+        to be integrated into the Django application.
+
+    Daemon:
+    ~~~~~~~
+
+    What it is: A daemon is a background process that runs independently from the 
+    user's control.
+    
+    Role in the Django app: In the context of our Django application, daemon is 
+    used to manage the lifecycle of your application servers (Gunicorn and Daphne). 
+    Using a systemd service or similar mechanism, you can create daemons that:
+
+        Start automatically on boot: Ensure that the application servers start 
+        automatically when the VM boots.
+        
+        Restart on failure: Automatically restart the application servers if 
+        they crash.
+        
+        Manage logs: Handle logging for the application, making it easier to 
+        monitor and troubleshoot.
+
+    Celery:
+    ~~~~~~~
+
+    What is it: Celery is an asynchronous task queue/job queue based on distributed
+    message passing. It is used for handling background tasks in web applications, 
+    allowing you to offload long-running or resource-intensive operations from the 
+    main application flow.
+
+    Role in the Django app: In the context of our application, Celery is used to
+    handle the periodic task of updating our database nightly with the next day's 
+    food items, and clearing the previous day's station ratings. There are two 
+    processes running on the VM in the background on detached screens to enable
+    this feature: a Celery Worker process and a Celery Beat process.
+
+        The Celery Beat process is what ensures the database task is called every
+        night at 1am EST. It reads periodic tasks from the swipesaver database then
+        instructs the Celery Worker process to actually execute the task. You can 
+        view all of the periodic tasks and results of task executions through
+        the Django Admin page: swipesaver.cs.rpi.edu/admin/
+
+        The Celery Worker process is the process actually executing the task to 
+        reset the ratings and food item tables every night.
+
+        To view the celery_worker and the celery_beat screens, run screen -ls 
+        once sshed into the VM.
+
+    Redis:
+    ~~~~~~
+
+        Redis is an in-memory data store used by Celery as a message broker. It 
+        queues tasks for Celery workers to execute and can also store the results 
+        of those tasks. In our case, we store the results of tasks in the swipesaver
+        PostgreSQL database. Redis helps in efficiently managing the communication 
+        between the Celery Beat and the workers.
+
+Making Changes to Production:
+-----------------------------
+
+Currently, the production version of SwipeSaver is stored within the origin/production
+branch on our GitHub. When we want to make changes to production, changes need to be 
+added to the branch, or pulled in from another branch. Then we can git pull into the 
+directory on the virtual machine. Then, it is necessary that we restart the services 
+hosting the website so the changes are visible to users. We have written a bash 
+script to do this restart automatically. It must be executed as follows:
+
+    sudo ./restart_swipesaver.sh
+
+The script will reload daemon, restart gunicorn, reload nginx, and restart daphne.
+If changes are made to periodic tasks, the worker and beat processes may have to be 
+restarted. This can be done as follows:
+
+    Restarting Celery Worker:
+    screen -ls             --> list the screens running to get their ids
+    screen -r <screen_id>  --> attach to the worker screen
+    CTRL + C               --> end the worker process
+    celery -A SwipeSaver worker --loglevel=info  --> run the worker again
+    Hold CTRL, click and release A key, then click and release D key, to
+    run the worker in the background then detach from the screen.
+
+    Restarting Celery Beat:
+    screen -ls             --> list the screens running to get their ids
+    screen -r <screen_id>  --> attach to the beat screen
+    CTRL + C               --> end the beat process
+    celery -A SwipeSaver beat --loglevel=info  --> run the beat again
+    Hold CTRL, click and release A key, then click and release D key, to
+    run the beat in the background then detach from the screen.
+
+    If New Screens Need to be Created:
+    screen -S <your_screen_name>   --> create a string with a given name
+
+
+
+
+
+
+
+
+
+

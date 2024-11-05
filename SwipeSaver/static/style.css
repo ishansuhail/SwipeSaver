@@ -124,9 +124,9 @@ body {
     margin: 20px auto;
     border: none;
     outline: none;
-    transition: background-color 0.4s;
-    display: block;
-    position: relative; /* Needed for positioning the pseudo-element */
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
 }
 
 .accordion.active, .accordion:hover {
@@ -144,10 +144,39 @@ body {
 }
 
 .accordion.active:after {
-    content: "\2796"; /* Minus sign */
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-/* Panel Styles */
+.accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.station-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    color: #444;
+}
+
+.rating-icon {
+    color: #FFD700; /* Gold color for the star icon */
+    font-size: 18px;
+}
+
+.rating-score {
+    font-weight: bold;
+    color: #333; /* Dark color for readability */
+}
+
 .panel {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
@@ -220,65 +249,135 @@ body {
     color: white;
 }
 
-/* Time Style */
-.time-style {
-    text-align: right; 
-    font-size: 1.5rem; 
-    margin-left: 40px; 
-    margin-right: 10px;
-    color: #333333; /* Ensure text is visible */
-}
-
-/* Center Container */
 .center-container {
     display: flex; 
     align-items: center; 
     justify-content: center;
-    flex-direction: column;
-    margin: 20px;
 }
 
-.calorie-info {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #333333; /* Ensure text is visible */
+.rating-section {
+    display: flex;                   /* Use Flexbox layout */
+    align-items: center;            /* Center items horizontally */
+    text-align: center;             /* Center text */
+    gap: 10px;
+    margin-top: 15px;
 }
 
-/* Clear Calories Button */
-.button {
-    font-size: 1rem;
-    border: none;
-    color: red;
+.rate-message-style {
+    color: #333333; /* Rich dark color for readability */
+    font-size: 20px; /* Large, but not overwhelming */
+    font-weight: 600; /* Slightly bold for emphasis */
+    padding: 10px 20px; /* Comfortable padding for a balanced look */
+    background-color: #F7F9FB; /* Light, subtle background */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
+    display: inline-block; /* Keeps the text contained */
+    letter-spacing: 1px; /* Small letter spacing for elegance */
+    text-transform: uppercase; /* Adds a touch of emphasis */
+}
+
+.star-rating {
+    display: inline-flex;
+    flex-direction: row-reverse; /* Enables left-to-right fill effect */
+    gap: 8px; /* Adjusted gap for a clean look */
+}
+
+.star {
     background: none;
+    border: none;
+    font-size: 30px; /* Adjusted for uniform size */
     cursor: pointer;
+    color: #D3D3D3; /* Subtle light gray color for inactive stars */
+    transition: color 0.25s ease, transform 0.15s ease; /* Smooth transition for color and scale */
+    padding: 4px; /* Adds padding for better click area */
 }
 
-.button:hover {
-    text-decoration: underline;
+.star:hover {
+    color: #FFD700; /* Bright gold on hover */
+    transform: scale(1.1); /* Adds slight zoom on hover for engagement */
 }
 
-/* Footer */
-.footer {
-    position: fixed; /* Fix the footer to the bottom of the viewport */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
+.star:hover ~ .star {
+    color: #FFD700; /* Ensure all stars to the left also turn gold on hover */
+}
+
+.star.selected {
+    color: #FFC107 !important; /* Richer gold for selected stars */
+}
+
+.star.selected ~ .star {
+    color: #FFC107 !important; /* Maintain gold for all selected stars to the left */
+}
+
+.star.selected:hover {
+    color: #FFB300 !important; /* Slightly deeper gold when hovering over selected stars */
+    transform: scale(1.1);
+}
+
+.star.selected:hover ~ .star {
+    color: #FFB300 !important;;
+}
+
+/* Optional: Disable outline on focus */
+.star:focus {
+    outline: none; /* No outline for focused stars */
+}
+
+/* Animation on selection */
+.star-rating .star.selected {
+    animation: pop 0.2s ease-in-out; /* Subtle pop effect on selection */
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.login-alert {
+    background-color: #ffcccb;  /* Light red background */
+    color: #d8000c;              /* Dark red text */
+    border: 1px solid #d8000c;  /* Dark red border */
+    padding: 15px;               /* Padding around the text */
+    border-radius: 5px;         /* Rounded corners */
+    margin: 20px 0;             /* Margin above and below */
+    font-family: 'Montserrat', sans-serif;  /* Font family */
+    font-size: 16px;            /* Font size */
+    display: flex;              /* Flexbox for alignment */
+    align-items: center;        /* Center align vertically */
+}
+
+.login-alert p {
+    margin: 0;                  /* Remove default paragraph margin */
+}
+
+.login-alert::before {
+    content: "⚠️";              /* Warning icon */
+    font-size: 20px;           /* Size of the icon */
+    margin-right: 10px;        /* Space between icon and text */
+    margin-left: 40px; 
+}
+
+.station-title {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
-    padding: 10px 0;
-    z-index: 1000; /* Ensure the footer stays above other content */
+    justify-content: center;
+    gap: 5px; /* Space between items */
 }
 
-.footer p {
-    color: white;
-    margin: 0;
-    padding-right: 20px; /* Space between text and button */
-}
-
-#to_top {
-    height: 40px;
+#to_top{
+    position:fixed;
+    float:right;
+    height:40px;
+    width:155px;
+    right: 10px;
     background-color: white;
     color: black;
     border: none;
@@ -290,115 +389,5 @@ body {
 
 #to_top:hover {
     background-color: var(--accent-color);
-    color: white;
-}
-
-/* Media Queries for Larger Screens */
-@media (min-width: 1400px) {
-    .accordion, .panel {
-        width: 90%; /* Slightly reduce width to keep margins */
-        max-width: 1400px; /* Allow more expansion */
-    }
-}
-
-@media (min-width: 1800px) {
-    .accordion, .panel {
-        width: 85%; /* Further reduce width percentage */
-        max-width: none; /* Remove max-width to allow full expansion */
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-container h1 {
-        font-size: 2rem;
-    }
-
-    .accordion, .panel {
-        width: 95%;
-        max-width: 100%; /* Ensure full width on small screens */
-    }
-
-    .meal-title {
-        font-size: 1.5rem;
-        margin-left: 5%;
-    }
-
-    .meal-name {
-        font-size: 1rem;
-    }
-
-    .toggle-button {
-        width: 25px;
-        height: 25px;
-        font-size: 0.8rem;
-    }
-
-    .meal-description {
-        font-size: 0.9rem;
-    }
-
-    .time-style {
-        font-size: 1.2rem;
-    }
-
-    #to_top {
-        bottom: 80px;
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .scrollmenu a {
-        padding: 10px;
-        margin: 0 5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-container h1 {
-        font-size: 1.5rem;
-    }
-
-    .scrollmenu a {
-        padding: 8px;
-        margin: 0 3px;
-        font-size: 0.9rem;
-    }
-
-    .user-status {
-        font-size: 0.8rem;
-    }
-
-    .time-style {
-        font-size: 1rem;
-    }
-
-    .center-container p {
-        font-size: 1rem;
-    }
-
-    .meal-title {
-        font-size: 1.2rem;
-        margin-left: 5%;
-    }
-
-    .meal-name {
-        font-size: 0.9rem;
-    }
-
-    .toggle-button {
-        width: 20px;
-        height: 20px;
-        font-size: 0.7rem;
-    }
-
-    .meal-description {
-        font-size: 0.8rem;
-    }
-
-    #to_top {
-        bottom: 90px;
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-}
+    color: white; 
+  }
