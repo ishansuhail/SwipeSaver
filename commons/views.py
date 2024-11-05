@@ -26,7 +26,7 @@ def commons(request):
     
     user_id = request.user.id
     ratings = Rating.objects.filter(dining_hall="commons", user_id=user_id)
-    
+  
     # Pass the result to the template
     return render(request, 'commons.html', {'breakfast_items': breakfast_items, 'brunch_items': brunch_items, 'lunch_items': lunch_items, 'dinner_items': dinner_items, 'ratings': ratings, 'is_authenticated': request.user.is_authenticated})
  
