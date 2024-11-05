@@ -1,313 +1,30 @@
 <!DOCTYPE html>
+
 {% load static %}
+{% load custom_tags %}
+
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwipeSaver Homepage</title>
-    <style>
-        /* Define the color palette */
-        :root {
-            --primary-color: #333333;
-            --secondary-color: #FFFFFF;
-            --accent-color: #E41E1E;
-        }
-
-        div.scrollmenu {
-            display: flex; /* Use Flexbox */
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Align items vertically */
-            background-color: var(--primary-color);
-            overflow: auto;
-            white-space: nowrap;
-            padding: 10px 0; /* Add some vertical padding */
-        }
-
-        div.scrollmenu {
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        div.scrollmenu a {
-            display: inline-block;
-            color: var(--secondary-color);
-            text-align: center;
-            padding: 14px;
-            text-decoration: none;
-        }
-
-        div.scrollmenu a:hover {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            margin: 0 10px; /* Add some horizontal spacing */
-        }
-
-        /* Content styles */
-        .content-container {
-            text-align: center;
-            padding: 20px;
-        }
-
-        p {
-            font-size: 32px;
-            color: var(--accent-color);
-            margin: 0;
-        }
-
-        .quote {
-            font-size: 20px;
-            margin-top: 30px;
-            color: var(--secondary-color);
-        }
-
-        .logo {
-            width: 200%; /* Make the logo larger (adjust the percentage as needed) */
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-            margin: 0 auto; /* Center the logo */
-            max-width: 600px; /* Limit the maximum width if needed */
-        }
-
-        body {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 100px;
-        }
-
-        /* Top-right login status */
-        .user-status {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 16px;
-            color: var(--primary-color);
-        }
-
-        .user-status a {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-        .user-status a:hover {
-            text-decoration: underline;
-        }
-
-        /* Additional styles for scrollmenu */
-        .disabled {
-            background-color: gray;
-            color: white;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        .solid-line {
-            border: 3px solid var(--accent-color);
-        }
-
-        .dashed-line {
-            border: 1px dashed red;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .header-container {
-            position: relative;
-            background-color: var(--secondary-color);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .header-container img {
-            width: 80%; /* Set a percentage for the width (adjust as needed) */
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-            margin: 0 auto 10px;
-        }
-
-        .header-container h1 {
-            font-size: 60px;
-            margin: 0;
-            color: var(--primary-color);
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .red-box {
-            position: relative;
-            margin-top: 20px;
-            background-color: var(--accent-color);
-            text-align: center;
-            width: 100%;
-            height:20px;
-        }
-
-        /* Updated styles for dining-halls-container */
-        .dining-halls-container {
-            display: flex;
-            flex-wrap: wrap; /* Allow items to wrap onto the next line */
-            justify-content: center;
-            align-items: center;
-            height: auto; /* Removed fixed height to accommodate wrapping */
-        }
-
-        /* Updated styles for image-container */
-        .image-container {
-            margin: 10px; /* Add some space between the blocks */
-            flex-basis: calc(50% - 20px); /* Adjust width with respect to margin */
-            max-width: 600px; /* Max width of the container */
-            position: relative; /* Set position relative for absolute child positioning */
-        }
-
-        /* Updated styles for images */
-        .dining-halls-container img {
-            width: 100%; /* Full width */
-            height: auto; /* Maintain aspect ratio */
-            padding: 0; /* No padding to affect width */
-            /* Removed margin to allow title-overlay to be full width of the image-container */
-        }
-
-        /* Media query for smaller screens */
-        @media (max-width: 768px) {
-            .image-container {
-                flex-basis: 100%; /* Full width on smaller screens */
-            }
-            .logo {
-                width: 120%; /* Increase the percentage for smaller screens if needed */
-                max-width: 600px; /* You can adjust or remove this if needed */
-            }
-            .title-overlay {
-                left: 0; /* Align left to the container on smaller screens */
-                width: 100%; /* Full width on smaller screens */
-            }
-    
-            .panel, .title-overlay {
-                width: 100%; /* Full width on smaller screens */
-                left: 0; /* Align left on smaller screens */
-            }
-    
-            .dining-halls-container img {
-                width: 100%; /* Full width on smaller screens */
-                margin: 0; /* No margin on smaller screens */
-            }
-        }
-
-        /* Styles for title-overlay */
-        .title-overlay {
-            position: absolute;
-            top: 0;
-            left: 0; /* Align left to the image-container */
-            width: 100%; /* Full width of the image-container */
-            height: 15%; 
-            background-color: rgb(255, 255, 255, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border: none;
-            outline: none;
-            transition: 0.4s;
-            cursor: pointer;
-        }
-
-        .active, .title-overlay:hover {
-            background-color: rgb(255, 255, 255, 0.9);
-        }
-
-        .title-overlay:after {
-            background-color: rgb(255, 255, 255, 0.9);
-        }
-
-        .panel {
-            position: absolute;
-            top: 15%;
-            left: 0; /* Align left to the image-container */
-            width: 100%; /* Full width of the image-container */
-            background-color: rgb(255, 255, 255, 0.9);
-            max-height: 0;
-            color: var(--primary-color); /* Changed to primary-color for visibility */
-            border: none;
-            outline: none;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-        }
-
-        .panel p{
-            display: inline;
-            color: var(--primary-color);
-            font-size: 25px; 
-            margin-top: 10px; 
-            margin-left: 20px;
-        }
-
-        .panel a{
-            display: inline; /* or inline-block */
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 23px;
-        }
-
-        .panel a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background-color: #333;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer p {
-            color: white;
-        }
-
-        #to_top{
-            position:fixed;
-            float:right;
-            height:40px;
-            width:155px;
-            right: 10px;
-            background-color: white;
-            color: black; 
-            border: none; 
-            border-radius: 100px; 
-            padding: 10px 20px; 
-            font-weight: bold;
-            cursor: pointer; 
-          }
-          
-          #to_top:hover {
-            background-color: var(--accent-color); /* Change color on hover */
-            color: white; 
-          }
-      
-    </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{% static 'distanceTracker.js' %}"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SWIPESAVER</title>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
 </head>
 
-
 <body style="background-color: whitesmoke;">
-    
-    <div class="header-container">
-        <img src="{% static 'logo.png' %}" alt="SwipeSaver" class="logo">
-    </div>       
+<div class="header-container">
+<div class="overlay-box"></div>
+
+<img alt="SwipeSaver" src="{% static 'final_logo.png' %}"/>
+
+<h1>SWIPESAVER</h1>
+
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'distanceTracker.js' %}"></script>
+</div>      
     
     <!-- Top-right user status -->
     <div class="user-status">
@@ -467,66 +184,73 @@
         function getHours() {
             var date = new Date();
             var day = date.getDay();
-            if(day == 0) //Sunday
+            if(day == 0) // Sunday
             {
                 document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
                 document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
                 document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
                 document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 - 8:00 pm";
             }
-            else if(day >= 1 && day <= 4) //Monday - Thursday
+            else if(day >= 1 && day <= 4) // Monday - Thursday
             {
                 document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 8:00 pm";
+                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
             }
-            else if(day == 5) //Friday
+            else if(day == 5) // Friday
             {
                 document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 - 8:00 pm";
+                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
             }
-            else if(day == 6) //Saturday
+            else if(day == 6) // Saturday
             {
                 document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
                 document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
                 document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 - 8:00 pm";
+                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 pm - 8:00 pm";
             }
         }
+    
         getCurrentTime();
         getHours();
         setInterval(getCurrentTime, 1000);
     </script>
-
+    
+    <!-- Updated Script for Overlay Click Event -->
     <script>
         var acc = document.getElementsByClassName("title-overlay");
         var i;
-
+    
         for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-            } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
+            acc[i].addEventListener("click", function() {
+                // Toggle the 'active' class on the overlay (optional, for styling)
+                this.classList.toggle("active");
+    
+                // Get the panel (next sibling element)
+                var panel = this.nextElementSibling;
+    
+                // Toggle the 'open' class on the panel to control visibility
+                panel.classList.toggle('open');
+    
+                // Update 'aria-expanded' attribute for accessibility
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+            });
         }
-    </script>
-
+    </script>    
+    
     <script>
         function scrollToTop() {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth' 
-          });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
         }
     </script>
-
+    
     <script>
         function updateDiningHallStatuses() {
             var now = new Date();
@@ -537,7 +261,6 @@
             updateStatus("sage", getSageHours(day), currentTime);
             updateStatus("barh", getBARHHours(day), currentTime);
             updateStatus("blitman", getBlitmanHours(day), currentTime);
-            // Add similar lines for other dining halls
         }
     
         function updateStatus(diningHallId, openHours, currentTime) {
@@ -569,48 +292,48 @@
                 return hours;
             }
         }
-
+    
         function getSageHours(day) {
             var breakfast = { start: 7 * 60, end: 10 * 60, meal: "Breakfast" };
             var continentalBreakfast = { start: 10 * 60, end: 11 * 60, meal: "Continental Breakfast" };
             var lunch = { start: 11 * 60, end: 14.5 * 60, meal: "Lunch" }; // Until 2:30 PM
             var dinner = { start: 16 * 60, end: 20 * 60, meal: "Dinner" }; // Until 8:00 PM
             var lateLunchWeekend = { start: 13.5 * 60, end: 16 * 60, meal: "Late Lunch" }; // 1:30 PM to 4:00 PM
-        
+    
             if (day >= 1 && day <= 5) { // Monday to Friday
                 return [breakfast, continentalBreakfast, lunch, dinner];
             } else { // Saturday and Sunday
                 return [lateLunchWeekend, dinner];
             }
-        }        
-
+        }
+    
         function getBARHHours(day) {
             var breakfast = { start: 7 * 60, end: 9.5 * 60, meal: "Breakfast" }; // 7:00 AM to 9:30 AM
             var dinnerWeek = { start: 17 * 60, end: 21 * 60, meal: "Dinner" }; // 5:00 PM to 9:00 PM
             var brunchWeekend = { start: 11 * 60, end: 13 * 60, meal: "Brunch" }; // 11:00 AM to 1:00 PM
-        
+    
             if (day >= 1 && day <= 5) { // Monday to Friday
                 return [breakfast, dinnerWeek];
             } else { // Saturday and Sunday
                 return [brunchWeekend];
             }
         }
-
+    
         function getBlitmanHours(day) {
             var breakfastWeek = { start: 7 * 60, end: 9.5 * 60, meal: "Breakfast" }; // 7:00 AM to 9:30 AM, Monday-Friday
             var brunchWeekend = { start: 10.5 * 60, end: 13.5 * 60, meal: "Brunch" }; // 10:30 AM to 1:30 PM, Saturday-Sunday
             var dinner = { start: 17 * 60, end: 20 * 60, meal: "Dinner" }; // 5:00 PM to 8:00 PM, Monday-Sunday
-        
+    
             if (day >= 1 && day <= 5) { // Monday to Friday
                 return [breakfastWeek, dinner];
             } else { // Saturday and Sunday
                 return [brunchWeekend, dinner];
             }
         }
-        
+    
         updateDiningHallStatuses();
         setInterval(updateDiningHallStatuses, 60000); // Update status every minute
-    </script>
+    </script>    
     
 
 </body>
