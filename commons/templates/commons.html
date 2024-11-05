@@ -87,30 +87,18 @@
 	</div>
 {% endif %}
 
-<div class="footer">
-<p>An RCOS project</p>
-<button id="to_top" onclick="scrollToTop()">BACK TO TOP</button>
-</div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function getCurrentTime() {
-    var date = new Date();
-    var options = { timeZone: 'America/New_York', hour12: true };
-    var timeString = date.toLocaleTimeString('en-US', options);
-    document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
+        var date = new Date();
+        var options = { timeZone: 'America/New_York', hour12: true };
+        var timeString = date.toLocaleTimeString('en-US', options);
+        document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
     }
     getCurrentTime();
     setInterval(getCurrentTime, 1000);
 </script>
-<script>
-	function scrollToTop() {
-		window.scrollTo({
-		top: 0,
-		behavior: 'smooth' 
-		});
-	}
-</script>
+
 <script>
 	let totalCalories = 0
 
@@ -124,22 +112,7 @@
 		document.getElementById("totalCalories").textContent = totalCalories;
 	}
 </script>
-<script>
-	var acc = document.getElementsByClassName("accordion");
-	var i;
 
-	for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-            } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-	}
-</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var acc = document.querySelectorAll(".accordion");
