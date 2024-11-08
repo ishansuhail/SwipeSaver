@@ -4,6 +4,7 @@ from collections import defaultdict
 
 register = template.Library()
 
+# Used to dynamically generate the station HTML
 @register.simple_tag
 def render_meal_info(meal_items, user_ratings, is_authenticated):
     # Group meal items by meal and station
@@ -12,6 +13,8 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
         if item.station:  # Ensure station is not None or empty
             grouped_meals[item.meal.upper()][item.station].append(item)
     
+    
+    
     html_parts = []
 
     # Iterate over meal types (BREAKFAST, LUNCH, DINNER)
@@ -19,12 +22,15 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
         if meal in grouped_meals:
             # Create top-level accordion for each meal
             html_parts.append(f'''
-                <button class="accordion">View Menu</button>
+                <button class="accordion">
+                    <span class="accordion-text">View Menu</span>
+                </button>
                 <div class="panel">
             ''')
 
             # Create station accordions within the meal accordion
             for station, items in grouped_meals[meal].items():
+                
                 if not station or station.lower() == "none":
                     continue  # Skip None or empty stations
 
@@ -46,13 +52,19 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                     description = item.description.strip() if item.description else "No description available"
                     show_description = item.description and description.lower() != "no description available"
                     
+                    allergens = item.allergens if len(item.allergens) > 0 else "No allergens"
+                    calories = item.calories.strip()
+                    
                     html_parts.append(f'''
                     <div class="meal-item">
                         <div class="meal-header">
-                            <p class="meal-name">{item.name}</p>
+                            <p class="meal-name">{item.name} </p>
                             {'<button onclick="toggleDescription(this);" class="toggle-button">+</button>' if show_description else ''}
+                            <button onclick=calorieCounter({calories}) class="calorie-button">{calories}cal</button>
                         </div>
+                        <div style = "color: black">{allergens}</div>
                         {f'<div style="display: none;"><p class="meal-description">{description}</p></div>' if show_description else ''}
+                        
                     </div>
                     ''')
                     
@@ -91,5 +103,13 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
 
             # Close the meal panel
             html_parts.append('</div>')
+            html_parts.append('</button>')
 
     return mark_safe(''.join(html_parts))
+
+# Used to properly capitalize dining hall names for HTML
+@register.filter
+def capitalize_dining_hall_name(value):
+    if value:
+        return ' '.join(word.capitalize() for word in value.split('-'))
+    return value
