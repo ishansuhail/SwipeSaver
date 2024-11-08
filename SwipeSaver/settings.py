@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-owhocqew%b896oy1b4bnfhn^qpyg(p#g!6ih@vv53%9na55=!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','128.113.126.74', 'swipesaver.cs.rpi.edu']
 
 
 # Application definition
@@ -92,8 +92,8 @@ ASGI_APPLICATION = 'SwipeSaver.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swipesaver_dev',
-        'USER': 'aiden',
+        'NAME': 'swipesaver',
+        'USER': 'ishan',
         'PASSWORD': 'swipesaver',
         'HOST': 'swipesaver.cs.rpi.edu',
         'PORT': '5432',
@@ -107,6 +107,8 @@ DATABASES = {
 
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'db+postgresql://ishan:swipesaver@swipesaver.cs.rpi.edu/swipesaver'
+CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -144,6 +146,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'homepage/static'),
