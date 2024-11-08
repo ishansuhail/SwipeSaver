@@ -11,7 +11,32 @@
     padding: 0;
 }
 
-/* Body Styles */
+.dashed-line {
+    border: 1px dashed red;
+    margin-left: 30px;
+}
+
+
+.calorie-button {
+    background: none; 
+    border: none; 
+    padding: 0; 
+    margin: 0; 
+    outline: none; 
+    box-shadow: none; 
+    cursor: pointer; 
+    margin-left: auto; 
+    margin-right: 10px; 
+    color: black;
+    font-size: large;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calorie-button:hover {
+    color: gray;
+
+}
+
 body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
