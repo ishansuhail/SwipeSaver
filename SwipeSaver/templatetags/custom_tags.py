@@ -56,7 +56,7 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                     
                     calories = item.calories.strip()
                     
-                    print(allergens, calories)
+                    
                     
                     html_parts.append(f'''
                     <div class="meal-item">
@@ -65,7 +65,9 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                             {'<button onclick="toggleDescription(this);" class="toggle-button">+</button>' if show_description else ''}
                             <button onclick=calorieCounter({calories}) class="calorie-button">{calories}cal</button>
                         </div>
-                        <div style = "color: black">{allergens}</div>
+                        <div style = "color: black; display: flex; flex-direction: row; gap: 10px">
+                         {''.join(f'<div>{allergen["name"]}</div>' if isinstance(allergen, dict) and "name" in allergen else f'<div></div>' for allergen in allergens)}
+                        </div>
                         {f'<div style="display: none;"><p class="meal-description">{description}</p></div>' if show_description else ''}
                         
                     </div>

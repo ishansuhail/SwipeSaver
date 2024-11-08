@@ -73,7 +73,7 @@ p {
 
 .calorie-button:hover {
     color: gray;
-
+    transform: scale(1.05)
 }
 
 body {
