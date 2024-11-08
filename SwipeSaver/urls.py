@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('commons/', include('commons.urls')),
     path('barh/', include('barh.urls')),
-    path('russellsage/', include('russellsage.urls')),
+    path('russell-sage/', include('russellsage.urls')),
     path('blitman/', include('blitman.urls')),
     path('accounts/', include('accounts.urls')),
 ]

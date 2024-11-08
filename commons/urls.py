@@ -8,6 +8,6 @@ urlpatterns = [
     path('submit-rating/', views.submit_rating, name='submit_rating'),
 ]
 
-websocket_urlpatterns = [
-    path("ws/log/", consumers.LogConsumer.as_asgi()),
+commons_websocket_urlpatterns = [
+    path("ws/log/commons/", consumers.LogConsumer.as_asgi()),
 ]

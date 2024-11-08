@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-owhocqew%b896oy1b4bnfhn^qpyg(p#g!6ih@vv53%9na55=!y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -92,8 +92,8 @@ ASGI_APPLICATION = 'SwipeSaver.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swipesaver',
-        'USER': 'ishan',
+        'NAME': 'swipesaver_dev',
+        'USER': 'aiden',
         'PASSWORD': 'swipesaver',
         'HOST': 'swipesaver.cs.rpi.edu',
         'PORT': '5432',
@@ -149,7 +149,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'homepage/static'),
     os.path.join(BASE_DIR, 'SwipeSaver/static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

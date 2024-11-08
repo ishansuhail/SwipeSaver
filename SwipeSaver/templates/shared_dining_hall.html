@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+{% load custom_tags %}
+
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{{ dining_hall_name|capitalize_dining_hall_name }} Dining Hall</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+</head>
+
+<body style="background-color: whitesmoke;">
+<div class="header-container">
+    <div class="overlay-box"></div>
+    <img alt="SwipeSaver" src="{% static 'final_logo.png' %}"/>
+    <h1>{{ dining_hall_name|capitalize_dining_hall_name|upper }} DINING HALL</h1>
+</div>
+
+<!-- Top-right user status -->
+<div class="user-status">
+    {% if user.is_authenticated %}
+        <span>Logged in as {{ user.username }}</span>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+</div>
+
+<div class="scrollmenu">
+    <a href="{% url 'homepage' %}">Home</a>
+    <a href="{% url 'commons' %}">Commons</a>
+    <a href="{% url 'barh' %}">Barh</a>
+    <a href="{% url 'russellsage' %}">Russell Sage</a>
+    <a href="{% url 'blitman' %}">Blitman</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+</div>
+
+<div class="center-container" style="margin-top: 20px;">
+    <p style="text-align: center; font-size: 24px;">
+        Total Calories: <span id="totalCalories">0</span>
+        <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button>
+    </p>
+    <p id="time" class="time-style"></p>
+</div>
+
+<!-- Login alert if not authenticated -->
+{% if not user.is_authenticated %}
+<div class="login-alert">
+    <p>You need to be logged in to vote.</p> 
+</div>
+{% endif %}
+
+<!-- Meal sections -->
+<div class="meal-sections">
+    {% if breakfast_items|length > 0 %}
+        <p class="meal-title">BREAKFAST</p>
+        <div>{% render_meal_info breakfast_items ratings user.is_authenticated %}</div>
+    {% endif %}
+
+    {% if brunch_items|length > 0 %}
+        <p class="meal-title">BRUNCH</p>
+        <div>{% render_meal_info brunch_items ratings user.is_authenticated %}</div>
+    {% endif %}
+
+    {% if lunch_items|length > 0 %}
+        <p class="meal-title">LUNCH</p>
+        <div>{% render_meal_info lunch_items ratings user.is_authenticated %}</div>
+    {% endif %}
+
+    {% if dinner_items|length > 0 %}
+        <p class="meal-title">DINNER</p>
+        <div>{% render_meal_info dinner_items ratings user.is_authenticated %}</div>
+    {% endif %}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var diningHallName = "{{ dining_hall_name|lower }}";
+    const csrfToken = "{{ csrf_token }}";
+</script>
+<script src="{% static 'dining_hall_scripts.js' %}"></script>
+</body>
+</html>
