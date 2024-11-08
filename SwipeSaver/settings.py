@@ -92,8 +92,8 @@ ASGI_APPLICATION = 'SwipeSaver.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swipesaver_dev',
-        'USER': 'aiden',
+        'NAME': 'swipesaver',
+        'USER': 'ishan',
         'PASSWORD': 'swipesaver',
         'HOST': 'swipesaver.cs.rpi.edu',
         'PORT': '5432',
