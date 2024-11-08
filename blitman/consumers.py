@@ -5,7 +5,7 @@ from utils.rating_utils import send_average_ratings_per_station
 class LogConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         await self.accept()
-        hall_name = "commons"
+        hall_name = "blitman"
         self.loop_task = asyncio.create_task(send_average_ratings_per_station(self, hall_name))
 
     async def disconnect(self, close_code):

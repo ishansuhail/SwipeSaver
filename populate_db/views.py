@@ -54,8 +54,6 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             # Save the FoodItem instance to the database
                             food_item.save()
                             
-
-                #print(json.dumps(data, indent=4))
             except json.JSONDecodeError as e:
                 print("Error decoding JSON:", e)  # Part after the delimiter
 
