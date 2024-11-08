@@ -16,11 +16,19 @@ from channels.auth import AuthMiddlewareStack
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SwipeSaver.settings')
 django.setup()
 
-from commons.urls import websocket_urlpatterns
+from commons.urls import commons_websocket_urlpatterns
+from blitman.urls import blitman_websocket_urlpatterns
+from russellsage.urls import russelsage_websocket_urlpatterns
+from barh.urls import barh_websocket_urlpatterns
 
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
-        URLRouter(websocket_urlpatterns)
+        URLRouter(
+            commons_websocket_urlpatterns +
+            blitman_websocket_urlpatterns +
+            russelsage_websocket_urlpatterns +
+            barh_websocket_urlpatterns
+        )
     ),
 })
