@@ -108,7 +108,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Accordion Styles */
 .accordion {
     background-color: #eee;
     font-family: Verdana, sans-serif;
@@ -116,7 +115,6 @@ body {
     cursor: pointer;
     padding: 18px;
     width: 95%;
-    max-width: 1200px;
     font-size: 1.25rem;
     font-weight: bold;
     text-align: left;
@@ -128,23 +126,26 @@ body {
     align-items: center;
 }
 
+.accordion-text {
+    flex-grow: 1;
+    text-align: left; 
+}
+
 .accordion.active, .accordion:hover {
     background-color: #ccc;
 }
 
 .accordion:after {
-    content: '\02795'; /* Plus sign */
-    font-size: 1rem;
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
     color: #777;
-    position: absolute;
-    right: 20px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.accordion.active:after {
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
+  }
 
 .accordion-title {
     display: flex;

@@ -19,7 +19,9 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
         if meal in grouped_meals:
             # Create top-level accordion for each meal
             html_parts.append(f'''
-                <button class="accordion">View Menu</button>
+                <button class="accordion">
+                    <span class="accordion-text">View Menu</span>
+                </button>
                 <div class="panel">
             ''')
 
@@ -91,5 +93,6 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
 
             # Close the meal panel
             html_parts.append('</div>')
+            html_parts.append('</button>')
 
     return mark_safe(''.join(html_parts))
