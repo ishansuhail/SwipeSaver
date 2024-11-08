@@ -4,6 +4,7 @@ from collections import defaultdict
 
 register = template.Library()
 
+# Used to dynamically generate the station HTML
 @register.simple_tag
 def render_meal_info(meal_items, user_ratings, is_authenticated):
     # Group meal items by meal and station
@@ -96,3 +97,10 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
             html_parts.append('</button>')
 
     return mark_safe(''.join(html_parts))
+
+# Used to properly capitalize dining hall names for HTML
+@register.filter
+def capitalize_dining_hall_name(value):
+    if value:
+        return ' '.join(word.capitalize() for word in value.split('-'))
+    return value
