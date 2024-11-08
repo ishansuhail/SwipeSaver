@@ -11,12 +11,6 @@
     padding: 0;
 }
 
-.dashed-line {
-    border: 1px dashed red;
-    margin-left: 30px;
-}
-
-
 .calorie-button {
     background: none; 
     border: none; 
