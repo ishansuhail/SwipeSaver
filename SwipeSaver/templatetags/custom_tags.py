@@ -53,13 +53,7 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                     show_description = item.description and description.lower() != "no description available"
                     
                     allergens = item.allergens if len(item.allergens) > 0 else "No allergens"
-                    
-                    
-                    
-                    
                     calories = item.calories.strip()
-                    
-                    print(allergens, calories)
                     
                     html_parts.append(f'''
                     <div class="meal-item">
