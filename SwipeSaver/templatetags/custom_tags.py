@@ -55,14 +55,20 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                     allergens = item.allergens if len(item.allergens) > 0 else "No allergens"
                     calories = item.calories.strip()
                     
+                    
+                    
                     html_parts.append(f'''
                     <div class="meal-item">
                         <div class="meal-header">
                             <p class="meal-name">{item.name} </p>
                             {'<button onclick="toggleDescription(this);" class="toggle-button">+</button>' if show_description else ''}
-                            <button onclick=calorieCounter({calories}) class="calorie-button">{calories}cal</button>
+                            <div style = "color: black; display: flex; flex-direction: row; gap: 10px; margin-left: 10px;">
+                                {''.join(f'<div>{allergen["name"]}</div>' if isinstance(allergen, dict) and "name" in allergen else f'<div></div>' for allergen in allergens)}
+                            </div>
+                            <button onclick=addCalories({calories}) class="calorie-button">{calories}cal</button>
+                            
                         </div>
-                        <div style = "color: black">{allergens}</div>
+                        
                         {f'<div style="display: none;"><p class="meal-description">{description}</p></div>' if show_description else ''}
                         
                     </div>
