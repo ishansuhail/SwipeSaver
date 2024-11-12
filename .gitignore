@@ -6,6 +6,13 @@ __pycache__
 */__pycache__/*
 db.sqlite3
 media
+SwipeSaver/settings.py
+
+# Ignore the entire assets directory
+assets/
+
+# Ignore celerybeat-schedule file
+celerybeat-schedule
 
 # Backup files # 
 *.bak 

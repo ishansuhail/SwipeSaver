@@ -1,0 +1,483 @@
+:root {
+    --primary-color: #333333;
+    --secondary-color: #FFFFFF;
+    --accent-color: #333333;
+}
+
+/* Reset default styles for better control */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.calorie-button {
+    background: none; 
+    border: none; 
+    padding: 0; 
+    margin: 0; 
+    outline: none; 
+    box-shadow: none; 
+    cursor: pointer; 
+    margin-left: auto; 
+    margin-right: 10px; 
+    color: black;
+    font-size: large;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calorie-button:hover {
+    color: gray;
+    transform: scale(1.05)
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 65px;
+    padding-bottom: 60px; /* Prevent content overlap with fixed footer */
+}
+
+/* Header Styles */
+.header-container {
+    position: relative;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container img {
+    width: 10%;
+    height: 10%;
+    margin-right: 20px;
+}
+
+.header-container h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.overlay-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(228, 30, 30);
+    z-index: -1;
+}
+
+/* Scroll Menu */
+.scrollmenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    overflow: auto;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scrollmenu a {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.scrollmenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* User Status */
+.user-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.user-status a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.user-status a:hover {
+    text-decoration: underline;
+}
+
+/* Meal Title */
+.meal-title {
+    color: rgb(228, 30, 30);
+    font-size: 2rem;
+    margin-top: 35px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
+.accordion {
+    background-color: #eee;
+    font-family: Verdana, sans-serif;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 95%;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 20px auto;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-text {
+    flex-grow: 1;
+    text-align: left; 
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.station-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    color: #444;
+}
+
+.rating-icon {
+    color: #FFD700; /* Gold color for the star icon */
+    font-size: 18px;
+}
+
+.rating-score {
+    font-weight: bold;
+    color: #333; /* Dark color for readability */
+}
+
+.panel {
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    max-height: 0; /* Start collapsed */
+    overflow: hidden;
+    width: 95%; /* Increased width */
+    max-width: 1200px; /* Increased max-width */
+    border: none;
+    outline: none;
+    margin: 0 auto; /* Centered */
+    transition: max-height 0.3s ease-out;
+    padding: 0 18px;
+}
+
+/* Panel Expanded */
+.accordion.active + .panel {
+    padding: 10px 18px;
+}
+
+/* Meal Items */
+.meal-item {
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.meal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px; /* Add this line */
+}
+
+.meal-name {
+    margin: 0;
+    padding-right: 10px;
+    font-size: 1.25rem;
+    flex: 1;
+    color: #333333; /* Ensure text is visible */
+}
+
+.meal-description {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #333333; /* Ensure text is visible */
+}
+
+/* Toggle Button */
+.toggle-button {
+    border: solid;
+    border-color: rgb(228, 30, 30);
+    border-radius: 10px;
+    color: rgb(228, 30, 30);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-button:hover {
+    background-color: rgb(228, 30, 30);
+    color: white;
+}
+
+.center-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.rating-section {
+    display: flex;                   /* Use Flexbox layout */
+    align-items: center;            /* Center items horizontally */
+    text-align: center;             /* Center text */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.rate-message-style {
+    color: #333333; /* Rich dark color for readability */
+    font-size: 20px; /* Large, but not overwhelming */
+    font-weight: 600; /* Slightly bold for emphasis */
+    padding: 10px 20px; /* Comfortable padding for a balanced look */
+    background-color: #F7F9FB; /* Light, subtle background */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
+    display: inline-block; /* Keeps the text contained */
+    letter-spacing: 1px; /* Small letter spacing for elegance */
+    text-transform: uppercase; /* Adds a touch of emphasis */
+}
+
+.star-rating {
+    display: inline-flex;
+    flex-direction: row-reverse; /* Enables left-to-right fill effect */
+    gap: 8px; /* Adjusted gap for a clean look */
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 30px; /* Adjusted for uniform size */
+    cursor: pointer;
+    color: #D3D3D3; /* Subtle light gray color for inactive stars */
+    transition: color 0.25s ease, transform 0.15s ease; /* Smooth transition for color and scale */
+    padding: 4px; /* Adds padding for better click area */
+}
+
+.star:hover {
+    color: #FFD700; /* Bright gold on hover */
+    transform: scale(1.1); /* Adds slight zoom on hover for engagement */
+}
+
+.star:hover ~ .star {
+    color: #FFD700; /* Ensure all stars to the left also turn gold on hover */
+}
+
+.star.selected {
+    color: #FFC107 !important; /* Richer gold for selected stars */
+}
+
+.star.selected ~ .star {
+    color: #FFC107 !important; /* Maintain gold for all selected stars to the left */
+}
+
+.star.selected:hover {
+    color: #FFB300 !important; /* Slightly deeper gold when hovering over selected stars */
+    transform: scale(1.1);
+}
+
+.star.selected:hover ~ .star {
+    color: #FFB300 !important;;
+}
+
+/* Optional: Disable outline on focus */
+.star:focus {
+    outline: none; /* No outline for focused stars */
+}
+
+/* Animation on selection */
+.star-rating .star.selected {
+    animation: pop 0.2s ease-in-out; /* Subtle pop effect on selection */
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.login-alert {
+    background-color: #ffcccb;  /* Light red background */
+    color: #d8000c;              /* Dark red text */
+    border: 1px solid #d8000c;  /* Dark red border */
+    padding: 15px;               /* Padding around the text */
+    border-radius: 5px;         /* Rounded corners */
+    margin: 20px 0;             /* Margin above and below */
+    font-family: 'Montserrat', sans-serif;  /* Font family */
+    font-size: 16px;            /* Font size */
+    display: flex;              /* Flexbox for alignment */
+    align-items: center;        /* Center align vertically */
+}
+
+.login-alert p {
+    margin: 0;                  /* Remove default paragraph margin */
+}
+
+.login-alert::before {
+    content: "⚠️";              /* Warning icon */
+    font-size: 20px;           /* Size of the icon */
+    margin-right: 10px;        /* Space between icon and text */
+    margin-left: 40px; 
+}
+
+.station-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between items */
+}
+
+#to_top{
+    position:fixed;
+    float:right;
+    height:40px;
+    width:155px;
+    right: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#to_top:hover {
+    background-color: var(--accent-color);
+    color: white; 
+  }
+
+ /* Adjusted size for image-container and images */
+.dining-halls-container {
+    display: flex;
+    justify-content: center; /* Spread out the images */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-container {
+    position: relative;
+    width: 35%; /* Increase the width for larger images */
+    margin: 15px;
+}
+
+.image-container img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+/* Title overlay */
+.title-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.8); /* White with slight transparency */
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: background 0.3s;
+}
+
+.title-overlay:hover {
+    background: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+}
+
+/* Dropdown panel overlaid on the image */
+.image-container .panel {
+    position: absolute;
+    top: 60px; /* Place below the overlay */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Translucent white */
+    color: #333;
+    padding: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Add shadow for depth */
+}
+
+.image-container .panel.open {
+    max-height: 500px; /* Allows dropdown expansion */
+}
+
+/* Lines */
+.solid-line {
+    border-top: 1px solid black;
+    margin: 10px 0;
+}

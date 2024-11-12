@@ -27,9 +27,7 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                 
                 # Extract info that we want
                 for meal in data:
-                    print(f"Meal: {meal.get('name')}")
                     for group in meal.get('groups', []):  # Ensure 'groups' is available
-                        print(f"  Group name: {group.get('name')}")
                         for item in group.get('items', []):  # Ensure 'items' is available
                             
                             item_station = item.get('course')
@@ -37,6 +35,8 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                             item_id = item.get('menuItemId')
                             item_name = item.get('formalName')
                             item_desc = item.get('description')
+                            item_calories = item.get('calories')
+                            item_allergens = item.get('allergens')
                             item_dining_hall = dining_hall
 
                             # Create a FoodItem instance
@@ -46,14 +46,14 @@ def populate(url = "https://rpi.sodexomyway.com/en-us/locations/the-commons-dini
                                 description=item_desc,
                                 meal=item_meal,
                                 station=item_station,
-                                dining_hall=item_dining_hall
+                                calories = item_calories,
+                                allergens = item_allergens,
+                                dining_hall=item_dining_hall,
                             )
                             
                             # Save the FoodItem instance to the database
-                            food_item.save(using='PostgresDB')
+                            food_item.save()
                             
-
-                #print(json.dumps(data, indent=4))
             except json.JSONDecodeError as e:
                 print("Error decoding JSON:", e)  # Part after the delimiter
 
