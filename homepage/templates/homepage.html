@@ -1,169 +1,137 @@
 <!DOCTYPE html>
-
 {% load static %}
 {% load custom_tags %}
-
 <html lang="en">
+
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SWIPESAVER</title>
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SwipeSaver</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
-<body style="background-color: whitesmoke;">
-<div class="header-container">
-<div class="overlay-box"></div>
+<body>
 
-<img alt="SwipeSaver" src="{% static 'final_logo.png' %}"/>
+    <div class="header-container">
+        <div class="overlay-box"></div>
+        <img alt="SwipeSaver" src="{% static 'final_logo.png' %}" />
+        <h1>SWIPESAVER</h1>
+    </div>
 
-<h1>SWIPESAVER</h1>
-
-</head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{% static 'distanceTracker.js' %}"></script>
-</div>      
-    
     <!-- Top-right user status -->
     <div class="user-status">
         {% if user.is_authenticated %}
-            <!-- Display when the user is logged in -->
-            <span>Logged in as {{ user.username }}</span>
-            <a href="{% url 'logout' %}">Logout</a>
+        <span>Logged in as {{ user.username }}</span>
+        <a href="{% url 'logout' %}">Logout</a>
         {% endif %}
     </div>
 
+    <!-- Scroll Menu -->
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
-        <a href="{% url 'commons' %}">Commons</a>    
-        <a href="{% url 'barh' %}">Barh</a>    
+        <a href="{% url 'commons' %}">Commons</a>
+        <a href="{% url 'barh' %}">Barh</a>
         <a href="{% url 'russellsage' %}">Russell Sage</a>
         <a href="{% url 'blitman' %}">Blitman</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-
         {% if not user.is_authenticated %}
-            <!-- Show login and signup buttons when user is not logged in -->
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
         {% endif %}
     </div>
 
-    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>
-
-    <div id="output" hidden="hidden" style="text-align: center; margin: 20px;"></div>
-
-    <div class="red-box"></div>
+    <p id="time" class="time-display"></p>
 
     <div class="dining-halls-container">
+        <!-- Commons -->
         <div class="image-container">
             <img src="{% static 'commons_cropped.png' %}" alt="Commons">
-            <button class ="title-overlay">
+            <button class="title-overlay">
                 <p>Commons</p>
             </button>
-
             <div class="panel">
                 <hr class="solid-line">
                 <p id="commons_status">Status: Checking...</p>
-                <hr class="dashed-line">                
-                
+                <hr class="dashed-line">
                 <div id="commons_distance"></div>
                 <hr class="dashed-line">
-
-                <p >View Menu: </p>
-                <a href="{% url 'commons' %}">Commons Dining Hall</a>    
+                <p>View Menu: </p>
+                <a href="{% url 'commons' %}">Commons Dining Hall</a>
                 <hr class="dashed-line">
-
-                <p id = "commons_hours"></p>
+                <p id="commons_hours"></p>
                 <hr class="dashed-line">
-
-                <p >Rating:</p>
+                <p>Rating:</p>
                 <hr class="dashed-line">
             </div>
         </div>
 
+        <!-- Russell Sage -->
         <div class="image-container">
             <img src="{% static 'sage_cropped.png' %}" alt="Sage">
-            <button class ="title-overlay">
-                <p>Sage</p>
+            <button class="title-overlay">
+                <p>Russell Sage</p>
             </button>
-
             <div class="panel">
                 <hr class="solid-line">
                 <p id="sage_status">Status: Checking...</p>
                 <hr class="dashed-line">
-
                 <div id="sage_distance"></div>
                 <hr class="dashed-line">
-
-                <p >View Menu: </p>
-                <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>    
+                <p>View Menu: </p>
+                <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>
                 <hr class="dashed-line">
-
-                <p id = "sage_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
+                <p id="sage_hours"></p>
                 <hr class="dashed-line">
-
-                <p >Rating:</p>
+                <p>Rating:</p>
                 <hr class="dashed-line">
             </div>
         </div>
     </div>
 
-    <div class="red-box"></div>
-
     <div class="dining-halls-container">
-
+        <!-- Blitman -->
         <div class="image-container">
             <img src="{% static 'blitman_cropped.png' %}" alt="Blitman">
-            <button class ="title-overlay">
+            <button class="title-overlay">
                 <p>Blitman</p>
             </button>
-
             <div class="panel">
                 <hr class="solid-line">
                 <p id="blitman_status">Status: Checking...</p>
                 <hr class="dashed-line">
-
                 <div id="blitman_distance"></div>
                 <hr class="dashed-line">
-
-                <p >View Menu: </p>
-                <a href="#blitman">Blitman Dining Hall</a>    
+                <p>View Menu: </p>
+                <a href="#blitman">Blitman Dining Hall</a>
                 <hr class="dashed-line">
-
-                <p id = "blitman_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>           
+                <p id="blitman_hours"></p>
                 <hr class="dashed-line">
-
-                <p >Rating:</p>
+                <p>Rating:</p>
                 <hr class="dashed-line">
             </div>
         </div>
 
+        <!-- BARH -->
         <div class="image-container">
             <img src="{% static 'barh_cropped.png' %}" alt="BARH">
-            <button class ="title-overlay">
+            <button class="title-overlay">
                 <p>BARH</p>
             </button>
-            
             <div class="panel">
                 <hr class="solid-line">
                 <p id="barh_status">Status: Checking...</p>
                 <hr class="dashed-line">
-
                 <div id="barh_distance"></div>
                 <hr class="dashed-line">
-                
-                <p >View Menu: </p>
-                <a href="{% url 'barh' %}">BARH Dining Hall</a>    
-                <hr class="dashed-line">  
-
-                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
+                <p>View Menu: </p>
+                <a href="{% url 'barh' %}">BARH Dining Hall</a>
                 <hr class="dashed-line">
-
-                <p >Rating:</p>
-                <hr class="dashed-line">              
+                <p id="barh_hours"></p>
+                <hr class="dashed-line">
+                <p>Rating:</p>
+                <hr class="dashed-line">
             </div>
         </div>
     </div>
@@ -173,6 +141,8 @@
         <button onclick="scrollToTop()" id="to_top">BACK TO TOP</button>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'distanceTracker.js' %}"></script>
     <script>
         function getCurrentTime() {
             var date = new Date();
@@ -180,161 +150,31 @@
             var timeString = date.toLocaleTimeString('en-US', options);
             document.getElementById("time").textContent = "Time in Troy NY (EST): " + timeString;
         }
-    
-        function getHours() {
-            var date = new Date();
-            var day = date.getDay();
-            if(day == 0) // Sunday
-            {
-                document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 - 8:00 pm";
-            }
-            else if(day >= 1 && day <= 4) // Monday - Thursday
-            {
-                document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
-            }
-            else if(day == 5) // Friday
-            {
-                document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
-            }
-            else if(day == 6) // Saturday
-            {
-                document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 pm - 8:00 pm";
-            }
-        }
-    
+
         getCurrentTime();
-        getHours();
         setInterval(getCurrentTime, 1000);
     </script>
-    
-    <!-- Updated Script for Overlay Click Event -->
-    <script>
-        var acc = document.getElementsByClassName("title-overlay");
-        var i;
-    
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                // Toggle the 'active' class on the overlay (optional, for styling)
-                this.classList.toggle("active");
-    
-                // Get the panel (next sibling element)
-                var panel = this.nextElementSibling;
-    
-                // Toggle the 'open' class on the panel to control visibility
-                panel.classList.toggle('open');
-    
-                // Update 'aria-expanded' attribute for accessibility
-                var expanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !expanded);
-            });
-        }
-    </script>    
-    
+
     <script>
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' 
+                behavior: 'smooth'
             });
         }
     </script>
-    
+
+    <!-- Updated Script for Accordion Functionality -->
     <script>
-        function updateDiningHallStatuses() {
-            var now = new Date();
-            var day = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
-            var currentTime = now.getHours() * 60 + now.getMinutes(); // Time in minutes
-    
-            updateStatus("commons", getCommonsHours(day), currentTime);
-            updateStatus("sage", getSageHours(day), currentTime);
-            updateStatus("barh", getBARHHours(day), currentTime);
-            updateStatus("blitman", getBlitmanHours(day), currentTime);
-        }
-    
-        function updateStatus(diningHallId, openHours, currentTime) {
-            var statusText = "Closed";
-            for (var i = 0; i < openHours.length; i++) {
-                var timeRange = openHours[i];
-                if (currentTime >= timeRange.start && currentTime <= timeRange.end) {
-                    statusText = "Open for " + timeRange.meal;
-                    break;
-                }
-            }
-            document.getElementById(diningHallId + "_status").textContent = "Status: " + statusText;
-        }
-    
-        function getCommonsHours(day) {
-            var breakfast = { start: 7 * 60, end: 10 * 60, meal: "Breakfast" };
-            var continentalBreakfast = { start: 10 * 60, end: 11 * 60, meal: "Continental Breakfast" };
-            var lunch = { start: 11 * 60, end: 15.5 * 60, meal: "Lunch" };
-            var dinnerWeek = { start: 16.5 * 60, end: 21 * 60, meal: "Dinner" };
-            var lateNight = { start: 21 * 60, end: 22.5 * 60, meal: "Late Night" };
-            var brunch = { start: 9 * 60, end: 14 * 60, meal: "Brunch" };
-            var dinnerWeekend = { start: 16.5 * 60, end: 20 * 60, meal: "Dinner" };
-    
-            if (day >= 1 && day <= 5) { // Monday to Friday
-                return [breakfast, continentalBreakfast, lunch, dinnerWeek];
-            } else if (day == 6 || day == 0) { // Saturday and Sunday
-                var hours = [brunch, dinnerWeekend];
-                if (day == 0) hours.push(lateNight); // Sunday Late Night
-                return hours;
-            }
-        }
-    
-        function getSageHours(day) {
-            var breakfast = { start: 7 * 60, end: 10 * 60, meal: "Breakfast" };
-            var continentalBreakfast = { start: 10 * 60, end: 11 * 60, meal: "Continental Breakfast" };
-            var lunch = { start: 11 * 60, end: 14.5 * 60, meal: "Lunch" }; // Until 2:30 PM
-            var dinner = { start: 16 * 60, end: 20 * 60, meal: "Dinner" }; // Until 8:00 PM
-            var lateLunchWeekend = { start: 13.5 * 60, end: 16 * 60, meal: "Late Lunch" }; // 1:30 PM to 4:00 PM
-    
-            if (day >= 1 && day <= 5) { // Monday to Friday
-                return [breakfast, continentalBreakfast, lunch, dinner];
-            } else { // Saturday and Sunday
-                return [lateLunchWeekend, dinner];
-            }
-        }
-    
-        function getBARHHours(day) {
-            var breakfast = { start: 7 * 60, end: 9.5 * 60, meal: "Breakfast" }; // 7:00 AM to 9:30 AM
-            var dinnerWeek = { start: 17 * 60, end: 21 * 60, meal: "Dinner" }; // 5:00 PM to 9:00 PM
-            var brunchWeekend = { start: 11 * 60, end: 13 * 60, meal: "Brunch" }; // 11:00 AM to 1:00 PM
-    
-            if (day >= 1 && day <= 5) { // Monday to Friday
-                return [breakfast, dinnerWeek];
-            } else { // Saturday and Sunday
-                return [brunchWeekend];
-            }
-        }
-    
-        function getBlitmanHours(day) {
-            var breakfastWeek = { start: 7 * 60, end: 9.5 * 60, meal: "Breakfast" }; // 7:00 AM to 9:30 AM, Monday-Friday
-            var brunchWeekend = { start: 10.5 * 60, end: 13.5 * 60, meal: "Brunch" }; // 10:30 AM to 1:30 PM, Saturday-Sunday
-            var dinner = { start: 17 * 60, end: 20 * 60, meal: "Dinner" }; // 5:00 PM to 8:00 PM, Monday-Sunday
-    
-            if (day >= 1 && day <= 5) { // Monday to Friday
-                return [breakfastWeek, dinner];
-            } else { // Saturday and Sunday
-                return [brunchWeekend, dinner];
-            }
-        }
-    
-        updateDiningHallStatuses();
-        setInterval(updateDiningHallStatuses, 60000); // Update status every minute
-    </script>    
-    
+        document.querySelectorAll(".title-overlay").forEach(button => {
+            button.addEventListener("click", function() {
+                const panel = this.nextElementSibling;
+
+                // Toggle the 'open' class to control the visibility
+                panel.classList.toggle("open");
+            });
+        });
+    </script>
 
 </body>
 </html>

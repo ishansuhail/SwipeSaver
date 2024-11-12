@@ -32,7 +32,7 @@
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--secondary-color);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -410,35 +410,38 @@ body {
     color: white; 
   }
 
- /* Adjusted size for image-container and images */
+/* General CSS for image scaling and overlay */
+
+/* Dining Halls Container */
 .dining-halls-container {
     display: flex;
-    justify-content: center; /* Spread out the images */
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
 }
 
 .image-container {
     position: relative;
-    width: 35%; /* Increase the width for larger images */
+    width: 45%; /* Increased width for larger images */
+    max-width: 400px; /* Maximum width to control overall layout */
     margin: 15px;
 }
 
 .image-container img {
-    width: 50%;
+    width: 100%; /* Full width within container */
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Title overlay */
+/* Title Overlay */
 .title-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    background: rgba(255, 255, 255, 0.8); /* White with slight transparency */
+    background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
     color: #333;
     display: flex;
     align-items: center;
@@ -455,7 +458,7 @@ body {
     background: rgba(255, 255, 255, 1); /* Fully opaque on hover */
 }
 
-/* Dropdown panel overlaid on the image */
+/* Dropdown Panel Overlaid on the Image */
 .image-container .panel {
     position: absolute;
     top: 60px; /* Place below the overlay */
@@ -463,7 +466,7 @@ body {
     width: 100%;
     background: rgba(255, 255, 255, 0.9); /* Translucent white */
     color: #333;
-    padding: 20px;
+    padding: 15px 20px; /* Smaller padding for a cleaner look */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
@@ -473,11 +476,17 @@ body {
 }
 
 .image-container .panel.open {
-    max-height: 500px; /* Allows dropdown expansion */
+    max-height: 300px; /* Controlled expansion size */
+}
+
+/* Remove Blank Line in Panel Content */
+.panel p, .panel div {
+    margin: 0; /* Remove any extra margins */
+    padding: 5px 0; /* Minimal padding for spacing */
 }
 
 /* Lines */
-.solid-line {
+.solid-line, .dashed-line {
     border-top: 1px solid black;
-    margin: 10px 0;
+    margin: 5px 0;
 }
