@@ -417,7 +417,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 }
 
 .image-container {
@@ -466,7 +466,8 @@ body {
     width: 100%;
     background: rgba(255, 255, 255, 0.9); /* Translucent white */
     color: #333;
-    padding: 15px 20px; /* Smaller padding for a cleaner look */
+    padding-top: 5px;
+    padding-bottom: 5px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
@@ -489,4 +490,10 @@ body {
 .solid-line, .dashed-line {
     border-top: 1px solid black;
     margin: 5px 0;
+}
+
+.dynamic-text {
+    font-family: 'Montserrat', sans-serif; /* Matches the static content */
+    font-size: 16px; /* Matches the specified size */
+    color: #333; /* Matches the static text color */
 }
