@@ -18,17 +18,6 @@
     <h1>{{ dining_hall_name|capitalize_dining_hall_name|upper }} DINING HALL</h1>
 </div>
 
-<!-- Top-right user status -->
-<div class="user-status">
-    {% if user.is_authenticated %}
-        <span>Logged in as {{ user.username }}</span>
-        <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
-    {% endif %}
-</div>
-
 <div class="scrollmenu">
     <a href="{% url 'homepage' %}">Home</a>
     <a href="{% url 'commons' %}">Commons</a>
@@ -53,33 +42,26 @@
     </div>
 </div>
 
-<!-- Login alert if not authenticated -->
-{% if not user.is_authenticated %}
-<div class="login-alert">
-    <p>You need to be logged in to vote.</p> 
-</div>
-{% endif %}
-
 <!-- Meal sections -->
 <div class="meal-sections">
     {% if breakfast_items|length > 0 %}
         <p class="meal-title">BREAKFAST</p>
-        <div>{% render_meal_info breakfast_items ratings user.is_authenticated %}</div>
+        <div>{% render_meal_info breakfast_items ratings %}</div>
     {% endif %}
 
     {% if brunch_items|length > 0 %}
         <p class="meal-title">BRUNCH</p>
-        <div>{% render_meal_info brunch_items ratings user.is_authenticated %}</div>
+        <div>{% render_meal_info brunch_items ratings %}</div>
     {% endif %}
 
     {% if lunch_items|length > 0 %}
         <p class="meal-title">LUNCH</p>
-        <div>{% render_meal_info lunch_items ratings user.is_authenticated %}</div>
+        <div>{% render_meal_info lunch_items ratings %}</div>
     {% endif %}
 
     {% if dinner_items|length > 0 %}
         <p class="meal-title">DINNER</p>
-        <div>{% render_meal_info dinner_items ratings user.is_authenticated %}</div>
+        <div>{% render_meal_info dinner_items ratings %}</div>
     {% endif %}
 </div>
 
@@ -89,5 +71,6 @@
     const csrfToken = "{{ csrf_token }}";
 </script>
 <script src="{% static 'dining_hall_scripts.js' %}"></script>
+<script src="{% static 'cookies.js' %}"></script>
 </body>
 </html>
