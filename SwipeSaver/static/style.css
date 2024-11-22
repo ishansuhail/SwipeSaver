@@ -53,6 +53,47 @@ body {
 }
 
 
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-color); /* Matches the primary theme */
+    color: var(--secondary-color); /* Text color for contrast */
+    text-align: center; /* Center the text and button */
+    padding: 20px; /* Add padding for spacing */
+    position: fixed; /* Make the footer stick to the bottom */
+    bottom: 0; /* Position it at the bottom */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 100; /* Ensure it stays above other content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items horizontally */
+}
+
+/* Footer Text */
+.footer p {
+    margin: 5px 0; /* Add small spacing between text and button */
+    font-size: 1rem; /* Match other text sizes */
+}
+
+/* Back to Top Button */
+#to_top {
+    margin-top: 2px; /* Space between text and button */
+    background-color: var(--secondary-color); /* Contrast with footer background */
+    color: var(--primary-color); /* Match primary color for consistency */
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Comfortable padding */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+#to_top:hover {
+    background-color: var(--accent-color); /* Accent color on hover */
+    color: var(--secondary-color); /* Contrast text color on hover */
+}
+
+
 /* Header Styles */
 .header-container {
     position: relative;
