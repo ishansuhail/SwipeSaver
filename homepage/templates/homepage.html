@@ -25,15 +25,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'distanceTracker.js' %}"></script>
 </div>      
-    
-    <!-- Top-right user status -->
-    <div class="user-status">
-        {% if user.is_authenticated %}
-            <!-- Display when the user is logged in -->
-            <span>Logged in as {{ user.username }}</span>
-            <a href="{% url 'logout' %}">Logout</a>
-        {% endif %}
-    </div>
 
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
@@ -43,12 +34,6 @@
         <a href="{% url 'blitman' %}">Blitman</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-
-        {% if not user.is_authenticated %}
-            <!-- Show login and signup buttons when user is not logged in -->
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'signup' %}">Sign Up</a>
-        {% endif %}
     </div>
 
     <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>

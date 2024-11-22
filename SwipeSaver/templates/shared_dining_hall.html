@@ -18,17 +18,6 @@
     <h1>{{ dining_hall_name|capitalize_dining_hall_name|upper }} DINING HALL</h1>
 </div>
 
-<!-- Top-right user status -->
-<div class="user-status">
-    {% if user.is_authenticated %}
-        <span>Logged in as {{ user.username }}</span>
-        <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
-    {% endif %}
-</div>
-
 <div class="scrollmenu">
     <a href="{% url 'homepage' %}">Home</a>
     <a href="{% url 'commons' %}">Commons</a>
