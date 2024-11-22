@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SWIPESAVER</title>
+<title>SwipeSaver</title>
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
 </head>
 
@@ -41,8 +41,8 @@
         <a href="{% url 'barh' %}">Barh</a>    
         <a href="{% url 'russellsage' %}">Russell Sage</a>
         <a href="{% url 'blitman' %}">Blitman</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        {% comment %} <a href="#contact">Contact</a>
+        <a href="#about">About</a> {% endcomment %}
 
         {% if not user.is_authenticated %}
             <!-- Show login and signup buttons when user is not logged in -->
@@ -51,7 +51,7 @@
         {% endif %}
     </div>
 
-    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px; color: #33333"></p>
+    <p id="time"></p>
 
     <div id="output" hidden="hidden" style="text-align: center; margin: 20px;"></div>
 
