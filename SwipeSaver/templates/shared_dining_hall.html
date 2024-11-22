@@ -29,11 +29,11 @@
 </div>
 
 <div class="center-container" style="margin-top: 20px; color: black;">
+    <div class="popup" id = "itemList" onclick="popUp()">Click me to toggle the popup!
+        <span class="popuptext" id="myPopup">A Simple Popup!</span>
+    </div>
     <p style="flex: 1; text-align: center; font-size: 24px;">
         {% comment %} <label for = "items-selected"></label> {% endcomment %}
-        <select style = "display: none" name = "items-selected" id = "dropdown">
-
-        </select>
         Total Calories: <span id="totalCalories">0</span>
         <button class="button" onclick="clearCalories()" style="color: black; font-size: 20px; border: none; color: red;">Clear Calories</button>
     </p>
