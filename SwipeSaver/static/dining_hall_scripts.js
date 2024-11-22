@@ -14,7 +14,14 @@ setInterval(getCurrentTime, 1000);
 
 let totalCalories = 0
 
-function addCalories(calories){
+let food_items = []
+
+let dropdown = document.getElementById("dropdown");
+
+function addCalories(calories, item){
+    document.getElementById("dropdown").style.display = "block";
+    food_items.push([item, calories]);
+    
     totalCalories += calories;
     document.getElementById("totalCalories").textContent = totalCalories;
 }
@@ -23,6 +30,21 @@ function clearCalories(){
     totalCalories = 0
     document.getElementById("totalCalories").textContent = totalCalories;
 }
+
+
+dropdown = document.getElementById("dropdown");
+
+dropdown.addEventListener('click', function() {
+    food_items = dropdown.options.length;
+
+
+    console.log("This is the legnth", food_items);
+})
+
+
+
+
+
 
 /* LOGIC FOR ACCORDIONS */
 
