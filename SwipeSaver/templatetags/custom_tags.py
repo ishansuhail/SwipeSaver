@@ -58,20 +58,18 @@ def render_meal_info(meal_items, user_ratings, is_authenticated):
                     
                     
                     html_parts.append(f'''
-                    <div class="meal-item">
-                        <div class="meal-header">
-                            <p class="meal-name">{item.name} </p>
-                            {'<button onclick="toggleDescription(this);" class="toggle-button">+</button>' if show_description else ''}
-                            <div style = "color: black; display: flex; flex-direction: row; gap: 10px; margin-left: 10px; margin-right: 10px;">
-                                {''.join(f'<div>{allergen["name"]}</div>' if isinstance(allergen, dict) and "name" in allergen else f'' for allergen in allergens)}
+                        <div class="meal-item">
+                            <div class="meal-header">
+                                <p class="meal-name">{item.name}</p>
+                                {'<button onclick="toggleDescription(this);" class="toggle-button">+</button>' if show_description else ''}
+                                <div style="color: black; display: flex; flex-direction: row; gap: 10px; margin-left: 10px; margin-right: 10px;">
+                                    {''.join(f'<div>{allergen["name"]}</div>' if isinstance(allergen, dict) and "name" in allergen else '' for allergen in allergens)}
+                                </div>
+                                <button onclick="addCalories({calories}, '{item.name.replace("'", "&#39;")}')" class="calorie-button">{calories}cal</button>
                             </div>
-                            <button onclick=addCalories({calories}) class="calorie-button">{calories}cal</button>
                             
+                            {f'<div style="display: none;"><p class="meal-description">{description}</p></div>' if show_description else ''}
                         </div>
-                        
-                        {f'<div style="display: none;"><p class="meal-description">{description}</p></div>' if show_description else ''}
-                        
-                    </div>
                     ''')
                     
                     # Add a red dotted line after each item
