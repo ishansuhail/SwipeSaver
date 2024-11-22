@@ -28,12 +28,18 @@
     <a href="#about">About</a>
 </div>
 
-<div class="center-container" style="margin-top: 20px;">
-    <p style="text-align: center; font-size: 24px;">
+<div class="center-container" style="margin-top: 20px; color: black;">
+    <p style="flex: 1; text-align: center; font-size: 24px;">
+        {% comment %} <label for = "items-selected"></label> {% endcomment %}
+        <select style = "display: none" name = "items-selected" id = "dropdown">
+
+        </select>
         Total Calories: <span id="totalCalories">0</span>
-        <button class="button" onclick="clearCalories()" style="font-size: 20px; border: none; color: red;">Clear Calories</button>
+        <button class="button" onclick="clearCalories()" style="color: black; font-size: 20px; border: none; color: red;">Clear Calories</button>
     </p>
-    <p id="time" class="time-style"></p>
+    <div class = "calorie-header">
+        <p id="time"  class="time-style"></p>
+    </div>
 </div>
 
 <!-- Meal sections -->
