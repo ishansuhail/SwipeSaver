@@ -14,7 +14,7 @@ setInterval(getCurrentTime, 1000);
 
 let totalCalories = 0;
 let food_items = [];
-let itemList = document.getElementById("itemList");
+let itemList = document.getElementById("myPopup");
 
 function addCalories(calories, item) {
     
@@ -45,6 +45,7 @@ function updateCalories(item, calories, checkbox) {
         // Deselecting removes calories
         totalCalories -= calories;
         food_items = food_items.filter((food) => food.item !== item);
+        
     }
     document.getElementById("totalCalories").textContent = totalCalories;
 }
