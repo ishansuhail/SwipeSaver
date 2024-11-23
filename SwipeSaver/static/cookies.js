@@ -12,7 +12,6 @@ function getCookie(name) {
     // Construct a regular expression to find the cookie
     const regex = new RegExp('(?:^|; )' + encodeURIComponent(name) + '=([^;]*)');
     const match = document.cookie.match(regex);
-    console.log(match)
     return match ? decodeURIComponent(match[1]) : null;
 }
 
@@ -22,7 +21,5 @@ window.onload = function() {
         // If it doesn't exist, generate a new user_id and set it as a cookie
         let user_id = generateUniqueId();
         document.cookie = "user_id=" + user_id + "; path=/;";
-    } else {
-        console.log("User ID cookie already set:", getCookie('user_id'))
     }
 }
