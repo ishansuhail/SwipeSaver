@@ -66,7 +66,8 @@ async def get_average_ratings_per_station(hall_name):
         {
             "meal": result['meal'],
             "station": result['station'], 
-            "average_rating": result['average_rating'] or 0}
+            "average_rating": round(result['average_rating'] or 0, 2)
+        }
         for result in avg_ratings
     ]
 
