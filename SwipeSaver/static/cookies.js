@@ -9,8 +9,11 @@ function generateUniqueId(length = 10) {
 }
 
 function getCookie(name) {
-    let match = document.cookie.match('^|; ?' + name + '=([^;]*)(;|$)');
-    return match ? match[2] : null;
+    // Construct a regular expression to find the cookie
+    const regex = new RegExp('(?:^|; )' + encodeURIComponent(name) + '=([^;]*)');
+    const match = document.cookie.match(regex);
+    console.log(match)
+    return match ? decodeURIComponent(match[1]) : null;
 }
 
 window.onload = function() {
