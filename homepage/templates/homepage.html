@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SWIPESAVER</title>
+<title>SwipeSaver</title>
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
 </head>
 
@@ -25,6 +25,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'distanceTracker.js' %}"></script>
 </div>      
+    
+    <!-- Top-right user status -->
+    <div class="user-status">
+        {% if user.is_authenticated %}
+            <!-- Display when the user is logged in -->
+            <span>Logged in as {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+    </div>
 
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
@@ -32,11 +41,17 @@
         <a href="{% url 'barh' %}">Barh</a>    
         <a href="{% url 'russellsage' %}">Russell Sage</a>
         <a href="{% url 'blitman' %}">Blitman</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        {% comment %} <a href="#contact">Contact</a>
+        <a href="#about">About</a> {% endcomment %}
+
+        {% if not user.is_authenticated %}
+            <!-- Show login and signup buttons when user is not logged in -->
+            {% comment %} <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a> {% endcomment %}
+        {% endif %}
     </div>
 
-    <p id="time" style="text-align: right; font-size: 24px; margin-left: 40px; margin-right: 10px; margin-top:15px"></p>
+    <p id="time"></p>
 
     <div id="output" hidden="hidden" style="text-align: center; margin: 20px;"></div>
 
@@ -50,7 +65,6 @@
             </button>
 
             <div class="panel">
-                <hr class="solid-line">
                 <p id="commons_status">Status: Checking...</p>
                 <hr class="dashed-line">                
                 
@@ -61,11 +75,9 @@
                 <a href="{% url 'commons' %}">Commons Dining Hall</a>    
                 <hr class="dashed-line">
 
+                <p >Hours: </p>
                 <p id = "commons_hours"></p>
-                <hr class="dashed-line">
 
-                <p >Rating:</p>
-                <hr class="dashed-line">
             </div>
         </div>
 
@@ -76,7 +88,6 @@
             </button>
 
             <div class="panel">
-                <hr class="solid-line">
                 <p id="sage_status">Status: Checking...</p>
                 <hr class="dashed-line">
 
@@ -87,11 +98,9 @@
                 <a href="{% url 'russellsage' %}">Russell Sage Dining Hall</a>    
                 <hr class="dashed-line">
 
-                <p id = "sage_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
-                <hr class="dashed-line">
+                <p >Hours: </p>
+                <p id = "sage_hours" ></p>
 
-                <p >Rating:</p>
-                <hr class="dashed-line">
             </div>
         </div>
     </div>
@@ -107,7 +116,6 @@
             </button>
 
             <div class="panel">
-                <hr class="solid-line">
                 <p id="blitman_status">Status: Checking...</p>
                 <hr class="dashed-line">
 
@@ -118,11 +126,9 @@
                 <a href="#blitman">Blitman Dining Hall</a>    
                 <hr class="dashed-line">
 
-                <p id = "blitman_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>           
-                <hr class="dashed-line">
+                <p >Hours: </p>
+                <p id = "blitman_hours"></p>           
 
-                <p >Rating:</p>
-                <hr class="dashed-line">
             </div>
         </div>
 
@@ -133,7 +139,6 @@
             </button>
             
             <div class="panel">
-                <hr class="solid-line">
                 <p id="barh_status">Status: Checking...</p>
                 <hr class="dashed-line">
 
@@ -144,19 +149,18 @@
                 <a href="{% url 'barh' %}">BARH Dining Hall</a>    
                 <hr class="dashed-line">  
 
-                <p id = "barh_hours" style="font-size: 25px; margin-top: 10px; margin-left: 20px"></p>
-                <hr class="dashed-line">
-
-                <p >Rating:</p>
-                <hr class="dashed-line">              
+                <p >Hours: </p>
+                <p id = "barh_hours"></p>
+            
             </div>
         </div>
     </div>
 
-    <div class="footer">
+    <footer class="footer">
         <p>An RCOS project</p>
         <button onclick="scrollToTop()" id="to_top">BACK TO TOP</button>
-    </div>
+    </footer>
+    
 
     <script>
         function getCurrentTime() {
@@ -171,31 +175,31 @@
             var day = date.getDay();
             if(day == 0) // Sunday
             {
-                document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "9:00 am - 2:00 pm | 4:30 pm - 10:30 pm";
+                document.getElementById("sage_hours").textContent = "1:30 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "11:00 am - 1:00 pm";
+                document.getElementById("blitman_hours").textContent = "10:30 am - 1:30 pm | 5:00 - 8:00 pm";
             }
             else if(day >= 1 && day <= 4) // Monday - Thursday
             {
-                document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "7:00 am - 3:30 pm | 4:30 pm - 10:30 pm";
+                document.getElementById("sage_hours").textContent = "7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
             }
             else if(day == 5) // Friday
             {
-                document.getElementById("commons_hours").textContent = "Hours: 7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "7:00 am - 3:30 pm | 4:30 pm - 9:00 pm";
+                document.getElementById("sage_hours").textContent = "7:00 am - 2:30 pm | 4:00 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "7:00 am - 9:30 am | 5:00 pm - 9:00 pm";
+                document.getElementById("blitman_hours").textContent = "7:00 am - 9:30 am | 5:00 pm - 8:00 pm";
             }
             else if(day == 6) // Saturday
             {
-                document.getElementById("commons_hours").textContent = "Hours: 9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
-                document.getElementById("sage_hours").textContent = "Hours: 1:30 pm - 8:00 pm";
-                document.getElementById("barh_hours").textContent = "Hours: 11:00 am - 1:00 pm";
-                document.getElementById("blitman_hours").textContent = "Hours: 10:30 am - 1:30 pm | 5:00 pm - 8:00 pm";
+                document.getElementById("commons_hours").textContent = "9:00 am - 2:00 pm | 4:30 pm - 9:00 pm";
+                document.getElementById("sage_hours").textContent = "1:30 pm - 8:00 pm";
+                document.getElementById("barh_hours").textContent = "11:00 am - 1:00 pm";
+                document.getElementById("blitman_hours").textContent = "10:30 am - 1:30 pm | 5:00 pm - 8:00 pm";
             }
         }
     
@@ -319,7 +323,7 @@
         updateDiningHallStatuses();
         setInterval(updateDiningHallStatuses, 60000); // Update status every minute
     </script>    
-    <script src="{% static 'cookies.js' %}"></script>
+    
 
 </body>
 </html>

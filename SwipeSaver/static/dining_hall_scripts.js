@@ -12,30 +12,59 @@ setInterval(getCurrentTime, 1000);
 
 /* LOGIC FOR CALORIE CALCULATIONS */
 
-let totalCalories = 0
+let totalCalories = 0;
+let food_items = [];
+let itemList = document.getElementById("myPopup");
 
-let food_items = []
-
-let dropdown = document.getElementById("dropdown");
-
-function addCalories(calories, item){
-    document.getElementById("dropdown").style.display = "block";
-    food_items.push([item, calories]);
+function addCalories(calories, item) {
     
+    food_items.push({ item, calories });
+
+    
+    let listItem = document.createElement("li");
+    listItem.innerHTML = `
+        <input type="checkbox" id="${item}" checked value="${calories}" onchange="updateCalories('${item}', ${calories}, this)">
+        <label for="${item}">${item}</label>
+    `;
+    itemList.appendChild(listItem);
+
+
+
+    // Update the total calories
     totalCalories += calories;
     document.getElementById("totalCalories").textContent = totalCalories;
 }
 
+
+function updateCalories(item, calories, checkbox) {
+    if (checkbox.checked) {
+        // Re-selecting adds calories back
+        totalCalories += calories;
+        food_items.push({ item, calories });
+    } else {
+        // Deselecting removes calories
+        totalCalories -= calories;
+        food_items = food_items.filter((food) => food.item !== item);
+        
+    }
+    document.getElementById("totalCalories").textContent = totalCalories;
+}
+
+
+
 function clearCalories(){
+    
     totalCalories = 0
     document.getElementById("totalCalories").textContent = totalCalories;
+    console.log(itemList)
+    itemList.remove();
 }
 
 
 dropdown = document.getElementById("dropdown");
 
-dropdown.addEventListener('click', function() {
-    food_items = dropdown.options.length;
+itemList.addEventListener('click', function() {
+    food_items = itemList.options.length;
 
 
     console.log("This is the legnth", food_items);
@@ -43,7 +72,12 @@ dropdown.addEventListener('click', function() {
 
 
 
-
+/* POPUP */
+// When the user clicks on div, open the popup
+function popUp() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
 
 
 /* LOGIC FOR ACCORDIONS */
