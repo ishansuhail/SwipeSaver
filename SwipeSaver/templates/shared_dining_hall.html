@@ -24,8 +24,8 @@
     <a href="{% url 'barh' %}">Barh</a>
     <a href="{% url 'russellsage' %}">Russell Sage</a>
     <a href="{% url 'blitman' %}">Blitman</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    {% comment %} <a href="#contact">Contact</a>
+    <a href="#about">About</a> {% endcomment %}
 </div>
 
 <div class="center-container" style="margin-top: 20px; color: black;">
@@ -65,10 +65,24 @@
     {% endif %}
 </div>
 
+
+<footer class="footer">
+    <p>An RCOS project</p>
+    <button onclick="scrollToTop()" id="to_top">BACK TO TOP</button>
+</footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var diningHallName = "{{ dining_hall_name|lower }}";
     const csrfToken = "{{ csrf_token }}";
+</script>
+<script>
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    }
 </script>
 <script src="{% static 'dining_hall_scripts.js' %}"></script>
 <script src="{% static 'cookies.js' %}"></script>
