@@ -37,6 +37,7 @@ function addCalories(calories, item) {
 
 
 function updateCalories(item, calories, checkbox) {
+
     if (checkbox.checked) {
         // Re-selecting adds calories back
         totalCalories += calories;
