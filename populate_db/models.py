@@ -11,7 +11,7 @@ class FoodItem(models.Model):
     allergens = models.JSONField(null=True, blank=True)
 
 class Rating(models.Model):
-    user_id = models.BigIntegerField(null=True)
+    user_id = models.TextField(null=True)
     meal = models.TextField(null=True)
     station = models.TextField(null=True)
     dining_hall = models.TextField(null=True)

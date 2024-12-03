@@ -2,19 +2,18 @@ import json
 import asyncio
 
 from django.http import JsonResponse
-from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.db.models import Avg
 from channels.db import database_sync_to_async
 from populate_db.models import Rating
 
 # Function used to submit user ratings to the database
-@login_required
 @require_POST  
 def submit_rating_util(request):
-    # Check if the user is authenticated
-    if not request.user.is_authenticated:
-        return JsonResponse({'message': 'You must be logged in to submit a rating.', 'success': False}, status=401)
+    # Check if the user_id cookie exists
+    user_id = request.COOKIES.get('user_id')
+    if not user_id:
+        return JsonResponse({'message': 'User ID cookie is missing.', 'success': False}, status=400)
     
     try:
         data = json.loads(request.body)  # Parse the JSON data
@@ -22,7 +21,6 @@ def submit_rating_util(request):
         station = data.get('station')
         dining_hall = data.get('dining_hall')
         meal = data.get('meal')
-        user_id = request.user.id
 
         # Validate input data
         if rating not in [1, 2, 3, 4, 5]:
