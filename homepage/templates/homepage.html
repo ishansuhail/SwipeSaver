@@ -26,14 +26,6 @@
 <script src="{% static 'distanceTracker.js' %}"></script>
 </div>      
     
-    <!-- Top-right user status -->
-    <div class="user-status">
-        {% if user.is_authenticated %}
-            <!-- Display when the user is logged in -->
-            <span>Logged in as {{ user.username }}</span>
-            <a href="{% url 'logout' %}">Logout</a>
-        {% endif %}
-    </div>
 
     <div class="scrollmenu">
         <a href="{% url 'homepage' %}">Home</a>
@@ -43,12 +35,6 @@
         <a href="{% url 'blitman' %}">Blitman</a>
         {% comment %} <a href="#contact">Contact</a>
         <a href="#about">About</a> {% endcomment %}
-
-        {% if not user.is_authenticated %}
-            <!-- Show login and signup buttons when user is not logged in -->
-            {% comment %} <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'signup' %}">Sign Up</a> {% endcomment %}
-        {% endif %}
     </div>
 
     <p id="time"></p>
